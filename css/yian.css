@@ -1,0 +1,5 @@
+/* 自定义字体 */
+@font-face {
+    font-family: 'ZCOOL XiaoWei';
+    src: url('https://fonts.googleapis.com/css2?family=ZCOOL+XiaoWei&display=swap');
+}
