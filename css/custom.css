@@ -1,0 +1,15 @@
+/* 自定义字体 */
+@font-face {
+    font-family: 'ZCOOL XiaoWei';
+    src: url(https://fonts.googleapis.com/css2?family=ZCOOL+XiaoWei&display=swap);
+}
+
+@font-face {
+    font-family: 'ZCOOL KuaiLe';
+    src: url(https://fonts.googleapis.com/css2?family=ZCOOL+KuaiLe&display=swap);
+}
+
+@font-face {
+    font-family: 'Liu Jian Mao Cao';
+    src: url(https://fonts.googleapis.com/css2?family=Liu+Jian+Mao+Cao&display=swap);
+}
