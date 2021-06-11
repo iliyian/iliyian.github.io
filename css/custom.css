@@ -11,9 +11,14 @@
 
 @font-face {
     font-family: 'Liu Jian Mao Cao';
-    src: url(https://fonts.googleapis.com/css2?family=Liu+Jian+Mao+Cao&display=swap);
+    src: url(/css/LiuJianMaoCao-Regular.ttf);
 }
 
-body{
-    font-family: 'ZCOOL XiaoWei'!important;
+@font-face {
+    font-family: 'Ma Shan Zheng';
+    src: url(/css/MaShanZheng-Regular.ttf);
 }
+
+/* body{
+    font-family: 'Noto Serif TC'!important;
+} */

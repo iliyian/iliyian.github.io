@@ -1341,7 +1341,7 @@ body {
   background: var(--global-bg);
   color: var(--font-color);
   font-size: var(--global-font-size);
-  font-family: ZCOOL XiaoWei;
+  font-family: Ma Shan Zheng;
   line-height: 2;
   -webkit-tap-highlight-color: rgba(0,0,0,0);
 }
@@ -1469,7 +1469,7 @@ a:hover {
 #site-name,
 #aside-content .author-info__name,
 #aside-content .author-info__description {
-  font-family: ZCOOL XiaoWei;
+  font-family: Liu Jian Mao Cao;
 }
 .is-center {
   text-align: center;
@@ -2620,7 +2620,7 @@ blockquote footer cite:before {
   padding: 0.5rem;
   text-align: center;
   font-size: 14px;
-  font-family: ZCOOL XiaoWei;
+  font-family: Liu Jian Mao Cao;
 }
 @media screen and (max-width: 768px) {
   #error-wrap .error-content .error-info {
