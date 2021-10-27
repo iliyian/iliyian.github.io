@@ -1,0 +1,30 @@
+- class_name: 传送门
+  class_desc: 易安伙伴们的博客
+  link_list:
+    - name: 無何有之鄉
+      link: https://chromicredbrick.xyz/
+      avatar: https://chi01pap002files.storage.live.com/y4muhK5vpXlzZbaPcMJy6cZA0DQ6bV0TeKd3PvzovkhbhqZupr1EoJ8c9RdCOl53bo4DVYCXOO86MpXgLvgVYn8VCcupRI8_chWCfIVxa8BOPlgKEkkq9cd1Zv1BFXuE8Y73Lb7WExIrHUQMpDUNEJbWC7W44D-ewtpqXwozrAU4cJbBTE0yoRN0OBEEG7FfEXt?width=945&height=1068&cropmode=none
+      descr: 便合與官充水手，此生何止略知津。
+    - name: Cannedcha 酱
+      link: https://blog.cannedcha.net/
+      avatar: https://blog.cannedcha.net/wp-content/uploads/2021/04/cropped-23333.png
+      descr: 可可爱爱の小罐猹
+    - name: 安德烈 卡夫卡 酱
+      link: https://nonewswasgoodnews.wordpress.com/
+      avatar: https://secure.gravatar.com/avatar/7eaa69cc4e7d9103641d48b6785a16b2?s=160&d=identicon&r=g
+      descr: 是最好最好的爱人哦
+- class_name: 游乐园
+  class_desc: 易安做的内建小游戏噢
+  link_list:
+    - name: 别踩白块儿
+      link: /bcbker/
+      avatar: /img/bcbker.jpg
+      descr: 简简单单二元小游戏
+    - name: 博弈小游戏
+      link: /boyi/
+      avatar: /img/boyi.jpg
+      descr: 简简单单要克制欲望的游戏
+    - name: 别踩白块儿 2 之 canvas重制版
+      link: /bcbker2/
+      avatar: /img/bcbker2.jpg
+      descr: 虽然游戏体验可能还没原版好QAQ
