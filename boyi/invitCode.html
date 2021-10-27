@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>test</title>
+<meta name="keywords" content="test" />
+<meta name="description" content="test" />
+<meta charset="utf-8">
+<meta name="copyrigths" content="MHJ" />
+</head>
+<body>
+<style>
+body{
+	margin:0;
+	padding:0;
+	text-align:center;
+	background-color:#EEEEEE;
+}
+</style>
+<script>
+function get() {
+    console.time("sort");
+    document.getElementById("output").innerHTML = "";
+    var Long = document.getElementById("first").value;
+    var times = document.getElementById("last").value;
+    for (var i = 0; i < times; i++) {
+        end = "";
+        Num = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
+        for (var a = 0; a < Long; a++) {
+            id = Math.ceil(Math.random() * 35);
+            end = end + Num[id].toUpperCase()
+        }
+        document.write(end + "<br/>")
+    }
+    var end = d.getTime();
+    console.timeEnd("sort")
+}
+</script>
+<p>这里是邀请码长度：<input value="" type="text" id="first"/>
+<p>这里是生成次数：<input value="" type="text" id="last" />
+<br/><br/>
+<button onclick="get()">点我开始</button>
+<br/>
+<!--<div id="usedTime"></div>-->
+<div id="output"></div>
+</body>
+</html>

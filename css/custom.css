@@ -19,6 +19,21 @@
     src: url(/css/MaShanZheng-Regular.ttf);
 }
 
+@font-face {
+    font-family: 'Ou Kai';
+    src: url(/css/OuKai.otf);
+}
+
+@font-face {
+    font-family: 'Kan Hei';
+    src: url(/css/方正兰亭刊黑_GBK.ttf);
+}
+
+@font-face {
+    font-family: 'Er Ci Yuan';
+    src: url(/css/二次元字体.ttf);
+}
+
 /* body{
     font-family: 'Noto Serif TC'!important;
 } */
