@@ -1,0 +1,46 @@
+<html>
+<head>
+  <title>简单博弈游戏</title>
+  <link rel="stylesheet" type="text/css" href="index.css"/>
+  <meta name="keywords" content="简易博弈游戏"/>
+  <meta name="description" content="简易博弈游戏"/>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta charset="utf-8">
+  <meta content="width=device-width,user-scalable=no" name="viewport">
+</head>
+<body onkeypress="press()">
+  <br/>
+<div id="title"><a href="invitCode.html" style="text-decoration:none;color:red;font-size:142%;font-weight:bold;">点击生成随机邀请码</a></div><br/>
+<div id="outPut">
+  <div id="times">#</div>
+  <div id="wins">#</div>
+  <div id="loses">#</div>
+  <div id="money">#</div>
+</div><br/><br/>
+<div id="inPut">
+  请输入投注金额：<input type="text" id="given" value="twitter@iliyian" /><br/>
+  可以设置赔率<b>(自动变更)</b>：<input type="text" id="odds" disabled="disabled" value="请不要屏蔽JavaScript" /><br/><br/>
+  <input type="button" id="go" value="投注" onclick="go()" onkeydown="clickEnter()"/><br/><br/>
+  <div id="sta">
+  <div id="just">#</div>
+  <div id="All">#</div></div>
+</div><br/>
+<div id="upLog">
+<script>
+document.write("本页最后更新日期: " + '2019/12/13' + "<br>")
+</script>
+<span class="version"><b>系统版本:0.1.5</b></span><br/>
+更新日志：<br/>
+1.微调了CSS；<br/>
+2.新增本地存储和一些附加功能；<br/>
+3.使用了更人性化的逻辑。<br>
+4.解决乱码问题<br>
+</div>
+<button onclick="theRestore()" id="restore">点按重启</button><span>  </span><input type="text" id="code" value="可输入重启码" style="text-align:center" />
+<br/>
+<div id="copyright"><b>Copyright 2003-2018 <a href="https://twitter.com/iliyian01">iliyian</a> 版权所有<br/>All Rights Reserved</b></div>
+
+  <script src="localStorage.js" charset="utf-8"></script>
+  <script src="index.js" charset="gb2312"></script>
+</body>
+</html>

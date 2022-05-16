@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<body>
+  <style>
+    html, body {
+      width: 100%;
+      height: 100%;
+    }
+    body {
+      display: flex;
+      justify-content: center;
+    }
+    canvas {
+      border: solid;
+      width: 400px;
+      height: 600px;
+    }
+  </style>
+
+  <canvas id="canvas" width="400" height="600" ></canvas>
+  
+  <script>
+    var canvas = document.getElementById('canvas')
+    ctx = canvas.getContext('2d')
+    // ctx.translate(0.5, 0.5)
+
+    var gameBoard = {
+
+    }
+
+    var blocks = []
+
+    var prepare_start = {
+      x: 76, y: 120, w: 248, h: 150,
+      draw: function() {
+        draw_prepare_rect(this)
+        ctx.fillText('Start', 200, 220)
+      }
+    }
+
+    var prepare_set = {
+      x: 76, y: 360, w: 248, h: 150,
+      draw: function() {
+        draw_prepare_rect(this)
+        ctx.fillText('Settings', 200, 460)
+      }
+    }
+
+    function draw_prepare_rect(elem) {
+      ctx.fillStyle = 'black'
+      ctx.fillRect(elem.x, elem.y, elem.w, elem.h) 
+      ctx.font = '50px serif'
+      ctx.fillStyle = 'white'
+      ctx.textAlign = 'center'
+    }
+
+    function inside(obj, x, y) {
+      if (obj.x < x && x < obj.x + obj.w
+          && obj.y < y && y < obj.y + obj.h) {
+            return true
+          }
+      else {
+        return false
+      }
+    }
+
+    function prepare() {
+      lost = false
+      blocks = []
+      ctx.clearRect(0, 0, 400, 600)
+      prepare_start.draw()
+      prepare_set.draw()
+      canvas.addEventListener('click', handle_prepare_click)
+    }
+
+    function handle_prepare_click(ev) {
+      // alert("clicked!")
+      // let rect = canvas.getBoundingClientRect()
+      // let x = ev.clientX - rect.left
+      // let y = ev.clientY - rect.top
+      let x = ev.offsetX, y = ev.offsetY
+      if (inside(prepare_start, x, y)) {
+        canvas.removeEventListener('click', handle_prepare_click)
+        // prepare_animate()
+        init()
+      } else if (inside(prepare_set, x, y)) {
+        alert("WIP")
+      }
+    }
+
+    function prepare_animate() {
+      let speed1 = Math.ceil(Math.random() * 500) + 500;
+      let way1 = Math.ceil(Math.random() * 4);
+      let speed2 = Math.ceil(Math.random() * 500) + 500;
+      let way2 = Math.ceil(Math.random() * 4);
+
+      dx = 0, dy = 0
+      switch (way1) {
+        case 1:
+          dx = - (prepare_start.x + prepare_start.w)
+          break
+        case 2:
+          dx = prepare_start.x + prepare_start.w
+          break
+        case 3:
+          dy = prepare_start.y + prepare_start.h
+          break
+        case 4:
+          dy = - (prepare_start.y + prepare_start.h)
+          break
+      }
+      prepare_animate_draw(dx, dy, prepare_start.x, prepare_start.y, w, h)
+
+    }
+
+    function prepare_animate_draw(dx, dy, tx, ty, sp, w, h) {
+      let vx = dx / sp, vy = dy / sp
+      let frame = 25
+      setTimeout(() => {
+        ctx.clearRect(tx, ty, w, h)
+        tx -= vx * 25, ty -= vy * 25
+        ctx.fillRect(tx, vx, w, h)
+      }, sp / 25);
+    }
+
+    let gaming = false, lost = false
+    function init() {
+      for (let i = -1; i < 4; i++) {
+        let choose = Math.floor(Math.random() * 4)
+        let line = []
+        for (let j = 0; j < 4; j++) {
+          b = {
+            x: j*100,
+            y: i*150,
+            w: 100,
+            h: 150,
+            color: choose == j ? 'black' : 'white'
+          }
+          line.push(b)
+
+          if (i == 3 && choose == j) {
+            blocks['start'] = j
+          }
+        }
+        blocks.push(line)
+      }
+
+      blocks.w = 100, blocks.h = 150;
+      console.log(blocks)
+
+      ctx.save()
+      draw()
+      ctx.save()
+      ctx.font = '30px serif'
+      ctx.fillStyle = 'white'
+      startBlock = blocks[blocks.length-1][blocks['start']]
+      ctx.fillText('Start', startBlock.x + 50, startBlock.y + 100)
+      canvas.addEventListener('click', handle_gaming_click)
+      // canvas.addEventListener('click', handle_gaming_click)
+    }
+
+    function queryBlock(x, y) {
+      console.log('queryed %d %d', x, y)
+      y -= blocks[2][0].y - blocks.h
+      return blocks[Math.floor(y / blocks.h)+1][Math.floor(x / blocks.w)]
+    }
+
+    function start() {
+      lost = false
+      scores = 0
+      move()
+    }
+
+    function lose() {
+      ctx.clearRect(0, 0, 400, 600)
+      ctx.save()
+
+      ctx.fillStyle = 'green'
+      ctx.fillRect(0, 0, 400, 600)
+      ctx.save()
+
+      ctx.fillStyle = 'white'
+      ctx.fillRect(38, 114, 324, 150)
+      ctx.save()
+
+      ctx.fillStyle = 'black'
+      againRect = {
+        x: 76, y: 372, w: 248, h: 150
+      }
+      ctx.fillRect(againRect.x, againRect.y, againRect.w, againRect.h)
+      ctx.save()
+
+      ctx.fillStyle = 'red'
+      ctx.font = 'serif 60px'
+      ctx.fillText("You have got " + scores + " scores", 200, 200)
+      ctx.save()
+
+      ctx.fillStyle = 'white'
+      ctx.font = 'serif 160px'
+      ctx.fillText('Try Again', 200, 450)
+
+      canvas.removeEventListener('click', handle_gaming_click)
+      canvas.addEventListener('click', handle_again_click)
+    }
+
+    function handle_again_click(ev) {
+      let x = ev.pageX - this.offsetLeft
+      let y = ev.pageY - this.offsetTop
+      if (inside(againRect, x, y)) {
+        canvas.removeEventListener('click', handle_again_click)
+        prepare()
+      }
+    }
+
+    speed = 7
+    function move() {
+      if (blocks[0][0].y + 20 > 0) {
+        update_line()
+      } else {
+        blocks.forEach(line => {
+          line.forEach(block => {
+            block.y += speed
+          })
+        })
+      }
+      moving = setTimeout(move, 20)
+      window.requestAnimationFrame(draw)
+      if (!check()) {
+        draw()
+        lost = true
+        setTimeout(() => {
+          lose()
+        }, 1000);
+      }
+    }
+
+    function check() {
+      let lastline = blocks[blocks.length-1], flag = true
+      lastline.forEach(element => {
+        if (element.color == 'black') {
+          flag = false
+          element.color = 'red'
+        }
+      });
+      return flag
+    }
+
+    function update_line() {
+      blocks.pop()
+      let line = [], choose = Math.floor(Math.random() * 4)
+      for ( let i = 0; i < 4; i++ ) {
+        let block = {
+            x: i*100,
+            y: -150,
+            w: 100,
+            h: 150,
+            color: choose == i ? 'black' : 'white'
+        }
+        line.push(block)
+      }
+      blocks.unshift(line)
+    }
+
+    scores = 0
+    function scored() {
+      scores ++;
+    }
+
+    function handle_gaming_click(ev) {
+      let x = ev.pageX - this.offsetLeft
+      let y = ev.pageY - this.offsetTop
+      let block = queryBlock(x, y)
+      
+      if (lost) return false
+
+      if (!gaming && inside(startBlock, x, y)) {
+        gaming = true
+        block.color = 'white'
+        start()
+      } else if (block.color == 'white'){
+        block.color = 'red'
+        window.requestAnimationFrame(draw)
+        if (typeof moving != 'undefined') clearTimeout(moving)
+        setTimeout(() => {
+          lost = true
+          gaming = false
+          lose()
+        }, 1000);
+      } else if (gaming && block.color == 'black') {
+        block.color = 'white'
+        scored()
+        window.requestAnimationFrame(draw)
+      }
+    }
+
+    function draw() {
+      if (lost) return
+      blocks.forEach(line => {
+        line.forEach(element => {
+          ctx.fillStyle = element.color
+          ctx.fillRect(element.x, element.y, element.w, element.h)
+        })
+      });
+    }
+
+    prepare()
+    </script>    
+</body>
+</html>
