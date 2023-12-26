@@ -1,0 +1,312 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>导数试嬉 | 易安的小木屋</title><meta name="author" content="iliyian"><meta name="copyright" content="iliyian"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="导数试嬉 作者: 易安 (又是某篇征文)  导数是十分美妙的一类数学工具，她的美在于没有繁琐的圆锥曲线的扭曲的不可思议的计算，而只有几个简简单单的朴素式子的相互结合，便如同宇宙大爆炸从一粒奇点生成整个庞大的宇宙那般，生出了整个答题区域都占不下的详细空间。 但是在开始陈述之前，我向首先就韦达定理给出另"><link rel="shortcut icon" href="/img/bookgirl_ico.jpg"><link rel="canonical" href="https://blog.bookgirl.xyz/posts/e894c0ee/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//www.google-analytics.com" crossorigin=""/><link rel="preconnect" href="//hm.baidu.com"/><link rel="preconnect" href="//static.cloudflareinsights.com"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?a952c0a68f799cf75033595b45206e8e";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script><script async="async" src="https://www.googletagmanager.com/gtag/js?id=UA-198821287-1"></script><script>window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'UA-198821287-1');
+</script><script defer="defer" data-pjax="data-pjax" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon="{&quot;token&quot;: &quot;5ce475ca405b41b995ffb2cd9a5edd8b&quot;}"></script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"languages":{"hits_empty":"找不到您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: {"chs_to_cht":"你已切换为繁体中文","cht_to_chs":"你已切换为简体中文","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#49b1f5","bgDark":"#121212","position":"bottom-left"},
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyload: true,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: true
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '导数试嬉',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2023-11-29 18:23:52'
+}</script><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+          const isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+          const isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+          const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+
+          if (t === undefined) {
+            if (isLightMode) activateLightMode()
+            else if (isDarkMode) activateDarkMode()
+            else if (isNotSpecified || hasNoSupport) {
+              const now = new Date()
+              const hour = now.getHours()
+              const isNight = hour <= 6 || hour >= 18
+              isNight ? activateDarkMode() : activateLightMode()
+            }
+            window.matchMedia('(prefers-color-scheme: dark)').addListener(e => {
+              if (saveToLocal.get('theme') === undefined) {
+                e.matches ? activateDarkMode() : activateLightMode()
+              }
+            })
+          } else if (t === 'light') activateLightMode()
+          else activateDarkMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><link rel="stylesheet" href="/css/custom.css" media="defer" onload="this.media='all'"><link rel="stylesheet" href="/css/iconfont.css" media="defer" onload="this.media='all'"><meta name="generator" content="Hexo 7.0.0"><link rel="alternate" href="/atom.xml" title="易安的小木屋" type="application/atom+xml">
+</head><body><script>window.paceOptions = {
+  restartOnPushState: false
+}
+
+document.addEventListener('pjax:send', () => {
+  Pace.restart()
+})
+</script><link rel="stylesheet" href="/css/minimal.css"/><script src="https://cdn.jsdelivr.net/npm/pace-js/pace.min.js"></script><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src= "/img/loading-cat.gif" data-lazy-src="/img/tg_avatar.jpg" onerror="onerror=null;src='https://http.cat/404'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">27</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">14</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">7</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 文章分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 任意门</span></a></div><div class="menus_item"><a class="site-page" href="/game/"><i class="fa-fw fas fa-chess-queen"></i><span> 游乐园</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/img/dafenqi_hailuo.jpg')"><nav id="nav"><span id="blog-info"><a href="/" title="易安的小木屋"><span class="site-name">易安的小木屋</span></a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search" href="javascript:void(0);" rel="external nofollow noreferrer"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 文章分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 任意门</span></a></div><div class="menus_item"><a class="site-page" href="/game/"><i class="fa-fw fas fa-chess-queen"></i><span> 游乐园</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);" rel="external nofollow noreferrer"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">导数试嬉<a class="post-edit-link" href="https://github.com/iliyian/blogxyz/edit/main/source/_posts/导数试嬉.md" rel="external nofollow noreferrer" title="编辑" target="_blank"><i class="fas fa-pencil-alt"></i></a></h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="fa-fw post-meta-icon far fa-calendar-alt"></i><span class="post-meta-label">发表于</span><time datetime="2022-05-15T07:31:07.000Z" title="发表于 2022-05-15 15:31:07">2022-05-15</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E6%95%B0%E5%AD%A6/">数学</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">1.3k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>3分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="导数试嬉"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h2 id="导数试嬉">导数试嬉</h2>
+<p>作者: 易安 (又是某篇征文)</p>
+<hr>
+<p>导数是十分美妙的一类数学工具，她的美在于没有繁琐的圆锥曲线的扭曲的不可思议的计算，而只有几个简简单单的朴素式子的相互结合，便如同宇宙大爆炸从一粒奇点生成整个庞大的宇宙那般，生出了整个答题区域都占不下的详细空间。<br>
+但是在开始陈述之前，我向首先就韦达定理给出另一种证明方式，这是同解决许多导数问题时的方法类似的。</p>
+<p><img src= "/img/loading-cat.gif" data-lazy-src="/img/%E5%AF%BC%E6%95%B0%E8%AF%95%E5%AC%89/image13.png" alt=""></p>
+<p>这在恰好最高次和最低次差为2时使用韦达定理的效果完全相同，而具体操作中节省了化为相同分母的时间。接下来是关于韦达定理两根之积的证明，与上述相对应的，使用两式相加的形式。</p>
+<p><img src= "/img/loading-cat.gif" data-lazy-src="/img/%E5%AF%BC%E6%95%B0%E8%AF%95%E5%AC%89/image9.png" alt=""></p>
+<p>接下来是一道私以为极其典型的，零点的相关式子相加减，以及<!--![](/img/导数试嬉/image1.png)-->形式的导数题，来自2021年广州市普通高中毕业班综合测试（1）</p>
+<p><img src= "/img/loading-cat.gif" data-lazy-src="/img/%E5%AF%BC%E6%95%B0%E8%AF%95%E5%AC%89/image2.png" alt=""></p>
+<p>首先得到两个式子</p>
+<p><img src= "/img/loading-cat.gif" data-lazy-src="/img/%E5%AF%BC%E6%95%B0%E8%AF%95%E5%AC%89/image4.png" alt=""></p>
+<p>原因在于什么？原因在于没有立刻注意到x为共同的因式之一，纵使不可能进行完全的因式分解，我们在做题时也应当保证随时都尝试对简单的式子进行因式分解。而同时又由于lnx的存在使得x&gt;1恒成立，因此等式两边同时除以x后仍然成立，即得到以下</p>
+<p><img src= "/img/loading-cat.gif" data-lazy-src="/img/%E5%AF%BC%E6%95%B0%E8%AF%95%E5%AC%89/image16.png" alt=""></p>
+<p>此时似乎又陷入了一筹莫展的境地，但当我们再次审题，发现这不和谐的a没有在题干之中出现第二次，这或许说明应当利用a充作我们解题的桥梁，因为它实在没有别的用处了。我们尝试构建关于a的等式:</p>
+<p><img src= "/img/loading-cat.gif" data-lazy-src="/img/%E5%AF%BC%E6%95%B0%E8%AF%95%E5%AC%89/image3.png" alt=""></p>
+<p>想必在座诸位在久经题海的磨难之后，对于右侧的式子早已有了灵魂深处的敏感性，也即通过构建t为x1和x2的商，换元从而达到目的。但是这要求上下的次数应当是一样的，例如下面式子中上下次数都是2</p>
+<p><img src= "/img/loading-cat.gif" data-lazy-src="/img/%E5%AF%BC%E6%95%B0%E8%AF%95%E5%AC%89/image6.png" alt=""></p>
+<p>但是由于lnx1x2中x的次数为0，因此倘如使用上文提到的还原法，必定无法彻底。<br>
+此时，需要我们解放思想，实事求是，与时俱进，这是马克思主义活的灵魂，也即对lnx1x2进行大胆的扬弃，因为它如同前文中的a一样，对于解题没有任何帮助，那么为何不尝试着抛弃它:</p>
+<p><img src= "/img/loading-cat.gif" data-lazy-src="/img/%E5%AF%BC%E6%95%B0%E8%AF%95%E5%AC%89/image11.png" alt=""></p>
+<p>此时尚且难以确立舍弃lnx1x2这一步骤的正确性，但是敏感力强如你，对于题干中<!--![](/img/导数试嬉/image7.png)-->的说法是否立刻想到了那传说中的不等式链？在此，我默写出她的二维形式</p>
+<p><img src= "/img/loading-cat.gif" data-lazy-src="/img/%E5%AF%BC%E6%95%B0%E8%AF%95%E5%AC%89/image10.png" alt=""></p>
+<p>调几算方：基本不等式即中间两项，而题干的内容则极类似第四项，因此可以得出</p>
+<p><img src= "/img/loading-cat.gif" data-lazy-src="/img/%E5%AF%BC%E6%95%B0%E8%AF%95%E5%AC%89/image8.png" alt=""></p>
+<p>而这种敏感性又岂仅是几百道题所能够巩固的。让我们重新回到上文，以t代表其商</p>
+<p><img src= "/img/loading-cat.gif" data-lazy-src="/img/%E5%AF%BC%E6%95%B0%E8%AF%95%E5%AC%89/image14.png" alt=""></p>
+<p>诸位在考场上极端紧张的情况下想必连余弦公式都能把里面的cos背成sin或者把横坐标看着坐标，更何谈这最后一步的简单的通分母。我的经验是，一项一项先通再合，而并非瞬间漂移上去，这种小技巧我在圆锥曲线也有类似的体会，因此在这里插播一条圆锥曲线的相关内容</p>
+<p><img src= "/img/loading-cat.gif" data-lazy-src="/img/%E5%AF%BC%E6%95%B0%E8%AF%95%E5%AC%89/image5.png" alt=""></p>
+<p>但是圆锥曲线最困难的根本不是联立，完全相反的是，最简单最简单的就是联立直线和椭圆方程和求各种根之间的关系了。在这之后才是蜀道难难于上青天。<br>
+对于上面的式子，我的建议是先算-2a2，然后算km，然后将其相乘，而并非算完-2a2后傻傻地算出-2a2k然后才是-2a2km，后者容易计算错误。<br>
+接下来回到正题，我直到最近才突然明白了为什么它要告诉我们两根之间带有倍数的大小关系，根本原因在于要我们相除！也就间接提示了用还原法来替代他们的商，但以仆驽钝，又何以全其题也。易知</p>
+<p><img src= "/img/loading-cat.gif" data-lazy-src="/img/%E5%AF%BC%E6%95%B0%E8%AF%95%E5%AC%89/image12.png" alt=""></p>
+<p>通常像这种似乎存在一个零点而又找不到的，放心大胆地用e,e/2,1,2,1/e来代入变量，出题者为了让它刚好在那个数字凑成零可谓费劲艰辛。于是</p>
+<p><img src= "/img/loading-cat.gif" data-lazy-src="/img/%E5%AF%BC%E6%95%B0%E8%AF%95%E5%AC%89/image17.png" alt=""></p>
+<p>让我们在第n次向回头看，</p>
+<p><img src= "/img/loading-cat.gif" data-lazy-src="/img/%E5%AF%BC%E6%95%B0%E8%AF%95%E5%AC%89/image15.png" alt=""></p>
+<p>夜幕沉沉，寒鸦声声，不甚困倦，至此搁笔。</p>
+<hr>
+<p>上于 2022年5月14日夜</p>
+<p>因为最开始是在 google docs 里面写的，公式则是随便下载了个插件，然后似乎被它转成图片了，为了方便，就也用图片的形式弄了过来。刚刚查了下hexo和markdown的数学公式表示，好像KaTex不错。感觉以后可以弄点数学的东西上来，顺便练练用KaTex表示数学符号，感觉也有助于我自己做题能力的提升。毕竟这上面讲的是多么微小的一部分内容。</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="https://blog.bookgirl.xyz">iliyian</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="https://blog.bookgirl.xyz/posts/e894c0ee/">https://blog.bookgirl.xyz/posts/e894c0ee/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="external nofollow noreferrer" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://blog.bookgirl.xyz" target="_blank">易安的小木屋</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E6%95%B0%E5%AD%A6/">数学</a><a class="post-meta__tags" href="/tags/%E5%AF%BC%E6%95%B0/">导数</a></div><div class="post_share"><div class="social-share" data-image="/img/dafenqi_hailuo.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/posts/a73562c5/" title="生物错误点"><img class="cover" src= "/img/loading-cat.gif" data-lazy-src="/img/%E7%94%9F%E7%89%A9%E9%94%99%E8%AF%AF%E7%82%B9.jpg" onerror="onerror=null;src='https://http.cat/404'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">生物错误点</div></div></a></div><div class="next-post pull-right"><a href="/posts/1e6efac2/" title="踏入孤独"><img class="cover" src= "/img/loading-cat.gif" data-lazy-src="/img/%E7%81%AB%E3%81%AE%E3%82%88%E3%81%86%E3%81%AB%E7%86%B1%E3%81%84.jpg" onerror="onerror=null;src='https://http.cat/404'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">踏入孤独</div></div></a></div></nav><hr class="custom-hr"/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div><div class="comment-switch"><span class="first-comment">Gitalk</span><span id="switch-btn"></span><span class="second-comment">Waline</span></div></div><div class="comment-wrap"><div><div id="gitalk-container"></div></div><div><div id="waline-wrap"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src= "/img/loading-cat.gif" data-lazy-src="/img/tg_avatar.jpg" onerror="this.onerror=null;this.src='https://http.cat/404'" alt="avatar"/></div><div class="author-info__name">iliyian</div><div class="author-info__description">是小可爱</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">27</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">14</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">7</div></a></div><a id="card-info-btn" target="_blank" rel="noopener external nofollow noreferrer" href="https://t.me/iliyian"><i class="fab fa-telegram-plane"></i><span>Chat Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/iliyian" rel="external nofollow noreferrer" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="https://t.me/iliyian" rel="external nofollow noreferrer" target="_blank" title="Telegram"><i class="fab fa-telegram"></i></a><a class="social-icon" href="https://space.bilibili.com/299627858" rel="external nofollow noreferrer" target="_blank" title="Bilibili"><i class="iconfont icon-bilibili3"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">微笑吧~就算不断失败~</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AF%BC%E6%95%B0%E8%AF%95%E5%AC%89"><span class="toc-number">1.</span> <span class="toc-text">导数试嬉</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/posts/8253bfee/" title="之江的哲欣"><img src= "/img/loading-cat.gif" data-lazy-src="/img/%E4%B9%8B%E6%B1%9F%E6%96%B0%E8%AF%AD.jpg" onerror="this.onerror=null;this.src='https://http.cat/404'" alt="之江的哲欣"/></a><div class="content"><a class="title" href="/posts/8253bfee/" title="之江的哲欣">之江的哲欣</a><time datetime="2023-12-24T13:35:20.087Z" title="更新于 2023-12-24 21:35:20">2023-12-24</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/891a7930/" title="签到题"><img src= "/img/loading-cat.gif" data-lazy-src="/img/icpc-logo.png" onerror="this.onerror=null;this.src='https://http.cat/404'" alt="签到题"/></a><div class="content"><a class="title" href="/posts/891a7930/" title="签到题">签到题</a><time datetime="2023-12-24T12:26:39.657Z" title="更新于 2023-12-24 20:26:39">2023-12-24</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/aedea4c3/" title="音阅推荐"><img src= "/img/loading-cat.gif" data-lazy-src="/img/no5.jpg" onerror="this.onerror=null;this.src='https://http.cat/404'" alt="音阅推荐"/></a><div class="content"><a class="title" href="/posts/aedea4c3/" title="音阅推荐">音阅推荐</a><time datetime="2023-12-24T12:08:23.953Z" title="更新于 2023-12-24 20:08:23">2023-12-24</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/cd013c4d/" title="《洞穴奇案》读书报告"><img src= "/img/loading-cat.gif" data-lazy-src="/img/%E6%B4%9E%E7%A9%B4%E5%A5%87%E6%A1%88.jpg" onerror="this.onerror=null;this.src='https://http.cat/404'" alt="《洞穴奇案》读书报告"/></a><div class="content"><a class="title" href="/posts/cd013c4d/" title="《洞穴奇案》读书报告">《洞穴奇案》读书报告</a><time datetime="2023-12-24T09:26:10.199Z" title="更新于 2023-12-24 17:26:10">2023-12-24</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/5a88978f/" title="自传"><img src= "/img/loading-cat.gif" data-lazy-src="/img/sunset_changshan.jpg" onerror="this.onerror=null;this.src='https://http.cat/404'" alt="自传"/></a><div class="content"><a class="title" href="/posts/5a88978f/" title="自传">自传</a><time datetime="2023-12-13T09:00:24.735Z" title="更新于 2023-12-13 17:00:24">2023-12-13</time></div></div></div></div></div></div></main><footer id="footer" style="background-image: url('/img/dafenqi_hailuo.jpg')"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2023 By iliyian</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener external nofollow noreferrer" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text">To Be A Great Poet.<br/><a href="https://icp.gov.moe/?keyword=20232063" rel="external nofollow noreferrer" target="_blank">萌ICP备20232063号</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="chat-btn" type="button" title="聊天"><i class="fas fa-sms"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module"></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.js"></script><script>function panguFn () {
+  if (typeof pangu === 'object') pangu.autoSpacingPage()
+  else {
+    getScript('https://cdn.jsdelivr.net/npm/pangu/dist/browser/pangu.min.js')
+      .then(() => {
+        pangu.autoSpacingPage()
+      })
+  }
+}
+
+function panguInit () {
+  if (false){
+    GLOBAL_CONFIG_SITE.isPost && panguFn()
+  } else {
+    panguFn()
+  }
+}
+
+document.addEventListener('DOMContentLoaded', panguInit)</script><div class="js-pjax"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css"><script src="https://cdn.jsdelivr.net/npm/katex/dist/contrib/copy-tex.min.js"></script><script>(() => {
+  document.querySelectorAll('#article-container span.katex-display').forEach(item => {
+    btf.wrap(item, 'div', { class: 'katex-wrap'})
+  })
+})()</script><script>(() => {
+  const initGitalk = () => {
+    const gitalk = new Gitalk(Object.assign({
+      clientID: '82d3ae30fb1309b8aef2',
+      clientSecret: '9a7da5f699aaa02763e4ad89e662fff858e00511',
+      repo: 'blog_comments',
+      owner: 'iliyian',
+      admin: ['iliyian'],
+      id: '8d7348136e0345ca9293c9a261c6897a',
+      updateCountCallback: commentCount
+    },null))
+
+    gitalk.render('gitalk-container')
+  }
+
+  const loadGitalk = async() => {
+    if (typeof Gitalk === 'function') initGitalk()
+    else {
+      await getCSS('https://cdn.jsdelivr.net/npm/gitalk/dist/gitalk.min.css')
+      await getScript('https://cdn.jsdelivr.net/npm/gitalk/dist/gitalk.min.js')
+      initGitalk()
+    }
+  }
+  
+  const commentCount = n => {
+    const isCommentCount = document.querySelector('#post-meta .gitalk-comment-count')
+    if (isCommentCount) {
+      isCommentCount.textContent= n
+    }
+  }
+
+  if ('Gitalk' === 'Gitalk' || !false) {
+    if (false) btf.loadComment(document.getElementById('gitalk-container'), loadGitalk)
+    else loadGitalk()
+  } else {
+    window.loadOtherComment = loadGitalk
+  }
+})()</script><script>(() => {
+  const initWaline = () => {
+    const waline = Waline.init(Object.assign({
+      el: '#waline-wrap',
+      serverURL: 'https://waline-six-pied.vercel.app/',
+      pageview: false,
+      dark: 'html[data-theme="dark"]',
+      path: window.location.pathname,
+      comment: false,
+    }, null))
+  }
+
+  const loadWaline = async () => {
+    if (typeof Waline === 'object') initWaline()
+    else {
+      await getCSS('https://cdn.jsdelivr.net/npm/@waline/client/dist/waline.min.css')
+      await getScript('https://cdn.jsdelivr.net/npm/@waline/client/dist/waline.min.js')
+      initWaline()
+    }
+  }
+
+  if ('Gitalk' === 'Waline' || !false) {
+    if (false) btf.loadComment(document.getElementById('waline-wrap'),loadWaline)
+    else setTimeout(loadWaline, 0)
+  } else {
+    window.loadOtherComment = loadWaline
+  }
+})()</script></div><canvas class="fireworks" mobile="true"></canvas><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/fireworks.min.js"></script><script defer="defer" id="fluttering_ribbon" mobile="true" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/canvas-fluttering-ribbon.min.js"></script><script id="canvas_nest" defer="defer" color="255,0,0" opacity="0.618" zIndex="-1" count="99" mobile="true" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/canvas-nest.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = false;
+POWERMODE.mobile = true;
+document.body.addEventListener('input', POWERMODE);
+</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js"></script></div></div></body></html>
