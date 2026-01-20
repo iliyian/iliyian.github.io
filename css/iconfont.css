@@ -1,0 +1,82 @@
+@font-face {
+  font-family: "iconfont";
+  src: url('https://r2-imgs.iliyian.com/css/iconfont.woff2?t=1763224469798') format('woff2'),
+       url('https://r2-imgs.iliyian.com/css/iconfont.woff?t=1763224469798') format('woff'),
+       url('https://r2-imgs.iliyian.com/css/iconfont.ttf?t=1763224469798') format('truetype');
+}
+
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 21px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-QQ:before {
+  content: "\e882";
+}
+
+.icon-mail:before {
+  content: "\e812";
+}
+
+.icon-codeforces2:before {
+  content: "\e712";
+}
+
+.icon-codeforces3:before {
+  content: "\e60b";
+}
+
+.icon-codeforces4:before {
+  content: "\e60c";
+}
+
+.icon-codeforces5:before {
+  content: "\e604";
+}
+
+.icon-codeforces1:before {
+  content: "\eb65";
+}
+
+.icon-banquan:before {
+  content: "\e629";
+}
+
+.icon-codeforces:before {
+  content: "\e657";
+}
+
+.icon-bilibili3:before {
+  content: "\e607";
+}
+
+.icon-pixiv1:before {
+  content: "\e603";
+}
+
+.icon-bilibili2:before {
+  content: "\e602";
+}
+
+.icon-pixiv:before {
+  content: "\e600";
+}
+
+.icon-bilibili1:before {
+  content: "\e6cf";
+}
+
+.icon-bilibili-line:before {
+  content: "\e75d";
+}
+
+.icon-icon_bilibili-square:before {
+  content: "\e601";
+}
+
+.icon-bilibili:before {
+  content: "\e6b4";
+}
