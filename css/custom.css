@@ -25,9 +25,14 @@
     src: url(https://r2-imgs.iliyian.com/css/OuKai.otf);
 } */
 
-@font-face {
+/* @font-face {
     font-family: 'Kan Hei';
     src: url(https://r2-imgs.iliyian.com/css/方正兰亭刊黑_GBK.ttf);
+} */
+
+@font-face {
+    font-family: "LXGW";
+    src: url(https://r2-imgs.iliyian.com/css/LXGWWenKai-Medium.ttf);
 }
 
 /* @font-face {
