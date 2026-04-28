@@ -1,0 +1,222 @@
+/* ==========================================================================
+   APlayer Custom Key Style for Butterfly Theme
+   Theme Color: #ff6f00
+   Font: LXGW
+   ========================================================================== */
+
+/* ------------------------------------------------------------------
+   通用样式 (普通模式 & 吸底模式共用)
+   ------------------------------------------------------------------ */
+.aplayer {
+    font-family: 'LXGW', 'PingFang SC', 'Microsoft YaHei', sans-serif !important;
+    border-radius: 12px !important;
+}
+
+/* 进度条颜色 - 使用主题色 */
+.aplayer .aplayer-info .aplayer-controller .aplayer-bar-wrap .aplayer-bar .aplayer-played {
+    background: #ff6f00 !important;
+}
+
+/* 进度球样式 */
+.aplayer .aplayer-info .aplayer-controller .aplayer-bar-wrap .aplayer-bar .aplayer-played .aplayer-thumb {
+    background: #ff6f00 !important;
+    border: 2px solid #fff;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.2);
+    transform: scale(0.8);
+    transition: transform 0.3s;
+}
+.aplayer .aplayer-info .aplayer-controller .aplayer-bar-wrap .aplayer-bar .aplayer-played .aplayer-thumb:hover {
+    transform: scale(1.1);
+}
+
+/* ------------------------------------------------------------------
+   普通模式 (文章内嵌入) - 增加卡片感
+   ------------------------------------------------------------------ */
+.aplayer:not(.aplayer-fixed) {
+    margin: 20px 0 !important;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08) !important;
+    border: none !important;
+    background: rgba(255, 255, 255, 0.95);
+    transition: all 0.3s ease;
+}
+
+.aplayer:not(.aplayer-fixed):hover {
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12) !important;
+}
+
+/* 封面圆角 */
+.aplayer:not(.aplayer-fixed) .aplayer-pic {
+    border-radius: 12px 0 0 12px;
+}
+.aplayer:not(.aplayer-fixed) .aplayer-info {
+    border-radius: 0 12px 12px 0;
+}
+
+/* ------------------------------------------------------------------
+   吸底模式 (Fixed) - 优化背景
+   ------------------------------------------------------------------ */
+.aplayer.aplayer-fixed .aplayer-body {
+    background-color: #fff !important;
+    box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    border-radius: 6px 6px 0 0; /* 仅上方圆角 */
+}
+
+/* 吸底模式列表 */
+.aplayer.aplayer-fixed .aplayer-list {
+    border-radius: 6px 6px 0 0;
+    margin-bottom: 0;
+    border: none !important;
+}
+
+/* ------------------------------------------------------------------
+   歌词区域美化
+   ------------------------------------------------------------------ */
+.aplayer .aplayer-lrc {
+    text-shadow: none !important;
+}
+
+/* 歌词上下遮罩 - 亮色模式透明渐变 */
+.aplayer .aplayer-lrc:before {
+    background: linear-gradient(180deg, #ffffff 0%, rgba(255, 255, 255, 0) 100%) !important;
+}
+.aplayer .aplayer-lrc:after {
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #ffffff 100%) !important;
+}
+
+/* 通用歌词字体 */
+.aplayer .aplayer-lrc p {
+    color: #666;
+    font-size: 14px;
+    opacity: 0.6;
+    transition: all 0.3s ease;
+}
+
+/* 当前播放歌词高亮 */
+.aplayer .aplayer-lrc p.aplayer-lrc-current {
+    color: #ff6f00 !important; /* 主题色 */
+    font-size: 16px;
+    font-weight: bold;
+    opacity: 1;
+}
+
+/* ------------------------------------------------------------------
+   播放列表美化
+   ------------------------------------------------------------------ */
+.aplayer .aplayer-list ol li {
+    border-top: 1px solid transparent !important;
+    padding: 0 15px;
+    margin: 0;
+    transition: background 0.2s ease;
+}
+
+/* 列表悬停色 */
+.aplayer .aplayer-list ol li:hover {
+    background: rgba(255, 111, 0, 0.08) !important;
+}
+
+/* 列表当前播放项高亮 */
+.aplayer .aplayer-list ol li.aplayer-list-light {
+    background: rgba(255, 111, 0, 0.12) !important;
+}
+
+.aplayer .aplayer-list ol li.aplayer-list-light .aplayer-list-title {
+    color: #ff6f00;
+    font-weight: bold;
+}
+
+.aplayer .aplayer-list ol li .aplayer-list-index {
+    color: #999;
+}
+.aplayer .aplayer-list ol li .aplayer-list-author {
+    color: #888;
+}
+
+/* 滚动条美化 */
+.aplayer .aplayer-list ol::-webkit-scrollbar {
+    width: 5px;
+}
+.aplayer .aplayer-list ol::-webkit-scrollbar-thumb {
+    border-radius: 5px;
+    background-color: rgba(0, 0, 0, 0.1);
+}
+.aplayer .aplayer-list ol::-webkit-scrollbar-thumb:hover {
+    background-color: rgba(255, 111, 0, 0.3);
+}
+
+/* ------------------------------------------------------------------
+   深色模式适配 (Dark Mode)
+   Butterfly 通常使用 [data-theme="dark"]
+   ------------------------------------------------------------------ */
+[data-theme="dark"] .aplayer {
+    background: #282828 !important;
+    color: #e0e0e0;
+}
+
+/* 修复吸底模式背景 */
+[data-theme="dark"] .aplayer.aplayer-fixed .aplayer-body {
+    background-color: #282828 !important;
+    box-shadow: 0 0 15px rgba(0,0,0,0.4);
+}
+
+/* 歌词区域遮罩 - 深色 */
+[data-theme="dark"] .aplayer .aplayer-lrc:before {
+    background: linear-gradient(180deg, #282828 0%, rgba(40, 40, 40, 0) 100%) !important;
+}
+[data-theme="dark"] .aplayer .aplayer-lrc:after {
+    background: linear-gradient(180deg, rgba(40, 40, 40, 0) 0%, #282828 100%) !important;
+}
+
+/* 歌词文字颜色 */
+[data-theme="dark"] .aplayer .aplayer-lrc p {
+    color: #aaa;
+}
+[data-theme="dark"] .aplayer .aplayer-lrc p.aplayer-lrc-current {
+    color: #ff9800 !important; /* 深色模式下稍微亮一点的橙色 */
+}
+
+/* 信息区域文字 */
+[data-theme="dark"] .aplayer .aplayer-info .aplayer-music .aplayer-title {
+    color: #e0e0e0;
+}
+[data-theme="dark"] .aplayer .aplayer-info .aplayer-music .aplayer-author {
+    color: #777;
+}
+
+/* 控制按钮颜色 */
+[data-theme="dark"] .aplayer .aplayer-info .aplayer-controller .aplayer-time {
+    color: #999;
+}
+[data-theme="dark"] .aplayer .aplayer-icon path {
+    fill: #ddd;
+}
+[data-theme="dark"] .aplayer .aplayer-icon:hover path {
+    fill: #fff;
+}
+
+/* 列表颜色 */
+[data-theme="dark"] .aplayer .aplayer-list ol li:hover {
+    background: rgba(255, 152, 0, 0.15) !important;
+}
+[data-theme="dark"] .aplayer .aplayer-list ol li.aplayer-list-light {
+    background: rgba(255, 152, 0, 0.2) !important;
+}
+[data-theme="dark"] .aplayer .aplayer-list ol li.aplayer-list-light .aplayer-list-title {
+    color: #ff9800;
+}
+[data-theme="dark"] .aplayer .aplayer-list ol li .aplayer-list-title {
+    color: #ddd;
+}
+[data-theme="dark"] .aplayer .aplayer-list ol li .aplayer-list-author {
+    color: #666;
+}
+[data-theme="dark"] .aplayer .aplayer-list ol li .aplayer-list-index {
+    color: #555;
+}
+
+/* 深色模式滚动条 */
+[data-theme="dark"] .aplayer .aplayer-list ol::-webkit-scrollbar-thumb {
+    background-color: rgba(255, 255, 255, 0.15);
+}
+[data-theme="dark"] .aplayer .aplayer-list ol::-webkit-scrollbar-thumb:hover {
+    background-color: rgba(255, 152, 0, 0.4);
+}

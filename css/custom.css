@@ -55,3 +55,79 @@
 /* body{
     font-family: 'Noto Serif TC'!important;
 } */
+
+/* 移动端右侧按钮避开底部音乐播放器 */
+@media screen and (max-width: 768px) {
+    #rightside {
+        bottom: 130px !important;
+    }
+}
+
+/* Live2D 看板娘样式修复 */
+#waifu {
+    box-shadow: none !important;
+}
+
+#waifu canvas,
+#waifu #live2d {
+    background: transparent !important;
+    box-shadow: none !important;
+    filter: none !important;
+}
+
+/* Live2D 看板娘 - 半身显示 */
+/* #waifu {
+    overflow: hidden;
+}
+
+#waifu #live2d {
+    height: 350px !important;
+    width: 350px !important;
+    transform: translateY(-35%);
+} */
+
+/* ===== 配色美化 ===== */
+
+/* 卡片半透明毛玻璃效果 */
+#aside-content .card-widget,
+.layout > div:first-child:not(.recent-post-item) {
+    background: rgba(255, 255, 255, 0.85) !important;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+}
+
+#recent-posts {
+    background: transparent !important;
+    border-radius: 12px !important;
+}
+
+[data-theme="dark"] #aside-content .card-widget,
+[data-theme="dark"] .layout > div:first-child:not(.recent-post-item) {
+    background: rgba(26, 26, 46, 0.85) !important;
+}
+
+[data-theme="dark"] #recent-posts > .recent-post-item {
+    background: transparent !important;
+}
+
+/* 页脚半透明 */
+#footer {
+    background: rgba(123, 107, 138, 0.75) !important;
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+}
+
+/* 链接悬停过渡 */
+#article-container a:hover {
+    color: #5a7a8a;
+    transition: color 0.3s ease;
+}
+
+/* 滚动条美化 */
+::-webkit-scrollbar-thumb {
+    background: rgba(123, 107, 138, 0.4);
+    border-radius: 8px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(123, 107, 138, 0.6);
+}
