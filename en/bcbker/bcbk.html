@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<script src="jquery-3.3.1.min.js"></script>
+
+<head>
+    <meta charset="UTF-8">
+    <style>
+        /* Screen */
+        #main {
+            width: 400px;
+            height: 400px;
+            border: 2px solid black;
+            margin: auto;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Container */
+        #container {
+            width: 100%;
+            height: 400px;
+            position: relative;
+            top: -100px;
+            background: white;
+        }
+
+        /*.row*/
+        .row {
+            width: 100%;
+            height: 100px;
+
+        }
+
+        /*.cell*/
+        .cell {
+            width: 100px;
+            height: 100px;
+            float: left;
+        }
+
+        .black {
+            background: black;
+        }
+
+        /*
+            Score centered
+        */
+        #score {
+            text-align: center;
+        }
+
+        #button {
+            text-align: center;
+            margin-top: 8px;
+        }
+    </style>
+    <title>Don't Tap the White Tile</title>
+<!-- Matomo -->
+<script>
+  var _paq = window._paq = window._paq || [];
+  /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//mat.iliyian.com/";
+    _paq.push(['setTrackerUrl', u+'t']);
+    _paq.push(['setSiteId', '1']);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<!-- End Matomo Code -->
+</head>
+
+<body>
+    <h1 id="score">0</h1>
+    <div id="main">
+        <div id="container"></div>
+    </div>
+    <div id="button">
+        <button onclick="start()">Click to Start</button>
+    </div>
+</body>
+<script>
+    var clock = null; // Timer
+    var state = 0; // 0: initial state, 1: in progress, 3: failed/ended
+    var speed = 2;
+    /*
+     * Initialize interface
+     * */
+    function init() {
+        for (var i = 0; i < 4; i++) {
+            crow();
+        }
+        // Mouse click event delegation for black tiles
+        $('main').onclick = function (ev) {
+            judge(ev)
+        }
+    }
+
+    /*
+     * Judge: tap black tile to score, white tile ends game
+     * */
+
+    function judge(ev) {
+        if (state == 3) {
+            alert('Losers not allowed')
+            return;
+        }
+        if (ev.target.className.indexOf('black') == -1) {
+            fall();
+        } else {
+            ev.target.className = 'cell';
+            ev.target.parentNode.pass = 1;
+            score();
+        }
+    }
+
+    /*
+     * start() - Start timer
+     * */
+    function start() {
+        clock = window.setInterval('move()', 30);
+    }
+
+
+    /*
+     * Animate black tiles
+     * Get container's current top value and add pixels
+     * */
+    function move() {
+        var con = $('container');
+        var top = parseInt(window.getComputedStyle(con, null)['top']);
+        if (speed + top > 0) { // If step exceeds, set top = 0 directly
+            top = 0;
+        } else {
+            top += speed; // Adjust pixels per descent
+        }
+        con.style.top = top + 'px';
+
+        //
+
+        if (top == 0) {
+            crow();
+            con.style.top = '-100px';
+            drow();
+        } else if (top == (-100 + speed)) {
+            var rows = con.childNodes;
+            if ((rows.length == 5) && (rows[rows.length - 1].pass !== 1)) {
+                fall();
+            }
+        }
+    }
+
+    /*
+     * Speed up method
+     * */
+    function jiasu() {
+        if (speed == 2) {
+            speed = 4;
+        } else if (speed == 4) {
+            speed = 5;
+        } else if (speed == 5) {
+            speed = 10;
+        } else if (speed == 10) {
+            speed = 20;
+        } else if (speed == 20) {
+            alert("Your computer is too slow, browser can't handle it");
+        }
+    }
+
+    /*
+     * Lose, end game
+     * */
+    function fall() {
+        clearInterval(clock);
+        state = 3;
+        alert('Game Over');
+    }
+
+
+    /*
+     * Score
+     * */
+    function score() {
+        var newscore = parseInt($('score').innerHTML) + 1;
+        $('score').innerHTML = newscore;
+        if (newscore % 20 == 0) {
+            jiasu();
+        }
+
+    }
+
+    /*
+     * Create div.row with class='row'
+     * */
+    function crow() {
+        var con = $('container')
+        var row = cdiv('row');
+        var classes = createSn()
+        for (var i = 0; i < 4; i++) {
+            row.appendChild(cdiv(classes[i]));
+        }
+        if (con.firstChild == null) {
+            con.appendChild(row);
+        } else {
+            con.insertBefore(row, con.firstChild);
+        }
+
+    }
+
+    /*
+     * Delete last row of black tiles
+     * */
+    function drow() {
+        var con = $('container');
+        if (con.childNodes.length == 6) {
+            con.removeChild(con.lastChild);
+        }
+
+    }
+
+    /*
+     * Create div with className as its class name
+     * */
+    function cdiv(className) {
+        var div = document.createElement('div');
+        div.className = className;
+        return div;
+    }
+
+    /*
+     * Return an array with one random cell as "cell black", others as white
+     * */
+    function createSn() {
+        var arr = ['cell', 'cell', 'cell', 'cell'];
+        var i = Math.floor(Math.random() * 4);
+        arr[i] = 'cell black';
+        return arr;
+    }
+
+    /*
+     * Get element by id
+     * */
+    function $(id) {
+        return document.getElementById(id);
+    }
+
+    init();
+</script>
+
+</html>

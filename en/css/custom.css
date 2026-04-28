@@ -1,0 +1,115 @@
+/* 自定义字体 */
+
+/* @font-face {
+    font-family: 'ZCOOL XiaoWei';
+    src: url(https://fonts.googleapis.com/css2?family=ZCOOL+XiaoWei&display=swap);
+}
+
+@font-face {
+    font-family: 'ZCOOL KuaiLe';
+    src: url(https://fonts.googleapis.com/css2?family=ZCOOL+KuaiLe&display=swap);
+} */
+
+/* @font-face {
+    font-family: 'Liu Jian Mao Cao';
+    src: url(https://r2-imgs.iliyian.com/css/LiuJianMaoCao-Regular.ttf);
+} */
+
+/* @font-face {
+    font-family: 'Ma Shan Zheng';
+    src: url(https://r2-imgs.iliyian.com/css/MaShanZheng-Regular.ttf);
+}
+
+@font-face {
+    font-family: 'Ou Kai';
+    src: url(/css/OuKai.otf);
+} */
+
+/* @font-face {
+    font-family: 'Kan Hei';
+    src: url(https://r2-imgs.iliyian.com/css/方正兰亭刊黑_GBK.ttf);
+} */
+
+@font-face {
+    font-family: 'Maple Mono';
+    src: url(https://r2-imgs.iliyian.com/css/MapleMonoNormal-Medium.ttf);
+}
+
+/* @font-face {
+    font-family: 'Er Ci Yuan';
+    src: url(https://r2-imgs.iliyian.com/css/二次元字体.ttf);
+} */
+
+/* @font-face {
+    font-family: 'Ke Ben Song';
+    src: url(https://r2-imgs.iliyian.com/css/AaGuDianKeBenSong-2.ttf);
+} */
+
+/* #article-container > p {text-indent: 2em} */
+
+/* @font-face {
+    font-family: 'Xiao Li';
+    src: url(https://r2-imgs.iliyian.com/css/汉仪小隶书简.ttf);
+} */
+
+/* body{
+    font-family: 'Noto Serif TC'!important;
+} */
+
+/* 移动端右侧按钮避开底部音乐播放器 */
+@media screen and (max-width: 768px) {
+    #rightside {
+        bottom: 130px !important;
+    }
+}
+
+/* Live2D 看板娘样式修复 */
+#waifu {
+    box-shadow: none !important;
+}
+
+/* ===== 配色美化 ===== */
+
+/* 卡片半透明毛玻璃效果 */
+#aside-content .card-widget,
+.layout > div:first-child:not(.recent-post-item) {
+    background: rgba(255, 255, 255, 0.85) !important;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+}
+
+#recent-posts {
+    background: transparent !important;
+    border-radius: 12px !important;
+}
+
+[data-theme="dark"] #aside-content .card-widget,
+[data-theme="dark"] .layout > div:first-child:not(.recent-post-item) {
+    background: rgba(26, 26, 46, 0.85) !important;
+}
+
+[data-theme="dark"] #recent-posts > .recent-post-item {
+    background: transparent !important;
+}
+
+/* 页脚半透明 */
+#footer {
+    background: rgba(123, 107, 138, 0.75) !important;
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+}
+
+/* 链接悬停过渡 */
+#article-container a:hover {
+    color: #5a7a8a;
+    transition: color 0.3s ease;
+}
+
+/* 滚动条美化 */
+::-webkit-scrollbar-thumb {
+    background: rgba(123, 107, 138, 0.4);
+    border-radius: 8px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(123, 107, 138, 0.6);
+}

@@ -1,0 +1,65 @@
+<html>
+<head>
+  <title>Simple Betting Game</title>
+  <link rel="stylesheet" type="text/css" href="index.css"/>
+  <meta name="keywords" content="Simple Betting Game"/>
+  <meta name="description" content="Simple Betting Game"/>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta charset="utf-8">
+  <meta content="width=device-width,user-scalable=no" name="viewport">
+<!-- Matomo -->
+<script>
+  var _paq = window._paq = window._paq || [];
+  /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//mat.iliyian.com/";
+    _paq.push(['setTrackerUrl', u+'t']);
+    _paq.push(['setSiteId', '1']);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<!-- End Matomo Code -->
+</head>
+<body onkeypress="press()">
+  <br/>
+<div id="title"><a href="invitCode.html" style="text-decoration:none;color:red;font-size:142%;font-weight:bold;">Click to generate random invite code</a></div><br/>
+<div id="outPut">
+  <div id="times">#</div>
+  <div id="wins">#</div>
+  <div id="loses">#</div>
+  <div id="money">#</div>
+</div><br/><br/>
+<div id="inPut">
+  Enter bet amount: <input type="text" id="given" value="twitter@iliyian" /><br/>
+  Set odds <b>(auto-change)</b>: <input type="text" id="odds" disabled="disabled" value="Please do not block JavaScript" /><br/><br/>
+  <input type="button" id="go" value="Bet" onclick="go()" onkeydown="clickEnter()"/><br/><br/>
+  <div id="sta">
+  <div id="just">#</div>
+  <div id="All">#</div></div>
+</div><br/>
+<div id="upLog">
+<script>
+document.write("Last updated: " + '2019/12/13' + "<br>")
+</script>
+<span class="version"><b>System version: 0.1.5</b></span><br/>
+Update log:<br/>
+1. Fine-tuned CSS;<br/>
+2. Added local storage and some additional features;<br/>
+3. Used more user-friendly logic.<br>
+4. Fixed encoding issues<br>
+</div>
+<button onclick="theRestore()" id="restore">Click to restart</button><span>  </span><input type="text" id="code" value="Enter restart code" style="text-align:center" />
+<br/>
+<div id="copyright"><b>Copyright 2003-2018 <a href="https://twitter.com/iliyian01">iliyian</a><br/>All Rights Reserved</b></div>
+
+  <script src="localStorage.js" charset="utf-8"></script>
+  <script src="index.js" charset="gb2312"></script>
+  <script async src="https://busuanzi.iliyian.com/js"></script>
+Total page views: <span id="busuanzi_page_pv"></span>
+<br>
+Total visitors: <span id="busuanzi_page_uv"></span>
+</body>
+</html>

@@ -1,0 +1,462 @@
+<!DOCTYPE html><html lang="en" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>June 2021 | Yian's World</title><meta name="author" content="iliyian"><meta name="copyright" content="iliyian"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#f8f6f4"><meta property="og:type" content="website">
+<meta property="og:title" content="June 2021">
+<meta property="og:url" content="https://iliyian.com/en/archives/2021/06/index.html">
+<meta property="og:site_name" content="Yian&#39;s World">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://r2-imgs.iliyian.com/img/37.jpg">
+<meta property="article:author" content="iliyian">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://r2-imgs.iliyian.com/img/37.jpg"><script type="application/ld+json"></script><link rel="shortcut icon" href="https://r2-imgs.iliyian.com/img/bookgirl_ico.jpg"><link rel="canonical" href="https://iliyian.com/en/archives/2021/06/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//www.google-analytics.com" crossorigin=""/><link rel="preconnect" href="//hm.baidu.com"/><link rel="preconnect" href="//static.cloudflareinsights.com"/><link rel="preconnect" href="//www.clarity.ms"/><link rel="stylesheet" href="/en/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!false && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#1a1a2e')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#f8f6f4')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?78a5384b08d9abb6acb93050332afa9d";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+btf.addGlobalFn('pjaxComplete', () => {
+  _hmt.push(['_trackPageview',window.location.pathname])
+}, 'baidu_analytics')
+</script><script async="async" src="https://www.googletagmanager.com/gtag/js?id=UA-198821287-1"></script><script>window.dataLayer = window.dataLayer || []
+function gtag(){dataLayer.push(arguments)}
+gtag('js', new Date())
+gtag('config', 'UA-198821287-1')
+btf.addGlobalFn('pjaxComplete', () => {
+  gtag('config', 'UA-198821287-1', {'page_path': window.location.pathname})
+}, 'google_analytics')
+</script><script defer="defer" data-pjax="data-pjax" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon="{&quot;token&quot;: &quot;d19d24baf4bf4322b7f6dca4e9343988&quot;}"></script><script>(function(c,l,a,r,i,t,y){
+    c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+    t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+    y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+})(window, document, "clarity", "script", "tjgnm8jrqb");
+</script><script>const GLOBAL_CONFIG = {
+  root: '/en/',
+  algolia: undefined,
+  localSearch: {"path":"/en/search.xml","preload":true,"top_n_per_article":1,"unescape":false,"pagination":{"enable":false,"hitsPerPage":8},"languages":{"hits_empty":"No results found for: ${query}","hits_stats":"${hits} articles found"}},
+  translate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":true},
+  copy: {
+    success: 'Copy Successful',
+    error: 'Copy Failed',
+    noSupport: 'Browser Not Supported'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: 'days',
+  dateSuffix: {
+    just: 'Just now',
+    min: 'minutes ago',
+    hour: 'hours ago',
+    day: 'days ago',
+    month: 'months ago'
+  },
+  copyright: undefined,
+  lightbox: 'null',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid/dist/infinitegrid.min.js',
+    buttonText: 'Load More'
+  },
+  isPhotoFigcaption: true,
+  islazyloadPlugin: true,
+  isAnchor: true,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'June 2021',
+  isHighlightShrink: true,
+  isToc: false,
+  pageType: 'archive'
+}</script><link rel="stylesheet" href="/en/css/custom.css" media="defer" onload="this.media='all'"><link rel="stylesheet" href="/en/css/iconfont.css" media="defer" onload="this.media='all'"><link rel="stylesheet" href="/en/css/music.css"><link rel="stylesheet" href="/en/css/aplayer-custom.css"><!-- Matomo -->
+<script>
+  var _paq = window._paq = window._paq || [];
+  /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//mat.iliyian.com/";
+    _paq.push(['setTrackerUrl', u+'t']);
+    _paq.push(['setSiteId', '1']);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.async=true; g.src=u+'mat.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<!-- End Matomo Code -->
+<meta name="generator" content="Hexo 7.3.0"><link rel="alternate" href="/en/atom.xml" title="Yian's World" type="application/atom+xml">
+</head><body><div id="web_bg" style="background-image: url(https://r2-imgs.iliyian.com/img/雨に耳を傾ける.jpg);"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="https://r2-imgs.iliyian.com/img/loading-cat.gif" data-lazy-src="https://r2-imgs.iliyian.com/img/37.jpg" onerror="this.onerror=null;this.src='https://http.cat/404'" alt="avatar"/></div><div class="site-data text-center"><a href="/en/archives/"><div class="headline">Articles</div><div class="length-num">40</div></a><a href="/en/tags/"><div class="headline">Tags</div><div class="length-num">19</div></a><a href="/en/categories/"><div class="headline">Categories</div><div class="length-num">8</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="https://iliyian.com"><i class="fa-fw fas fa-language"></i><span> 中文</span></a></div><div class="menus_item"><a class="site-page" href="https://iliyian.com/music/"><i class="fa-fw fas fa-music"></i><span> Music</span></a></div><div class="menus_item"><a class="site-page" href="/en/link/"><i class="fa-fw fas fa-link"></i><span> Dokodemo-Door</span></a></div><div class="menus_item"><a class="site-page" href="/en/game/"><i class="fa-fw fas fa-chess-queen"></i><span> Paradise</span></a></div></div></div></div><div class="page" id="body-wrap"><header class="not-home-page" id="page-header" style="background-image: url(https://r2-imgs.iliyian.com/img/sonetto_pondering_centered.jpg);"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/en/"><span class="site-name">Yian's World</span></a></span><div id="menus"><div id="search-button"><span class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> Search</span></span></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="https://iliyian.com"><i class="fa-fw fas fa-language"></i><span> 中文</span></a></div><div class="menus_item"><a class="site-page" href="https://iliyian.com/music/"><i class="fa-fw fas fa-music"></i><span> Music</span></a></div><div class="menus_item"><a class="site-page" href="/en/link/"><i class="fa-fw fas fa-link"></i><span> Dokodemo-Door</span></a></div><div class="menus_item"><a class="site-page" href="/en/game/"><i class="fa-fw fas fa-chess-queen"></i><span> Paradise</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="page-site-info"><h1 id="site-title">June 2021</h1></div></header><main class="layout" id="content-inner"><div id="archive"><div class="article-sort-title">All Articles - 11</div><div class="article-sort"><div class="article-sort-item year">2021</div><div class="article-sort-item"><a class="article-sort-item-img" href="/en/posts/e1c2c9e0/" title="The Secret of the Clock House"><img src="https://r2-imgs.iliyian.com/img/loading-cat.gif" data-lazy-src="https://r2-imgs.iliyian.com/img/林道.jpg" alt="The Secret of the Clock House" onerror="this.onerror=null;this.src='https://http.cat/404'"></a><div class="article-sort-item-info"><div class="article-sort-item-time"><i class="far fa-calendar-alt"></i><time class="post-meta-date-created" datetime="2021-06-18T06:46:33.000Z" title="Created 2021-06-18 14:46:33">2021-06-18</time></div><a class="article-sort-item-title" href="/en/posts/e1c2c9e0/" title="The Secret of the Clock House">The Secret of the Clock House</a></div></div><div class="article-sort-item"><a class="article-sort-item-img" href="/en/posts/5225a720/" title="Yi An's Childhood"><img src="https://r2-imgs.iliyian.com/img/loading-cat.gif" data-lazy-src="https://r2-imgs.iliyian.com/img/友人A-cut.jpg" alt="Yi An's Childhood" onerror="this.onerror=null;this.src='https://http.cat/404'"></a><div class="article-sort-item-info"><div class="article-sort-item-time"><i class="far fa-calendar-alt"></i><time class="post-meta-date-created" datetime="2021-06-13T06:07:24.000Z" title="Created 2021-06-13 14:07:24">2021-06-13</time></div><a class="article-sort-item-title" href="/en/posts/5225a720/" title="Yi An's Childhood">Yi An's Childhood</a></div></div><div class="article-sort-item"><a class="article-sort-item-img" href="/en/posts/50afc27c/" title="In the Counseling Room"><img src="https://r2-imgs.iliyian.com/img/loading-cat.gif" data-lazy-src="https://r2-imgs.iliyian.com/img/吸血鬼.jpg" alt="In the Counseling Room" onerror="this.onerror=null;this.src='https://http.cat/404'"></a><div class="article-sort-item-info"><div class="article-sort-item-time"><i class="far fa-calendar-alt"></i><time class="post-meta-date-created" datetime="2021-06-11T13:45:32.000Z" title="Created 2021-06-11 21:45:32">2021-06-11</time></div><a class="article-sort-item-title" href="/en/posts/50afc27c/" title="In the Counseling Room">In the Counseling Room</a></div></div><div class="article-sort-item"><a class="article-sort-item-img" href="/en/posts/8bd09628/" title="The Heart Zither"><img src="https://r2-imgs.iliyian.com/img/loading-cat.gif" data-lazy-src="https://r2-imgs.iliyian.com/img/心琴-cut.jpg" alt="The Heart Zither" onerror="this.onerror=null;this.src='https://http.cat/404'"></a><div class="article-sort-item-info"><div class="article-sort-item-time"><i class="far fa-calendar-alt"></i><time class="post-meta-date-created" datetime="2021-06-10T07:30:17.000Z" title="Created 2021-06-10 15:30:17">2021-06-10</time></div><a class="article-sort-item-title" href="/en/posts/8bd09628/" title="The Heart Zither">The Heart Zither</a></div></div><div class="article-sort-item"><a class="article-sort-item-img" href="/en/posts/72ecd414/" title="Yi An's Poetry Collection"><img src="https://r2-imgs.iliyian.com/img/loading-cat.gif" data-lazy-src="https://r2-imgs.iliyian.com/img/天地创造.jpg" alt="Yi An's Poetry Collection" onerror="this.onerror=null;this.src='https://http.cat/404'"></a><div class="article-sort-item-info"><div class="article-sort-item-time"><i class="far fa-calendar-alt"></i><time class="post-meta-date-created" datetime="2021-06-08T06:35:18.000Z" title="Created 2021-06-08 14:35:18">2021-06-08</time></div><a class="article-sort-item-title" href="/en/posts/72ecd414/" title="Yi An's Poetry Collection">Yi An's Poetry Collection</a></div></div><div class="article-sort-item"><a class="article-sort-item-img" href="/en/posts/59816506/" title="Sunday Night"><img src="https://r2-imgs.iliyian.com/img/loading-cat.gif" data-lazy-src="https://r2-imgs.iliyian.com/img/都市.jpg" alt="Sunday Night" onerror="this.onerror=null;this.src='https://http.cat/404'"></a><div class="article-sort-item-info"><div class="article-sort-item-time"><i class="far fa-calendar-alt"></i><time class="post-meta-date-created" datetime="2021-06-06T13:56:01.000Z" title="Created 2021-06-06 21:56:01">2021-06-06</time></div><a class="article-sort-item-title" href="/en/posts/59816506/" title="Sunday Night">Sunday Night</a></div></div><div class="article-sort-item"><a class="article-sort-item-img" href="/en/posts/9a4c61c9/" title="I Lived a Happy Life"><img src="https://r2-imgs.iliyian.com/img/loading-cat.gif" data-lazy-src="https://r2-imgs.iliyian.com/img/夕暮.png" alt="I Lived a Happy Life" onerror="this.onerror=null;this.src='https://http.cat/404'"></a><div class="article-sort-item-info"><div class="article-sort-item-time"><i class="far fa-calendar-alt"></i><time class="post-meta-date-created" datetime="2021-06-05T05:33:55.000Z" title="Created 2021-06-05 13:33:55">2021-06-05</time></div><a class="article-sort-item-title" href="/en/posts/9a4c61c9/" title="I Lived a Happy Life">I Lived a Happy Life</a></div></div><div class="article-sort-item"><a class="article-sort-item-img" href="/en/posts/3c83dd1a/" title="The Colors of Youth"><img src="https://r2-imgs.iliyian.com/img/loading-cat.gif" data-lazy-src="https://r2-imgs.iliyian.com/img/千花の雫.jpg" alt="The Colors of Youth" onerror="this.onerror=null;this.src='https://http.cat/404'"></a><div class="article-sort-item-info"><div class="article-sort-item-time"><i class="far fa-calendar-alt"></i><time class="post-meta-date-created" datetime="2021-06-04T04:45:48.000Z" title="Created 2021-06-04 12:45:48">2021-06-04</time></div><a class="article-sort-item-title" href="/en/posts/3c83dd1a/" title="The Colors of Youth">The Colors of Youth</a></div></div><div class="article-sort-item"><a class="article-sort-item-img" href="/en/posts/4ffca13/" title="An Analysis of Myself"><img src="https://r2-imgs.iliyian.com/img/loading-cat.gif" data-lazy-src="https://r2-imgs.iliyian.com/img/神域の入り口.jpg" alt="An Analysis of Myself" onerror="this.onerror=null;this.src='https://http.cat/404'"></a><div class="article-sort-item-info"><div class="article-sort-item-time"><i class="far fa-calendar-alt"></i><time class="post-meta-date-created" datetime="2021-06-02T13:56:17.000Z" title="Created 2021-06-02 21:56:17">2021-06-02</time></div><a class="article-sort-item-title" href="/en/posts/4ffca13/" title="An Analysis of Myself">An Analysis of Myself</a></div></div><div class="article-sort-item"><a class="article-sort-item-img" href="/en/posts/7fa201c1/" title="How to Interpret Yozo Using Schopenhauer's Theory"><img src="https://r2-imgs.iliyian.com/img/loading-cat.gif" data-lazy-src="https://r2-imgs.iliyian.com/img/叔本华.jpg" alt="How to Interpret Yozo Using Schopenhauer's Theory" onerror="this.onerror=null;this.src='https://http.cat/404'"></a><div class="article-sort-item-info"><div class="article-sort-item-time"><i class="far fa-calendar-alt"></i><time class="post-meta-date-created" datetime="2021-06-02T13:45:01.000Z" title="Created 2021-06-02 21:45:01">2021-06-02</time></div><a class="article-sort-item-title" href="/en/posts/7fa201c1/" title="How to Interpret Yozo Using Schopenhauer's Theory">How to Interpret Yozo Using Schopenhauer's Theory</a></div></div></div><nav id="pagination"><div class="pagination"><span class="page-number current">1</span><a class="page-number" href="/en/archives/2021/06/page/2/">2</a><a class="extend next" rel="next" href="/en/archives/2021/06/page/2/"><i class="fas fa-chevron-right fa-fw"></i></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="https://r2-imgs.iliyian.com/img/loading-cat.gif" data-lazy-src="https://r2-imgs.iliyian.com/img/37.jpg" onerror="this.onerror=null;this.src='https://http.cat/404'" alt="avatar"/></div><div class="author-info-name">iliyian</div><div class="author-info-description">A Lovely Girl</div><div class="site-data"><a href="/en/archives/"><div class="headline">Articles</div><div class="length-num">40</div></a><a href="/en/tags/"><div class="headline">Tags</div><div class="length-num">19</div></a><a href="/en/categories/"><div class="headline">Categories</div><div class="length-num">8</div></a></div><a id="card-info-btn" target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/iliyian"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons"><a class="social-icon" href="https://github.com/iliyian" rel="external nofollow noreferrer" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="https://t.me/iliyian" rel="external nofollow noreferrer" target="_blank" title="Telegram"><i class="fab fa-telegram"></i></a><a class="social-icon" href="https://space.bilibili.com/299627858" rel="external nofollow noreferrer" target="_blank" title="Bilibili"><i class="iconfont icon-bilibili2"></i></a><a class="social-icon" href="https://codeforces.com/profile/iliyian" rel="external nofollow noreferrer" target="_blank" title="Codeforces"><i class="iconfont icon-codeforces2"></i></a><a class="social-icon" href="mailto:hello@iliyian.com" target="_blank" title="MailToMe"><i class="iconfont icon-mail"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>Announcement</span></div><div class="announcement_content">The slanting sun, I have failed you in this waning spring, with lines of tears.</div></div><div class="sticky_layout"><div class="card-widget card-categories"><div class="item-headline">
+            <i class="fas fa-folder-open"></i>
+            <span>Categories</span>
+            
+          </div>
+          <ul class="card-category-list" id="aside-cat-list">
+            <li class="card-category-list-item "><a class="card-category-list-link" href="/en/categories/Algorithm/"><span class="card-category-list-name">Algorithm</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/en/categories/Essay/"><span class="card-category-list-name">Essay</span><span class="card-category-list-count">2</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/en/categories/Idle-Talk/"><span class="card-category-list-name">Idle Talk</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/en/categories/Law/"><span class="card-category-list-name">Law</span><span class="card-category-list-count">2</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/en/categories/Literature/"><span class="card-category-list-name">Literature</span><span class="card-category-list-count">12</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/en/categories/Mathematics/"><span class="card-category-list-name">Mathematics</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/en/categories/Philosophy/"><span class="card-category-list-name">Philosophy</span><span class="card-category-list-count">3</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/en/categories/Study/"><span class="card-category-list-name">Study</span><span class="card-category-list-count">1</span></a></li>
+          </ul></div><div class="card-widget card-tags"><div class="item-headline"><i class="fas fa-tags"></i><span>Tags</span></div><div class="card-tag-cloud"><a href="/en/tags/Literature/" style="font-size: 1.5em; color: #99a9bf">Literature</a> <a href="/en/tags/Law/" style="font-size: 1.23em; color: #999ea6">Law</a> <a href="/en/tags/Mathematics/" style="font-size: 1.1em; color: #999">Mathematics</a> <a href="/en/tags/Satire/" style="font-size: 1.1em; color: #999">Satire</a> <a href="/en/tags/Philosophy/" style="font-size: 1.37em; color: #99a4b2">Philosophy</a> <a href="/en/tags/Algorithm/" style="font-size: 1.23em; color: #999ea6">Algorithm</a> <a href="/en/tags/Music/" style="font-size: 1.1em; color: #999">Music</a> <a href="/en/tags/ICPC/" style="font-size: 1.1em; color: #999">ICPC</a> <a href="/en/tags/Book-Report/" style="font-size: 1.1em; color: #999">Book Report</a> <a href="/en/tags/Study/" style="font-size: 1.1em; color: #999">Study</a> <a href="/en/tags/Biology/" style="font-size: 1.1em; color: #999">Biology</a> <a href="/en/tags/Constitutional-Law/" style="font-size: 1.1em; color: #999">Constitutional Law</a> <a href="/en/tags/Autobiography/" style="font-size: 1.37em; color: #99a4b2">Autobiography</a> <a href="/en/tags/Jurisprudence/" style="font-size: 1.1em; color: #999">Jurisprudence</a> <a href="/en/tags/Essay/" style="font-size: 1.23em; color: #999ea6">Essay</a> <a href="/en/tags/secret/" style="font-size: 1.37em; color: #99a4b2">secret</a> <a href="/en/tags/Derivatives/" style="font-size: 1.1em; color: #999">Derivatives</a> <a href="/en/tags/Negative/" style="font-size: 1.1em; color: #999">Negative</a> <a href="/en/tags/Meaningless/" style="font-size: 1.1em; color: #999">Meaningless</a></div></div><div class="card-widget card-archives">
+    <div class="item-headline">
+      <i class="fas fa-archive"></i>
+      <span>Archives</span>
+      <a class="card-more-btn" href="/en/archives/"
+            title="View More">
+            <i class="fas fa-angle-right"></i>
+          </a>
+    </div>
+  
+    <ul class="card-archive-list">
+      
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/en/archives/2026/04/">
+            <span class="card-archive-list-date">
+              April 2026
+            </span>
+            <span class="card-archive-list-count">1</span>
+          </a>
+        </li>
+      
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/en/archives/2026/03/">
+            <span class="card-archive-list-date">
+              March 2026
+            </span>
+            <span class="card-archive-list-count">2</span>
+          </a>
+        </li>
+      
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/en/archives/2026/01/">
+            <span class="card-archive-list-date">
+              January 2026
+            </span>
+            <span class="card-archive-list-count">1</span>
+          </a>
+        </li>
+      
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/en/archives/2025/12/">
+            <span class="card-archive-list-date">
+              December 2025
+            </span>
+            <span class="card-archive-list-count">2</span>
+          </a>
+        </li>
+      
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/en/archives/2025/11/">
+            <span class="card-archive-list-date">
+              November 2025
+            </span>
+            <span class="card-archive-list-count">1</span>
+          </a>
+        </li>
+      
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/en/archives/2025/10/">
+            <span class="card-archive-list-date">
+              October 2025
+            </span>
+            <span class="card-archive-list-count">1</span>
+          </a>
+        </li>
+      
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/en/archives/2025/09/">
+            <span class="card-archive-list-date">
+              September 2025
+            </span>
+            <span class="card-archive-list-count">1</span>
+          </a>
+        </li>
+      
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/en/archives/2025/07/">
+            <span class="card-archive-list-date">
+              July 2025
+            </span>
+            <span class="card-archive-list-count">1</span>
+          </a>
+        </li>
+      
+    </ul>
+  </div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>Website Info</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">Article Count :</div><div class="item-count">40</div></div><div class="webinfo-item"><div class="item-name">Runtime :</div><div class="item-count" id="runtimeshow" data-publishDate="2021-06-01T16:00:00.000Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">Total Word Count :</div><div class="item-count">50.4k</div></div><div class="webinfo-item"><div class="item-name">Unique Visitors :</div><div class="item-count" id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">Page Views :</div><div class="item-count" id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">Last Update :</div><div class="item-count" id="last-push-date" data-lastPushDate="2026-04-28T13:14:41.506Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div></div></div></div></div></main><footer id="footer" style="background-image: url(https://r2-imgs.iliyian.com/img/sonetto_pondering_centered.jpg);"><div class="footer-other"><div class="footer-copyright"><span class="copyright">&copy;&nbsp;2021 - 2026 By iliyian</span><span class="framework-info"><span>Framework </span><a target="_blank" rel="noopener external nofollow noreferrer" href="https://hexo.io">Hexo 7.3.0</a><span class="footer-separator">|</span><span>Theme </span><a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly 5.5.0</a></span></div><div class="footer_custom_text">To Be A Great Poet.<br/><a href="https://icp.gov.moe/?keyword=20232063" rel="external nofollow noreferrer" target="_blank">MoeICP Registration No. 20232063</a><br/>Translated w/ Gemini 3 Pro Preview</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="Toggle Between Light and Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle Between Single-column and Double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="Settings"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="Back to Top"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/en/js/utils.js"></script><script src="/en/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js"></script><div class="js-pjax"><script>(() => {
+  const runMermaid = ele => {
+    window.loadMermaid = true
+    const theme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'default'
+
+    ele.forEach((item, index) => {
+      const mermaidSrc = item.firstElementChild
+      const mermaidThemeConfig = `%%{init:{ 'theme':'${theme}'}}%%\n`
+      const mermaidID = `mermaid-${index}`
+      const mermaidDefinition = mermaidThemeConfig + mermaidSrc.textContent
+
+      const renderFn = mermaid.render(mermaidID, mermaidDefinition)
+      const renderMermaid = svg => {
+        mermaidSrc.insertAdjacentHTML('afterend', svg)
+      }
+
+      // mermaid v9 and v10 compatibility
+      typeof renderFn === 'string' ? renderMermaid(renderFn) : renderFn.then(({ svg }) => renderMermaid(svg))
+    })
+  }
+
+  const codeToMermaid = () => {
+    const codeMermaidEle = document.querySelectorAll('pre > code.mermaid')
+    if (codeMermaidEle.length === 0) return
+
+    codeMermaidEle.forEach(ele => {
+      const preEle = document.createElement('pre')
+      preEle.className = 'mermaid-src'
+      preEle.hidden = true
+      preEle.textContent = ele.textContent
+      const newEle = document.createElement('div')
+      newEle.className = 'mermaid-wrap'
+      newEle.appendChild(preEle)
+      ele.parentNode.replaceWith(newEle)
+    })
+  }
+
+  const loadMermaid = () => {
+    if (true) codeToMermaid()
+    const $mermaid = document.querySelectorAll('#article-container .mermaid-wrap')
+    if ($mermaid.length === 0) return
+
+    const runMermaidFn = () => runMermaid($mermaid)
+    btf.addGlobalFn('themeChange', runMermaidFn, 'mermaid')
+    window.loadMermaid ? runMermaidFn() : btf.getScript('https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js').then(runMermaidFn)
+  }
+
+  btf.addGlobalFn('encrypt', loadMermaid, 'mermaid')
+  window.pjax ? loadMermaid() : document.addEventListener('DOMContentLoaded', loadMermaid)
+})()</script></div><script>var meting_api='https://meting-api.iliyian.com/api?server=:server&type=:type&id=:id&auth=:auth&r=:r';</script><meting-js server="tencent" type="playlist" id="2374187585" fixed="true" autoplay="false" lrc-type="-1" list-folded="true" order="random"></meting-js><script defer pjax data-api="https://busuanzi.iliyian.com/api" data-prefix="busuanzi_value" src="https://busuanzi.iliyian.com/js"></script><script src="/en/js/music.js"></script><script>
+document.addEventListener('DOMContentLoaded', function(){
+  if(document.querySelector('#post-meta')){
+    const path = location.pathname;
+    
+    const separator = document.createElement('span');
+    separator.className = 'post-meta-separator';
+    separator.innerHTML = ' | ';
+    
+    const wrapper = document.createElement('span');
+    wrapper.className = 'post-meta-translate';
+    
+    const icon = document.createElement('i');
+    icon.className = 'fas fa-language fa-fw post-meta-icon';
+    
+    const btn = document.createElement('a');
+    if(path.startsWith('/en/')){
+      btn.href = path.replace('/en/', '/');
+      btn.innerHTML = '中文';
+    } else {
+      btn.href = '/en' + path;
+      btn.innerHTML = 'English';
+    }
+    btn.style.cssText = 'color: #ffffff; text-decoration: none; transition: all .2s; border-bottom: 1px solid var(--light-grey);';
+    btn.onmouseover = function(){ this.style.color = '#4a7a94'; this.style.borderBottomColor = '#4a7a94'; };
+    btn.onmouseout = function(){ this.style.color = '#ffffff'; this.style.borderBottomColor = 'var(--light-grey)'; };
+    
+    wrapper.appendChild(icon);
+    wrapper.appendChild(btn);
+    
+    const meta = document.querySelector('#post-meta .meta-firstline');
+    if(meta) {
+      meta.appendChild(separator);
+      meta.appendChild(wrapper);
+    }
+  }
+});
+</script>
+<script id="canvas_nest" defer="defer" color="123,107,138" opacity="0.5" zIndex="-1" count="99" mobile="true" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/canvas-nest.min.js"></script><script id="click-show-text" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/click-show-text.min.js" data-mobile="true" data-text="I,LOVE,YOU" data-fontsize="15px" data-random="false" async="async"></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script><script src="/en/js/Meting.min.js"></script><script>(() => {
+  const option = null
+  const config = {"site_uv":false,"site_pv":false,"page_pv":false,"token":"api_dVzoMbnY7aI6UZUwxw9tyjf6sNO5Y7dG"}
+
+  const runTrack = () => {
+    if (typeof umami !== 'undefined' && typeof umami.track === 'function') {
+      umami.track(props => ({ ...props, url: window.location.pathname, title: GLOBAL_CONFIG_SITE.title }))
+    } else {
+      console.warn('Umami Analytics: umami.track is not available')
+    }
+  }
+
+  const loadUmamiJS = () => {
+    btf.getScript('https://umami.iliyian.com/script.js', {
+      'data-website-id': '2c4cb795-e91c-4f1e-97c4-e132521a824d',
+      'data-auto-track': 'false',
+      ...option
+    }).then(() => {
+      runTrack()
+    }).catch(error => {
+      console.error('Umami Analytics: Error loading script', error)
+    })
+  }
+
+  const getData = async (isPost) => {
+    try {
+      const now = Date.now()
+      const keyUrl = isPost ? `&url=${window.location.pathname}` : ''
+      const headerList = { 'Accept': 'application/json' }
+
+      if (true) {
+        headerList['Authorization'] = `Bearer ${config.token}`
+      } else {
+        headerList['x-umami-api-key'] = config.token
+      }
+
+      const res = await fetch(`https://umami.iliyian.com/api/websites/2c4cb795-e91c-4f1e-97c4-e132521a824d/stats?startAt=0000000000&endAt=${now}${keyUrl}`, {
+        method: "GET",
+        headers: headerList
+      })
+
+      if (!res.ok) {
+        throw new Error(`HTTP error! status: ${res.status}`)
+      }
+
+      return await res.json()
+    } catch (error) {
+      console.error('Umami Analytics: Failed to fetch data', error)
+      throw error
+    }
+  }
+
+  const insertData = async () => {
+    try {
+      if (GLOBAL_CONFIG_SITE.pageType === 'post' && config.page_pv) {
+        const pagePV = document.getElementById('umamiPV')
+        if (pagePV) {
+          const data = await getData(true)
+          if (data && data.pageviews && typeof data.pageviews.value !== 'undefined') {
+            pagePV.textContent = data.pageviews.value
+          } else {
+            console.warn('Umami Analytics: Invalid page view data received')
+          }
+        }
+      }
+
+      if (config.site_uv || config.site_pv) {
+        const data = await getData(false)
+
+        if (config.site_uv) {
+          const siteUV = document.getElementById('umami-site-uv')
+          if (siteUV && data && data.visitors && typeof data.visitors.value !== 'undefined') {
+            siteUV.textContent = data.visitors.value
+          } else if (siteUV) {
+            console.warn('Umami Analytics: Invalid site UV data received')
+          }
+        }
+
+        if (config.site_pv) {
+          const sitePV = document.getElementById('umami-site-pv')
+          if (sitePV && data && data.pageviews && typeof data.pageviews.value !== 'undefined') {
+            sitePV.textContent = data.pageviews.value
+          } else if (sitePV) {
+            console.warn('Umami Analytics: Invalid site PV data received')
+          }
+        }
+      }
+    } catch (error) {
+      console.error('Umami Analytics: Failed to insert data', error)
+    }
+  }
+
+  btf.addGlobalFn('pjaxComplete', runTrack, 'umami_analytics_run_track')
+  btf.addGlobalFn('pjaxComplete', insertData, 'umami_analytics_insert')
+
+
+  loadUmamiJS()
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', insertData)
+  } else {
+    setTimeout(insertData, 100)
+  }
+})()</script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">Search</span><i class="fas fa-spinner fa-pulse" id="loading-status" hidden="hidden"></i><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="text-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  Loading Database</span></div><div class="local-search-input"><input placeholder="Search for Posts" type="text"/></div><hr/><div id="local-search-results"></div><div class="ais-Pagination" id="local-search-pagination" style="display:none;"><ul class="ais-Pagination-list"></ul></div><div id="local-search-stats"></div></div><div id="search-mask"></div><script src="/en/js/search/local-search.js"></script></div></div></body></html>

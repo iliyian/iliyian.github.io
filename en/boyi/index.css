@@ -1,0 +1,85 @@
+body{
+	margin:0;
+	padding:0;
+	text-align:center;
+	background-color:#EEEEEE;
+}
+#title{
+    width:100%;
+    height:30px;
+    margin-left:auto;
+    margin-right:auto;
+    background-color: #EEEEEE;
+    line-height:30px;
+    font-size:14px;
+    color: #FB2416;
+}
+#outPut{
+	text-align:center;
+	width:100%;
+	border:medium double #82E2FA;
+	padding:0;
+	margin:0;
+	line-height:50px;
+	background-color:#FFFFFF;
+}
+#inPut{
+	border:dotted #214AE0;
+	padding:15px 0;
+	background-color:#FFFFFF;
+	width:100%;
+}
+#upLog{
+	background-color:#FFFFFF;
+}
+#copyright{
+    background-color:#FFFFFF;
+}
+#given{
+	width:95%;
+	height:50px;
+	text-align:center;
+}
+#odds{
+	width:95%;
+	text-align:center;
+	line-height:33px;
+}
+#go{
+	width:95%;
+	background-color:E8AE34;
+	height:33px;
+	color:#FFFFFF;
+	border:0;
+}
+#sta{
+	border:double medium green;
+	line-height:50px;
+	width:100%;
+}
+#times{
+	color:#2023DF;
+	font-family:幼圆;
+}
+#wins{
+	color:#FEA601;
+	font-family:仿宋;
+}
+
+#loses{
+	color:CE0FA0;
+	font-family:楷体;
+	width
+}
+#money{
+	color:#FC1F16;
+	width:100%;
+}
+	
+#upLog{
+	color:#3E26D7;
+	width:100%;
+}
+span.version{
+	color:#FB3535;
+}
