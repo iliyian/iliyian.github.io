@@ -1,6 +1,6 @@
 /* ==========================================================================
    APlayer Custom Key Style for Butterfly Theme
-   Theme Color: #ff6f00
+   Theme Color: #6b5b7a
    Font: LXGW
    ========================================================================== */
 
@@ -14,12 +14,12 @@
 
 /* 进度条颜色 - 使用主题色 */
 .aplayer .aplayer-info .aplayer-controller .aplayer-bar-wrap .aplayer-bar .aplayer-played {
-    background: #ff6f00 !important;
+    background: #6b5b7a !important;
 }
 
 /* 进度球样式 */
 .aplayer .aplayer-info .aplayer-controller .aplayer-bar-wrap .aplayer-bar .aplayer-played .aplayer-thumb {
-    background: #ff6f00 !important;
+    background: #6b5b7a !important;
     border: 2px solid #fff;
     box-shadow: 0 1px 4px rgba(0,0,0,0.2);
     transform: scale(0.8);
@@ -68,6 +68,11 @@
     border: none !important;
 }
 
+/* 去掉 fixed 模式 info 上沿灰色分割线 */
+.aplayer.aplayer-fixed .aplayer-info {
+    border-top-color: transparent !important;
+}
+
 /* ------------------------------------------------------------------
    歌词区域美化
    ------------------------------------------------------------------ */
@@ -93,7 +98,7 @@
 
 /* 当前播放歌词高亮 */
 .aplayer .aplayer-lrc p.aplayer-lrc-current {
-    color: #ff6f00 !important; /* 主题色 */
+    color: #6b5b7a !important; /* 主题色 */
     font-size: 16px;
     font-weight: bold;
     opacity: 1;
@@ -111,16 +116,16 @@
 
 /* 列表悬停色 */
 .aplayer .aplayer-list ol li:hover {
-    background: rgba(255, 111, 0, 0.08) !important;
+    background: rgba(107, 91, 122, 0.08) !important;
 }
 
 /* 列表当前播放项高亮 */
 .aplayer .aplayer-list ol li.aplayer-list-light {
-    background: rgba(255, 111, 0, 0.12) !important;
+    background: rgba(107, 91, 122, 0.12) !important;
 }
 
 .aplayer .aplayer-list ol li.aplayer-list-light .aplayer-list-title {
-    color: #ff6f00;
+    color: #6b5b7a;
     font-weight: bold;
 }
 
@@ -140,7 +145,7 @@
     background-color: rgba(0, 0, 0, 0.1);
 }
 .aplayer .aplayer-list ol::-webkit-scrollbar-thumb:hover {
-    background-color: rgba(255, 111, 0, 0.3);
+    background-color: rgba(107, 91, 122, 0.3);
 }
 
 /* ------------------------------------------------------------------
@@ -171,7 +176,7 @@
     color: #aaa;
 }
 [data-theme="dark"] .aplayer .aplayer-lrc p.aplayer-lrc-current {
-    color: #ff9800 !important; /* 深色模式下稍微亮一点的橙色 */
+    color: #9b8baa !important; /* 深色模式下稍微亮一点的主题色 */
 }
 
 /* 信息区域文字 */
@@ -182,26 +187,298 @@
     color: #777;
 }
 
-/* 控制按钮颜色 */
-[data-theme="dark"] .aplayer .aplayer-info .aplayer-controller .aplayer-time {
-    color: #999;
+/* ==================================================================
+   图标 Icon 美化
+   ================================================================== */
+
+/* ---- 基础图标重置 ---- */
+.aplayer .aplayer-icon {
+    width: 19px;
+    height: 19px;
+    opacity: 0.55;
+    transition: opacity 0.25s cubic-bezier(0.4, 0, 0.2, 1),
+                transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    vertical-align: middle;
 }
+
+/* 通用 hover 反馈 */
+.aplayer .aplayer-icon:hover {
+    opacity: 1;
+}
+
+/* 图标路径颜色 - 亮色模式 */
+.aplayer .aplayer-icon path {
+    fill: #6b5b7a;
+    transition: fill 0.25s ease;
+}
+
+.aplayer .aplayer-icon:hover path {
+    fill: #4a3d55;
+}
+
+/* ---- 封面播放/暂停按钮 ---- */
+.aplayer .aplayer-pic .aplayer-button {
+    background: rgba(107, 91, 122, 0.35) !important;
+    backdrop-filter: blur(10px) saturate(140%);
+    -webkit-backdrop-filter: blur(10px) saturate(140%);
+    border: 2px solid rgba(255, 255, 255, 0.5) !important;
+    box-shadow:
+        0 4px 15px rgba(0, 0, 0, 0.12),
+        inset 0 1px 0 rgba(255, 255, 255, 0.3) !important;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    opacity: 0;
+}
+
+.aplayer .aplayer-pic:hover .aplayer-button {
+    opacity: 1;
+}
+
+.aplayer .aplayer-pic .aplayer-button:hover {
+    background: rgba(107, 91, 122, 0.55) !important;
+    border-color: rgba(255, 255, 255, 0.7) !important;
+    transform: scale(1.12);
+    box-shadow:
+        0 8px 25px rgba(0, 0, 0, 0.2),
+        inset 0 1px 0 rgba(255, 255, 255, 0.4) !important;
+}
+
+.aplayer .aplayer-pic .aplayer-button:active {
+    transform: scale(0.95);
+}
+
+/* 封面播放按钮 - 更大更居中 */
+.aplayer .aplayer-pic .aplayer-play {
+    width: 42px;
+    height: 42px;
+    margin: 0 -21px -21px 0;
+    border-radius: 50%;
+}
+
+.aplayer .aplayer-pic .aplayer-play svg {
+    position: absolute;
+    top: 8px;
+    left: 10px;
+    height: 26px;
+    width: 26px;
+}
+
+/* 封面暂停按钮 */
+.aplayer .aplayer-pic .aplayer-pause {
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    bottom: 6px;
+    right: 6px;
+}
+
+.aplayer .aplayer-pic .aplayer-pause svg {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    height: 16px;
+    width: 16px;
+}
+
+/* 封面按钮内图标始终白色 */
+.aplayer .aplayer-pic .aplayer-button path {
+    fill: #fff !important;
+}
+
+/* ---- 控制器区域图标 ---- */
+.aplayer .aplayer-info .aplayer-controller .aplayer-time .aplayer-icon {
+    width: 17px;
+    height: 17px;
+    margin-left: 3px;
+    opacity: 0.5;
+}
+
+/* forward 图标由 APlayer 原生 rotate(180deg) 控制，这里不加 transform */
+.aplayer .aplayer-info .aplayer-controller .aplayer-time .aplayer-icon:not(.aplayer-icon-forward):hover {
+    opacity: 1;
+    transform: scale(1.15);
+}
+
+.aplayer .aplayer-info .aplayer-controller .aplayer-time .aplayer-icon-forward:hover {
+    opacity: 1;
+}
+
+.aplayer .aplayer-info .aplayer-controller .aplayer-time .aplayer-icon path {
+    fill: #6b5b7a !important;
+}
+
+.aplayer .aplayer-info .aplayer-controller .aplayer-time .aplayer-icon:hover path {
+    fill: #4a3d55 !important;
+}
+
+/* 控制器时间文字 */
+.aplayer .aplayer-info .aplayer-controller .aplayer-time {
+    color: #8a8a8a;
+    font-size: 11px;
+}
+
+/* ---- 音量图标 ---- */
+.aplayer .aplayer-info .aplayer-controller .aplayer-volume-wrap .aplayer-icon {
+    width: 17px;
+    height: 17px;
+    opacity: 0.5;
+    transition: opacity 0.25s cubic-bezier(0.4, 0, 0.2, 1),
+                transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.aplayer .aplayer-info .aplayer-controller .aplayer-volume-wrap:hover .aplayer-icon {
+    opacity: 1;
+    transform: scale(1.12);
+}
+
+.aplayer .aplayer-info .aplayer-controller .aplayer-volume-wrap .aplayer-icon path {
+    fill: #6b5b7a !important;
+}
+
+.aplayer .aplayer-info .aplayer-controller .aplayer-volume-wrap:hover .aplayer-icon path {
+    fill: #4a3d55 !important;
+}
+
+/* ---- Fixed 吸底模式图标 ---- */
+.aplayer.aplayer-fixed .aplayer-icon-back,
+.aplayer.aplayer-fixed .aplayer-icon-forward,
+.aplayer.aplayer-fixed .aplayer-icon-menu,
+.aplayer.aplayer-fixed .aplayer-icon-play {
+    width: 22px;
+    height: 22px;
+    opacity: 0.55;
+    transition: opacity 0.25s cubic-bezier(0.4, 0, 0.2, 1),
+                transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.aplayer.aplayer-fixed .aplayer-icon-back:hover,
+.aplayer.aplayer-fixed .aplayer-icon-menu:hover,
+.aplayer.aplayer-fixed .aplayer-icon-play:hover {
+    opacity: 1;
+    transform: scale(1.15);
+}
+
+.aplayer.aplayer-fixed .aplayer-icon-forward:hover {
+    opacity: 1;
+    transform: rotate(180deg) scale(1.15);
+}
+
+.aplayer.aplayer-fixed .aplayer-icon-back path,
+.aplayer.aplayer-fixed .aplayer-icon-forward path,
+.aplayer.aplayer-fixed .aplayer-icon-menu path,
+.aplayer.aplayer-fixed .aplayer-icon-play path {
+    fill: #6b5b7a;
+}
+
+.aplayer.aplayer-fixed .aplayer-icon-back:hover path,
+.aplayer.aplayer-fixed .aplayer-icon-forward:hover path,
+.aplayer.aplayer-fixed .aplayer-icon-menu:hover path,
+.aplayer.aplayer-fixed .aplayer-icon-play:hover path {
+    fill: #4a3d55;
+}
+
+/* ---- Mini switcher 折叠按钮 ---- */
+.aplayer .aplayer-miniswitcher {
+    background: transparent !important;
+    width: 20px;
+    border-radius: 0 6px 6px 0 !important;
+    opacity: 0.45;
+    transition: opacity 0.25s cubic-bezier(0.4, 0, 0.2, 1),
+                background 0.25s ease;
+}
+
+.aplayer .aplayer-miniswitcher:hover {
+    opacity: 1;
+    background: rgba(107, 91, 122, 0.1) !important;
+}
+
+.aplayer .aplayer-miniswitcher .aplayer-icon {
+    width: 100%;
+    height: 100%;
+    transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.aplayer .aplayer-miniswitcher .aplayer-icon path {
+    fill: #6b5b7a !important;
+    transition: fill 0.25s ease;
+}
+
+.aplayer .aplayer-miniswitcher:hover .aplayer-icon path {
+    fill: #4a3d55 !important;
+}
+
+/* 深色模式 */
+[data-theme="dark"] .aplayer .aplayer-miniswitcher:hover {
+    background: rgba(155, 139, 170, 0.15) !important;
+}
+
+[data-theme="dark"] .aplayer .aplayer-miniswitcher .aplayer-icon path {
+    fill: #b0a0bb !important;
+}
+
+[data-theme="dark"] .aplayer .aplayer-miniswitcher:hover .aplayer-icon path {
+    fill: #d0c0dd !important;
+}
+
+/* ---- 深色模式 ---- */
 [data-theme="dark"] .aplayer .aplayer-icon path {
-    fill: #ddd;
+    fill: #b0a0bb;
 }
 [data-theme="dark"] .aplayer .aplayer-icon:hover path {
-    fill: #fff;
+    fill: #d0c0dd;
+}
+
+/* 深色模式 - 封面按钮 */
+[data-theme="dark"] .aplayer .aplayer-pic .aplayer-button {
+    background: rgba(155, 139, 170, 0.4) !important;
+    border-color: rgba(255, 255, 255, 0.35) !important;
+}
+[data-theme="dark"] .aplayer .aplayer-pic .aplayer-button:hover {
+    background: rgba(155, 139, 170, 0.6) !important;
+    border-color: rgba(255, 255, 255, 0.5) !important;
+}
+
+/* 深色模式 - 控制器时间区域 */
+[data-theme="dark"] .aplayer .aplayer-info .aplayer-controller .aplayer-time {
+    color: #888;
+}
+[data-theme="dark"] .aplayer .aplayer-info .aplayer-controller .aplayer-time .aplayer-icon path {
+    fill: #b0a0bb !important;
+}
+[data-theme="dark"] .aplayer .aplayer-info .aplayer-controller .aplayer-time .aplayer-icon:hover path {
+    fill: #d0c0dd !important;
+}
+
+/* 深色模式 - 音量图标 */
+[data-theme="dark"] .aplayer .aplayer-info .aplayer-controller .aplayer-volume-wrap .aplayer-icon path {
+    fill: #b0a0bb !important;
+}
+[data-theme="dark"] .aplayer .aplayer-info .aplayer-controller .aplayer-volume-wrap:hover .aplayer-icon path {
+    fill: #d0c0dd !important;
+}
+
+/* 深色模式 - Fixed 模式图标 */
+[data-theme="dark"] .aplayer.aplayer-fixed .aplayer-icon-back path,
+[data-theme="dark"] .aplayer.aplayer-fixed .aplayer-icon-forward path,
+[data-theme="dark"] .aplayer.aplayer-fixed .aplayer-icon-menu path,
+[data-theme="dark"] .aplayer.aplayer-fixed .aplayer-icon-play path {
+    fill: #b0a0bb;
+}
+[data-theme="dark"] .aplayer.aplayer-fixed .aplayer-icon-back:hover path,
+[data-theme="dark"] .aplayer.aplayer-fixed .aplayer-icon-forward:hover path,
+[data-theme="dark"] .aplayer.aplayer-fixed .aplayer-icon-menu:hover path,
+[data-theme="dark"] .aplayer.aplayer-fixed .aplayer-icon-play:hover path {
+    fill: #d0c0dd;
 }
 
 /* 列表颜色 */
 [data-theme="dark"] .aplayer .aplayer-list ol li:hover {
-    background: rgba(255, 152, 0, 0.15) !important;
+    background: rgba(155, 139, 170, 0.15) !important;
 }
 [data-theme="dark"] .aplayer .aplayer-list ol li.aplayer-list-light {
-    background: rgba(255, 152, 0, 0.2) !important;
+    background: rgba(155, 139, 170, 0.2) !important;
 }
 [data-theme="dark"] .aplayer .aplayer-list ol li.aplayer-list-light .aplayer-list-title {
-    color: #ff9800;
+    color: #9b8baa;
 }
 [data-theme="dark"] .aplayer .aplayer-list ol li .aplayer-list-title {
     color: #ddd;
@@ -218,5 +495,5 @@
     background-color: rgba(255, 255, 255, 0.15);
 }
 [data-theme="dark"] .aplayer .aplayer-list ol::-webkit-scrollbar-thumb:hover {
-    background-color: rgba(255, 152, 0, 0.4);
+    background-color: rgba(155, 139, 170, 0.4);
 }

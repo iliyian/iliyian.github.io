@@ -22,7 +22,7 @@
 
 @font-face {
     font-family: 'Ou Kai';
-    src: url(/css/OuKai.otf);
+    src: url(https://r2-imgs.iliyian.com/css/OuKai.otf);
 } */
 
 /* @font-face {
@@ -33,6 +33,8 @@
 @font-face {
     font-family: 'Maple Mono';
     src: url(https://r2-imgs.iliyian.com/css/MapleMonoNormal-Medium.ttf);
+    /* font-family: "LXGW";
+    src: url(https://r2-imgs.iliyian.com/css/LXGWWenKai-Medium.ttf); */
 }
 
 /* @font-face {
@@ -68,7 +70,34 @@
     box-shadow: none !important;
 }
 
+#waifu canvas,
+#waifu #live2d {
+    background: transparent !important;
+    box-shadow: none !important;
+    filter: none !important;
+}
+
+/* Live2D 看板娘 - 半身显示 */
+/* #waifu {
+    overflow: hidden;
+}
+
+#waifu #live2d {
+    height: 350px !important;
+    width: 350px !important;
+    transform: translateY(-35%);
+} */
+
 /* ===== 配色美化 ===== */
+
+/* 背景图片毛玻璃模糊效果 */
+#web_bg {
+    filter: blur(3px);
+    width: 110%;
+    height: 110%;
+    top: -5%;
+    left: -5%;
+}
 
 /* 卡片半透明毛玻璃效果 */
 #aside-content .card-widget,
@@ -81,6 +110,11 @@
 #recent-posts {
     background: transparent !important;
     border-radius: 12px !important;
+}
+
+/* 文章卡片文字居中 */
+.recent-post-item .recent-post-info {
+    text-align: center;
 }
 
 [data-theme="dark"] #aside-content .card-widget,
@@ -112,4 +146,23 @@
 }
 ::-webkit-scrollbar-thumb:hover {
     background: rgba(123, 107, 138, 0.6);
+}
+
+/* 右下角设置菜单移到左下角，避免与 live2d 重叠 */
+#rightside {
+    right: auto !important;
+    left: -48px !important;
+    bottom: 80px !important;
+}
+
+#rightside.rightside-show {
+    transform: translate(58px, 0) !important;
+}
+
+#rightside #rightside-config-hide {
+    transform: translate(-45px, 0) !important;
+}
+
+#rightside #rightside-config-hide.show {
+    transform: translate(0, 0) !important;
 }

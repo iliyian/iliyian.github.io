@@ -15,18 +15,26 @@
       detect: 'portrait',
       // detect 为 portrait 时，innerWidth / innerHeight 小于该值就启用移动端配置。
       aspectRatio: 1,
-      // 移动端整体缩放倍率；会同时缩小 canvas 尺寸和模型 scale。
-      scale: 0.85,
+      // 移动端整体缩放倍率；会同时缩放 canvas 尺寸和模型 scale。
+      // scale: 0.85,
+      scale: 2,
       // 移动端可选覆盖 canvas 位置，例如 { right: -12, bottom: -8 }。
-      canvas: {},
+      canvas: {
+        width: defaultWidgetSize * 0.62,
+        height: defaultWidgetSize * 0.62,
+      },
       // 移动端可选覆盖模型位置，例如 { offset: [0.45, -1.05] }。
-      model: {},
+      model: {
+        offset: [0.1, -3.7],
+      },
+      // 滚动时淡入淡出
+      scrollFade: true,
     },
     canvas: {
       // 挂件固定到哪个角；目前 l2d-widget 支持 bottom-left / bottom-right。
       position: 'bottom-right',
       // canvas 的 CSS 宽高，单位 px；模型只会画在这个区域内。
-      width: defaultWidgetSize * 0.62,
+      width: defaultWidgetSize * 0.7,
       height: defaultWidgetSize,
       // canvas 容器离窗口右/下边缘的距离，单位 px；bottom-left 时可用 left 覆盖左边距。
       right: 0,
@@ -41,7 +49,7 @@
       // 模型在 canvas 内的缩放；1 是当前基准大小。
       scale: 1.2,
       // 模型在 canvas 内的偏移；[x, y]，x 正值右移，y 正值上移。
-      offset: [0, -1.62],
+      offset: [0, -2.5],
       // motion 自带语音和脚本手动播放语音的音量，范围 0~1。
       volume: 0.9,
       // 脚本侧语音口型参数；按模型存在情况依次尝试。
@@ -63,7 +71,7 @@
       // 左右倾斜幅度，作用于 Axis=2 的 Z 轴参数，如 ParamAngleZ / ParamBodyAngleZ。
       tiltSensitivity: 1,
       // 鼠标追踪满量程半径 = “脸”命中区域宽高 * radiusX/Y；值越大越不敏感。
-      radiusX: 6,
+      radiusX: 12,
       radiusY: 3,
       // 如果“脸”命中区域太小，半径至少为 canvas 宽高的这个比例。
       minRadiusX: 0.22,
@@ -75,6 +83,12 @@
       // 自动平滑结果的上下限，避免太慢或瞬移。
       autoSmoothMin: 0.08,
       autoSmoothMax: 0.45,
+    },
+    chat: {
+      systemPrompt: `你是一个名叫37的可爱看板娘，性格活泼开朗，喜欢和人聊天。你的回复要简短温暖（1-3句话），像朋友间 的对话一样自然。用中文回复，偶尔可以加入一些可爱的语气词。回复不超过50字。你正在和一个访客在你的个人博客上聊天。
+你的回复必须严格遵循以下 JSON 格式：
+{"en": "你的英文台词", "zh": "对应的唯美中文翻译"}
+不要输出除 JSON 之外的任何多余字符。`,
     },
   };
 
@@ -153,7 +167,7 @@
   let widget;
   let currentModel = initialModel;
   let currentSource;
-  let muted = false;
+  let muted = true;
   let audio;
   let lipSyncSource;
   let lipSyncAnimation;
@@ -178,6 +192,13 @@
   let tapBatchTimer;
   const pendingTapAreas = new Set();
   const mouseTrackingValues = {};
+
+  let chatHistory = [];
+  let chatCapsule;
+  let chatSending = false;
+  const CHAT_STORAGE_KEY = 'blog-live2d-chat-history';
+  const MAX_CHAT_MESSAGES = 5;
+  let refAudioDataUrl;
 
   function debugLive2D(label, details) {
     console.log(`[blog-live2d] ${label}`, { time: performance.now().toFixed(0), ...details });
@@ -333,6 +354,58 @@
         padding: 2px 8px;
         text-align: center;
       }
+      #blog-live2d-chat-capsule {
+        position: fixed;
+        left: 50%;
+        bottom: 40px;
+        transform: translateX(-50%) translateY(8px) scale(.96);
+        z-index: 10003;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        padding: 8px 18px;
+        background: rgba(147,112,219,.92);
+        border-radius: 24px;
+        box-shadow: 0 8px 28px rgba(0,0,0,.22);
+        backdrop-filter: blur(10px);
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity .22s ease, transform .22s ease;
+      }
+      #blog-live2d-chat-capsule.blog-live2d-visible {
+        opacity: 1;
+        transform: translateX(-50%) translateY(0) scale(1);
+        pointer-events: auto;
+      }
+      #blog-live2d-chat-capsule input {
+        background: transparent;
+        border: none;
+        outline: none;
+        color: rgba(255,255,255,.96);
+        font-size: 14px;
+        width: 200px;
+        padding: 2px 4px;
+      }
+      #blog-live2d-chat-capsule input::placeholder {
+        color: rgba(255,255,255,.5);
+      }
+      #blog-live2d-chat-capsule .blog-live2d-chat-send {
+        background: rgba(255,255,255,.15);
+        border: none;
+        border-radius: 50%;
+        width: 30px;
+        height: 30px;
+        color: rgba(255,255,255,.85);
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 16px;
+        flex-shrink: 0;
+      }
+      #blog-live2d-chat-capsule .blog-live2d-chat-send:hover {
+        background: rgba(255,255,255,.25);
+      }
     `;
     document.head.appendChild(style);
   }
@@ -364,7 +437,7 @@
     }, config.model.typingSpeed / 2);
   }
 
-  function showSpeech(text, duration = 5000, sound) {
+  function showSpeech(text, duration = 5000, sound, typingSpeed) {
     if (!text) return;
     const el = ensureSpeech();
     clearTimeout(hideTimer);
@@ -373,11 +446,17 @@
     el.classList.add('blog-live2d-visible');
 
     const raw = String(text ?? '').replaceAll('{$br}', '\n').replaceAll('{$intimacy}', '∞');
+    const charCount = [...raw].filter((c) => c !== '\n').length || 1;
+    const effectiveDuration = (sound?.duration && Number.isFinite(sound.duration) && sound.duration > 0)
+      ? sound.duration * 1000
+      : (duration || 5000);
+    const autoSpeed = Math.max(30, Math.min(config.model.typingSpeed, effectiveDuration / charCount));
+    const speed = typingSpeed ?? autoSpeed;
     let i = 0;
     const tick = () => {
       if (i >= raw.length) {
         typingTimer = 0;
-        if (!sound) hideTimer = setTimeout(hideSpeech, duration);
+        if (!sound && duration > 0) hideTimer = setTimeout(hideSpeech, duration);
         return;
       }
       const ch = raw[i];
@@ -396,14 +475,14 @@
       }
       if (ch !== '\n' && !sound) pulseMouth();
       i++;
-      typingTimer = setTimeout(tick, config.model.typingSpeed);
+      typingTimer = setTimeout(tick, speed);
     };
     tick();
 
     if (!sound) return;
 
     const syncDuration = () => {
-      if (audio !== sound || !Number.isFinite(sound.duration)) return;
+      if (!Number.isFinite(sound.duration)) return;
       clearTimeout(hideTimer);
       hideTimer = setTimeout(hideSpeech, sound.duration * 1000 + 300);
     };
@@ -412,7 +491,22 @@
     sound.addEventListener('ended', () => {
       if (audio !== sound) return;
       clearTimeout(hideTimer);
-      hideSpeech();
+      if (typingTimer) {
+        clearTimeout(typingTimer);
+        let remaining = '';
+        for (let j = i; j < raw.length; j++) {
+          const ch = raw[j];
+          if (ch === '\n') remaining += '<br>';
+          else if (ch === '<') remaining += '&lt;';
+          else if (ch === '>') remaining += '&gt;';
+          else if (ch === '&') remaining += '&amp;';
+          else if (ch === '"') remaining += '&quot;';
+          else remaining += ch;
+        }
+        el.innerHTML += remaining;
+        typingTimer = 0;
+      }
+      hideTimer = setTimeout(hideSpeech, 600);
     }, { once: true });
     if (sound.readyState >= 1) syncDuration();
   }
@@ -488,10 +582,26 @@
     return entries(group).indexOf(entry);
   }
 
+  function passesTimeLimit(entry) {
+    const tl = entry.TimeLimit;
+    if (!tl) return true;
+    const now = new Date();
+    const minutes = now.getHours() * 60 + now.getMinutes();
+    const start = tl.Hour * 60;
+    return minutes >= start && minutes < start + (tl.Sustain || 0);
+  }
+
   function randomEntry(groups) {
-    const candidates = groups.flatMap((group) => entries(group)
-      .filter((entry) => resourceFile(entry.File) || resourceFile(entry.Sound) || entry.Text || entry.Choices)
-      .map((entry) => ({ group, entry })));
+    const candidates = groups.flatMap((group) => {
+      const colon = group.indexOf(':');
+      if (colon >= 0) {
+        const entry = findEntry(group.slice(0, colon), group.slice(colon + 1));
+        return entry && passesTimeLimit(entry) ? [{ group: group.slice(0, colon), entry }] : [];
+      }
+      return entries(group)
+        .filter((entry) => (resourceFile(entry.File) || resourceFile(entry.Sound) || entry.Text || entry.Choices) && passesTimeLimit(entry))
+        .map((entry) => ({ group, entry }));
+    });
     return candidates[Math.floor(Math.random() * candidates.length)] ?? null;
   }
 
@@ -895,6 +1005,29 @@
     return hidden;
   }
 
+  function installInternalAudioKiller() {
+    const appModel = activeAppModel();
+    if (!appModel || appModel.__internalAudioKilled) return;
+    appModel.__internalAudioKilled = true;
+
+    if (appModel._audioElement) {
+      appModel._audioElement.pause();
+      appModel._audioElement = null;
+    }
+
+    Object.defineProperty(appModel, '_audioElement', {
+      get() { return null; },
+      set(v) {
+        if (v) {
+          try { v.pause(); } catch { /* ignore */ }
+          v.src = '';
+          v.load();
+        }
+      },
+      configurable: true,
+    });
+  }
+
   function installWhitePointHider() {
     const appModel = activeAppModel();
     if (!appModel || appModel.__blogLive2DWhitePointHider) return;
@@ -919,6 +1052,9 @@
 
   function playTap(areaName) {
     if (performance.now() < busyUntil) return;
+    if (chatSending) return;
+    const container = widget?.l2d?.getCanvas?.()?.parentElement;
+    if (container && parseFloat(container.style.opacity) === 0) return;
     const hit = currentSource?.HitAreas?.find((area) => area.Name === areaName);
     debugLive2D('tap', {
       model: models[currentModel]?.name,
@@ -952,6 +1088,7 @@
       if (instance !== widget.l2d) return;
       installTapDebug();
       installWhitePointHider();
+      installInternalAudioKiller();
       installMouseTracking();
       updateLipSyncIds();
       if (startGreetingPending) {
@@ -987,6 +1124,357 @@
       if (instance !== widget.l2d) return;
       enqueueTap(areaName);
     });
+  }
+
+  function loadChatHistory() {
+    try {
+      const saved = localStorage.getItem(CHAT_STORAGE_KEY);
+      return saved ? JSON.parse(saved) : [];
+    } catch {
+      return [];
+    }
+  }
+
+  function saveChatHistory(history) {
+    try {
+      localStorage.setItem(CHAT_STORAGE_KEY, JSON.stringify(history));
+    } catch { /* ignore */ }
+  }
+
+  function ensureChatCapsule() {
+    if (chatCapsule) return chatCapsule;
+    chatCapsule = document.createElement('div');
+    chatCapsule.id = 'blog-live2d-chat-capsule';
+
+    const input = document.createElement('input');
+    input.type = 'text';
+    input.placeholder = '和看板娘说点什么...';
+
+    const sendBtn = document.createElement('button');
+    sendBtn.className = 'blog-live2d-chat-send';
+    sendBtn.innerHTML = '&#10148;';
+    sendBtn.title = 'Send';
+
+    chatCapsule.appendChild(input);
+    chatCapsule.appendChild(sendBtn);
+    document.body.appendChild(chatCapsule);
+
+    const submit = () => {
+      const text = input.value.trim();
+      if (!text || chatSending) return;
+      input.value = '';
+      hideChatCapsule();
+      void sendChatMessage(text);
+    };
+
+    sendBtn.addEventListener('click', submit);
+    input.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter') submit();
+      if (e.key === 'Escape') hideChatCapsule();
+    });
+
+    return chatCapsule;
+  }
+
+  function showChatCapsule() {
+    if (chatSending) return;
+    const el = ensureChatCapsule();
+    el.classList.add('blog-live2d-visible');
+    el.querySelector('input').focus();
+  }
+
+  function hideChatCapsule() {
+    chatCapsule?.classList.remove('blog-live2d-visible');
+  }
+
+  async function loadRefAudio() {
+    if (refAudioDataUrl) return refAudioDataUrl;
+    const resp = await fetch(`${base}b5dc8ab726516a4d512149b47be1d1be.mp3`);
+    if (!resp.ok) throw new Error(`Ref audio HTTP ${resp.status}`);
+    const blob = await resp.blob();
+    refAudioDataUrl = await new Promise((resolve, reject) => {
+      const reader = new FileReader();
+      reader.onload = () => resolve(reader.result);
+      reader.onerror = reject;
+      reader.readAsDataURL(blob);
+    });
+    return refAudioDataUrl;
+  }
+
+  async function sendChatMessage(text) {
+    chatSending = true;
+    stopAudio();
+    hideSpeech();
+    showSpeech('思考中...', 0);
+    const history = loadChatHistory();
+    history.push({ role: 'user', content: text });
+
+    const systemPrompt = config.chat?.systemPrompt || '你是《重返未来：1999》里的 37。回复不超过50字。';
+    const recentMessages = history.slice(-MAX_CHAT_MESSAGES);
+    const messages = [
+      { role: 'system', content: systemPrompt },
+      ...recentMessages,
+    ];
+
+    try {
+      // Step 1: text
+      const textResponse = await fetch('https://waifu-chat.iliyian.com/v1/chat/completions', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ model: 'deepseek-v4-flash', messages}),
+      });
+
+      if (textResponse.status === 429) {
+        showSpeech('太多人在聊天啦，稍微等一下再试试吧～', 5000);
+        return;
+      }
+      if (textResponse.status === 413) {
+        showSpeech('消息太长啦，简短一点吧～', 5000);
+        return;
+      }
+      if (!textResponse.ok) throw new Error(`Text API HTTP ${textResponse.status}`);
+
+      const textData = await textResponse.json();
+      const rawContent = textData.choices?.[0]?.message?.content;
+      if (!rawContent) throw new Error('Empty text response');
+
+      let enText, zhText;
+      try {
+        const parsed = JSON.parse(rawContent.trim());
+        enText = parsed.en || '';
+        zhText = parsed.zh || '';
+      } catch {
+        enText = rawContent;
+        zhText = rawContent;
+      }
+
+      history.push({ role: 'assistant', content: rawContent });
+      saveChatHistory(history.slice(-MAX_CHAT_MESSAGES));
+
+      const displayText = enText && zhText ? `${zhText}\n${enText}` : (zhText || enText);
+
+      // Step 2: TTS
+      try {
+        const refAudio = await loadRefAudio();
+        const ttsResponse = await fetch('https://waifu-chat.iliyian.com/v1/audio/mimo', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            model: 'mimo-v2.5-tts-voiceclone',
+            messages: [
+              { role: 'user', content: '声音务必空灵，灵动，最关键的是流畅性，同时永远保持年轻少女的富有活力的音色，但是不能过于可爱，依然以**空灵轻盈**为绝对的主色调。几乎每句话的结尾都是上扬的语调。' },
+              { role: 'assistant', content: enText },
+            ],
+            audio: {
+              format: 'wav',
+              voice: refAudio,
+            },
+          }),
+        });
+
+        if (ttsResponse.ok) {
+          const ttsData = await ttsResponse.json();
+          const audioBase64 = ttsData.choices?.[0]?.message?.audio?.data
+            || ttsData.audio?.data
+            || ttsData.data;
+
+          if (audioBase64) {
+            const binary = atob(audioBase64);
+            const bytes = new Uint8Array(binary.length);
+            for (let i = 0; i < binary.length; i++) bytes[i] = binary.charCodeAt(i);
+            const blob = new Blob([bytes], { type: 'audio/wav' });
+            const url = URL.createObjectURL(blob);
+            stopAudio();
+            const ttsAudio = new Audio(url);
+            ttsAudio.volume = config.model.volume;
+            ttsAudio.onended = () => URL.revokeObjectURL(url);
+            audio = ttsAudio;
+            ttsAudio.play().catch(() => {});
+            updateLipSyncIds();
+            installLipSync(ttsAudio);
+            showSpeech(displayText, 0, ttsAudio);
+            return;
+          }
+        }
+        console.warn('[blog-live2d] TTS failed, HTTP', ttsResponse.status);
+      } catch (ttsErr) {
+        console.warn('[blog-live2d] TTS error:', ttsErr);
+      }
+
+      // Fallback: text only
+      stopAudio();
+      showSpeech(displayText, 12000);
+    } catch (err) {
+      console.warn('[blog-live2d] chat error:', err);
+      showSpeech('唔...好像出了点问题，等会再试试吧～', 5000);
+    } finally {
+      chatSending = false;
+    }
+  }
+
+  function patchMenuForTouch() {
+    if (!isMobile()) return;
+    const canvas = widget?.l2d?.getCanvas?.();
+    const container = canvas?.parentElement;
+    if (!container) return;
+    const menuEl = [...container.children].find((el) =>
+      el instanceof HTMLElement &&
+      el.style.position === 'absolute' &&
+      el.style.display === 'flex' &&
+      el.style.flexDirection === 'column');
+    if (!menuEl) return;
+
+    let hideTimer;
+    const show = () => { clearTimeout(hideTimer); menuEl.style.opacity = '1'; menuEl.style.pointerEvents = 'auto'; };
+    const hide = () => { hideTimer = setTimeout(() => { menuEl.style.opacity = '0'; menuEl.style.pointerEvents = 'none'; }, 3000); };
+
+    canvas.addEventListener('pointerenter', show);
+    canvas.addEventListener('pointerleave', hide);
+    menuEl.addEventListener('pointerenter', show);
+    menuEl.addEventListener('pointerleave', hide);
+  }
+
+  function installLongPressDrag() {
+    // TODO: 移动端 applyMobileConfig 将 canvas 缩小 + model offset 下移导致模型下半身被 canvas 裁掉。
+    // 拖拽只能移动 canvas 在屏幕上的位置，无法露出 canvas 内部已裁切的部分。
+    // 后续考虑两种方案：① mobile 用负 bottom 代替 canvas 裁剪 ② 拖拽时临时展开 canvas/调整 offset。
+    const canvas = widget?.l2d?.getCanvas?.();
+    const container = canvas?.parentElement;
+    if (!container) return;
+
+    let longPressTimer;
+    let dragging = false;
+    let startX, startY;
+    let startRight, startBottom;
+    const LONG_PRESS_DURATION = 500;
+    const MOVE_THRESHOLD = 5;
+    const STORAGE_KEY = 'blog-live2d-position';
+
+    // 只恢复上次保存的横向位置，纵向始终从页面底部开始
+    try {
+      const saved = localStorage.getItem(STORAGE_KEY);
+      if (saved) {
+        const { right } = JSON.parse(saved);
+        if (typeof right === 'number') {
+          setCanvasPlacement({ right, bottom: 0 });
+        }
+      }
+    } catch { /* ignore */ }
+
+    const onPointerDown = (e) => {
+      if (e.target !== canvas) return;
+      if (e.button !== 0 && e.pointerType === 'mouse') return;
+      if (switching) return;
+
+      startX = e.clientX;
+      startY = e.clientY;
+      startRight = config.canvas.right;
+      startBottom = config.canvas.bottom;
+
+      longPressTimer = setTimeout(() => {
+        dragging = true;
+        container.style.cursor = 'grabbing';
+        container.style.transition = 'none';
+        container.style.opacity = '0.85';
+        busyUntil = performance.now() + 60000;
+      }, LONG_PRESS_DURATION);
+    };
+
+    const onPointerMove = (e) => {
+      if (!dragging) {
+        if (longPressTimer && (Math.abs(e.clientX - startX) > MOVE_THRESHOLD || Math.abs(e.clientY - startY) > MOVE_THRESHOLD)) {
+          clearTimeout(longPressTimer);
+          longPressTimer = null;
+        }
+        return;
+      }
+
+      e.preventDefault();
+
+      const deltaX = e.clientX - startX;
+      const deltaY = e.clientY - startY;
+
+      let newRight = startRight - deltaX;
+      let newBottom = startBottom - deltaY;
+
+      newRight = Math.max(-config.canvas.width * 0.7, Math.min(window.innerWidth - config.canvas.width * 0.3, newRight));
+      newBottom = Math.max(-config.canvas.height * 0.7, Math.min(window.innerHeight - config.canvas.height * 0.3, newBottom));
+
+      config.canvas.right = newRight;
+      config.canvas.bottom = newBottom;
+
+      container.style.right = newRight + 'px';
+      container.style.bottom = newBottom + 'px';
+
+      if (speech) {
+        speech.style.right = Math.max(18, newRight + Math.round(widgetWidth * 0.7)) + 'px';
+        speech.style.bottom = (newBottom + Math.round(widgetHeight * 0.68)) + 'px';
+      }
+    };
+
+    const onPointerUp = () => {
+      clearTimeout(longPressTimer);
+      longPressTimer = null;
+
+      if (dragging) {
+        dragging = false;
+        container.style.cursor = '';
+        container.style.transition = '';
+        container.style.opacity = '';
+        busyUntil = 0;
+
+        try {
+          localStorage.setItem(STORAGE_KEY, JSON.stringify({
+            right: config.canvas.right,
+            bottom: config.canvas.bottom,
+          }));
+        } catch { /* ignore */ }
+      }
+    };
+
+    canvas.addEventListener('pointerdown', onPointerDown);
+    document.addEventListener('pointermove', onPointerMove);
+    document.addEventListener('pointerup', onPointerUp);
+    canvas.style.touchAction = 'none';
+  }
+
+  function installMobileScrollFade() {
+    let lastScrollY = window.scrollY;
+    let hidden = false;
+
+    window.addEventListener('scroll', () => {
+      if (!isMobile() || config.mobile.scrollFade === false) return;
+      const currentY = window.scrollY;
+      const delta = currentY - lastScrollY;
+      if (Math.abs(delta) < 4) return;
+      lastScrollY = currentY;
+
+      const container = widget?.l2d?.getCanvas?.()?.parentElement;
+      if (!container) return;
+
+      const canvas = widget?.l2d?.getCanvas?.();
+      const els = [container, speech, chatCapsule].filter(Boolean);
+
+      if (delta > 0 && !hidden) {
+        hidden = true;
+        for (const el of els) {
+          el.style.transition = 'opacity 0.28s ease';
+          el.style.opacity = '0';
+          el.style.pointerEvents = 'none';
+        }
+        if (canvas) canvas.style.pointerEvents = 'none';
+      } else if (delta < 0 && hidden) {
+        hidden = false;
+        for (const el of els) {
+          el.style.transition = 'opacity 0.28s ease';
+          el.style.pointerEvents = '';
+          if (el === container || el.classList.contains('blog-live2d-visible')) {
+            el.style.opacity = '1';
+          }
+        }
+        if (canvas) canvas.style.pointerEvents = 'auto';
+      }
+    }, { passive: true });
   }
 
   async function init() {
@@ -1050,6 +1538,14 @@
               showSpeech(muted ? '禁言' : '解除禁言', 1800);
             },
           },
+          {
+            icon: 'mdi:chat-outline',
+            label: '聊天',
+            onClick() {
+              cancelIdle();
+              showChatCapsule();
+            },
+          },
         ],
       },
     });
@@ -1068,7 +1564,9 @@
       await widgetSwitchModel(modelOrder.indexOf(currentModel));
       bindEvents();
       installWhitePointHider();
+      installInternalAudioKiller();
       installMouseTracking();
+      installLongPressDrag();
       Object.keys(mouseTrackingValues).forEach((key) => { delete mouseTrackingValues[key]; });
       updateLipSyncIds();
       activeExpression = null;
@@ -1078,6 +1576,9 @@
 
     bindEvents();
     setCanvasPlacement();
+    installLongPressDrag();
+    installMobileScrollFade();
+    patchMenuForTouch();
 
     window.blogLive2D = {
       widget,
