@@ -164,3 +164,102 @@
 #rightside #rightside-config-hide.show {
     transform: translate(0, 0) !important;
 }
+
+/* ===== 首页卡片：基于封面色调为整张卡片染上同色 ===== */
+/* --cover-accent 由 /js/cover-accent.js 按封面取色后写到 .recent-post-item，形如 "r,g,b"。
+   染色铺在整张卡片底，封面图盖在 cover 侧自然过渡，信息区透明叠在染色卡片上，
+   避免信息区外露白边。no-cover 卡片 JS 不写变量，回退默认白底；ads-wrap 广告不染。 */
+.recent-post-item:not(.ads-wrap):not(:has(.recent-post-info.no-cover)) {
+    background:
+        linear-gradient(135deg,
+            rgba(var(--cover-accent), .12),
+            rgba(var(--cover-accent), .03)),
+        var(--card-bg) !important;
+    /* 双线同色细边框：外层实边 + 内层极淡同色内阴影，画框感。
+       变量值为逗号分隔的 "r,g,b"，故用 rgba(var(),a) 老语法（逗号分隔 RGB+alpha），
+       不带 fallback：no-cover 卡片不匹配此规则，变量必有值。 */
+    border: 1.5px solid rgba(var(--cover-accent), .55);
+    box-shadow:
+        inset 0 0 0 3px rgba(var(--cover-accent), .06),
+        var(--card-box-shadow) !important;
+    transition: background .4s ease, border-color .3s ease, box-shadow .3s ease;
+}
+.recent-post-item:not(.ads-wrap):not(:has(.recent-post-info.no-cover)):hover {
+    background:
+        linear-gradient(135deg,
+            rgba(var(--cover-accent), .18),
+            rgba(var(--cover-accent), .05)),
+        var(--card-bg) !important;
+    /* hover 克制：边框略加深 + 内阴影略增，沿用主题原有抬升阴影，不加发光 */
+    border-color: rgba(var(--cover-accent), .85);
+    box-shadow:
+        inset 0 0 0 4px rgba(var(--cover-accent), .12),
+        var(--card-hover-box-shadow) !important;
+}
+/* 信息区透明，继承卡片底色，不再自带白底遮住渐变 */
+.recent-post-item .recent-post-info {
+    background: transparent !important;
+}
+/* 暗色模式：只叠极淡色洗，保留你已有的卡片透明感；边框透明度略提以可见 */
+[data-theme="dark"] .recent-post-item:not(.ads-wrap):not(:has(.recent-post-info.no-cover)) {
+    background:
+        linear-gradient(135deg,
+            rgba(var(--cover-accent), .08),
+            rgba(var(--cover-accent), .01)) !important;
+    border: 1.5px solid rgba(var(--cover-accent), .45);
+    box-shadow:
+        inset 0 0 0 3px rgba(var(--cover-accent), .05),
+        var(--card-box-shadow) !important;
+}
+[data-theme="dark"] .recent-post-item:not(.ads-wrap):not(:has(.recent-post-info.no-cover)):hover {
+    background:
+        linear-gradient(135deg,
+            rgba(var(--cover-accent), .12),
+            rgba(var(--cover-accent), .02)) !important;
+    border-color: rgba(var(--cover-accent), .75);
+    box-shadow:
+        inset 0 0 0 4px rgba(var(--cover-accent), .10),
+        var(--card-hover-box-shadow) !important;
+}
+
+/* ===== 文章页 #post：古色古香同色双线画框 + 封面色淡染 ===== */
+/* 默认古茶色作 --cover-accent 兜底，cover-accent.js 取 #page-header.post-bg 封面主色后覆盖。
+   双线框（外实边 + 内 inset 细线）拟古典画框；底叠极淡封面色渐变，保留 .layout 原有毛玻璃。
+   仅 #body-wrap.post 生效，首页卡片与独立页不受影响。 */
+#body-wrap.post #post {
+    --cover-accent: 139, 115, 85;
+    background:
+        linear-gradient(135deg,
+            rgba(var(--cover-accent), .07),
+            rgba(var(--cover-accent), .015)),
+        rgba(255, 255, 255, 0.85) !important;
+    border: 2px solid rgba(var(--cover-accent), .5) !important;
+    box-shadow:
+        inset 0 0 0 3px rgba(var(--cover-accent), .07),
+        var(--card-box-shadow) !important;
+    transition: border-color .3s ease, box-shadow .3s ease, background .4s ease;
+}
+#body-wrap.post #post:hover {
+    border-color: rgba(var(--cover-accent), .78) !important;
+    box-shadow:
+        inset 0 0 0 3px rgba(var(--cover-accent), .12),
+        var(--card-hover-box-shadow) !important;
+}
+/* 暗色：保留深色底以保长文可读，仅叠极淡封面色；边框透明度略提以可见 */
+[data-theme="dark"] #body-wrap.post #post {
+    background:
+        linear-gradient(135deg,
+            rgba(var(--cover-accent), .06),
+            rgba(var(--cover-accent), .01)),
+        rgba(26, 26, 46, 0.85) !important;
+    border: 2px solid rgba(var(--cover-accent), .45) !important;
+    box-shadow:
+        inset 0 0 0 3px rgba(var(--cover-accent), .06),
+        var(--card-box-shadow) !important;
+}
+[data-theme="dark"] #body-wrap.post #post:hover {
+    border-color: rgba(var(--cover-accent), .72) !important;
+    box-shadow:
+        inset 0 0 0 3px rgba(var(--cover-accent), .10),
+        var(--card-hover-box-shadow) !important;
+}
