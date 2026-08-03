@@ -169,16 +169,18 @@
 /* ===== 首页卡片：基于封面色调为整张卡片染上同色 ===== */
 /* --cover-accent 由 /js/cover-accent.js 按封面取色后写到 .recent-post-item，形如 "r,g,b"。
    染色铺在整张卡片底，封面图盖在 cover 侧自然过渡，信息区透明叠在染色卡片上，
-   避免信息区外露白边。no-cover 卡片 JS 不写变量，回退默认白底；ads-wrap 广告不染。 */
+   避免信息区外露白边。no-cover 卡片 JS 不写变量，回退默认白底；ads-wrap 广告不染。
+   规则自带 --cover-accent 白底默认值：JS 取色完成前 var() 已有值，卡片显示白底，
+   而非变量未定义导致声明无效被丢弃后的透明；JS 取色后以 inline style 覆盖默认值。 */
 .recent-post-item:not(.ads-wrap):not(:has(.recent-post-info.no-cover)) {
+    --cover-accent: 255, 255, 255;
     background:
         linear-gradient(135deg,
             rgba(var(--cover-accent), .12),
             rgba(var(--cover-accent), .03)),
         var(--card-bg) !important;
     /* 双线同色细边框：外层实边 + 内层极淡同色内阴影，画框感。
-       变量值为逗号分隔的 "r,g,b"，故用 rgba(var(),a) 老语法（逗号分隔 RGB+alpha），
-       不带 fallback：no-cover 卡片不匹配此规则，变量必有值。 */
+       变量值为逗号分隔的 "r,g,b"，故用 rgba(var(),a) 老语法（逗号分隔 RGB+alpha）。 */
     border: 1.5px solid rgba(var(--cover-accent), .55);
     box-shadow:
         inset 0 0 0 3px rgba(var(--cover-accent), .06),
@@ -201,8 +203,10 @@
 .recent-post-item .recent-post-info {
     background: transparent !important;
 }
-/* 暗色模式：只叠极淡色洗，保留你已有的卡片透明感；边框透明度略提以可见 */
+/* 暗色模式：只叠极淡色洗，保留你已有的卡片透明感；边框透明度略提以可见。
+   默认值用暗色而非白：未取色时淡色洗近似透明，避免暗色模式下闪白。 */
 [data-theme="dark"] .recent-post-item:not(.ads-wrap):not(:has(.recent-post-info.no-cover)) {
+    --cover-accent: 26, 26, 46;
     background:
         linear-gradient(135deg,
             rgba(var(--cover-accent), .08),
