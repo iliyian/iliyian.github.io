@@ -258,12 +258,25 @@
     });
   }
 
-  function ready(fn) {
-    if (document.readyState === 'loading') {
-      document.addEventListener('DOMContentLoaded', fn, { once: true });
-    } else {
-      fn();
+  function onEverythingLoaded(fn) {
+    // 等到页面所有资源（图片/样式/脚本等）都加载完成后再启动 Live2D，
+    // 避免和首屏内容抢带宽；再用 requestIdleCallback 在浏览器空闲时执行。
+    let started = false;
+    const start = () => {
+      if (started) return;
+      started = true;
+      const schedule = window.requestIdleCallback
+        ? (cb) => requestIdleCallback(cb, { timeout: 3000 })
+        : (cb) => setTimeout(cb, 300);
+      schedule(fn);
+    };
+    if (document.readyState === 'complete') {
+      start();
+      return;
     }
+    window.addEventListener('load', start, { once: true });
+    // 兜底：若有资源卡住导致 load 迟迟不触发，最多等 8s 仍启动。
+    setTimeout(start, 8000);
   }
 
   function escapeHtml(value) {
@@ -1612,7 +1625,7 @@
     };
   }
 
-  ready(() => {
+  onEverythingLoaded(() => {
     if (window.L2D_WIDGET) {
       void init();
       return;

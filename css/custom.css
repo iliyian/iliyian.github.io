@@ -32,7 +32,8 @@
 
 @font-face {
     font-family: "LXGW";
-    src: url(https://r2-imgs.iliyian.com/css/LXGWWenKai-Medium.ttf);
+    src: url(/fonts/LXGWWenKai-Medium.subset.woff2);
+    font-display: swap;
 }
 
 /* @font-face {
