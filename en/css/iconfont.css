@@ -1,12 +1,12 @@
 @font-face {
-  font-family: "iconfont";
+  font-family: "blog-iconfont";
   src: url('https://r2-imgs.iliyian.com/css/iconfont.woff2?t=1763224469798') format('woff2'),
        url('https://r2-imgs.iliyian.com/css/iconfont.woff?t=1763224469798') format('woff'),
        url('https://r2-imgs.iliyian.com/css/iconfont.ttf?t=1763224469798') format('truetype');
 }
 
 .iconfont {
-  font-family: "iconfont" !important;
+  font-family: "blog-iconfont" !important;
   font-size: 21px;
   font-style: normal;
   -webkit-font-smoothing: antialiased;

@@ -1,0 +1,1113 @@
+<!DOCTYPE html><html lang="en" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>Dream Record | Yian's World</title><meta name="author" content="iliyian"><meta name="copyright" content="iliyian"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#f8f6f4"><meta name="description" content="Coming like a vernal dream that tarries but a while, departing like the morning cloud, nowhere to be found.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Dream Record">
+<meta property="og:url" content="https://iliyian.com/en/posts/a6489eb5/index.html">
+<meta property="og:site_name" content="Yian&#39;s World">
+<meta property="og:description" content="Coming like a vernal dream that tarries but a while, departing like the morning cloud, nowhere to be found.">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://r2-imgs.iliyian.com/img/cold_moon_43.png">
+<meta property="article:published_time" content="2026-05-18T13:00:31.000Z">
+<meta property="article:modified_time" content="2026-10-31T15:35:17.126Z">
+<meta property="article:author" content="iliyian">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://r2-imgs.iliyian.com/img/cold_moon_43.png"><script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Dream Record",
+  "url": "https://iliyian.com/en/posts/a6489eb5/",
+  "image": "https://r2-imgs.iliyian.com/img/cold_moon_43.png",
+  "datePublished": "2026-05-18T13:00:31.000Z",
+  "dateModified": "2026-10-31T15:35:17.126Z",
+  "author": [
+    {
+      "@type": "Person",
+      "name": "iliyian",
+      "url": "https://iliyian.com"
+    }
+  ]
+}</script><link rel="shortcut icon" href="https://r2-imgs.iliyian.com/img/bookgirl_ico.jpg"><link rel="canonical" href="https://iliyian.com/en/posts/a6489eb5/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="stylesheet" href="/en/css/index.css"><link rel="stylesheet" href="/en/css/fontawesome-subset.css"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        try {
+          const data = { value }
+
+          if (ttl != null) {
+            data.expiry = Date.now() + ttl * 86400000
+          }
+
+          localStorage.setItem(key, JSON.stringify(data))
+        } catch (e) {
+          console.error(e)
+        }
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return
+
+        try {
+          const data = JSON.parse(itemStr)
+
+          if (data.expiry && Date.now() > data.expiry) {
+            localStorage.removeItem(key)
+            return
+          }
+
+          return data.value
+        } catch {
+          localStorage.removeItem(key)
+        }
+      }
+    }
+
+    const scriptCache = new Map()
+    const cssCache = new Map()
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => {
+        if (scriptCache.has(url)) {
+          return scriptCache.get(url)
+        }
+
+        const promise = new Promise((resolve, reject) => {
+          const script = document.createElement('script')
+
+          script.src = url
+          script.async = true
+
+          for (const key in attr) {
+            script.setAttribute(key, attr[key])
+          }
+
+          script.onload = resolve
+          script.onerror = reject
+
+          document.head.appendChild(script)
+        })
+
+        scriptCache.set(url, promise)
+
+        return promise
+      },
+      getCSS: (url, id) => {
+        if (cssCache.has(url)) {
+          return cssCache.get(url)
+        }
+
+        const promise = new Promise((resolve, reject) => {
+          const link = document.createElement('link')
+
+          link.rel = 'stylesheet'
+          link.href = url
+
+          if (id) {
+            link.id = id
+          }
+
+          link.onload = resolve
+          link.onerror = reject
+
+          document.head.appendChild(link)
+        })
+
+        cssCache.set(url, promise)
+
+        return promise
+      },
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!true && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const metaThemeColor = document.querySelector('meta[name="theme-color"]')
+      const activateDarkMode = () => {
+        document.documentElement.dataset.theme = 'dark'
+        if (metaThemeColor !== null) {
+          metaThemeColor.setAttribute('content', '#1a1a2e')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.dataset.theme = 'light'
+        if (metaThemeColor !== null) {
+          metaThemeColor.setAttribute('content', '#f8f6f4')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/en/',
+  algolia: undefined,
+  localSearch: {"path":"/en/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"pagination":{"enable":false,"hitsPerPage":8},"languages":{"hits_empty":"No results found for: ${query}","hits_stats":"${hits} articles found"}},
+  translate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":true},
+  copy: {
+    success: 'Copy Successful',
+    error: 'Copy Failed',
+    noSupport: 'Browser Not Supported'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: 'days',
+  dateSuffix: {
+    just: 'Just now',
+    min: 'minutes ago',
+    hour: 'hours ago',
+    day: 'days ago',
+    month: 'months ago'
+  },
+  copyright: undefined,
+  lightbox: 'null',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid/dist/infinitegrid.min.js',
+    buttonText: 'Load More'
+  },
+  isPhotoFigcaption: true,
+  islazyloadPlugin: true,
+  isAnchor: true,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'Dream Record',
+  isHighlightShrink: true,
+  isToc: true,
+  pageType: 'post'
+}</script><script>window.loadMeting = window.loadMeting || function () {};</script><link rel="preload" href="/fonts/LXGWWenKai-Screen.woff2" as="font" type="font/woff2" crossorigin><link rel="stylesheet" href="/en/css/custom.css" media="defer" onload="this.media='all'"><link rel="stylesheet" href="/en/css/iconfont.css" media="defer" onload="this.media='all'"><link rel="stylesheet" href="/en/css/music.css" media="defer" onload="this.media='all'"><link rel="stylesheet" href="/en/css/aplayer-custom.css" media="defer" onload="this.media='all'"><!-- Matomo -->
+<script>
+  var _paq = window._paq = window._paq || [];
+  /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//mat.iliyian.com/";
+    _paq.push(['setTrackerUrl', u+'t']);
+    _paq.push(['setSiteId', '1']);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.async=true; g.src=u+'mat.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<!-- End Matomo Code -->
+<script>
+  !function(t,e){var o,n,p,r;e.__SV||(window.posthog && window.posthog.__loaded)||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.crossOrigin="anonymous",p.async=!0,p.src=s.api_host.replace(".i.posthog.com","-assets.i.posthog.com")+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"},o="Ji Yi init fn mn Ur pn bn cn capture calculateEventProperties Sn register register_once register_for_session unregister unregister_for_session Tn getFeatureFlag getFeatureFlagPayload getFeatureFlagResult getAllFeatureFlags isFeatureEnabled reloadFeatureFlags updateFlags updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures on onFeatureFlags onSurveysLoaded onSessionId getSurveys getActiveMatchingSurveys renderSurvey displaySurvey cancelPendingSurvey canRenderSurvey canRenderSurveyAsync Mn identify setPersonProperties unsetPersonProperties group resetGroups setPersonPropertiesForFlags resetPersonPropertiesForFlags setGroupPropertiesForFlags resetGroupPropertiesForFlags reset shutdown setIdentity clearIdentity get_distinct_id getGroups get_session_id get_session_replay_url alias set_config startSessionRecording stopSessionRecording sessionRecordingStarted captureException addExceptionStep captureLog startExceptionAutocapture stopExceptionAutocapture loadToolbar get_property getSessionProperty Cn xn createPersonProfile setInternalOrTestUser In hn Pn opt_in_capturing opt_out_capturing has_opted_in_capturing has_opted_out_capturing get_explicit_consent_status is_capturing clear_opt_in_out_capturing debug Vr Rt getPageViewId captureTraceFeedback captureTraceMetric an".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
+  posthog.init('phc_wib2S3JfFRaaaAVNFN4miJq2S8zKquKuZa9nQuV3hL2y', {
+      api_host: 'https://posth.iliyian.com',
+      defaults: '2026-05-30',
+      person_profiles: 'always', // or 'always' to create profiles for anonymous users as well
+      capture_copied_text: true
+  })
+</script>
+<meta name="generator" content="Hexo 7.3.0"><link rel="alternate" href="/en/atom.xml" title="Yian's World" type="application/atom+xml">
+</head><body><div class="bg-animation" id="web_bg" style="background-image: url(https://r2-imgs.iliyian.com/img/雨に耳を傾ける.avif);"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="https://r2-imgs.iliyian.com/img/loading-cat.gif" data-lazy-src="https://r2-imgs.iliyian.com/img/37.jpg" onerror="this.onerror=null;this.src='https://http.cat/404'" alt="avatar"/></div><div class="site-data text-center"><a href="/en/archives/"><div class="headline">Articles</div><div class="length-num">47</div></a><a href="/en/tags/"><div class="headline">Tags</div><div class="length-num">19</div></a><a href="/en/categories/"><div class="headline">Categories</div><div class="length-num">8</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="https://iliyian.com"><i class="fa-fw fas fa-language"></i><span> 中文</span></a></div><div class="menus_item"><a class="site-page" href="https://iliyian.com/music/"><i class="fa-fw fas fa-music"></i><span> Music</span></a></div><div class="menus_item"><a class="site-page" href="/en/link/"><i class="fa-fw fas fa-link"></i><span> Dokodemo-Door</span></a></div><div class="menus_item"><a class="site-page" href="/en/game/"><i class="fa-fw fas fa-chess-queen"></i><span> Paradise</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url(https://r2-imgs.iliyian.com/cdn-cgi/image/format=webp,quality=80/img/cold_moon_43.png);" data-cover-src="https://r2-imgs.iliyian.com/img/cold_moon_43.png"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/en/"><span class="site-name">Yian's World</span></a><a class="nav-page-title" href="/en/"><span class="site-name">Dream Record</span><span class="site-name"><i class="fa-solid fa-circle-arrow-left"></i><span>  Back to Home</span></span></a></span><div id="menus"><div id="search-button"><span class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> Search</span></span></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="https://iliyian.com"><i class="fa-fw fas fa-language"></i><span> 中文</span></a></div><div class="menus_item"><a class="site-page" href="https://iliyian.com/music/"><i class="fa-fw fas fa-music"></i><span> Music</span></a></div><div class="menus_item"><a class="site-page" href="/en/link/"><i class="fa-fw fas fa-link"></i><span> Dokodemo-Door</span></a></div><div class="menus_item"><a class="site-page" href="/en/game/"><i class="fa-fw fas fa-chess-queen"></i><span> Paradise</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="post-info"><h1 class="post-title">Dream Record<a class="post-edit-link" href="https://github.com/iliyian/blogxyz/edit/main/source/_posts/梦境记录.md" rel="external nofollow noreferrer" title="Edit" target="_blank"><i class="fas fa-pencil-alt"></i></a></h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="fa-fw post-meta-icon far fa-calendar-alt"></i><span class="post-meta-label">Created</span><time datetime="2026-05-18T13:00:31.000Z" title="Created 2026-05-18 21:00:31">2026-05-18</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">Word Count:</span><span class="word-count">7819</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">Reading Time:</span><span>49 mins</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">Post Views:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="container post-content" id="article-container"><p><strong>[Disclaimer and Privacy Statement]</strong></p>
+<ol>
+<li>All the following text consists of personal dream records, containing a large amount of bizarre, illogical, and even dark subconscious content, which does not represent real events that occurred in reality or my true intentions.</li>
+<li>To protect the privacy of real individuals, all identifying information such as names, nicknames, and initials involved in the text have been replaced with pseudonyms. However, the names preserve the character traits as much as possible.</li>
+<li>The behaviors of characters in the dreams have nothing to do with their real-life counterparts. Readers must not match the plots in the text with real people, so as to avoid causing controversy.</li>
+</ol>
+<p><em>Awakened from heavy slumber, languid I speak not a word; startled from a shattered fair dream, nowhere is it to be found.</em></p>
+<hr>
+<h3 id="2023-1-3">2023.1.3</h3>
+<p>In the dream she took the initiative to hold my hand, smiling<br>
+We ran away in the golden hue of autumn<br>
+Or that phone call transcending time and space</p>
+<h3 id="2023-11-20">2023.11.20</h3>
+<p>Dreamed that I was being persecuted by someone, with throwing knives, I wanted to find the station but couldn’t find it, a standing-room ticket, so crowded with people that I couldn’t even get on that coach bus at all, and finally hid in the house of that person surnamed Ma whose house was on the very edge, and he even gave me a bag of something<br>
+Anyway it was a pure nightmare of being hunted down, the other party used throwing knives, slicing across my face, the other party used their own body as flying paint, smearing the entire wall of the room, with droplet-shaped tentacles, light blue, I got the right to have my ticket checked using a standing-room exam candidate pass, but because I couldn’t find the ticket gate I was questioned over a loudspeaker, which was terrifying, after going in I even forgot my schoolbag, came out to look for it but could never find it again, heavy rain started falling in that city, I went all the way east yet arrived in the sky above an emerald green valley,<br>
+Truly a nightmare</p>
+<h3 id="2023-11-24">2023.11.24</h3>
+<p>The scene should be during Chinese New Year, what left a deep impression was, I got a certificate of merit from a past competition, with a photo of me wearing a yellow short-sleeved school uniform on it, I cried, Xu Ji was sitting to my front-left at the time, I introduced him to the person to my back-left saying he won the Top Student Award 2 times, he explained he won it 3 times, top five in the grade. Afterwards there was a scene of a rusted marble campus covered in fallen leaves, as if school had just started. Afterwards there was a castle-like restaurant, I opened the door wanting to go order food, but was recognized by someone who might be a relative or the like, who called my name, so I escaped through the door on the left. I also dreamed that Ren Lan was sleeping on a bed similar to Ji Jingzhi’s bed, covered with a quilt.</p>
+<h3 id="2023-11-29">2023.11.29</h3>
+<p>Ren Lan and I kissed more than once, she pressed down on top of me. The kitten at home turned white and yellow. In my hometown, because of the Asian Games, a transparent aquarium was built in front of Rong Shuming’s house, with big fish inside. Xiao Liang threw red sodium into it for fun, and got electrocuted because of it. To prepare for an important exam I took a shower and found I was wearing a full five tops. Besides that, an important imagery was that I again dreamed of myself appearing naked in front of a crowd. Adding to the earlier part, she held a ribbon between her lips, and kissed me, I slightly sucked in the water in her mouth. To prepare for the exam, I had many, many, many boxes of books to sort out, I planned to take the waterway back to my hometown from Hangzhou, by boat. My desk was cleared out, and placed somewhere else. I also dreamed that the one who kissed me was already hundreds of millions of years old. At the same time I struggled with it for a long time, and finally decided to kiss back, and then Ren Lan on the bed, was told that I was already hundreds of millions of years old.<br>
+The images in my dreams are always dim and blurry</p>
+<h3 id="2023-12-2">2023.12.2</h3>
+<p>Simply put, being hunted down, I raised my hands in surrender, at the filthy dead end, the other party’s muzzle pointed at me, but in an instant the other party was killed by someone else, that person had a long gun, discovered me, and of course I died soon too<br>
+I also dreamed of moving up a grade, Class 11, the environment was dilapidated, entangled in moss, the math teacher said we didn’t need to learn too deeply to the point of taking away everyone’s textbooks, the floor had the names of the people for those seats written on it, single person single desk, but a row of girls sat on the left,<br>
+Before this I also dreamed of running in the darkness, running into a dark and dilapidated path that should be Renmin University of China, because it was too dark I ran back out, and then fell to the ground</p>
+<h3 id="2023-12-20">2023.12.20</h3>
+<p>Dreamed of a hand warmer smoking, temperature 288k</p>
+<h3 id="2024-2-13">2024.2.13</h3>
+<p>Ms. Ye pinched Xiao Liang’s foot and threw her down from a place that should be the attic of Rong Shuming’s house, resulting in the grey mangled remains on the ground and her death, in front of Rong Shuming’s house, I informed Ms. Gong and another person I can’t remember of Ms. Ye’s madness, by way of pointing at Xiao Liang’s corpse, the former hinted to Ms. Ye with some kind of hint among their own kind, Ms. Ye did not intend to call the police, and I was chased. I informed a police officer at this time, inside a locked door, both he and I were sad and heartbroken to the point of fainting, afterwards it was making something like book pages thin and transparent through some kind of bead-shaped light source to achieve some purpose, and right after that was me on the rooftop of a flying building, shooting at uniform-speed, slow, game-like flying birds with a bow and arrow, and after that was a failed attempt to make shoes hanging from a parachute fall using steel balls. Overall very chaotic,</p>
+<h3 id="2024-3-9">2024.3.9</h3>
+<p>Can’t remember too clearly, I got a world-level third prize in a math competition, and then needed to go to another school to participate in what should be a semi-final or something, the announcement mentioned they would specially consider bringing an extra school uniform of the other school for the scar on my arm. I also dreamed of myself interviewing discipline inspection, the national kind, and then watching them lie on the ground on their stomachs using water bottles placed under their hands and feet respectively as roller skates. Then I also dreamed that I also participated in the so-called Looking Ahead to 2400 competition of using water bottles as roller skates, in the dream it really was 2400, anyway it couldn’t be 2024, and then at the corner of the final street only I was left while everyone else didn’t follow the instructions on the ground and went in another direction instead. I also dreamed of Jian Jiahe, I can’t remember clearly, but it seemed to be because stronger new classmates came to the class, she lamented that she could only be the second sister-in-law, and I suspected Xu Ji for a moment, (it was him, middle and high school classmates were mixed up in the dream), and then realized this was my romantic ambiguity. I also dreamed that a tunnel dug specially for that competition was found during a post-event inspection to have a turtle inside an iron fence wanting to escape, although the gaps in the prison-like fence were huge it seemed to be stuck just right, during this part my perspective was inside the prison-like place. When the turtle was discovered the person who found it brought up its gloominess. I also dreamed that the sound playing on my phone’s speaker was still clearly audible even after leaving the house and walking down several floors, what a fucking nightmare.</p>
+<h3 id="2024-3-28">2024.3.28</h3>
+<p>Dreamed that classmates together flushed the entire school with flood-like green sulfuric acid sent my school dreamed the principal or some management lectured us for not learning the most basic something, the specific operation was us standing on the second floor pouring down buckets of long-accumulated sulfuric acid, the snow on the ground melted, becoming jaggedly black and white,</p>
+<h3 id="2024-4-4">2024.4.4</h3>
+<p>Dreamed, on the playground aliens rode bicycles flying toward space, while the sky turned to dawn in an instant. And I tightly hugged some girl, should be a female classmate from middle school, but I’m not sure it was her, I can’t remember anymore</p>
+<h3 id="2024-4-12">2024.4.12</h3>
+<p>Dreamed of snuggling together with Ren Lan, dreamed of being hunted down, dreamed of a very tall building, dreamed of a clock tower studded with golden clocks, dreamed of Ren Lan giving me a scratch art picture, dreamed of middle school classmates, dreamed of Qixi Festival, dreamed of Rong Shuming, dreamed of eating together on Lantern Festival,</p>
+<h3 id="2024-6-3">2024.6.3</h3>
+<p>Dreamed of being suspected because of depression, being compared with others, how others’ depression was like this and that, mainly focusing on the part where I could go home every day in high school, but it was already late at night then, and taking a bus I yet returned from school to the science and technology museum next to the student dormitory, I asked the driver whether he was going to the science and technology museum or not, yet I also dreamed of elementary school classmate Xu Zhichen, I was going down a grand staircase, he was going up, I also dreamed of gmlgmgm paying respects to that classmate from Class 515 who had a similar situation to mine which should be depression, in a place suspected to be a newspaper, lgm was surnamed Shi. I don’t know how to describe it in words anymore, the psychologist required me not to see a certain face printed on the paper?</p>
+<h3 id="2024-6-8">2024.6.8</h3>
+<p>Dreamed that I shot and killed the richest man in the world, and lots of other content, can’t remember anymore</p>
+<h3 id="2024-6-9">2024.6.9</h3>
+<p>Dreamed of holding Ren Lan, her body was so soft, we held each other, but also dreamed of the common pants falling down and such</p>
+<h3 id="2024-6-15">2024.6.15</h3>
+<p>Dreamed of killing someone, from behind the heart, two stabs, but there was no body disposal issue, only blood on the floor, in order to protect two other girls who lived in the same room with me, but with her we only hugged<br>
+Also dreamed of a car accident outside, a motorcycle smashed a little girl to pieces at night<br>
+Also dreamed of Rong Shuming, he went somewhere else for Chinese New Year, we walked on a bridge<br>
+Also dreamed of me and those two girls cleaning up the blood on the floor together, should be in the morning,<br>
+Also dreamed of us playing a game together, one of the girls was very good at it, also dreamed of her riding a horse from the ground up to a tall building and taking out the person holding hostages<br>
+Anyway dreamed that one of them should be my girlfriend, the other was jealous, but I didn’t seem to dream of more intimate behaviors, except touching her butt and such while carrying her on my back,<br>
+Also dreamed of us watching TV with a lot of people,<br>
+Why can’t I remember whether there were more intimate behaviors?</p>
+<h3 id="2024-6-21">2024.6.21</h3>
+<p>Had a dream far more wonderful than reality, only slept for 4 hours, it’s six-thirty now</p>
+<h3 id="2024-6-29">2024.6.29</h3>
+<p>Updating the content above, in every instant in the dream I experienced decades and centuries of environmental changes. And this was similar to me participating in a huge panoramic game<br>
+I indeed dreamed that I had sex with someone, but the scenes I can currently remember are only some dim and unclear third-person and first-person views left, I’m not even sure if I really dreamed of those or if they have already been diluted. I indeed had a sensation of penetration. I’m not sure if the partner was Ren Lan. I’m not sure of the cause either. I really forgot the cause. Afterwards, I forgot a lot more. Before being woken up by the sound of conversation, I finally dreamed I was at a dining table, everyone at the table were middle and high school female classmates whose names I can’t remember. The final scene was that I didn’t have chopsticks, while the food had already been served to everyone, and the girl opposite me very timely handed me a pair of chopsticks, this was really touching, I rarely say thank you at that kind of volume. And before that, I seemed to have tangled her hair with a black hair tie usually used for tying hair that was on my hand, but resolved this embarrassment in an instant. Writing this I remembered again, before this I also dreamed of attending class and fucking failing a course, and the inexplicable, disgusting, rotten, authoritarian pressure from some fucking female teacher, at this time it was a scene at a school desk.<br>
+These days I dream almost every day, but occasionally I’m really too lazy to write them down.</p>
+<h3 id="2024-10-1">2024.10.1</h3>
+<p>Dreamed that I had a stuffy nose, and then spat out two little white rabbit-like creatures from my mouth</p>
+<h3 id="2024-10-5">2024.10.5</h3>
+<p>Dreamed of getting into a car accident, the tire burst, also dreamed of attending psychology class without bringing the textbook and being criticized, etc.</p>
+<h3 id="2024-10-6">2024.10.6</h3>
+<p>Dreamed of attending class and then falling asleep, and then next to me it should be Wen Jiaoruo who started squeezing my __? Then we shared a book, and then seemed to have overslept through a class? What a mess</p>
+<h3 id="2025-3-22">2025.3.22</h3>
+<p>Wet dream, dreamed of holding hands with a girl and melting together, dreamed of putting my fingers into a girl’s __, very tight, two different girls</p>
+<h3 id="2025-3-31">2025.3.31</h3>
+<p>Dreamed of being in the top 12 before the scoreboard froze in the provincial competition, very terrifyingly dreamed within a dream of wetting the bed, so thankfully it was only in the dream and not reality</p>
+<h3 id="2025-4-7">2025.4.7</h3>
+<p>In dreams I knew not I was a guest, indulging in a fleeting joy<br>
+Dreamed of holding hands with He Yiyao and being in a relationship. There were many, many details, we did many, many things, I was very, very happy, even when I subconsciously thought that this was a dream I wasn’t willing to wake up, it was too wonderful, too wonderful, too wonderful, I’d rather the dream lasted a little longer. As well as the classic dreaming of not wearing pants in public. This dream was really too sweet, but I completely forgot the details, only the feeling remained. If I had woken up earlier I could still have written it down, but I wasn’t willing to wake up! Reality is too bitter, too bitter. I held her hand, she held back, damn it why can’t I remember the details, I can only remember that feeling of happiness. Why is only this heartbreaking happiness left? Why not let me recall it? Why must I forget this dream? This was happier than everything in my whole life, can I really recall Ms. Ye’s warmth? I fear her and guard against her, bad memories. How can I give myself body and soul, without worrying that she will lose control and take out a cleaver to stab herself or me to death? I will never forget that moment, becoming the tiniest hidden pain, planted in the most concealed place in my heart. How can she be completely trusted? After those things! I grieve that I lost that dream.</p>
+<h3 id="2025-6-10">2025.6.10</h3>
+<p>Dreamed of getting up, how I dreamed that Jian Jiahe was sleeping on the bed opposite mine, dreamed that while half-asleep and half-awake she crawled from her bedding into my quilt, so I pretended to be asleep to put my arm around her, gently pinching the side of her breast, and then it was a very good experience, she was very beautiful, very thin, clothes disheveled and skin exposed, I brought up wanting to sleep with her and she neither refused nor agreed, then we chatted about a lot of more fantastical things, dreamed of math problems that gave rewards in a game, dreamed of a girl who knew me but whom I didn’t know adding me on WeChat and I replied with a smiley face, while she complained about this, also dreamed that she got out of bed first, and I got out of bed too, also dreamed that on the opposite bed was my current real roommate in the corresponding spot opening a computer that seemed to be placed on the second floor and taking out headphones, while Jian Jiahe was cute the whole time and didn’t refuse me, I remember a lot happened before this too, she and I were lying on the bed, she lay to my upper right, her body exposed in many places, not refusing my requests, showing affection toward me, we had countless physical contacts, we had countless interactions, after all it was she who took the initiative to crawl into my bedding, her cute appearance was very, very, very, very, very vivid, even now I still clearly remember her face in the dream, it really makes one unable to imagine it was in a dream, not to mention in a dream one wouldn’t realize the illogical parts of certain things, but the story was shattered by the alarm clock eighteen minutes ago.</p>
+<h3 id="2025-6-16">2025.6.16</h3>
+<p>Dreamed that Chiang Kai-shek had a statue as tall as the Statue of Liberty placed at the entrance of the Presidential Office Building, and then it collapsed, shattering into pieces, dreamed of successfully turning in late homework.</p>
+<h3 id="2025-6-18">2025.6.18</h3>
+<p>I dreamed of Xia Yuzhi again, and even dreamed of Mr. Gu, I dreamed she went back to Ji Jingzhi’s house with me, it should be Ji Jingzhi’s house? But later I proposed taking Xia Yuzhi out to play, she obediently agreed, and then we arrived at a non-existent city that seemed to be called Hangzhou, I looked at the map, we took a car, first arrived at and got off at a blue palace, this was the palace in Jay Chou’s reflection, then we got off the car, at this time the sky was overcast and grey, maybe a light drizzle was falling, then I can’t remember anymore, then when it was time for lunch we went to a fairly large restaurant, at this time I clearly glanced at my watch, the time was 14:36, but after Xia Yuzhi sat down I felt as if this restaurant had left me with some bad memories and left, the process of leaving was also very awkward, after leaving I went to West Lake? Or a place that could be called West Lake but was completely different from reality, it was piled with cliffs and overlapping rocks, one even had to bend over to enter through the rock walls, yet on that narrow path electric scooters and a Ferrari were driving, yes a Ferrari, anyway it should be a black luxury car, and before going to that hotpot restaurant we should have gone out to play together, I remember when going out to play Mr. Gu and another relative? also proposed that they wanted to accompany me to go together. Anyway a light rain fell on the so-called West Lake, I took out my phone to take a picture of the rushing river next to the thick rock wall beside me, and found the battery was very low, but I need to interject here, it should be before coming to West Lake while looking at a physical map that I found an extra wound on my hand that even exposed red fat granules, the perspective here was very clear, very clear, very clear, I walked to the infirmary at the foot of the West Lake mountain yet didn’t dare ask for a band-aid and left. Oh god I’m going to forget it. Then after taking the photo I should have sent a message to Xia Yuzhi, and she replied that C++ was also her favorite language, she should have replied like that, the general meaning should be like that, and at this time the battery was only at 10%, I even thought about whether to call a taxi and tell him what I looked like, oh right, what I looked like: I clearly remember, I was wearing my high school winter uniform, the top was blue, cyan, and grey, but the pants were black, why was it my high school uniform? Then I tried to go downstairs to leave this so-called West Lake mountain, and entered an elevator, there were several rows of buttons in the elevator, very narrow, no more than one square meter, the first row was 2 and 3, I don’t remember how they were arranged, the second row had a 1 on the left, the third row had a C on the right. Then I accidentally pressed C thinking it was 1, and then other people did the same, and then I spoke up to remind him, or her? But at this time I need to flashback that Xia Yuzhi and I should have had a lot more chat history on WeChat before this, but I can’t remember it anymore, there should also have been chats on the second floor of Ji Jingzhi’s house, this is obvious, but I can’t remember it anymore either or rather forgot it right after experiencing it.<br>
+In the dream she was as cute as a cat, but I lack visual footage, only remembering there were many interactions between us, we had conversations and she responded to me. Xia Yuzhi.</p>
+<h3 id="2025-7-7">2025.7.7</h3>
+<p>First time dreaming of Liu Yueheng<br>
+It was raining, I didn’t bring an umbrella, she held an umbrella shading me, she conjured black holes and rainbows between her palms under the rain.<br>
+I dreamed I finally got to talk with her face to face, her reason was that she would go to Jilin after graduation (? although her hometown is in Henan), so there was no need to start.</p>
+<h3 id="2025-7-12">2025.7.12</h3>
+<p>Dreamed of attending PE class, the first day of the second week of next semester<br>
+Can only say I really should have chosen two health care classes, although in the dream I only regretted not choosing two PE classes<br>
+In the dream PE class started right away with a physical fitness test, but even for boys it was sit-ups<br>
+Then I can’t remember too clearly</p>
+<h3 id="2025-7-15">2025.7.15</h3>
+<p>Dreamed of Pu Lingzhou, playing a game similar to mrbeast<br>
+Not sure if Xia Yuzhi was there</p>
+<h3 id="2025-7-20">2025.7.20</h3>
+<p>Dreamed of calling Liu Yueheng, the voice was very quiet, couldn’t hear clearly, it was Monday, they were having PE class by West Lake, the voice answering the phone never sounded like her, sounded like her roommate, occasionally there was a male voice, her roommate pulled me into a WeChat group, the chat history urged me to pursue her.</p>
+<h3 id="2025-7-26">2025.7.26</h3>
+<p>An extremely long dream, I even woke up and fell asleep multiple times within the dream<br>
+This was the closest I’ve ever been to having Liu Yueheng, her image was much more approachable than in reality<br>
+Because several days might have passed in the dream too<br>
+I also had intimate actions with her, resting my head on her lap, most of our chats took place on a bed inside a room, I even saw her sitting next to me with her back to me changing her underwear, but that was probably about it<br>
+I only remember the ending now, oh god, as I’m writing I’m starting to forget a bit<br>
+Anyway the ending was that she asked me some things, seemed to be a word about paying attention to or looking after her or something? I can’t remember, anyway I expressed affirmation, and then she continued smiling and expressing thanks, which was also a kind of rejection, and then I held her and wept uncontrollably, she held me too, practically the image of the Madonna<br>
+Sure enough even in a dream do I still subconsciously make her reject me like this<br>
+I also remember being a captain of something, six people’s names, the task was to complete some schoolwork or something, I could even see the words in the dream: words written a few days ago in the dream to the point that the me in the dream even recalled for a moment before remembering those were words written a few days ago in the dream<br>
+I even remember chatting with Wei Shuangchi in the dream saying I wanted to tell him about this dream<br>
+I remember what I thought was indeed telling this dream, that’s why I said I woke up multiple times, to the point that the me in the dream couldn’t distinguish reality from dream<br>
+I remember staying at a small tavern, a very tall wooden structure, pointed roof, a bit similar to Rong Shuming’s house<br>
+Oh god how can I not remember what I chatted about with Liu Yueheng, there was clearly so much ah<br>
+Her overall image was white, just like the quilt<br>
+We should have chatted about a lot of other things at the beginning, which then led to the atmosphere being very romantic, but I can’t remember the specifics anymore, anyway the atmosphere was very romantic<br>
+But definitely not the I like you and you like me kind<br>
+Seemed to be about studying? Fucking hell I can’t remember<br>
+I strongly remember expressing my apologies in the dream, and multiple times before the end expressing my rejection of her, my coldness toward her, my objectivity toward her, but looking back it’s truly pitiful.<br>
+Also dreamed of some bizarre and supernatural things, including throwing something on the ground to calculate something<br>
+Too bad in the dream, my main principle still caved in</p>
+<h3 id="2025-7-30">2025.7.30</h3>
+<p>A small fragment, in the dream the umbrella shaft was blown apart by strong wind, while for everyone else the umbrella canopy was blown away, I held the umbrella shaft broken in two, the sky was bright</p>
+<h3 id="2025-8-2">2025.8.2</h3>
+<p>Had a nightmare<br>
+Dreamed of myself using a very ancient computer running windows7 to write exam questions, the most crucial thing was that I was late for this exam<br>
+They were programming questions, but long and atrocious<br>
+Also dreamed of slapping my own face, but the person who required me to do so also did the same<br>
+And even complained together with me about not being able to slap oneself hard enough</p>
+<h3 id="2025-8-3">2025.8.3</h3>
+<p>Dreamed of Jian Jiahe, she was wearing a red school uniform, in a bookstore, in front of a bookshelf, forgot what we said between us, anyway I gently wrapped both hands around her waist, and then she leaned her face over and kissed my cheek<br>
+Very happy<br>
+Also dreamed that I had already recorded this part, and ended up having to record it again</p>
+<h3 id="2025-9-1">2025.9.1</h3>
+<p>The most realistic dream within a dream ever<br>
+In the dream I __ with someone, for some reason the me in the dream __<br>
+Touched her in the dream too, then fell asleep in the dream, woke up in the dream<br>
+At first it was from the front and found I didn’t know how to _, then from behind, because it was too tight, _ a whole bunch. Then after falling asleep and waking up I took a shower. Even asked whether to __, she said once wouldn’t hit the jackpot<br>
+I still remember the details of helping her take off her pants. I still remember the shape of her breasts.<br>
+What left a deep impression was that she kept wearing headphones, listening to the style of music I like, even while _<br>
+In the dream I thought it was a dream, didn’t expect it to be real in the dream, didn’t expect the outermost layer was also a dream<br>
+In the dream a large patch of my pants was wet? Which layer was that actually?<br>
+Originally thought I could do it every day for the next few days<br>
+Ended up suddenly waking up only to find it was a dream</p>
+<h3 id="2025-9-5">2025.9.5</h3>
+<p>Dreaming again after going back to sleep<br>
+Dreamed that I went back to attend high school, to the point that in the dream I didn’t know why I had to go back to attend either<br>
+Dreamed the desks became shared by three people, connected together, made of iron, and very narrow, but sitting on both sides were girls? Couldn’t even fit many books.<br>
+Dreamed of attending a strange class, seemed to be math, and another female teacher, in the dream she had an unfamiliar hostility toward me, the kind of feeling that she thought my grades were bad.<br>
+Dreamed that course selection became completely free<br>
+Looking up and forward in the dream, it was completely the appearance of the classroom in my memory, which again contradicted other scenes in the dream<br>
+The overall environment was dark<br>
+Dreamed of walking into the wrong classroom<br>
+Dreamed of wearing a down jacket in summer, not wearing a school uniform<br>
+Dreamed of meeting a Zhejiang University upperclassman, very tall, thirty centimeters taller than me, I had to look up at him, at first I even asked him if he was in high school, which class he was in, walked with him for a bit and found he seemed to be here to give a presentation?<br>
+Anyway the timeline was very messy<br>
+Also met Yu Minghui, and various timelines</p>
+<h3 id="2025-9-21">2025.9.21</h3>
+<p>Dreaming back to high school<br>
+Dreamed of Gu Xinghe teaching us physics class<br>
+Dreamed of Yu Banwan?<br>
+For some reason I still clearly remember how she looked, because her appearance was really too pure and innocent, even for the me back in middle school<br>
+As pure as pure could possibly be</p>
+<h3 id="2025-9-26">2025.9.26</h3>
+<p>Dreamed of Yu Xinfei, dreamed we had a very good relationship, it was a reunion after many years, strangely I was lying in her arms, her face was very clear<br>
+We bantered back and forth very quickly<br>
+The background was Ms. Gong correcting a group of kittens<br>
+Also dreamed that I had just finished writing the dream log,<br>
+Dreamed of being scolded by Ji Jingzhi and then desperately trying to get Rong Shuming to prove my innocence, it was about some very complicated things, strange, why would I care</p>
+<h3 id="2025-11-23">2025.11.23</h3>
+<p>Another dream about the dead Mr. Gu<br>
+As well as the classic not wearing pants in public<br>
+Dreamed of kittens<br>
+Very chaotic, also dreamed of Ms. Ye, also dreamed of attending class, and a bus, very complicated, don’t want to write anymore, a very long dream</p>
+<h3 id="2026-1-26">2026.1.26</h3>
+<p>Dreamed of Jian Jiahe again<br>
+We could still chat</p>
+<h3 id="2026-1-29">2026.1.29</h3>
+<p>Dreaming back to high school, didn’t write the 38-point English essay, because I was too sleepy during the exam in the dream<br>
+In the dream I even fell out of the top three</p>
+<h3 id="2026-3-15">2026.3.15</h3>
+<p>Going back to sleep, why did I dream of Gu Xinghe and He Yiyao<br>
+We were having class in a large university lecture hall, Gu Xinghe was teaching us, I sat at the very back on the far right<br>
+I can’t remember the characters of the course name clearly, only remember handing in homework, collecting homework, class representative, not a good dream</p>
+<h3 id="2026-4-8">2026.4.8</h3>
+<p>I dreamed I slashed hard across my arm, and then blood gushed out fiercely along with my heartbeat, I’m not sure if it was high school or middle school, because my seat at school was to the left of Yu Banwan, she and I swapped seats, and were teased by other classmates in the class for it, speaking of blood, I should have cut it at home at the time, and then when others saw the floor covered in blood they weren’t very shocked, Ms. Ye just offered to help me clean it up afterwards, and then I can clearly remember how smooth the skin looked at the time, that cut felt like the very first cut rather than my countless cuts afterwards, I kept my arm at a special angle the whole time to keep the blood from flowing out as much as possible, and then on that curb of the residential complex outside my home, I saw blood flowing everywhere, because I was walking back and forth, several square meters of blood flowed, like a river, and then it should be in some conference room at school where it seemed to be Michael Corleone or someone, they gave a speech or something, and then the protagonist among them gathered around me, and others gathered around me because of that too, they were all standing, only I alone was sitting, afterwards they dispersed, that protagonist wanted to shake hands with me, he used his right hand, but my right hand was injured, so I had no choice but to use my left hand, he was puzzled, and earlier I remember when I cut it I specially went to the kitchen to let it bleed claiming it was easier to clean up, while Ms. Ye smiled and said the kitchen stove wasn’t that easy to clean up either, and then after shaking hands above, I sat on the inside of the far left row of the classroom, to my right should be Yu Banwan, the wound on my right hand sometimes burst open and sometimes stopped bleeding, under my sleeve, everyone seemed unable to see it or didn’t care, and then she or I was wearing black clothes, because swapping seats was a rather romantic thing, they were teasing us, and then the teacher started handing out books, there were a full one hundred books, the content of the books covered many, many aspects, but they were all part of the curriculum, and then I remember I was missing the 35th, 13th, 15th, 45th books, I counted them one by one, I wrote them down on paper, I’m not sure if it was these few numbers anymore, the material of the books was the most commonly seen soft paper, at the same time it’s worth noting that the books seemed to be a bundle, to the point that it seemed like a single book, what was being flipped through seemed like a single book, and then it seemed I had to take some exam, I kept failing to find my seat, later even when a certain whiteboard in the class had everyone’s seat and class number written on it I still couldn’t, and then Yu Banwan seemed to be wearing black clothes, we barely spoke much, but I just remember her or someone smiling at me or teasing, at that time the wound on my wrist was almost healed, only a tiny little bit left, as long as I maintained a certain posture it was guaranteed not to bleed, but in the dream once my movement was too large or the like, it would bleed, in the end I didn’t take that exam either, oh right at the time I could see opened snacks directly scattered in my bag, as well as a few unopened packs, I also remember stuffing two almost used-up Pilot p500 or p700 pens into my pocket in order to go take the exam, as well as that special bubble-sheet pencil I only bought in university? And a very big eraser, and a ruler, but in the end I didn’t take the exam, and then twenty minutes before the exam, I was in the classroom, seeing many people pouring in, they were probably coming to my classroom to take the exam, and then I woke up, prior to this many classmates had given me help regarding finding the exam classroom and seat number</p>
+<h3 id="2026-4-9">2026.4.9</h3>
+<p>Dreamed of kissing Jiahe on the bed, and some conversation, dreamed of the texture of her lips, dreamed that I recorded the first half of the dream inside the dream causing me to almost forget it now<br>
+I remember now, the scene was a class, looked like the high school history teacher, but seemed to be in university, because I wore glasses to see the blackboard clearly, Jiahe sat a few seats ahead of me struggling over whether to ask for permission to go to the bathroom, and then the teacher very kindly went out<br>
+But what was taught on the blackboard was math,<br>
+In the dream Jiahe and I should be a couple? Anyway I remember our relationship was very good, with lots of conversation and intimate actions, she seemed to be wearing the black camisole from the last time we met?<br>
+Also met a foreigner and Niannian on a long road, she asked me where Xiao Liang went, I said behind us, in the dream many people were walking on a very long road<br>
+And earlier, Jiahe and I leaned on the windowsill looking out, outside was a huge land base vehicle?<br>
+With some drying clothes and quilts hanging on it?<br>
+That foreigner also asked me if I recognized the words on a note? And said he’d treat our family to a meal later?<br>
+I was fucking running in the dream, but I could barely lift my calves, my calves are very sore right now too<br>
+Though the key thing is how did I forget what I did with Jiahe in the dream</p>
+<h3 id="2026-5-1">2026.5.1</h3>
+<p>In the dream, dreamed that because of death compensation or something, my bank account balance gained an extra eighty million RMB<br>
+Then in the dream, another dream passed, and only thirty million was left<br>
+Woke up once more, and nothing was left<br>
+Then I woke up<br>
+First time seeing the color tone of a dream, an expanse of grey-black, dreamed of being bullied and humiliated, dreamed of Rong Shuming and Ji Jingzhi celebrating my birthday together for me, dreamed of building Lego, dreamed of the concept of an annoying teacher, dreamed of disgusting ham sausages, dreamed of Ms. Ye, dreamed of my shoes stepping into deep black water<br>
+Dreamed of doing a psychological questionnaire<br>
+So annoying<br>
+That money in the dream was really too real and seemed so logical<br>
+Also dreamed of picking my nose</p>
+<h3 id="2026-5-13">2026.5.13</h3>
+<p>Very strange dream, seemed to be Xia Yuzhi, who captured __ through the security camera upstairs at Rong Shuming’s house and used it to blackmail me or something, very long but I can’t remember anymore</p>
+<h3 id="2026-5-18">2026.5.18</h3>
+<p>Nightmare, I again dreamed of a teacher publicly committing violence against me in class, seemed to be because I didn’t do homework or some reason, but it was my elementary school Chinese teacher, I was sitting in my seat almost the entire time in the dream, very chaotic, a very, very long dream, can’t remember too clearly, she stood behind the two seats in front of me, I only remember it was again because of something I did, she used a very thick book or something, and directly smashed right through the two desks in front, those two desks belonged to others, and then she picked up something like a juicer or soy milk maker, white, about to smash it at me, I didn’t move a muscle in the dream, closed my eyes, anticipating a heavy blow to my forehead, even if I died right then and there I wouldn’t care, but this didn’t happen<br>
+Then a lot of other things happened in the middle<br>
+Then I also dreamed of several female classmates trying in a public place, which was actually just the classroom, to take off my pants, to see how big my ___ was, because in the dream it was tenting my pants very noticeably, in the end what was very strange was, it seemed to be Xia Yuzhi who reached her hand into my pants from behind, wrapping around it, the tactile sensation was very real<br>
+Then it was an inescapable building, the elevator going from the third floor to the first floor could only reach B1 and such<br>
+Seemed to have also dreamed of, an ability to manipulate others into falling in love with me, in the dream I should have used it many times too, can’t remember the specific details clearly anymore<br>
+Also dreamed that in an empty classroom after a long time passed there was only me alone, everyone else had gone to hand in a very important assignment, except me, which also led to that incident above<br>
+I can’t remember why I wasn’t willing to wake up anymore, I could feel the end of the dream, could feel myself opening my eyes, seemed to have woken up, wanted to immediately record the dream, and then woke up once more only to find, that I had finally opened my physical eyes</p>
+<h3 id="2026-7-15">2026.7.15</h3>
+<p>1 PM<br>
+Going back to sleep I almost suffocated myself to death, quilt covering my head, in the dream it timely turned into a face mask, kept gasping for air in big breaths, my spine exerted force in order to keep me from suffocating to death<br>
+It was all dim in the dream, the plot should even be continuing from the morning<br>
+It was a nightmare, wrote something in the dream<br>
+Suddenly woke up and found the light was still on</p>
+<p>Went back to sleep again, connected right back to it again, it was very messy in the dream anyway</p>
+<h3 id="2026-7-24">2026.7.24</h3>
+<p>Dreamed of just waking up, my mom directly slapped me across the face after saying impatient<br>
+Then arguing, etc.<br>
+Then all kinds of messy things<br>
+Dreamed of people forming a human pyramid or something<br>
+Dreamed of reading a book, Chapter 368, the final chapter killed off the entire protagonist group, depressed me to death in the dream, without any warning, thought they were about to win</p>
+<p>Dreamed of going back to the Tang Dynasty, yet the scene was very modern, and then seemed to have started dating Jian Jiahe again<br>
+Dreamed of taking off pants or something</p>
+<h3 id="2026-8-7">2026.8.7</h3>
+<p>Dreamed of Gaokao review and the classroom, test papers and such, the main character was Gu Xinghe again, the most crucial thing was how did I even see XXX<br>
+Not a good dream, because it was very awkward in the dream and had no beginning or end, silences with only me alone frequently occurred<br>
+I still remember doing a lot of test papers, but why Chinese test papers</p>
+<h3 id="2026-8-13">2026.8.13</h3>
+<p>Actually dreamed of Teacher Han, what I dreamed of was a conversation scene on qq or somewhere, she asked me why I quit the team, sending messages over several days, I saw the last message displayed as one day ago in the dream<br>
+Seemed like the training team in the dream also had a sharing session, about something, she also asked me why I didn’t participate, in the dream this was very strange, I had clearly told Teacher Hou a long time ago, anyway later I gave all kinds of explanations to Teacher Han, and then Teacher Han sent all kinds of memes, and then I also sent all kinds of random messy things, anyway the things in the dream were all very chaotic<br>
+But the above was the dream after waking up from going back to sleep, the dream before going back to sleep was a very urgent dream, yet right when I woke up the first time I already couldn’t recall the specific details, anyway it wasn’t a good dream, it was a very painful dream<br>
+Also dreamed of fucking stupid PE class, dreamed of joining a big group of 300+ people for a health care class, fucking annoying as hell, also from a qq-like perspective</p>
+<h3 id="2026-8-13-2">2026.8.13</h3>
+<p>(This should indeed be the same day, except this is from going back to sleep, added on 8.18)<br>
+Should have dreamed of Xia Yuzhi, and my dad<br>
+Xia Yuzhi and I? Wait it didn’t seem to be her? Anyway it was a shot of chatting on DingTalk or qq, she told me to go downstairs to do something, and then stood me up, and then I seemed to be holding something at the time<br>
+Then later inexplicably chatted about **-like things, the language she sent was very abnormal, a bit similar to **, of course the kind where none of it was directly stated</p>
+<h3 id="2026-8-18-Going-back-to-sleep">2026.8.18 Going back to sleep</h3>
+<p>Very chaotic, involving over a dozen characters, and even involved aliens, I even saw the kind of aliens that look very much like humans, a scene of their dormitory, the point where they are more impressive compared to humans is that they can fly, but using a tool similar to our scooters, and then three legs are placed vertically flat at the front end of the vehicle, as if controlling the direction, the left and right two can also be placed somewhere higher, way too hard to keep a straight face<br>
+As well as seeing myself not wearing pants in public, even seeing how I looked not wearing pants inside a mirror<br>
+In the dream I seemed to be very angry because of something, anyway because of that I didn’t go to the next-door relative’s house to eat, grandpa and grandma made an appearance in this scene<br>
+Then dreaming back to high school again, in the dream I even seemed to explain the matter of why I inexplicably came back when I clearly already had a high school diploma<br>
+In the classroom I sat at the very back slightly to the right of the middle, as well as the classic only I didn’t bring the textbook, the textbook seemed to be something very complicated too<br>
+Also dreamed of a very luxurious student dormitory, without an ID, but what was very strange was that I didn’t see any beds in the dream<br>
+Going back to that eating thing earlier, I seemed to have locked myself in my room at the time, but seemed to also have a memory of stripping naked to take a shower, the memory of not wearing pants was after that<br>
+Then afterwards it seemed to be when I was using the toilet completely naked, or only wearing a top?, crawling all over the toilet were many disgusting bugs of various sizes, maggots, scaring me into immediately going to rinse off my legs</p>
+<h3 id="2026-8-21">2026.8.21</h3>
+<p>There was only one theme, I was innocent in the dream but suffered all kinds of abuse</p>
+<h3 id="2026-9-10">2026.9.10</h3>
+<p>In the dream there was a her who loved me forever, but I have now forgotten her name in the dream<br>
+This time it was dreaming back to high school or middle school, she helped me so that I could finish some homework<br>
+Only remember that it was a very silent love</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>Author: </span><span class="post-copyright-info"><a href="https://iliyian.com">iliyian</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>Link: </span><span class="post-copyright-info"><a href="https://iliyian.com/en/posts/a6489eb5/">https://iliyian.com/en/posts/a6489eb5/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>Copyright Notice: </span><span class="post-copyright-info">All articles on this blog are licensed under <a target="_blank" rel="noopener external nofollow noreferrer" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> unless otherwise stated.</span></div></div><div class="tag_share"><div class="post-share"><div class="social-share" data-image="https://r2-imgs.iliyian.com/img/cold_moon_43.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><a class="pagination-related" href="/en/posts/387b1cda/" title="She came to my side very suddenly."><img class="cover" src="https://r2-imgs.iliyian.com/img/loading-cat.gif" data-lazy-src="https://r2-imgs.iliyian.com/img/xiaoxi.png" onerror="onerror=null;src='https://http.cat/404'" alt="cover of previous post"><div class="info"><div class="info-1"><div class="info-item-1">Previous</div><div class="info-item-2">She came to my side very suddenly.</div></div><div class="info-2"><div class="info-item-1">Xiaoxi came to my side quite suddenly. Her exact arrival must have been on September 22nd, the da...</div></div></div></a><a class="pagination-related" href="/en/posts/d65648bd/" title="Resolution on Certain Historical Questions over the Past Eighteen Years"><img class="cover" src="https://r2-imgs.iliyian.com/img/loading-cat.gif" data-lazy-src="https://r2-imgs.iliyian.com/img/morning_glow_square.jpg" onerror="onerror=null;src='https://http.cat/404'" alt="cover of next post"><div class="info text-right"><div class="info-1"><div class="info-item-1">Next</div><div class="info-item-2">Resolution on Certain Historical Questions over the Past Eighteen Years</div></div><div class="info-2"><div class="info-item-1">Historical document</div></div></div></a></nav><hr class="custom-hr"/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> Comments</span></div><div class="comment-switch"><span class="first-comment">Waline</span><span id="switch-btn"></span><span class="second-comment">Gitalk</span></div></div><div class="comment-wrap"><div><div id="waline-wrap"></div></div><div><div id="gitalk-container"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="https://r2-imgs.iliyian.com/img/loading-cat.gif" data-lazy-src="https://r2-imgs.iliyian.com/img/37.jpg" onerror="this.onerror=null;this.src='https://http.cat/404'" alt="avatar"/></div><div class="author-info-name">iliyian</div><div class="author-info-description">A Lovely Girl</div><div class="site-data"><a href="/en/archives/"><div class="headline">Articles</div><div class="length-num">47</div></a><a href="/en/tags/"><div class="headline">Tags</div><div class="length-num">19</div></a><a href="/en/categories/"><div class="headline">Categories</div><div class="length-num">8</div></a></div><a id="card-info-btn" target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/iliyian"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons"><a class="social-icon" href="https://github.com/iliyian" rel="external nofollow noreferrer" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="https://t.me/iliyian" rel="external nofollow noreferrer" target="_blank" title="Telegram"><i class="fab fa-telegram"></i></a><a class="social-icon" href="https://steamcommunity.com/id/iliyian/" rel="external nofollow noreferrer" target="_blank" title="Steam"><i class="fab fa-steam"></i></a><a class="social-icon" href="https://space.bilibili.com/299627858" rel="external nofollow noreferrer" target="_blank" title="Bilibili"><i class="iconfont icon-bilibili2"></i></a><a class="social-icon" href="https://codeforces.com/profile/iliyian" rel="external nofollow noreferrer" target="_blank" title="Codeforces"><i class="iconfont icon-codeforces2"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>Announcement</span></div><div class="announcement_content">The slanting sun, I have failed you in this waning spring, with lines of tears.</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>Contents</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#2023-1-3"><span class="toc-number">1.</span> <span class="toc-text">2023.1.3</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2023-11-20"><span class="toc-number">2.</span> <span class="toc-text">2023.11.20</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2023-11-24"><span class="toc-number">3.</span> <span class="toc-text">2023.11.24</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2023-11-29"><span class="toc-number">4.</span> <span class="toc-text">2023.11.29</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2023-12-2"><span class="toc-number">5.</span> <span class="toc-text">2023.12.2</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2023-12-20"><span class="toc-number">6.</span> <span class="toc-text">2023.12.20</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2024-2-13"><span class="toc-number">7.</span> <span class="toc-text">2024.2.13</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2024-3-9"><span class="toc-number">8.</span> <span class="toc-text">2024.3.9</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2024-3-28"><span class="toc-number">9.</span> <span class="toc-text">2024.3.28</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2024-4-4"><span class="toc-number">10.</span> <span class="toc-text">2024.4.4</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2024-4-12"><span class="toc-number">11.</span> <span class="toc-text">2024.4.12</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2024-6-3"><span class="toc-number">12.</span> <span class="toc-text">2024.6.3</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2024-6-8"><span class="toc-number">13.</span> <span class="toc-text">2024.6.8</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2024-6-9"><span class="toc-number">14.</span> <span class="toc-text">2024.6.9</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2024-6-15"><span class="toc-number">15.</span> <span class="toc-text">2024.6.15</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2024-6-21"><span class="toc-number">16.</span> <span class="toc-text">2024.6.21</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2024-6-29"><span class="toc-number">17.</span> <span class="toc-text">2024.6.29</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2024-10-1"><span class="toc-number">18.</span> <span class="toc-text">2024.10.1</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2024-10-5"><span class="toc-number">19.</span> <span class="toc-text">2024.10.5</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2024-10-6"><span class="toc-number">20.</span> <span class="toc-text">2024.10.6</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2025-3-22"><span class="toc-number">21.</span> <span class="toc-text">2025.3.22</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2025-3-31"><span class="toc-number">22.</span> <span class="toc-text">2025.3.31</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2025-4-7"><span class="toc-number">23.</span> <span class="toc-text">2025.4.7</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2025-6-10"><span class="toc-number">24.</span> <span class="toc-text">2025.6.10</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2025-6-16"><span class="toc-number">25.</span> <span class="toc-text">2025.6.16</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2025-6-18"><span class="toc-number">26.</span> <span class="toc-text">2025.6.18</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2025-7-7"><span class="toc-number">27.</span> <span class="toc-text">2025.7.7</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2025-7-12"><span class="toc-number">28.</span> <span class="toc-text">2025.7.12</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2025-7-15"><span class="toc-number">29.</span> <span class="toc-text">2025.7.15</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2025-7-20"><span class="toc-number">30.</span> <span class="toc-text">2025.7.20</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2025-7-26"><span class="toc-number">31.</span> <span class="toc-text">2025.7.26</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2025-7-30"><span class="toc-number">32.</span> <span class="toc-text">2025.7.30</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2025-8-2"><span class="toc-number">33.</span> <span class="toc-text">2025.8.2</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2025-8-3"><span class="toc-number">34.</span> <span class="toc-text">2025.8.3</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2025-9-1"><span class="toc-number">35.</span> <span class="toc-text">2025.9.1</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2025-9-5"><span class="toc-number">36.</span> <span class="toc-text">2025.9.5</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2025-9-21"><span class="toc-number">37.</span> <span class="toc-text">2025.9.21</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2025-9-26"><span class="toc-number">38.</span> <span class="toc-text">2025.9.26</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2025-11-23"><span class="toc-number">39.</span> <span class="toc-text">2025.11.23</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2026-1-26"><span class="toc-number">40.</span> <span class="toc-text">2026.1.26</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2026-1-29"><span class="toc-number">41.</span> <span class="toc-text">2026.1.29</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2026-3-15"><span class="toc-number">42.</span> <span class="toc-text">2026.3.15</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2026-4-8"><span class="toc-number">43.</span> <span class="toc-text">2026.4.8</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2026-4-9"><span class="toc-number">44.</span> <span class="toc-text">2026.4.9</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2026-5-1"><span class="toc-number">45.</span> <span class="toc-text">2026.5.1</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2026-5-13"><span class="toc-number">46.</span> <span class="toc-text">2026.5.13</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2026-5-18"><span class="toc-number">47.</span> <span class="toc-text">2026.5.18</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2026-7-15"><span class="toc-number">48.</span> <span class="toc-text">2026.7.15</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2026-7-24"><span class="toc-number">49.</span> <span class="toc-text">2026.7.24</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2026-8-7"><span class="toc-number">50.</span> <span class="toc-text">2026.8.7</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2026-8-13"><span class="toc-number">51.</span> <span class="toc-text">2026.8.13</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2026-8-13-2"><span class="toc-number">52.</span> <span class="toc-text">2026.8.13</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2026-8-18-Going-back-to-sleep"><span class="toc-number">53.</span> <span class="toc-text">2026.8.18 Going back to sleep</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2026-8-21"><span class="toc-number">54.</span> <span class="toc-text">2026.8.21</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2026-9-10"><span class="toc-number">55.</span> <span class="toc-text">2026.9.10</span></a></li></ol></div></div></div></div></main><footer id="footer" style="background-image: url(https://r2-imgs.iliyian.com/cdn-cgi/image/format=webp,quality=80/img/cold_moon_43.png);" data-cover-src="https://r2-imgs.iliyian.com/img/cold_moon_43.png"><div class="footer-other"><div class="footer-copyright"><span class="copyright">&copy;&nbsp;2021 - 2026 By iliyian</span><span class="framework-info"><span>Framework </span><a target="_blank" rel="noopener external nofollow noreferrer" href="https://hexo.io">Hexo 7.3.0</a><span class="footer-separator">|</span><span>Theme </span><a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly 5.7.1.260810</a></span></div><div class="footer_custom_text">To Be A Great Poet.<br/><a href="https://icp.gov.moe/?keyword=20232063" rel="external nofollow noreferrer" target="_blank">MoeICP Registration No. 20232063</a><br/>Translated w/ Gemini 4 Argon</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="Reading Mode"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="Toggle Between Light and Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle Between Single-column and Double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="Settings"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="Table of Contents"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="Scroll to Comments"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="Back to Top"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/en/js/utils.js" defer></script><script src="/en/js/main.js" defer></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js" defer></script><div class="js-pjax"><script>(async () => {
+  const showKatex = () => {
+    document.querySelectorAll('#article-container .katex').forEach(el => el.classList.add('katex-show'))
+  }
+
+  if (!window.katex_js_css) {
+    window.katex_js_css = true
+    try {
+      await btf.getCSS('https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css')
+      if (true) {
+        await btf.getScript('https://cdn.jsdelivr.net/npm/katex/dist/contrib/copy-tex.min.js')
+      }
+    } catch (e) {
+      console.error('[katex] failed to load assets, showing formulas anyway:', e)
+    }
+  }
+
+  showKatex()
+  btf.addGlobalFn('encrypt', showKatex, 'katex')
+})()</script><script>(() => {
+  const parseViewBox = viewBox => {
+    if (!viewBox) return null
+    const parts = viewBox.trim().split(/[\s,]+/).map(n => Number(n))
+    if (parts.length !== 4 || parts.some(n => Number.isNaN(n))) return null
+    return parts
+  }
+
+  const getSvgViewBox = svg => {
+    const attr = parseViewBox(svg.getAttribute('viewBox'))
+    if (attr) return attr
+
+    // Fallback: use bbox to build a viewBox
+    try {
+      const bbox = svg.getBBox()
+      if (bbox && bbox.width && bbox.height) return [bbox.x, bbox.y, bbox.width, bbox.height]
+    } catch (e) {
+      // getBBox may fail on some edge cases; ignore
+    }
+
+    const w = Number(svg.getAttribute('width')) || 0
+    const h = Number(svg.getAttribute('height')) || 0
+    if (w > 0 && h > 0) return [0, 0, w, h]
+    return [0, 0, 100, 100]
+  }
+
+  const setSvgViewBox = (svg, vb) => {
+    svg.setAttribute('viewBox', `${vb[0]} ${vb[1]} ${vb[2]} ${vb[3]}`)
+  }
+
+  const clamp = (v, min, max) => Math.max(min, Math.min(max, v))
+
+  const openSvgInNewTab = ({ source, initViewBox }) => {
+    const getClonedSvg = () => {
+      if (typeof source === 'string') {
+        const template = document.createElement('template')
+        template.innerHTML = source.trim()
+        const svg = template.content.querySelector('svg')
+        return svg ? svg.cloneNode(true) : null
+      }
+      if (source && typeof source.cloneNode === 'function') {
+        return source.cloneNode(true)
+      }
+      return null
+    }
+
+    const clone = getClonedSvg()
+    if (!clone) return
+    if (initViewBox && initViewBox.length === 4) {
+      clone.setAttribute('viewBox', initViewBox.join(' '))
+    }
+    if (!clone.getAttribute('xmlns')) clone.setAttribute('xmlns', 'http://www.w3.org/2000/svg')
+    if (!clone.getAttribute('xmlns:xlink') && clone.innerHTML.includes('xlink:')) {
+      clone.setAttribute('xmlns:xlink', 'http://www.w3.org/1999/xlink')
+    }
+    // inject background to match current theme
+    const isDark = document.documentElement.getAttribute('data-theme') === 'dark'
+    const bg = getComputedStyle(document.body).backgroundColor || (isDark ? '#1e1e1e' : '#ffffff')
+    if (!clone.style.background) clone.style.background = bg
+
+    const serializer = new XMLSerializer()
+    const svgSource = serializer.serializeToString(clone)
+    const htmlSource = `<!doctype html><html><head><meta charset="utf-8" />
+      <style>
+        html, body { width: 100%; height: 100%; margin: 0; display: flex; align-items: center; justify-content: center; background: ${bg}; }
+        svg { max-width: 100%; max-height: 100%; height: auto; width: auto; }
+      </style>
+      </head><body>${svgSource}</body></html>`
+    const blob = new Blob([htmlSource], { type: 'text/html;charset=utf-8' })
+    const url = URL.createObjectURL(blob)
+    window.open(url, '_blank', 'noopener')
+
+    setTimeout(() => URL.revokeObjectURL(url), 5000)
+  }
+
+  const attachMermaidViewerButton = wrap => {
+    let btn = wrap.querySelector('.mermaid-open-btn')
+    if (!btn) {
+      btn = document.createElement('button')
+      btn.type = 'button'
+      btn.className = 'mermaid-open-btn'
+      wrap.appendChild(btn)
+    }
+
+    btn.innerHTML = '<i class="fa fa-search fa-fw" aria-hidden="true"></i>'
+
+    if (!btn.__mermaidViewerBound) {
+      btn.addEventListener('click', e => {
+        e.preventDefault()
+        e.stopPropagation()
+        const svg = wrap.__mermaidOriginalSvg || wrap.querySelector('svg')
+        if (!svg) return
+        const initViewBox = wrap.__mermaidInitViewBox
+        openSvgInNewTab({ source: svg, initViewBox })
+      })
+      btn.__mermaidViewerBound = true
+    }
+  }
+
+  // Zoom around a point (px, py) in the SVG viewport (in viewBox coordinates)
+  const zoomAtPoint = (vb, factor, px, py) => {
+    const w = vb[2] * factor
+    const h = vb[3] * factor
+    const nx = px - (px - vb[0]) * factor
+    const ny = py - (py - vb[1]) * factor
+    return [nx, ny, w, h]
+  }
+
+  const initMermaidGestures = wrap => {
+    // Clean up previous event listeners and pending frames
+    if (wrap.__mermaidAbortController) {
+      wrap.__mermaidAbortController.abort()
+      if (wrap.__mermaidRafId) cancelAnimationFrame(wrap.__mermaidRafId)
+    }
+    const ac = new AbortController()
+    wrap.__mermaidAbortController = ac
+    const svg = wrap.querySelector('svg')
+    if (!svg) return
+
+    // Ensure viewBox exists so gestures always work
+    const initVb = getSvgViewBox(svg)
+    wrap.__mermaidInitViewBox = initVb
+    wrap.__mermaidCurViewBox = initVb.slice()
+    setSvgViewBox(svg, initVb)
+    // Disable default gestures to prevent scroll chaining and pinch-zoom penetration in Chrome
+    svg.style.touchAction = 'none'
+
+    // Cache BoundingClientRect, throttled on scroll to reduce reflow
+    let cachedRect = svg.getBoundingClientRect()
+    let rectDirty = false
+    const markRectDirty = () => { rectDirty = true }
+    window.addEventListener('resize', markRectDirty, { signal: ac.signal })
+    window.addEventListener('scroll', markRectDirty, { signal: ac.signal, capture: true })
+    const getRect = () => {
+      if (rectDirty) {
+        cachedRect = svg.getBoundingClientRect()
+        rectDirty = false
+      }
+      return cachedRect
+    }
+
+    // Precompute clamp bounds from initial viewBox
+    const minW = initVb[2] * 0.1
+    const maxW = initVb[2] * 10
+    const minH = initVb[3] * 0.1
+    const maxH = initVb[3] * 10
+    const clampVb = vb => {
+      const out = vb.slice()
+      out[2] = clamp(out[2], minW, maxW)
+      out[3] = clamp(out[3], minH, maxH)
+      return out
+    }
+
+    // Throttle DOM updates using requestAnimationFrame
+    let pendingVb = null
+    let rafId = null
+    const applyVb = () => {
+      if (pendingVb) {
+        wrap.__mermaidCurViewBox = pendingVb
+        setSvgViewBox(svg, pendingVb)
+        pendingVb = null
+      }
+      rafId = null
+      wrap.__mermaidRafId = null
+    }
+    const setCurVb = vb => {
+      pendingVb = clampVb(vb)
+      if (!rafId) {
+        rafId = requestAnimationFrame(applyVb)
+        wrap.__mermaidRafId = rafId
+      }
+    }
+
+    const state = {
+      pointers: new Map(),
+      startVb: null,
+      startDist: 0,
+      lastPointerX: 0,
+      lastPointerY: 0
+    }
+
+    const onPointerDown = e => {
+      if (e.pointerType === 'mouse' && e.button !== 0) return
+      svg.setPointerCapture(e.pointerId)
+      const curVb = wrap.__mermaidCurViewBox
+      state.pointers.set(e.pointerId, { x: e.clientX, y: e.clientY })
+      if (state.pointers.size === 1) {
+        state.startVb = curVb.slice()
+        state.lastPointerX = e.clientX
+        state.lastPointerY = e.clientY
+      } else if (state.pointers.size === 2) {
+        const pts = [...state.pointers.values()]
+        const dx = pts[0].x - pts[1].x
+        const dy = pts[0].y - pts[1].y
+        state.startDist = Math.hypot(dx, dy)
+        state.startVb = curVb.slice()
+      }
+    }
+
+    const onPointerMove = e => {
+      if (!state.pointers.has(e.pointerId)) return
+      state.pointers.set(e.pointerId, { x: e.clientX, y: e.clientY })
+      const curVb = wrap.__mermaidCurViewBox
+      const rect = getRect()
+      if (state.pointers.size === 1 && state.startVb) {
+        const p = state.pointers.values().next().value
+        const dxClient = p.x - state.lastPointerX
+        const dyClient = p.y - state.lastPointerY
+        state.lastPointerX = p.x
+        state.lastPointerY = p.y
+        const dx = dxClient * (curVb[2] / rect.width)
+        const dy = dyClient * (curVb[3] / rect.height)
+        setCurVb([curVb[0] - dx, curVb[1] - dy, curVb[2], curVb[3]])
+        return
+      }
+      if (state.pointers.size === 2 && state.startVb && state.startDist > 0) {
+        const pts = [...state.pointers.values()]
+        const dx = pts[0].x - pts[1].x
+        const dy = pts[0].y - pts[1].y
+        const dist = Math.hypot(dx, dy)
+        if (!dist) return
+        const factor = state.startDist / dist
+        const cx = (pts[0].x + pts[1].x) / 2
+        const cy = (pts[0].y + pts[1].y) / 2
+        const px = curVb[0] + (cx - rect.left) * (curVb[2] / rect.width)
+        const py = curVb[1] + (cy - rect.top) * (curVb[3] / rect.height)
+        setCurVb(zoomAtPoint(state.startVb, factor, px, py))
+      }
+    }
+
+    const onPointerUpOrCancel = e => {
+      // Release PointerCapture to avoid event capture anomalies
+      if (svg.hasPointerCapture && svg.hasPointerCapture(e.pointerId)) {
+        svg.releasePointerCapture(e.pointerId)
+      }
+      state.pointers.delete(e.pointerId)
+      if (state.pointers.size === 0) {
+        state.startVb = null
+        state.startDist = 0
+      } else if (state.pointers.size === 1) {
+        const p = state.pointers.values().next().value
+        state.lastPointerX = p.x
+        state.lastPointerY = p.y
+      }
+    }
+
+    const onWheel = e => {
+      // Prevent event bubbling from triggering external scroll
+      e.preventDefault()
+      e.stopPropagation()
+      // Normalize deltaY across deltaMode (Chrome uses pixels, Safari uses lines)
+      let delta = e.deltaY
+      if (e.deltaMode === 1) delta *= 16
+      else if (e.deltaMode === 2) delta *= 400
+
+      // Continuous zoom factor: smoother than fixed 1.1/0.9 steps
+      const zoomFactor = Math.pow(1.001, delta)
+
+      const curVb = wrap.__mermaidCurViewBox
+      const rect = getRect()
+      const px = curVb[0] + (e.clientX - rect.left) * (curVb[2] / rect.width)
+      const py = curVb[1] + (e.clientY - rect.top) * (curVb[3] / rect.height)
+      setCurVb(zoomAtPoint(curVb, zoomFactor, px, py))
+    }
+
+    const onDblClick = () => {
+      const init = wrap.__mermaidInitViewBox
+      if (init) setCurVb(init)
+    }
+
+    svg.addEventListener('pointerdown', onPointerDown, { signal: ac.signal })
+    svg.addEventListener('pointermove', onPointerMove, { signal: ac.signal })
+    svg.addEventListener('pointerup', onPointerUpOrCancel, { signal: ac.signal })
+    svg.addEventListener('pointercancel', onPointerUpOrCancel, { signal: ac.signal })
+    svg.addEventListener('wheel', onWheel, { passive: false, signal: ac.signal })
+    svg.addEventListener('dblclick', onDblClick, { signal: ac.signal })
+  }
+
+  const runMermaid = ele => {
+    window.loadMermaid = true
+    const theme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'default'
+    ele.forEach((item, index) => {
+      const mermaidSrc = item.firstElementChild
+      // Clean up event listeners and stale content before re-rendering
+      if (item.__mermaidAbortController) {
+        item.__mermaidAbortController.abort()
+      }
+      const oldSvg = item.querySelector('svg')
+      if (oldSvg) oldSvg.remove()
+      const oldError = item.querySelector('.mermaid-error')
+      if (oldError) oldError.remove()
+      let config = {}
+      try {
+        config = mermaidSrc.dataset.config ? JSON.parse(mermaidSrc.dataset.config) : {}
+      } catch (e) {
+        console.warn('[mermaid] failed to parse dataset.config:', e)
+      }
+      if (!config.theme) {
+        config.theme = theme
+      }
+      const mermaidThemeConfig = `%%{init: ${JSON.stringify(config)}}%%\n`
+      const mermaidID = `mermaid-${index}`
+      const mermaidDefinition = mermaidThemeConfig + mermaidSrc.textContent
+
+      const renderMermaid = svg => {
+        mermaidSrc.insertAdjacentHTML('afterend', svg)
+        if (true) initMermaidGestures(item)
+        item.__mermaidOriginalSvg = svg
+        if (true) attachMermaidViewerButton(item)
+      }
+
+      const handleError = err => {
+        console.error(`[mermaid] render failed for block #${index}:`, err)
+        const errorEl = document.createElement('div')
+        errorEl.className = 'mermaid-error'
+        errorEl.textContent = `Mermaid render error: ${err.message || err}`
+        mermaidSrc.insertAdjacentElement('afterend', errorEl)
+      }
+
+      try {
+        const renderFn = mermaid.render(mermaidID, mermaidDefinition)
+        // mermaid v9 and v10 compatibility
+        if (typeof renderFn === 'string') {
+          renderMermaid(renderFn)
+        } else {
+          renderFn.then(({ svg }) => renderMermaid(svg)).catch(handleError)
+        }
+      } catch (err) {
+        handleError(err)
+      }
+    })
+  }
+
+  const codeToMermaid = $article => {
+    const codeMermaidEle = $article.querySelectorAll('pre > code.mermaid')
+    if (codeMermaidEle.length === 0) return
+
+    codeMermaidEle.forEach(ele => {
+      const preEle = document.createElement('pre')
+      preEle.className = 'mermaid-src'
+      preEle.hidden = true
+      preEle.textContent = ele.textContent
+      const newEle = document.createElement('div')
+      newEle.className = 'mermaid-wrap'
+      newEle.appendChild(preEle)
+      ele.parentNode.replaceWith(newEle)
+    })
+  }
+
+  const loadMermaid = () => {
+    const $article = document.getElementById('article-container')
+    if (!$article) return
+
+    if (true) codeToMermaid($article)
+    const $mermaid = $article.querySelectorAll('.mermaid-wrap')
+    if ($mermaid.length === 0) return
+
+    const runMermaidFn = () => runMermaid($mermaid)
+    btf.addGlobalFn('themeChange', runMermaidFn, 'mermaid')
+    window.loadMermaid ? runMermaidFn() : btf.getScript('https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js').then(runMermaidFn)
+  }
+
+  btf.addGlobalFn('encrypt', loadMermaid, 'mermaid')
+  window.pjax ? loadMermaid() : document.addEventListener('DOMContentLoaded', loadMermaid)
+})()</script><script>(() => {
+  let initFn = window.walineFn || null
+  const isShuoshuo = GLOBAL_CONFIG_SITE.pageType === 'shuoshuo'
+  const option = {"locale":{"placeholder":"O Troupe of little vagrants of the world, leave your footprints in my words.","sofa":"Her wishful face haunts my dreams like the rain at night."},"reaction":true,"turnstileKey":"0x4AAAAAAB6dmP1fw7Iw96wn"}
+
+  const destroyWaline = ele => ele.destroy()
+
+  const initWaline = (Fn, el = document, path = window.location.pathname) => {
+    const waline = Fn({
+      el: el.querySelector('#waline-wrap'),
+      serverURL: 'https://waline.iliyian.com/',
+      pageview: false,
+      dark: 'html[data-theme="dark"]',
+      comment: false,
+      ...option,
+      path: isShuoshuo ? path : (option && option.path) || path
+    })
+
+    let lightboxObserver = null
+    if (GLOBAL_CONFIG.lightbox !== 'null') {
+      const wrap = el.querySelector('#waline-wrap')
+      if (wrap) {
+        lightboxObserver = new MutationObserver(mutations => {
+          const imgs = []
+          mutations.forEach(mutation => {
+            mutation.addedNodes.forEach(node => {
+              if (node.nodeType !== 1) return
+              const nodeImgs = node.matches && node.matches('img') ? [node] : node.querySelectorAll('img')
+              nodeImgs.forEach(img => imgs.push(img))
+            })
+          })
+          const lightboxImgs = imgs.filter(img => img.closest('.wl-content') && !img.classList.contains('wl-emoji'))
+          if (lightboxImgs.length) btf.loadLightbox(lightboxImgs)
+        })
+        lightboxObserver.observe(wrap, { childList: true, subtree: true })
+      }
+    }
+
+    if (isShuoshuo) {
+      window.shuoshuoComment.destroyWaline = () => {
+        lightboxObserver && lightboxObserver.disconnect()
+        destroyWaline(waline)
+        if (el.children.length) {
+          el.innerHTML = ''
+          el.classList.add('no-comment')
+        }
+      }
+    }
+  }
+
+  const loadWaline = (el, path) => {
+    if (initFn) initWaline(initFn, el, path)
+    else {
+      btf.getCSS('https://cdn.jsdelivr.net/npm/@waline/client/dist/waline.min.css')
+        .then(() => import('https://cdn.jsdelivr.net/npm/@waline/client/dist/waline.min.js'))
+        .then(({ init }) => {
+          initFn = init || Waline.init
+          initWaline(initFn, el, path)
+          window.walineFn = initFn
+        })
+    }
+  }
+
+  if (isShuoshuo) {
+    'Waline' === 'Waline'
+      ? window.shuoshuoComment = { loadComment: loadWaline }
+      : window.loadOtherComment = loadWaline
+    return
+  }
+
+  if ('Waline' === 'Waline' || !false) {
+    if (false) btf.loadComment(document.getElementById('waline-wrap'),loadWaline)
+    else setTimeout(loadWaline, 0)
+  } else {
+    window.loadOtherComment = loadWaline
+  }
+})()</script><script>(() => {
+  const isShuoshuo = GLOBAL_CONFIG_SITE.pageType === 'shuoshuo'
+  const option = null
+
+  const commentCount = n => {
+    const isCommentCount = document.querySelector('#post-meta .gitalk-comment-count')
+    if (isCommentCount) {
+      isCommentCount.textContent= n
+    }
+  }
+
+  const initGitalk = (el, path) => {
+    if (isShuoshuo) {
+      window.shuoshuoComment.destroyGitalk = () => {
+        if (el.children.length) {
+          el.innerHTML = ''
+          el.classList.add('no-comment')
+        }
+      }
+    }
+
+    const gitalk = new Gitalk({
+      clientID: '82d3ae30fb1309b8aef2',
+      clientSecret: '9a7da5f699aaa02763e4ad89e662fff858e00511',
+      repo: 'blog_comments',
+      owner: 'iliyian',
+      admin: ['iliyian'],
+      updateCountCallback: commentCount,
+      ...option,
+      id: isShuoshuo ? path : (option && option.id) || '80f7b62e8f45e7cf1f75789e97c1f81e'
+    })
+
+    gitalk.render('gitalk-container')
+  }
+
+  const loadGitalk = async(el, path) => {
+    if (typeof Gitalk === 'function') initGitalk(el, path)
+    else {
+      await btf.getCSS('https://cdn.jsdelivr.net/npm/gitalk/dist/gitalk.min.css')
+      await btf.getScript('https://cdn.jsdelivr.net/npm/gitalk/dist/gitalk.min.js')
+      initGitalk(el, path)
+    }
+  }
+
+  if (isShuoshuo) {
+    'Waline' === 'Gitalk'
+      ? window.shuoshuoComment = { loadComment: loadGitalk }
+      : window.loadOtherComment = loadGitalk
+    return
+  }
+
+  if ('Waline' === 'Gitalk' || !false) {
+    if (false) btf.loadComment(document.getElementById('gitalk-container'), loadGitalk)
+    else loadGitalk()
+  } else {
+    window.loadOtherComment = loadGitalk
+  }
+})()</script></div><script defer src="/js/cover-colors.js"></script><script defer src="/en/js/cover-accent.js"></script><script defer src="/en/js/seal.js"></script><script defer src="/en/js/a11y.js"></script><script defer src="/en/js/pjax-transition.js"></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css" media="print" onload="this.media='all'"><script defer src="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js"></script><script defer src="/en/js/Meting.min.js"></script><script>var meting_api='https://meting-api.iliyian.com/api?server=:server&type=:type&id=:id&auth=:auth&r=:r';</script><meting-js server="tencent" type="playlist" id="2374187585" fixed="true" autoplay="false" list-folded="true" order="random" preload="none"></meting-js><script> (function() { var meting = document.querySelector('meting-js[fixed="true"]'); if (meting) { meting.addEventListener('load', function(e) { var ap = e.detail.aplayer; if (ap) { setTimeout(function() { var btn = ap.template.lrcButton; if (btn && !btn.classList.contains('aplayer-icon-lrc-inactivity')) { btn.click(); } }, 300); } }); } })(); </script><script defer pjax data-api="https://busuanzi.iliyian.com/api" data-prefix="busuanzi_value" src="https://busuanzi.iliyian.com/js"></script><script>
+document.addEventListener('pjax:complete', function () {
+  if (window._paq) {
+    _paq.push(['setCustomUrl', location.href]);
+    _paq.push(['setDocumentTitle', document.title]);
+    _paq.push(['trackPageView']);
+  }
+});
+</script>
+<script src="/en/js/music.js" defer></script><script defer src="/en/js/blog-live2d.js"></script><script>
+function initTranslateBtn(){
+  if(document.querySelector('.post-meta-translate')) return;
+  if(document.querySelector('#post-meta')){
+    const path = location.pathname;
+
+    const separator = document.createElement('span');
+    separator.className = 'post-meta-separator';
+    separator.innerHTML = ' | ';
+
+    const wrapper = document.createElement('span');
+    wrapper.className = 'post-meta-translate';
+
+    const icon = document.createElement('i');
+    icon.className = 'fas fa-language fa-fw post-meta-icon';
+
+    const btn = document.createElement('a');
+    if(path.startsWith('/en/')){
+      btn.href = path.replace('/en/', '/');
+      btn.innerHTML = '中文';
+    } else {
+      btn.href = '/en' + path;
+      btn.innerHTML = 'English';
+    }
+    btn.style.cssText = 'color: #ffffff; text-decoration: none; transition: all .2s; border-bottom: 1px solid var(--light-grey);';
+    btn.onmouseover = function(){ this.style.color = '#4a7a94'; this.style.borderBottomColor = '#4a7a94'; };
+    btn.onmouseout = function(){ this.style.color = '#ffffff'; this.style.borderBottomColor = 'var(--light-grey)'; };
+    // 中英两站是独立构建，样式与 GLOBAL_CONFIG 不同，必须整页跳转
+    btn.addEventListener('click', function(e){
+      e.preventDefault();
+      window.location.href = btn.href;
+    });
+
+    wrapper.appendChild(icon);
+    wrapper.appendChild(btn);
+
+    const meta = document.querySelector('#post-meta .meta-firstline');
+    if(meta) {
+      meta.appendChild(separator);
+      meta.appendChild(wrapper);
+    }
+  }
+}
+document.addEventListener('DOMContentLoaded', initTranslateBtn);
+document.addEventListener('pjax:complete', initTranslateBtn);
+</script>
+<script id="click-show-text" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/click-show-text.min.js" data-mobile="true" data-text="I,LOVE,YOU" data-fontsize="15px" data-random="false" async="async"></script><script src="https://cdn.jsdelivr.net/npm/pjax/pjax.min.js" defer="defer"></script><script>document.addEventListener('DOMContentLoaded', () => {
+  const pjaxSelectors = ["head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+
+  window.pjax = new Pjax({
+    elements: 'a:not([target="_blank"]):not([data-fancybox]):not([href="/music/"]):not([href="https://iliyian.com/music/"]):not([href="https://iliyian.com"]):not([href="https://iliyian.com/"])',
+    selectors: pjaxSelectors,
+    cacheBust: false,
+    analytics: false,
+    scrollRestoration: false
+  })
+
+  const triggerPjaxFn = (val) => {
+    if (!val) return
+    Object.values(val).forEach(fn => {
+      try {
+        fn()
+      } catch (err) {
+        console.debug('Pjax callback failed:', err)
+      }
+    })
+  }
+
+  document.addEventListener('pjax:send', () => {
+    // removeEventListener
+    btf.removeGlobalFnEvent('pjaxSendOnce')
+    btf.removeGlobalFnEvent('themeChange')
+
+    // reset readmode
+    const $bodyClassList = document.body.classList
+    if ($bodyClassList.contains('read-mode')) $bodyClassList.remove('read-mode')
+
+    triggerPjaxFn(window.globalFn.pjaxSend)
+  })
+
+  document.addEventListener('pjax:complete', () => {
+    btf.removeGlobalFnEvent('pjaxCompleteOnce')
+    document.querySelectorAll('script[data-pjax]').forEach(item => {
+      if (!item.parentNode) return
+      const newScript = document.createElement('script')
+      const content = item.text || item.textContent || ''
+      Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+      newScript.appendChild(document.createTextNode(content))
+      item.parentNode.replaceChild(newScript, item)
+    })
+
+    triggerPjaxFn(window.globalFn.pjaxComplete)
+  })
+
+  document.addEventListener('pjax:error', e => {
+    const responseURL = e.request && e.request.responseURL
+    if (e.request && e.request.status === 404) {
+      true
+        ? pjax.loadUrl('/en/404.html')
+        : responseURL && (window.location.href = responseURL)
+    } else if (responseURL) {
+      window.location.href = responseURL
+    }
+  })
+})</script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">Search</span><i class="fas fa-spinner fa-pulse" id="loading-status" hidden="hidden"></i><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="text-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  Loading Database</span></div><div class="local-search-input"><input placeholder="Search for Posts" type="text"/></div><hr/><div id="local-search-results"></div><div class="ais-Pagination" id="local-search-pagination" style="display:none;"><ul class="ais-Pagination-list"></ul></div><div id="local-search-stats"></div></div><div id="search-mask"></div><script>(function(){var src="/en/js/search/local-search-lazy.js";var loaded=false,loading=false;function load(cb){if(loaded){cb&&cb();return}if(loading)return;loading=true;var s=document.createElement("script");s.src=src;s.onload=function(){loading=false;loaded=true;cb&&cb()};s.onerror=function(){loading=false};document.head.appendChild(s)}document.addEventListener("click",function(e){var b=e.target.closest&&e.target.closest("#search-button");if(!b||loaded)return;e.preventDefault();e.stopImmediatePropagation();load(function(){var t=document.querySelector("#search-button > .search");t&&t.click()})},true);})();</script></div></div></body></html>

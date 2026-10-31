@@ -11,6 +11,8 @@
   // 示例：window.blogLive2DConfig = { model: { scale: 0.9 }, tracking: { tiltSensitivity: 0.4 } }。
   const config = {
     mobile: {
+      // 手机端默认不加载 Live2D；如需在手机端显示，改为 true。
+      enable: false,
       // 移动端检测：portrait 用视口宽高比判断；也可以手动设 true/false。
       detect: 'portrait',
       // detect 为 portrait 时，innerWidth / innerHeight 小于该值就启用移动端配置。
@@ -105,6 +107,8 @@
 
   function isMobile() {
     if (config.mobile.detect === true || config.mobile.detect === false) return config.mobile.detect;
+    // 手机 UA 优先，覆盖横屏手机；桌面触屏不会被误判。
+    if (/Mobi|Android|iPhone|iPad|iPod|Windows Phone/i.test(navigator.userAgent || '')) return true;
     if (config.mobile.detect === 'portrait') {
       return window.innerWidth / window.innerHeight < config.mobile.aspectRatio;
     }
@@ -123,6 +127,9 @@
 
   mergeConfig(config, window.blogLive2DConfig || window.BLOG_LIVE2D_CONFIG);
 
+  // 手机端直接跳过，避免下载 l2d-widget 和模型资源。
+  if (isMobile() && config.mobile.enable !== true) return;
+
   applyMobileConfig();
 
   const widgetHeight = config.canvas.height;
@@ -130,31 +137,31 @@
   const models = [
     {
       name: '原皮',
-      raw: '90d8644e2a1bbecca3c845c41937b1dd.model3.json',
+      raw: '90d8644e2a1bbecca3c845c41937b1dd.webp.model3.json',
       clean: '90d8644e2a1bbecca3c845c41937b1dd.blog.model3.json',
       command: '90d8644e2a1bbecca3c845c41937b1dd',
     },
     {
       name: '一位质数',
-      raw: '1efa04e576aa5447703fe8053127c4c8.model3.json',
+      raw: '1efa04e576aa5447703fe8053127c4c8.webp.model3.json',
       clean: '1efa04e576aa5447703fe8053127c4c8.blog.model3.json',
       command: '1efa04e576aa5447703fe8053127c4c8',
     },
     {
       name: '快乐的捕鸟人',
-      raw: 'a30907361155f9736acdb00055ebc043.model3.json',
+      raw: 'a30907361155f9736acdb00055ebc043.webp.model3.json',
       clean: 'a30907361155f9736acdb00055ebc043.blog.model3.json',
       command: 'a30907361155f9736acdb00055ebc043',
     },
     {
       name: '泉眼深处',
-      raw: '68ebbe52a1db89b500a70221ab49c47d.model3.json',
+      raw: '68ebbe52a1db89b500a70221ab49c47d.webp.model3.json',
       clean: '68ebbe52a1db89b500a70221ab49c47d.blog.model3.json',
       command: '68ebbe52a1db89b500a70221ab49c47d',
     },
     {
       name: '完美的流体',
-      raw: '662961567ba67e016ed9633ff2991193.model3.json',
+      raw: '662961567ba67e016ed9633ff2991193.webp.model3.json',
       clean: '662961567ba67e016ed9633ff2991193.blog.model3.json',
       command: '662961567ba67e016ed9633ff2991193',
     },
@@ -1234,7 +1241,7 @@
       const textResponse = await fetch('https://waifu-chat.iliyian.com/v1/chat/completions', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ model: 'deepseek-v4-flash', messages}),
+        body: JSON.stringify({ model: 'deepseek-flash', messages}),
       });
 
       if (textResponse.status === 429) {

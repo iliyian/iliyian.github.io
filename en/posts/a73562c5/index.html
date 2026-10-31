@@ -1,0 +1,1704 @@
+<!DOCTYPE html><html lang="en" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>Biology Error Points | Yian's World</title><meta name="author" content="iliyian"><meta name="copyright" content="iliyian"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#f8f6f4"><meta name="description" content="What is this These are the biology knowledge points compiled by Yi’an during high school—more accurately, since senior year. The phrasing might be a bit hard to understand. It shall likely incur the l">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Biology Error Points">
+<meta property="og:url" content="https://iliyian.com/en/posts/a73562c5/index.html">
+<meta property="og:site_name" content="Yian&#39;s World">
+<meta property="og:description" content="What is this These are the biology knowledge points compiled by Yi’an during high school—more accurately, since senior year. The phrasing might be a bit hard to understand. It shall likely incur the l">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://r2-imgs.iliyian.com/img/%E7%94%9F%E7%89%A9%E9%94%99%E8%AF%AF%E7%82%B9.jpg">
+<meta property="article:published_time" content="2023-06-18T12:38:29.000Z">
+<meta property="article:modified_time" content="2026-10-31T15:35:17.127Z">
+<meta property="article:author" content="iliyian">
+<meta property="article:tag" content="学习">
+<meta property="article:tag" content="生物">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://r2-imgs.iliyian.com/img/%E7%94%9F%E7%89%A9%E9%94%99%E8%AF%AF%E7%82%B9.jpg"><script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Biology Error Points",
+  "url": "https://iliyian.com/en/posts/a73562c5/",
+  "image": "https://r2-imgs.iliyian.com/img/生物错误点.jpg",
+  "datePublished": "2023-06-18T12:38:29.000Z",
+  "dateModified": "2026-10-31T15:35:17.127Z",
+  "author": [
+    {
+      "@type": "Person",
+      "name": "iliyian",
+      "url": "https://iliyian.com"
+    }
+  ]
+}</script><link rel="shortcut icon" href="https://r2-imgs.iliyian.com/img/bookgirl_ico.jpg"><link rel="canonical" href="https://iliyian.com/en/posts/a73562c5/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="stylesheet" href="/en/css/index.css"><link rel="stylesheet" href="/en/css/fontawesome-subset.css"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        try {
+          const data = { value }
+
+          if (ttl != null) {
+            data.expiry = Date.now() + ttl * 86400000
+          }
+
+          localStorage.setItem(key, JSON.stringify(data))
+        } catch (e) {
+          console.error(e)
+        }
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return
+
+        try {
+          const data = JSON.parse(itemStr)
+
+          if (data.expiry && Date.now() > data.expiry) {
+            localStorage.removeItem(key)
+            return
+          }
+
+          return data.value
+        } catch {
+          localStorage.removeItem(key)
+        }
+      }
+    }
+
+    const scriptCache = new Map()
+    const cssCache = new Map()
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => {
+        if (scriptCache.has(url)) {
+          return scriptCache.get(url)
+        }
+
+        const promise = new Promise((resolve, reject) => {
+          const script = document.createElement('script')
+
+          script.src = url
+          script.async = true
+
+          for (const key in attr) {
+            script.setAttribute(key, attr[key])
+          }
+
+          script.onload = resolve
+          script.onerror = reject
+
+          document.head.appendChild(script)
+        })
+
+        scriptCache.set(url, promise)
+
+        return promise
+      },
+      getCSS: (url, id) => {
+        if (cssCache.has(url)) {
+          return cssCache.get(url)
+        }
+
+        const promise = new Promise((resolve, reject) => {
+          const link = document.createElement('link')
+
+          link.rel = 'stylesheet'
+          link.href = url
+
+          if (id) {
+            link.id = id
+          }
+
+          link.onload = resolve
+          link.onerror = reject
+
+          document.head.appendChild(link)
+        })
+
+        cssCache.set(url, promise)
+
+        return promise
+      },
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!true && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const metaThemeColor = document.querySelector('meta[name="theme-color"]')
+      const activateDarkMode = () => {
+        document.documentElement.dataset.theme = 'dark'
+        if (metaThemeColor !== null) {
+          metaThemeColor.setAttribute('content', '#1a1a2e')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.dataset.theme = 'light'
+        if (metaThemeColor !== null) {
+          metaThemeColor.setAttribute('content', '#f8f6f4')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/en/',
+  algolia: undefined,
+  localSearch: {"path":"/en/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"pagination":{"enable":false,"hitsPerPage":8},"languages":{"hits_empty":"No results found for: ${query}","hits_stats":"${hits} articles found"}},
+  translate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":true},
+  copy: {
+    success: 'Copy Successful',
+    error: 'Copy Failed',
+    noSupport: 'Browser Not Supported'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: 'days',
+  dateSuffix: {
+    just: 'Just now',
+    min: 'minutes ago',
+    hour: 'hours ago',
+    day: 'days ago',
+    month: 'months ago'
+  },
+  copyright: undefined,
+  lightbox: 'null',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid/dist/infinitegrid.min.js',
+    buttonText: 'Load More'
+  },
+  isPhotoFigcaption: true,
+  islazyloadPlugin: true,
+  isAnchor: true,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'Biology Error Points',
+  isHighlightShrink: true,
+  isToc: false,
+  pageType: 'post'
+}</script><script>window.loadMeting = window.loadMeting || function () {};</script><link rel="preload" href="/fonts/LXGWWenKai-Screen.woff2" as="font" type="font/woff2" crossorigin><link rel="stylesheet" href="/en/css/custom.css" media="defer" onload="this.media='all'"><link rel="stylesheet" href="/en/css/iconfont.css" media="defer" onload="this.media='all'"><link rel="stylesheet" href="/en/css/music.css" media="defer" onload="this.media='all'"><link rel="stylesheet" href="/en/css/aplayer-custom.css" media="defer" onload="this.media='all'"><!-- Matomo -->
+<script>
+  var _paq = window._paq = window._paq || [];
+  /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//mat.iliyian.com/";
+    _paq.push(['setTrackerUrl', u+'t']);
+    _paq.push(['setSiteId', '1']);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.async=true; g.src=u+'mat.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<!-- End Matomo Code -->
+<script>
+  !function(t,e){var o,n,p,r;e.__SV||(window.posthog && window.posthog.__loaded)||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.crossOrigin="anonymous",p.async=!0,p.src=s.api_host.replace(".i.posthog.com","-assets.i.posthog.com")+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"},o="Ji Yi init fn mn Ur pn bn cn capture calculateEventProperties Sn register register_once register_for_session unregister unregister_for_session Tn getFeatureFlag getFeatureFlagPayload getFeatureFlagResult getAllFeatureFlags isFeatureEnabled reloadFeatureFlags updateFlags updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures on onFeatureFlags onSurveysLoaded onSessionId getSurveys getActiveMatchingSurveys renderSurvey displaySurvey cancelPendingSurvey canRenderSurvey canRenderSurveyAsync Mn identify setPersonProperties unsetPersonProperties group resetGroups setPersonPropertiesForFlags resetPersonPropertiesForFlags setGroupPropertiesForFlags resetGroupPropertiesForFlags reset shutdown setIdentity clearIdentity get_distinct_id getGroups get_session_id get_session_replay_url alias set_config startSessionRecording stopSessionRecording sessionRecordingStarted captureException addExceptionStep captureLog startExceptionAutocapture stopExceptionAutocapture loadToolbar get_property getSessionProperty Cn xn createPersonProfile setInternalOrTestUser In hn Pn opt_in_capturing opt_out_capturing has_opted_in_capturing has_opted_out_capturing get_explicit_consent_status is_capturing clear_opt_in_out_capturing debug Vr Rt getPageViewId captureTraceFeedback captureTraceMetric an".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
+  posthog.init('phc_wib2S3JfFRaaaAVNFN4miJq2S8zKquKuZa9nQuV3hL2y', {
+      api_host: 'https://posth.iliyian.com',
+      defaults: '2026-05-30',
+      person_profiles: 'always', // or 'always' to create profiles for anonymous users as well
+      capture_copied_text: true
+  })
+</script>
+<meta name="generator" content="Hexo 7.3.0"><link rel="alternate" href="/en/atom.xml" title="Yian's World" type="application/atom+xml">
+</head><body><div class="bg-animation" id="web_bg" style="background-image: url(https://r2-imgs.iliyian.com/img/雨に耳を傾ける.avif);"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="https://r2-imgs.iliyian.com/img/loading-cat.gif" data-lazy-src="https://r2-imgs.iliyian.com/img/37.jpg" onerror="this.onerror=null;this.src='https://http.cat/404'" alt="avatar"/></div><div class="site-data text-center"><a href="/en/archives/"><div class="headline">Articles</div><div class="length-num">47</div></a><a href="/en/tags/"><div class="headline">Tags</div><div class="length-num">19</div></a><a href="/en/categories/"><div class="headline">Categories</div><div class="length-num">8</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="https://iliyian.com"><i class="fa-fw fas fa-language"></i><span> 中文</span></a></div><div class="menus_item"><a class="site-page" href="https://iliyian.com/music/"><i class="fa-fw fas fa-music"></i><span> Music</span></a></div><div class="menus_item"><a class="site-page" href="/en/link/"><i class="fa-fw fas fa-link"></i><span> Dokodemo-Door</span></a></div><div class="menus_item"><a class="site-page" href="/en/game/"><i class="fa-fw fas fa-chess-queen"></i><span> Paradise</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url(https://r2-imgs.iliyian.com/cdn-cgi/image/format=webp,quality=80/img/%E7%94%9F%E7%89%A9%E9%94%99%E8%AF%AF%E7%82%B9.jpg);" data-cover-src="https://r2-imgs.iliyian.com/img/生物错误点.jpg"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/en/"><span class="site-name">Yian's World</span></a><a class="nav-page-title" href="/en/"><span class="site-name">Biology Error Points</span><span class="site-name"><i class="fa-solid fa-circle-arrow-left"></i><span>  Back to Home</span></span></a></span><div id="menus"><div id="search-button"><span class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> Search</span></span></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="https://iliyian.com"><i class="fa-fw fas fa-language"></i><span> 中文</span></a></div><div class="menus_item"><a class="site-page" href="https://iliyian.com/music/"><i class="fa-fw fas fa-music"></i><span> Music</span></a></div><div class="menus_item"><a class="site-page" href="/en/link/"><i class="fa-fw fas fa-link"></i><span> Dokodemo-Door</span></a></div><div class="menus_item"><a class="site-page" href="/en/game/"><i class="fa-fw fas fa-chess-queen"></i><span> Paradise</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="post-info"><h1 class="post-title">Biology Error Points<a class="post-edit-link" href="https://github.com/iliyian/blogxyz/edit/main/source/_posts/生物错误点.md" rel="external nofollow noreferrer" title="Edit" target="_blank"><i class="fas fa-pencil-alt"></i></a></h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="fa-fw post-meta-icon far fa-calendar-alt"></i><span class="post-meta-label">Created</span><time datetime="2023-06-18T12:38:29.000Z" title="Created 2023-06-18 20:38:29">2023-06-18</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/en/categories/%E5%AD%A6%E4%B9%A0/">学习</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">Word Count:</span><span class="word-count">8051</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">Reading Time:</span><span>51 mins</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">Post Views:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="container post-content" id="article-container"><p><strong>What is this</strong></p>
+<p>These are the biology knowledge points compiled by Yi’an during high school—more accurately, since senior year. The phrasing might be a bit hard to understand.<br>
+It shall likely incur the laughter of great masters.<br>
+But at least it proves that I have indeed been dialectically negating and sublating.</p>
+<p>The color-coded docx can be downloaded <a color="blue" target="_blank" rel="noopener external nofollow noreferrer" href="https://cloud.bookgirl.xyz/s/6aFB"><strong>here</strong></a></p>
+<p><strong>General Overview</strong></p>
+<ol>
+<li>Cloned monkeys did not use in vitro fertilization; it is asexual reproduction.</li>
+<li>Embryo splitting belongs to asexual reproduction technology, performed at the blastocyst stage.</li>
+<li>Early embryo culture develops to the blastocyst or morula stage; sex determination can only use the trophoblast.</li>
+<li>Bacteriophages have no RNA.</li>
+<li>The incidence of polygenic diseases increases rapidly with age, such as juvenile diabetes.</li>
+<li>Gene recombination has two meanings, one in anaphase, one in prophase.</li>
+<li>Plants use Ti plasmids, not E. coli plasmids.</li>
+<li>Naphthaleneacetic acid and gibberellin, treating tomato pistil stigmas, yield seedless tomatoes.</li>
+<li>What the arrow points into is the assimilation amount.</li>
+<li>Add “reasonable” and “pay attention to” to everything.</li>
+<li>For genetics problems, pay special attention to whether the expression is complete, and whether the situation of not producing gametes is omitted.</li>
+<li><strong>The establishment of facts requires a control group</strong> .</li>
+<li>In experiments, pay attention to whether a certain range of the variable is skipped,</li>
+<li>In genetics problems, never mistake the dominance or recessiveness of the trait to be calculated, never mistake the phenotype of the randomly mating parents, and definitely pay attention that some phenotypes might not be given</li>
+<li>Always remember to add a subject before a verb</li>
+<li>In multiple-choice fill-in-the-blanks, don’t forget the “-ness/-ity” (性) in “xx-ness”, read slowly, read carefully</li>
+<li>Questions that span across pages, be sure to read the question stem carefully</li>
+<li>Can’t solve it <strong>Careless reading of the question leads to missing conditions; when you can’t solve it, please read the question stem over and over again</strong></li>
+<li>A single set of experiments cannot have two independent variables</li>
+<li>Answer comprehensively</li>
+<li>When analyzing trends, pay attention to the edge data of charts, and consider the situation tending towards infinity.</li>
+<li>Don’t misread the multiple-choice fill-in-the-blanks.</li>
+<li>Fundamentally, it affects gene expression.</li>
+<li>“This experiment proves”: without a control group, this option is wrong; often appears in Streptococcus pneumoniae in vitro transformation</li>
+<li><strong>The question stem might go against the textbook</strong> .</li>
+<li>From genotype, chromosome, to gamete, and back to genotype, analyze step by step</li>
+<li>Protein relative molecular mass and protein structure are not the same</li>
+<li>Every table is meaningful; the true meaning might not be consistent with what the table looks like</li>
+<li>Pay attention to whether the subject in the modifier is wrong</li>
+<li>If the amount of a certain protein remains unchanged, but the phenomenon changes, then it is unrelated to the gene expression of that protein.</li>
+<li>The step before statistical data is acquiring data</li>
+<li>Experimental questions: answer by cutting into the root cause of the question, hitting every key point in the stem. Answer in a way that shows you know a lot, not like an elementary school student</li>
+<li>Constructing experimental mice is often to damage a certain target organ to be studied</li>
+<li>Extraneous variables have an impact on experimental results</li>
+<li>Protein synthesis ≠ processing ≠ maturation. Ribosomes do not process. Hormone secretion ≠ release.</li>
+<li>Antagonism: might compete for receptors</li>
+<li>When drawing division images in your mind, draw according to 2n=2, if unnecessary</li>
+<li>To determine the optimal concentration, set up a series of concentration gradients, and other required variables to determine the required optimal variable.</li>
+<li>When the question stem looks very similar to a certain knowledge point, especially forbid making things up out of nothing</li>
+<li>Even if you might have done it before, take a few more looks</li>
+<li>Explaining reasons in genetics problems: point out the real reason in one sentence with core competence</li>
+<li>The question stem <strong>has no useless words</strong></li>
+<li>The breakthrough in a genetic pedigree might just be on an individual suffering from both diseases, which might just be a recessive trait appearing out of nowhere</li>
+<li><strong>Write out the direct purpose and the ultimate purpose</strong></li>
+<li>A potentially complete genetic diagram, listed clearly and written plainly, is the universal key to solving all genetics problems,</li>
+<li>In experimental questions, if you don’t know what to add, just add an equal amount of physiological saline</li>
+<li>The variables of the experimental comparison groups must be sufficient</li>
+<li>Analyze the reasons, closely linked and step-by-step; write out in detail the result caused by each phenomenon, do not skip steps</li>
+<li>A series of conditions include ph, temperature, humidity, nutrients, concentration, treatment time, O₂ and CO₂ and other gas concentrations, etc.</li>
+<li>Different experiences may conflict with each other, please analyze specifically</li>
+</ol>
+<p><strong>Be sure to pay attention to multiple situations in genetics problems</strong></p>
+<p><strong>Be sure to read the question carefully</strong></p>
+<p><strong>Not reading carefully misses conditions, making it impossible to solve</strong></p>
+<p><strong>Compulsory 1</strong></p>
+<ol>
+<li>The endoplasmic reticulum is composed of membrane sacs and tubular lumens; the Golgi apparatus is composed of membrane sacs and vesicles.</li>
+<li>Providing ¹⁸O₂, in a short time the third stage produces H₂¹⁸O, <strong>over a long time</strong>** H₂¹⁸O <strong><strong>participates in the second stage to produce</strong></strong> C¹⁸O₂ **<strong>.</strong></li>
+<li>At the molecular level, eukaryotic and prokaryotic cells are the same.</li>
+<li>To explore the optimal temperature of an enzyme, keep them warm separately first and then mix. High temperature changes the enzyme structure, thereby decreasing its activity.</li>
+<li>Chlorophyll directly affects ATP and NADPH, thereby directly affecting the reduction of 3-phosphoglycerate in the Calvin cycle.</li>
+<li>Enzymes are preserved at low temperatures; at low temperatures, enzyme activity is low, rather than inactivated.</li>
+<li>Active transport does not necessarily use ATP directly; there is a series of NTPs that can be used. Carotenoids diffuse into cells.</li>
+<li>The high efficiency of enzymes requires inorganic catalysts for comparison.</li>
+<li>NADH is consumed in the cytosol during the second stage of anaerobic respiration. When energy is transferred to ATP, the vast majority is lost as heat.</li>
+<li>Type A blood, Type AB blood, red blood cells, carry A antigens.</li>
+<li>Young leaves of Hydrilla verticillata can be placed directly in a water drop on a slide; cannot use high power objective directly, must use low power objective first.</li>
+<li>The endoplasmic reticulum membrane is connected to the nuclear membrane on the inside and the cell membrane on the outside, not connected to the Golgi membrane</li>
+<li>Glucose and fructose have the same molecular formula</li>
+<li>Sucrose is composed of glucose and fructose; maltose is two molecules of glucose.</li>
+<li>The Golgi apparatus is different in animals and plants; in the latter, it forms the cell wall.</li>
+<li>In photosynthesis, when the question labels water with ¹⁸O, it often means that both CO₂ and H₂O will be labeled</li>
+<li>The amount of fixed CO₂ refers to the true photosynthetic rate.</li>
+<li>When cells absorb or lose water, water molecules undergo facilitated diffusion, not simple diffusion</li>
+<li>CO₂ fixation produces C₃</li>
+<li>True photosynthetic rate, maximum</li>
+<li>Using <strong>fat</strong> as a respiratory substrate <strong>,</strong> less CO₂ is released, because there is less O in it</li>
+<li>Low radioactivity is still radioactivity, and is also a qualitative difference</li>
+<li>The boundary of the cell is the cell membrane, not the cell wall</li>
+<li>Most proteins on the membrane can move</li>
+<li>Even if the net photosynthetic rate is less than zero, photosynthesis may still occur, and chloroplasts produce ATP</li>
+<li>Some cells do not have ribosomes</li>
+<li>The inner and outer membranes of mitochondria have different functions because the types and quantities of proteins are different</li>
+<li>Proteins cannot be synthesized inside the cell nucleus</li>
+<li>Producing starch in photosynthesis requires providing carbon dioxide, otherwise none</li>
+<li>The selective permeability of the plasma membrane is related to both membrane proteins and phospholipid molecules.</li>
+<li>Living cells may not all produce enzymes, such as mature mammalian red blood cells. But enzymes must be produced by living cells; enzymes do not provide activation energy, but lower activation energy</li>
+<li>Small intestinal villus epithelial cells absorb glucose and amino acids by active transport</li>
+<li>Cover with a coverslip first and then add droplets, letting it permeate by itself</li>
+<li>The larger the diffusion ratio, rather than volume, the higher the efficiency</li>
+<li>Non-reducing sugars: starch, sucrose, cellulose</li>
+<li>Chloroplasts are helpful for observing vacuoles. Young cells have fewer chloroplasts, making them easy to observe.</li>
+<li>**To observe onion root tip chromosomes, rinse with clean water after dissociation, **** not after gentian violet staining **<strong>.</strong></li>
+<li>Enzyme activity is absolutely, positively the amount of product generated per unit time per unit enzyme, neither can be missing.</li>
+<li>During seed germination, the weight of organic matter decreases, while the types of organic matter and water content increase.</li>
+<li>Using 95% ethanol solution to study cell water absorption and loss, the cells die and remain unchanged throughout; with KNO₃ and others that can pass freely, they eventually recover</li>
+<li>Increasing crop yield lies in making photosynthetic products export out of the leaves.</li>
+<li>Hydrogen ion concentration gradient assists sucrose transport; for hydrogen ions, it might also count as active transport</li>
+<li>For insulin to pass through the capillary wall, it requires not only endocytosis, but also exocytosis</li>
+<li>Number of peptide bonds equals amino acids minus peptide chains; molecular weight is average weight times amino acid number minus peptide bond number times 18; minimum oxygen atoms is amino acid number plus peptide chain number; minimum nitrogen atoms is amino acid number.</li>
+<li>Both DNA replication and gene expression can form nucleic acid-protein complexes</li>
+<li>The lower epidermis has no chloroplasts, cannot be observed.</li>
+<li>Pre-experiment in studying auxin concentration reduces the concentration gradient of the formal experiment, not the error.</li>
+<li>Macroelements in the human body are C,H,O,N,P, <strong>Cl</strong> ,Na, <strong>Mg</strong> ,K,Ca,S, so muscle twitching reflects the importance of macroelements</li>
+<li>Nucleic acids use carbon chains as their basic skeleton</li>
+<li>Energy of the parasitized host can be directly transferred to the parasite without passing through pathogens</li>
+<li>When plasmolysis reaches 100%, the inside and outside solution concentrations are basically equal.</li>
+<li>During plasmolysis, also consider that extreme conditions lead to cell death and loss of water absorption capacity</li>
+<li>Added inorganic substances might not act as catalysts. For example, inactivating the enzyme, in which case high efficiency cannot be proven</li>
+<li>Prokaryotic cell walls are composed of peptidoglycan, plants of cellulose and pectin, fungal cell walls of chitin.</li>
+<li>Transport proteins include carrier proteins that do not penetrate through, and channel proteins that penetrate through</li>
+<li>Conversion of sugar to CO₂ takes place in two locations</li>
+<li>Trypan blue stains dead cells blue, similar to red ink staining dead cells</li>
+<li>Acidic potassium dichromate is orange under acidic conditions, turns grey-green upon meeting ethanol; bromothymol blue solution turns from blue to green to yellow upon meeting CO₂.</li>
+<li>The cytoskeleton enables directed transport of vesicles; in eukaryotic cells, it is composed of protein fibers</li>
+<li>The “hydrogen” produced in the light reaction is contained in NADPH,</li>
+<li>The production of [H] is not necessarily all on biomembranes, [H]:4+20, ATP:2+2+28. Ethanol fermentation 4 ATP, producing water has 2</li>
+<li>Plasmolysis equilibrium means the inside and outside solution concentrations are equal. Solution concentration is not the concentration of a specific solute, such as NaCl.</li>
+<li>The H of the carboxyl group cannot be traced with radioactive isotopes, it will be removed</li>
+<li>CO₂ decreases, photosynthetic rate decreases, the two are positively correlated.</li>
+<li>O₂ produced by the light reaction must first exit the thylakoid membrane.</li>
+<li>Nucleic acids are macromolecules and cannot be absorbed directly</li>
+<li>Telomeres and telomerase are only in eukaryotic cells</li>
+<li>In the field of view, quantity is inversely proportional to volume</li>
+<li>In experiments, isolated chloroplasts measure the true photosynthetic rate</li>
+<li>Polymers and monomers all use carbon chains formed by carbon atoms as the basic skeleton</li>
+<li>Microfilaments, as proteins, their formation is related to ribosomes, not centrosomes.</li>
+<li>Organic matter produced by photosynthesis does not equal accumulated organic matter</li>
+<li>Pectin, Golgi apparatus, cell wall. Starch, chloroplast stroma. Sucrose, cytosol.</li>
+<li>Chloroplasts increase membrane area by stacking thylakoids</li>
+<li>Wherever there is a channel, it is facilitated diffusion.</li>
+<li>Chloroplasts synthesize more ATP than mitochondria</li>
+<li>Cytoskeleton: protein fibers. Spindle fibers, spindle, astral rays are tubulin</li>
+<li>Plants do not have spermatogonia</li>
+<li>Mature plant cells can all undergo plasmolysis, root tip meristematic zone cannot; recovery only happens when external solutes enter, no staining needed</li>
+<li>Biuret: Cu2+, blue, no heating. Benedict’s: blue, heating. Not colorless</li>
+<li>Separating pigments does not equal extracting pigments. Biuret cannot detect amino acids; first add 1mlA to the supernatant, shake well, then 4 drops of B; alcohol: rapidly kills cells, fixes mitotic phases, maintains chromosome structural integrity.</li>
+<li>Too much 95% ethanol leads to faint pigment bands</li>
+<li>Mitochondria belong to the genetic material in the cytoplasm</li>
+<li>Dissociation: 15%HCl and 95% alcohol, unequal amounts</li>
+<li>Chicken liver homogenate does not equal intact fresh chicken liver.</li>
+<li>Starch cannot be used as a substrate to verify the effect of pH on enzymes, because it hydrolyzes under acidic conditions. The same set of apparatus can be used, must be washed and dried</li>
+<li>Distributed at the bottom of the centrifuge tube is N15N15, not N15</li>
+<li>What is rotated is the nosepiece, not the diaphragm</li>
+<li>To observe mitosis, only cut 2-3mm</li>
+<li>Centromeres divide, not break</li>
+<li>Young cells have only one layer, easy to observe</li>
+<li>By counting cells, the duration of each phase of the cell cycle can be analyzed and estimated</li>
+<li>Biomembranes include cell membranes, organelle membranes, nuclear membranes, etc., excluding mucous membranes.</li>
+<li>Observing undivided rectangular cells in the root tip, they might be root hair zone cells</li>
+<li>Proteins enter and exit the nucleus through nuclear pore complexes, not through biomembranes. Nucleotides enter and exit through the nuclear membrane, two layers of biomembranes.</li>
+<li>When net photosynthetic rate equals respiratory rate, photosynthetic rate is 2 times the respiratory rate; the solid line might represent the net photosynthetic rate</li>
+<li>Prokaryotic cells have no cytoskeleton, binary fission. Eukaryotic cells can undergo amitosis.</li>
+<li>Higher plants achieve information exchange through plasmodesmata</li>
+<li>Requiring chemical potential energy generated by other ions moving down their concentration gradient to provide energy is also active transport. Energy comes from the concentration gradient. All active transport is coupled with oxygen. But if it only needs a carrier and goes down the concentration gradient, it is facilitated diffusion.</li>
+<li>ATP is often coupled with oxygen.</li>
+<li>One carrier protein can bind multiple ions, such as the sodium-potassium pump.</li>
+<li><strong>Observing</strong>** fat does not require hydrochloric acid**</li>
+<li>Alcohol fermentation is in the cytosol</li>
+<li>Lipids all contain C, H, O, some have N, P</li>
+<li>Studying yeast cell respiration, both aerobic and anaerobic are experimental groups, mutual controls, no blank control group.</li>
+<li>A protein that can hydrolyze ATP is an enzyme, lowering the activation energy of chemical reactions, even if it doesn’t look like one</li>
+<li>CO₂ provides nutrients for plants</li>
+<li>Yeast: heterotrophic facultative anaerobe.</li>
+<li>──────────────────</li>
+<li>2H₂O photolysis——&gt;4H⁺+O₂+4e⁻</li>
+<li>NADP⁺+H⁺+2e⁻——&gt;NADPH</li>
+<li>C₃ acid under the action of ATP and 1 part NADPH——&gt;C₃ sugar</li>
+<li>──────────────────</li>
+<li>Dextrin turns red upon meeting KI-I₂</li>
+<li>Identifying living cells: staining method, osmotic water absorption and loss</li>
+<li>Pre-experiments cannot reduce experimental error</li>
+<li>Photorespiration consumes excess ATP, NADPH, and supplements CO₂</li>
+<li>Red blood cells do not consume oxygen</li>
+<li>Enzymes do not supply activation energy</li>
+<li>Isolated dark chloroplast experiments prove that the energy for synthesizing ATP in photosynthesis does not come directly from light energy</li>
+<li>Nitrogen-containing in chloroplasts: photosynthetic pigments, enzymes</li>
+<li>[H] contains chemical energy, as well as ATP, heat energy, etc.</li>
+<li>[H] in cellular respiration is NADH</li>
+<li>Heavy metal ions directly cause the destruction of protein spatial structure</li>
+<li>Large amounts of organic acids and H⁺ in vacuoles</li>
+<li>Mitochondria are insulated from glucose</li>
+<li>High efficiency of artificial chloroplasts: high enzyme efficiency,</li>
+<li>¹⁵N and ¹⁸O have no radioactivity</li>
+<li>High temperature causes decomposition of photosynthetic pigments</li>
+<li>In the early development of oil-bearing seeds, oils are converted into soluble sugars, leading to an initial increase in dry weight</li>
+<li>In rooting experiments, the pre-experiment needs a blank control; the culture solution does not need added sugars, because photosynthesis synthesizes sugars</li>
+<li>NADPH and ATP provide phosphate groups, hydrogen, energy</li>
+<li>Photosynthetic products are transported in the form of sucrose, because non-reducing sugars are relatively stable</li>
+<li>Under 100% light intensity, the environmental factor limiting the photosynthetic rate is CO₂ concentration</li>
+</ol>
+<p><strong>Compulsory 2</strong></p>
+<ol>
+<li>
+<p>Familial cardiomyopathy is autosomal monogenic, favism is sex-chromosome monogenic, vitamin D-resistant rickets is X-linked dominant, schizophrenia is polygenic. Monogenic genetic diseases are higher in adults than in adolescents.</p>
+</li>
+<li>
+<p>S-type bacteria DNA expresses protein inside R-type bacteria, not capsular polysaccharide. In vivo transformation did not use isotope labeling.</p>
+</li>
+<li>
+<p>Tobacco mosaic virus RNA alone can cause disease.</p>
+</li>
+<li>
+<p>The two types of gene recombination correspond to the results of different chromosomes and the same chromosome, respectively.</p>
+</li>
+<li>
+<p>After gene mutation, alleles have different base pair numbers and sequences. However, the number and sequence of genes on the chromosome remain the same</p>
+</li>
+<li>
+<p><strong>Interphase chromosomes are thread-like</strong> , which facilitates DNA replication and gene expression. During the division phase, they are spiral-shaped, making it easy to be pulled by spindle fibers, and cannot be expressed at this time.</p>
+</li>
+<li>
+<p>Monogenic diseases are mostly rare diseases. A high incidence rate is not necessarily polygenic; it might be that the sample size is too small,</p>
+</li>
+<li>
+<p>Spindle formation and nucleolus disintegration occur in prophase of mitosis. In metaphase, centromeres connect to spindle fibers from both poles.</p>
+</li>
+<li>
+<p>Note that a female individual can only produce one type of gamete, but can have four daughter cells</p>
+</li>
+<li>
+<p>Cells do not express other genes during proliferation, because of the thread-like state. Such as the insulin gene</p>
+</li>
+<li>
+<p>In genetic diagrams, certain offspring might eliminate certain autosomal situations, leaving only one possible genotype.</p>
+</li>
+<li>
+<p>Has an even number of pairs? Homologous chromosomes, so fertile</p>
+</li>
+<li>
+<p>DNA or RNA is not an antigen</p>
+</li>
+<li>
+<p>DNA breaks during crossing over</p>
+</li>
+<li>
+<p>In genetics problems, if the conditions in the sub-stem seem to contradict the main stem, consider lethality.</p>
+</li>
+<li>
+<p>Pay attention to whether it is a whole chromosome deletion or a partial deletion</p>
+</li>
+<li>
+<p>Eukaryotic cell DNA replication requires helicase, ligase, and polymerase—three enzymes; expression does not require helicase</p>
+</li>
+<li>
+<p>Trust yourself, those two chromosomes look different, there are no homologous chromosomes here</p>
+</li>
+<li>
+<p>If the offspring of an autosomal recessive does not have the disease, they can only be Aa</p>
+</li>
+<li>
+<p>Definitely pay attention to the difference between having the disease and only having the disease, involving situations of having two diseases.</p>
+</li>
+<li>
+<p>mRNA cannot be said to pass freely through nuclear pores. Processed inside the nucleus</p>
+</li>
+<li>
+<p>In pedigree charts, chromosome number variations like XXY can lead to an increase in pathogenic genes due to replication.</p>
+</li>
+<li>
+<p>The formation of the cell membrane after division and the series of events caused by centromere division are relatively independent.</p>
+</li>
+<li>
+<p>If one of the parents has no pathogenic gene, and the offspring has the disease, it may be dominant</p>
+</li>
+<li>
+<p>Deleted or duplicated segments may be analyzed within the scope of a pair of homologous chromosomes</p>
+</li>
+<li>
+<p>Be especially careful in Meiosis II, A and a caused by gene mutation</p>
+</li>
+<li>
+<p>Gene recombination belongs to heritable variation</p>
+</li>
+<li>
+<p>A single species cannot alone be said to coevolve with different phenotypes</p>
+</li>
+<li>
+<p>XO type cannot undergo meiosis.</p>
+</li>
+<li>
+<p>S-type bacteria broken apart and added: in vitro. Live S: in vivo. <strong>Mix in liquid medium, observe on solid medium.</strong></p>
+</li>
+<li>
+<p>Gamete lethality generally does not have the situation where half of the same genotype dies. In this case, consider that the parents might have two genotypes. The latter is more likely to be tested.</p>
+</li>
+<li>
+<p>Some unrigorous questions might have different chromosomes of a homologous pair in the same color, resulting in the same color even after crossing over</p>
+</li>
+<li>
+<p>The essence of unwinding the DNA double helix is breaking the hydrogen bonds between bases, not phosphodiester bonds</p>
+</li>
+<li>
+<p>Don’t mistake the phenotype; ask yourself what the phenotype is? Then write the genotype</p>
+</li>
+<li>
+<p>Chromosomes do not synapse in mitosis, because there is no need, sister chromatids just separate. Haploids of diploids in meiosis have no ho-</p>
+</li>
+<li>
+<p>mologous chromosomes and do not synapse either</p>
+</li>
+<li>
+<p>Highly spiralized during division, cannot transcribe.</p>
+</li>
+<li>
+<p>Animal cells: centriole astral ray spindle; plant cells: two-pole spindle fiber spindle</p>
+</li>
+<li>
+<p>Reverse transcription and transcription have the same pairing method. T-A and A-T mean the same thing</p>
+</li>
+<li>
+<p>Crick’s Central Dogma does not include reverse transcription</p>
+</li>
+<li>
+<p>Repeated sequences are gene mutations, because they are not repeated genes.</p>
+</li>
+<li>
+<p>At least three spindles must be drawn for meiosis</p>
+</li>
+<li>
+<p>The same genotype in the same somatic cell is possible in both prophase and anaphase, at which time the chromosome number may be n or 2n.</p>
+</li>
+<li>
+<p>Natural selection changes gene frequency, not genotype frequency</p>
+</li>
+<li>
+<p>To determine sex based on the phenotype of genes on the X chromosome in offspring, the gene on the male parent must be dominant relative to the female parent</p>
+</li>
+<li>
+<p>Even if male and female phenotypes are the same, if lethality occurs, consider it being on the X chromosome. Because on autosomes it would be the same as the parental genotype, impossible to be lethal.</p>
+</li>
+<li>
+<p>Mitosis does not necessarily have homologous chromosomes, such as mitosis of haploids of diploids.</p>
+</li>
+<li>
+<p>Partial hybridization diagram of nucleic acid molecules: it cannot be the hybridization of primary transcription product and mature RNA, because identical ones cannot, only complementary ones can hybridize.</p>
+</li>
+<li>
+<p>¹⁵N and ¹⁸O are stable isotopes,</p>
+</li>
+<li>
+<p>May mutate into an already existing gene.</p>
+</li>
+<li>
+<p>If AA and Aa are not specially specified, they are the same.</p>
+</li>
+<li>
+<p>Anything that mentions Mendel while simultaneously mentioning chromosomes or genes is wrong.</p>
+</li>
+<li>
+<p>Start from the gametes</p>
+</li>
+<li>
+<p>Allodiploids cannot synapse, no offspring</p>
+</li>
+<li>
+<p>Genetic equilibrium: no natural selection, gene frequency and genotype frequency remain unchanged across generations</p>
+</li>
+<li>
+<p>In meiosis, if homologous chromosomes do not separate in the first division, and separate in the second, it is almost equivalent to mitosis. For example, ZW parthenogenesis producing females. If only the second division fails to separate, it doubles, parthenogenesis producing males</p>
+</li>
+<li>
+<p>In electrophoresis, if the bands are the same, the genes are generally the same. The number of gene band types in an electropherogram means the number of alleles</p>
+</li>
+<li>
+<p>Consider both A-B and A-b linkage situations</p>
+</li>
+<li>
+<p>As long as it is a nuclear gene, it follows Mendel’s laws</p>
+</li>
+<li>
+<p>For problems asking for the proportion of cells undergoing crossing over, <strong>after crossing over, two pairs of alleles produce four genotypes of gametes; without crossing over, there are only two</strong> , then set up an equation and plug in the question stem.</p>
+</li>
+<li>
+<p>The info is really all fucking in the question stem</p>
+</li>
+<li>
+<p>Writing codons requires writing 5’ and 3’</p>
+</li>
+<li>
+<p>Catalysis does not equal regulation</p>
+</li>
+<li>
+<p>Pay attention to which of the male and female parents is a single individual, and which is a group. A single one might not be able to produce too many gametes</p>
+</li>
+<li>
+<p>Reverse transcription cannot obtain fragments upstream of the start site</p>
+</li>
+<li>
+<p>Genotypes in genetics problems: list them clearly, write them plainly</p>
+</li>
+<li>
+<p>Arranged in Metaphase I are n pairs of homologous chromosomes, not 2n chromosomes</p>
+</li>
+<li>
+<p>In MΙ anaphase, each chromosome only connects to spindle fibers from one side</p>
+</li>
+<li>
+<p>Iron wire cannot be tied in the middle; they are not necessarily all metacentric chromosomes</p>
+</li>
+<li>
+<p>rna replicase is a type of rna polymerase</p>
+</li>
+<li>
+<p>Gene mutation produces alleles; a single gamete generally has no alleles</p>
+</li>
+<li>
+<p>Changes in somatic cell nuclear material are heritable variations, though not necessarily inherited. Environmental changes are non-heritable variations, genetic material does not change</p>
+</li>
+<li>
+<p>Mitosis, amitosis, and meiosis can all have gene mutations and chromosome aberrations</p>
+</li>
+<li>
+<p>Controlling proteins, controlling enzymes, controlling gene expression: three ways genes control traits.</p>
+</li>
+<li>
+<p>Triploids may produce some fertile gametes.</p>
+</li>
+<li>
+<p>Independent assortment requires eukaryotic cells, sexual reproduction, nuclear genes. Alleles require chromosomes</p>
+</li>
+<li>
+<p>Mycoplasma is a prokaryotic cell</p>
+</li>
+<li>
+<p>The direction of replication, transcription, and translation is all from 5’ to 3’ of the coding strand or mRNA. That is, the template strand for replication and transcription is 3’ to 5’, while the newly produced strand or tRNA extends from 3’ to 5’.</p>
+</li>
+<li>
+<p>The phosphate group of tRNA is at 5’, tRNA is a macromolecule. The 3’ of tran is short, 5’ is long,</p>
+</li>
+<li>
+<p>rrna and trna are not said to be obtained by transcription</p>
+</li>
+<li>
+<p>Sign of completion of fertilization: two polar bodies appear in the perivitelline space (between zona pellucida and egg cell membrane). The essence is the fusion of male and female pronuclei</p>
+</li>
+<li>
+<p>Be sure to pay attention to whether the parents are homozygous</p>
+</li>
+<li>
+<p>Two pairs of genes for one pair of traits: if one pair of genes masks the other pair, a testcross cannot reflect the parental genotype anymore, because it is masked</p>
+</li>
+<li>
+<p>Read carefully: both dominant and recessive genes can be cut into two segments</p>
+</li>
+<li>
+<p>rna as a macromolecule: endocytosis and exocytosis</p>
+</li>
+<li>
+<p>The binding site of eukaryotic ribosomes and mRNA forms two tRNA sites, no more, no less, just two</p>
+</li>
+<li>
+<p>Colchicine in haploid breeding <strong>can only treat seedlings</strong> ; in polyploid breeding it can treat seedlings and germinating seeds, because the former has no seeds. Requires hydrochloric acid and alcohol. Pollen cannot divide, so colchicine cannot be used.</p>
+</li>
+<li>
+<p>When chromosomes and nuclear DNA are both 2n, it might be G1, or it might be <strong>Anaphase II</strong> , in which case there are no homologous chromosomes</p>
+</li>
+<li>
+<p>To observe meiosis in locusts, use male reproductive organs. Similarly, plants can use anthers</p>
+</li>
+<li>
+<p>Crossing ZZ’ and ZW, offspringfemale to male is 1:2, indicating that without a normal Z it does not develop</p>
+</li>
+<li>
+<p>Different results in reciprocal crosses: sex chromosomes or cytoplasmic genes. Conversely, if a gene is on a sex chromosome (non-homologous region) or is a cytoplasmic gene, reciprocal crosses can be used to verify. If different, under XY (ZW) determination, F₁ female (male) is dominant.</p>
+</li>
+<li>
+<p>Rous sarcoma virus is a retrovirus.</p>
+</li>
+<li>
+<p>Green algae consume CO₂ dissolved in water, changing its pH</p>
+</li>
+<li>
+<p>Different lengths might be crossing over, rather than aberration</p>
+</li>
+<li>
+<p>Anything cultured in vitro is a haploid.</p>
+</li>
+<li>
+<p>Prenatal checkups cannot screen for gene mutations</p>
+</li>
+<li>
+<p>Distinguish between identical genes and alleles</p>
+</li>
+<li>
+<p>Continuous selfing screens out plants that can inherit stably</p>
+</li>
+<li>
+<p>A gene from X going to Y belongs to chromosome aberration</p>
+</li>
+<li>
+<p>Same results in reciprocal crosses: XY homologous region or autosome,</p>
+</li>
+<li>
+<p>The gene of the novel coronavirus is an RNA fragment with genetic effects</p>
+</li>
+<li>
+<p>Tetrads are half the number of chromosome pairs</p>
+</li>
+<li>
+<p>Haploid breeding = anther culture in vitro + chromosome doubling. The principle is cell totipotency. Polyploid breeding can yield seedless tomatoes. Tetraploid watermelon is a new species. Anther culture in vitro is not chromosome number variation, it is totipotency. The latter is variation</p>
+</li>
+<li>
+<p>In vitro transformation experiments use separation and purification methods to extract DNA, protein, and capsular substances separately. Not differential centrifugation.</p>
+</li>
+<li>
+<p>In an electropherogram, if parents and offspring do not share the same band, the band gene is on X, because if autosomal, it must be inherited.</p>
+</li>
+<li>
+<p>In an electropherogram, heterozygous having the disease is dominant</p>
+</li>
+<li>
+<p>Non-homologous chromosomes, there might be other situations, but consider translocation more</p>
+</li>
+<li>
+<p>Gel DNA molecules stained, detected under UV light</p>
+</li>
+<li>
+<p>Two spermatids produced simultaneously are generally the same</p>
+</li>
+<li>
+<p>Inserting a certain gene belongs to gene mutation</p>
+</li>
+<li>
+<p>Gene mutations often occur during DNA replication</p>
+</li>
+<li>
+<p>Only fossils are the most direct and important evidence</p>
+</li>
+<li>
+<p>Loss leads to changes in chromosome number</p>
+</li>
+<li>
+<p>Dominant homozygotes in broad-spectrum crosses have all dominant offspring</p>
+</li>
+<li>
+<p>Offspring being good might be due to hybrid vigor (heterosis)</p>
+</li>
+<li>
+<p>Trait segregation ratio is needed to determine whether it is a recessive trait</p>
+</li>
+<li>
+<p>Treating seedlings to obtain polyploids can only be colchicine</p>
+</li>
+<li>
+<p>Number of tetrads = pairs of homologous chromosomes; note that in polyploids, homologous chromosomes might not be in pairs</p>
+</li>
+<li>
+<p>Note that mitosis images will not show synapsed tetrads, that is, homologous chromosomes lined up together</p>
+</li>
+</ol>
+<p><strong>Elective 1</strong></p>
+<ol>
+<li>Insulin cannot inhibit the reabsorption of sugar by renal tubules.</li>
+<li>Progesterone lowers the excitability of uterine muscles, promotes gestation, related to pregnancy.</li>
+<li>Normal human bodies have mature B lymphocytes that recognize rabies, each B carries one type. Rabies virus can infect through tissue fluid.</li>
+<li>If membrane potentials are the same, the pointer positions are the same.</li>
+<li>Non-decremental propagation requires many potentials together to be displayed. What a voltmeter measures is often the difference.</li>
+<li>If the pointers point to the inside and outside of the membrane at the same spot, it only deflects once,</li>
+<li>The function of the mica sheet is to prove the production of signaling molecules; the conclusion is the same with or without light. There must be a control group to prove it.</li>
+<li>Ovaries secrete progesterone. Follicle-stimulating hormone promotes sperm production in men.</li>
+<li>Sweat glands secreting sweat is not controlled by humoral regulation.</li>
+<li>Synthesizing large amounts of glycogen is directly related to insulin concentration.</li>
+<li>Insulin inhibits the conversion of amino acids into glucose. Promotes cells to uptake, store, and utilize glucose, and absorb amino acids. Amino acids are not easily converted into glucose.</li>
+<li>Macrophages participate not only in the second line of defense, but also in the third line</li>
+<li>Immune-active substances refer to substances produced by immune cells or other cells that exert immune functions.</li>
+<li>Vasodilation and increased permeability lead to edema.</li>
+<li>Massive Ca2+ influx causes the generation of electrical signals. Acetylcholine binds to cell membrane receptors, causing depolarization.</li>
+<li>Within a certain current intensity range, as the stimulus current increases, the muscle contraction amplitude increases; the reason is that a nerve is composed of multiple nerve fibers, and within a certain range, as the stimulus current increases, the number of excited nerve fibers increases,</li>
+<li>Gibberellin: early germination, starch saccharification. Abscisic acid keeps dormancy. Naphthaleneacetic acid and gibberellin for grapes, auxin for tomatoes. Cytokinin extends shelf life, delays leaf senescence, content decreases during division. Ethylene extends storage, promotes pineapple flowering.</li>
+<li>The function of growth hormone is to stimulate protein synthesis and tissue growth, reduce glucose utilization, increase glycogen production, and promote fat breakdown.</li>
+<li>Antibodies can be detected by drawing blood</li>
+<li>Intracellular fluid, 2/3.</li>
+<li>The capillary wall has two layers of unit membranes, that is, four layers of phospholipid molecules</li>
+<li>Vitamin D promotes gastrointestinal absorption of Ca and P</li>
+<li>Allergic reactions subside quickly</li>
+<li>Note that a certain substance might be applied externally, making it an external factor</li>
+<li>Synergism might mean inhibiting more thoroughly.</li>
+<li>Reducing calcium ion concentration in nerve cells might be unfavorable for signal conduction</li>
+<li>S-type DNA can penetrate the R-type cell membrane</li>
+<li>Mature wheat seeds have a large amount of non-reducing sugar starch</li>
+<li>The hypothalamus controls biological rhythms and belongs to the brain</li>
+<li>If the S area is damaged, the vocal cords are fine, can make sounds, animal sounds</li>
+<li>The effector includes the efferent nerve endings</li>
+<li>Capillaries reabsorb blisters. There is more protein in blood plasma.</li>
+<li>The drop in pH is caused by lactic acid, not pyruvic acid</li>
+<li>When protein content is low, to maintain osmotic pressure, inorganic salt content needs to be high</li>
+<li>Even during strenuous exercise, human energy is mainly provided by aerobic respiration,</li>
+<li>In a hypertonic environment, active transport is required to excrete salt from the body</li>
+<li>Under hypoglycemia, the ratio of insulin to glucagon decreases, <strong>liver glycogen breakdown is enhanced, and the rate of fat, etc., converting into glucose accelerates</strong></li>
+<li>Exocrine glands secrete using ducts, endocrine glands use blood vessels</li>
+<li>At the edges of endothelial cells, there are one-way active valves that open into the lumen, preventing lymph from flowing back into the tissue fluid</li>
+<li>Clearing cancer cells reflects the immune surveillance function</li>
+<li>Both old drugs and no drugs should be ineffective</li>
+<li>Adenohypophysis, anterior pituitary, secretes growth hormone, tropic hormones, oxytocin, prolactin. Neurohypophysis, posterior pituitary, <strong>releases antidiuretic hormone</strong> , oxytocin. Hypothalamus <strong>secretes antidiuretic hormone</strong> . ?</li>
+<li>If the intensity is not enough, sodium ion channels partially open.</li>
+<li>TH cells, after receiving interleukin-1 from phagocytes, can still proliferate and differentiate. Activated th and memory th</li>
+<li>Multiple vaccinations produce more effector B and memory B, antibodies.</li>
+<li>Neurotransmitters need to be between two cells</li>
+<li>Necrosis is not selective expression</li>
+<li>During hypoglycemia, fat cannot be converted into sugars in large quantities</li>
+<li>Senescent cells: cell membrane permeability decreases, cell nucleus volume increases, staining deepens, nuclear membrane invaginates, water decreases, becomes stubborn</li>
+<li>White hair: melanin cannot be synthesized, tyrosinase activity decreases,</li>
+<li>Nerve centers analyze and integrate incoming information; pain sensation does not go through a complete reflex arc, does not belong to a reflex</li>
+<li>Extracellular fluid osmotic pressure mainly comes from NaCl</li>
+<li>The synthesis of secreted proteins and lysosomal proteins starts on free ribosomes. Only secreted proteins are processed on the endoplasmic reticulum and Golgi apparatus.</li>
+<li>Plant somatic hybridization does not equal plant hybridization; the latter may lead to alloploidy, making chromosomes unable to synapse</li>
+<li>The hormone itself is often fine; in this case, consider receptor issues</li>
+<li>What colchicine treats is seedlings</li>
+<li>Based on the content of lymphokines in normal people and patients, determine whether it is inhibitory or promotional, migration ability</li>
+<li>Diabetic organisms lowering blood sugar cannot convert it, can only excrete sugar in urine.</li>
+<li>Cancer cells: monitoring and clearing</li>
+<li>Respiratory center is in the brainstem, thermoregulation is in the hypothalamus</li>
+<li>White blood cells have a faster apoptosis rate than red blood cells</li>
+<li>Anything that enters the postsynaptic membrane is not a neurotransmitter</li>
+<li>Hypothalamus-pituitary-X regulatory axis means there is feedback regulation, such as adrenaline</li>
+<li>Needle prick: sensory neuron</li>
+<li>The root cap also synthesizes ABA</li>
+<li>Plants absorbing inorganic salts: active transport</li>
+<li>Action potentials cannot be detected at the exact point on the nerve fiber where the stimulus is given</li>
+<li>Antigen mostly refers to invaders; B lymphocytes only have receptors for “one type of antigen”</li>
+<li>Pulmonary alveoli do not belong to the internal environment</li>
+<li>Thyroid hormone and adrenaline act synergistically to promote metabolism and heat production.</li>
+<li>Low temperature, firstly causes vasoconstriction, secondly causes decreased cell membrane fluidity, thereby reducing absorption</li>
+<li>Adding quilts for an unyielding high fever might be wrong in the question stem</li>
+<li>Plasma osmotic pressure is related to ions rather than proteins</li>
+<li>Adrenaline, glucocorticoids, glucagon: synergistic</li>
+<li>Glucocorticoids: synthesized in the endoplasmic reticulum</li>
+<li>Carrier protein conformational change does not consume energy</li>
+<li>In facilitated diffusion, after the concentration difference reaches a certain degree, the rate no longer increases; cannot say it keeps increasing</li>
+<li>Spinal cord: blunt horn outputs, sharp horn inputs</li>
+<li>Thyroid hormone promotes the formation of processes (neurites) and synapses</li>
+<li>Two substances competing for receptors frequently appears in advanced questions</li>
+<li>Postsynaptic membrane ion channels change, triggering action potentials</li>
+<li>Capillary dilation: redness; high blood vessel wall permeability: edema, substances enter tissue fluid</li>
+<li><strong>The number of synapses, neuron order, and transmission speed are inversely proportional: synaptic delay. Because it takes time at the synaptic junction</strong></li>
+<li>The condition for whether it is a conditioned reflex or not is whether the cerebral cortex participates</li>
+<li>Changes in blood glucose concentration can directly stimulate islet cells</li>
+<li>Glucagon promotes liver glycogen breakdown and conversion of non-sugar substances</li>
+<li>When cold: capillaries constrict, sweat glands constrict</li>
+<li>Blood pressure rises, requiring blood vessels to constrict</li>
+<li>Neurotransmitters have a smaller range of action than hormones, the answer says so</li>
+<li>What is transmitted to the presynaptic membrane is an electrical signal, then chemical signal, electrical signal</li>
+<li>Sympathetic nerves cause blood vessels to constrict, and thereby increase blood pressure</li>
+<li>The pituitary in the regulatory axis is the anterior pituitary</li>
+<li>Adrenocorticotropic hormone receptors are on the cell membrane</li>
+<li>Viral vector vaccines induce humoral immunity by entering cells. But they may also cause allergic reactions</li>
+<li>Acting as signaling molecules: cytokines</li>
+</ol>
+<p><strong>Elective 2</strong></p>
+<ol>
+<li>The prerequisite for natural selection is heritable variation universally present in a population.</li>
+<li>Dominant individuals become the dominant group under the combined action of reproduction and natural selection.</li>
+<li>Global warming decreases agricultural viability</li>
+<li>Age pyramid is coupled with sex ratio.</li>
+<li>Maintaining the population size around K/2 can yield the maximum sustainable catch</li>
+<li>S-curve growth rate continuously decreases, while the growth velocity first rises and then falls. J-curve growth rate remains unchanged, while the growth velocity continuously rises.</li>
+<li>Even if a rabbit eats its own feces, that assimilation amount does not belong to the rabbit.</li>
+<li>Species with competitive advantages may lead to a decrease in community richness.</li>
+<li>Vertical structure is coupled with sunlight</li>
+<li><strong>Intake includes fecal amount plus assimilation amount; assimilation amount includes respiratory loss and the amount used for its own growth, development, and reproduction; the amount for growth, development, and reproduction includes the amount flowing to the next trophic level, flowing to decomposers, and unutilized</strong> . What the arrow points out from is the assimilation amount. Fecal amount belongs to the portion of the previous trophic level’s assimilation amount that flows to decomposers.</li>
+<li>Primary succession: melting glaciers, sandy land barren of grass year-round</li>
+<li>All heterotrophic organisms are secondary producers</li>
+<li>Ozone represents short-wave radiation</li>
+<li>Energy transfer efficiency is calculated between two trophic levels. Cannot talk about the energy transfer efficiency between two species.</li>
+<li>Ecosystems have the functions of energy flow, material cycling, information transmission, biological production, climate regulation, and water conservation.</li>
+<li>Sludge, etc., cannot directly provide energy for plants. Plants cannot utilize the energy of organic matter.</li>
+<li>Age structure is a statistical value of individual characteristics</li>
+<li>Edible, medicinal, agricultural, industrial, tourism appreciation, scientific research, etc., are direct values; preventing water blooms, windbreak and carbon fixation, providing for other animals, etc., <strong>ecological is indirect value</strong> . Bumper harvests in agriculture directly reflect indirect value. Unknown, in the future is potential value, the largest.</li>
+<li>Predicting change trends can only be done through age structure</li>
+<li>Ecosystems include components and trophic structures. Trophic structures include food chains and food webs.</li>
+<li>Pay attention to how long respiration was carried out; the question stem might have 1h dark treatment first, then 1h light treatment, at which time respiration is 2h.</li>
+<li>Richness mostly refers to communities, not a single population.</li>
+<li>Multiple organisms occupying different trophic levels makes the food chain complex</li>
+<li>Plants do not have an assimilation amount; for plants, that is called net primary production</li>
+<li>In upper and lower intercropping, the upper layer has a high light saturation point, and the lower layer has a low light saturation point</li>
+<li>Designing experiments: verify what is lacking, supplement whatever is lacking</li>
+<li>Because the first trophic level eats cellulose, the assimilation rate is relatively low,</li>
+<li>Biological nitrogen fixation is the most important method of nitrogen fixation.</li>
+<li>Death during recapture does not affect the result. Quadrat method for collecting soil samples must be at different locations at the same depth. Dry funnel separation method utilizes the heat-avoiding nature of soil animals.</li>
+<li>When writing ecosystem components, include abiotic components.</li>
+<li>Producers are the cornerstone of the ecosystem. The indispensable component is decomposers.</li>
+<li>Consumers accelerate material cycling and energy flow.</li>
+<li>Parasitism is not predation.</li>
+<li>Sex pheromones lower the birth rate, not the sex ratio.</li>
+<li>Horizontal lateral transport is <strong>active</strong> transport. Polar transport is merely from the morphological upper end to the lower end, and is also <strong>active</strong> transport.</li>
+<li>Species living in the same environment, because they both need to utilize nutrients and space, have a competitive relationship.</li>
+<li>Population density directly depends on birth rate and death rate</li>
+<li>To increase genetic diversity, need mutation, not artificial selection</li>
+<li>If the quantity is large, it might be uniformly distributed. Being distributed in all regions does not count as uniform distribution either</li>
+<li>A sudden rise in the mortality rate of old-age classes of normal perennial tall trees is caused by human activities.</li>
+<li>Natural selection is the sole driving force of adaptive evolution</li>
+<li>9×10⁷ should belong to the same trophic level as 1.1×10⁸.</li>
+<li>Calculating energy transfer efficiency is just calculating the quotient of assimilation amounts.</li>
+<li>Wrapped in plastic wrap is the experimental group</li>
+<li>Polyploid breeding might not be able to obtain homozygous superior individuals through selfing</li>
+<li>Burning toilet paper pollutes the environment</li>
+<li>The ecological niches of organisms at the same trophic level do not highly overlap</li>
+<li>Sex attractants can only kill males</li>
+<li>The result of long-term adaptation between organisms and the environment.</li>
+<li>Crop rotation, relay intercropping, and intercropping do not apply the principle of material cycling.</li>
+<li>Passing through the gut to return to the field achieves multi-pathway utilization of materials</li>
+<li>Community types changing over time: succession</li>
+<li>Holistic principle of ecological engineering construction,</li>
+<li>The key to increasing the starch synthesis rate or similar technologies is modifying the key enzyme that limits the reaction rate.</li>
+<li>Species richness is the number of species in a community. High richness is because the community structure is complex and food types are abundant.</li>
+<li>Herbaceous plants can provide more food conditions and habitat space for arthropods.</li>
+<li>Biomass is the accumulated amount of net primary production.</li>
+<li>A possible reason why energy transfer efficiency is far below 10% is that this species is also preyed upon by other organisms.</li>
+<li>Affecting community stability: <strong>complex trophic structure, high species richness</strong></li>
+<li>Territorial behavior is exclusive</li>
+<li>The basic pathway of water pollution is: dissolved oxygen decreases, anaerobic bacteria multiply, decomposition causes eutrophication, phytoplankton multiply</li>
+<li>Sampler sampling area is not specified, depth 0-25cm</li>
+<li>Insect-resistant cotton belongs to chemical signals</li>
+<li>Investigate climatic conditions, human interference factors, prey population density, age composition, to determine the carrying capacity of a certain species, that is, investigate various environmental conditions</li>
+<li>Important characteristic of different biological communities: species composition</li>
+<li>Flowering time is controlled by physical information: light</li>
+<li>Urban forest communities: fragmented, enclosed</li>
+<li>Increase material and energy input</li>
+<li>Vertical direction-&gt;stratified structure</li>
+<li>Insect pheromones belong to biological control using chemical information</li>
+<li>Reducing the number of dominant species can increase species richness</li>
+<li>Continuous increase cannot be said to be S-curve</li>
+<li>Developed animal husbandry leads to sandstorms</li>
+<li>Note, species richness must have multiple species to be talked about</li>
+</ol>
+<p><strong>Elective 3</strong></p>
+<ol>
+<li>Malignant cell lines: immortality, no contact inhibition.</li>
+<li>Intercellular collagen fibers in animal tissues are proteins.</li>
+<li><strong>Blastomeres or embryos after embryo splitting can be transplanted directly.</strong></li>
+<li>dNTP can provide energy and raw materials for PCR amplification.</li>
+<li>Only methylene blue and diphenylamine stain DNA. Rather than electrophoresis indicators that ensure nucleic acid position.</li>
+<li>Sperm for in vivo or in vitro fertilization both need to undergo capacitation. Oocytes in the ovary must be matured and cultured <strong>to Metaphase II</strong> before they can be fertilized with it,</li>
+<li>Cloned frogs are oviparous, no embryo transfer needed.</li>
+<li>When injecting into ascitic fluid, immunosuppressants must be injected.</li>
+<li>Selective medium plus specific antibody testing yields hybridoma cells with specific antibodies</li>
+<li>After hardening seedlings, transplant into vermiculite or perlite</li>
+<li>Forming callus requires appropriate concentrations of BA and IAA</li>
+<li>Plant somatic hybridization has nothing to do with the relative independence of gene structure</li>
+<li>To prevent microbial contamination, soak anthers in 75% ethanol for 30min. Hands also use this concentration.</li>
+<li>Serving as the control is a blank medium. Or a medium inoculated with an equal amount of sterile water. To judge whether a selective medium has a selective effect, since the variable is the medium, the control group uses an inoculated complete nutrient medium, maintaining the single variable principle.</li>
+<li>Autoclaving: the pressure gauge pressure must drop to 0.</li>
+<li>The core of microbial inoculation technology is preventing contamination by杂菌 (miscellaneous bacteria), ensuring the purity of the culture.</li>
+<li>Solid-liquid separation, precipitation, crystallization, drying,</li>
+<li>Alcohol fermentation temperature is 25, lower than acetic acid fermentation.</li>
+<li>The medium for urea-decomposing bacteria requires glucose.</li>
+<li>In vitro fertilization can only be carried out in a capacitation solution or a specialized fertilization solution</li>
+<li><strong>The blastocyst stage differentiates into the inner cell mass and trophoblast</strong></li>
+<li>The inner cell mass has totipotency</li>
+<li>Nutrient-restricted culture of somatic cells before nuclear transfer is beneficial for cell differentiation.</li>
+<li>Explants must first dedifferentiate before liquid suspension culture can be performed.</li>
+<li>Cleavage stage cell RNA is different from the RNA contained in the fertilized egg.</li>
+<li>Animals can only use microinjection.</li>
+<li>Transgenic microorganisms become ideal molecular factories for synthesizing proteins.</li>
+<li>Changing protein structure is protein engineering.</li>
+<li>Congo blue checks for cellulose-decomposing bacteria, trypan blue stains dead cells blue.</li>
+<li>Shake when sampling.</li>
+<li>Lacking light, test-tube plantlets turn yellow.</li>
+<li>Before cutting or inoculating redifferentiated clustered shoots, there is no need to disinfect again, because it is already under sterile conditions.</li>
+<li>Missing amino acids at the end: stop codon appears prematurely</li>
+<li>Of DNA molecule copied n times, uses 2ⁿ⁺¹-2 primers</li>
+<li>The prerequisite for amplification is having a known nucleotide sequence of the target gene</li>
+<li>In fruit wine fermentation, if the temperature is low, extend the time; if higher than 30°C, cannot shorten the time, must cool down.</li>
+<li>Acetic acid fermentation requires passing sterile air</li>
+<li>Spread multiple plates, if only one has no colonies, the medium is fine, caused by the spreaPCRder not cooling down after flame sterilization.</li>
+<li>Hybridomas require HAT selective medium screening, clonal culture, and antibody detection—three steps.</li>
+<li>During serial dilution, if 0.1mL is taken in the last step, it only means the last step diluted it by another 10 times, for the case of calculating per mL. Whereas the last step itself does not count as dilution.</li>
+<li>Protein engineering cannot directly modify proteins, must be achieved by modifying genes</li>
+<li><strong>Pipette draws, spreader spreads</strong> .</li>
+<li>Before introducing recombinant plasmids, place in low-temperature, low-concentration CaCl₂</li>
+<li><strong>5%CO₂</strong>** , maintains **<strong>pH</strong></li>
+<li>Explant disinfection cannot use mixed disinfectants; must use 75% alcohol first, then 10% sodium hypochlorite, then sterile water.</li>
+<li>DNA is dissolved with 2mol/L NaCl, extracted with 95% cold alcohol. Because proteins dissolve in alcohol</li>
+<li>Animal cell culture media do not need autoclaving, as they have natural organic components</li>
+<li>The principle of PCR is <strong>in vitro <strong><strong>DNA</strong></strong> replication</strong></li>
+<li>Denaturation: breaks hydrogen bonds between DNA double strands to form two single strands. Annealing: makes 2 primers bind to their respective complementary DNA single strands, forming hydrogen bonds. Extension: Taq enzyme uses single-stranded DNA as a template, guided by primers, utilizing dNTP, replicating complementary DNA from 5’ to 3’</li>
+<li>Haploid breeding reflects male gamete <strong>totipotency</strong> . The principle is not chromosome aberration</li>
+<li>Sticky ends and recognition sequences are not the same thing</li>
+<li>EDTA inhibits DNAse activity, SDS dissociates nucleoproteins</li>
+<li>In dedifferentiation, auxin and cytokinin are in equal amounts.</li>
+<li>Cloning has no in vitro fertilization</li>
+<li>Colonies are coupled with solid media.</li>
+<li>After obtaining the target gene, amplify via PCR, identify via electrophoresis (or DNA sequencing), then recover the DNA fragment containing the target gene from the gel, cut the target gene and plasmid with restriction enzymes, and then ligate with DNA ligase.</li>
+<li>After Agrobacterium is used, that is, <strong>whenever antibiotics are used on plants</strong> , the purpose is to kill Agrobacterium</li>
+<li>Preparing specific proteins: monoclonal antibodies</li>
+<li>Using wine as raw material, can only make vinegar</li>
+<li>Protein engineering directly modifies genes</li>
+<li>As long as the upstream and downstream sequences of the gene are the same, the primers are identical</li>
+<li>Leaving a certain space in the alcohol fermentation bottle: provides oxygen for yeast to multiply in large numbers; prevents overflow when vigorous</li>
+<li>Converting alcohol fermentation to acetic acid fermentation: inoculate acetic acid bacteria; pass sterile air; raise temperature to 30-35</li>
+<li>Culture medium: water, inorganic salts, nitrogen source, carbon source</li>
+<li>80℃ water bath heating: kills heat-intolerant microorganisms</li>
+<li>Screening for amylase-producing ones: KI-I₂</li>
+<li>High-yield strains: transgenic breeding, mutation breeding, protoplast fusion</li>
+<li>Antibiotic (or other reagents used for screening) sensitivity test.</li>
+<li>Transgenic recipients must have strong regeneration ability and genetic stability</li>
+<li>Genetic stability testing: observe cell nucleus morphology or metaphase mitosis chromosome morphological characteristics and number</li>
+<li>If annealing temperature is high, primers self-ligate or ligate to each other, resulting in no bands in electrophoresis.</li>
+<li>Gene expression: coupled with proteins</li>
+<li>Fertilized eggs need to be cultured into early embryos before they can be implanted into the uterus to complete implantation</li>
+<li>Embryonic stem cells do not easily undergo differentiation</li>
+<li>Freezing or high temperature causes cells to rupture and nutrients to flow out.</li>
+<li>Cellulase and pectinase require filter sterilization</li>
+<li>Replication inside E. coli is also called amplification,</li>
+<li>Long-term preservation: glycerol</li>
+<li>Trypsin is used for contact inhibition in animal cell culture</li>
+<li>Protoplast cytokinesis is also different from animal cells: the former requires a cell plate, the latter invaginates</li>
+<li>After sterilization, cool to around 50℃ to pour plates</li>
+<li>Appearing 0 bands in electrophoresis is the target bacteria</li>
+<li>The inner cell mass belongs to the blastocyst</li>
+<li>PCR cooling is for primers to bind to complementary dna strands; continuing at 72 degrees is to make the daughter strands extend completely</li>
+<li>Animal cell culture does not use agar</li>
+<li>HIV is different from bacteriophages; S can also be brought in, P can also be on the cell membrane</li>
+<li>Animal cell embryo culture solution is not a synthetic medium</li>
+<li>Adsorbent, adsorption fermentation, to separate and purify</li>
+<li>Gel pores-&gt;molecular sieve</li>
+<li>Mass culture of plant cells is called plant tissue culture, not scale-up culture</li>
+<li>Restriction enzymes cannot cut outside the promoter and terminator; priority is higher than cutting off resistance genes. Also note that recognition sequences cannot be the same</li>
+<li>Fermentation might need added alkaline buffer</li>
+<li>Primers must avoid base complementarity between different segments of primers</li>
+<li>Low temperature, dryness, hypoxia, nutrient deficiency, adding protective agents, to preserve strains</li>
+<li>You often fail to fill in disinfection, and liquid suspension/shaking culture; the latter also has an activation function</li>
+<li>Obtaining single colonies: spread plate method</li>
+<li>Eggs from the oviduct are used directly; eggs from the ovary require artificial culture</li>
+<li>The count must be between 30-300; counting along the edge is difficult, so cannot spread to the edge</li>
+<li>Differential centrifugation applies to all organelles</li>
+<li>Microorganisms as recipient cells: low cost, easy to operate, fast reproduction, simple structure and genetic material</li>
+<li>Electrophoresis migration rate: relative molecular mass, charge, shape, gel concentration, voltage</li>
+<li>If the experiment requires counting, can only use the dilution spread plate method</li>
+<li>LB medium is a bacterial medium; yeast commonly uses potato sucrose agar medium</li>
+<li>Young cells have strong division ability, low differentiation degree, easy to operate</li>
+<li>The dilution spread plate method cannot use just one pipette</li>
+</ol>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>Author: </span><span class="post-copyright-info"><a href="https://iliyian.com">iliyian</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>Link: </span><span class="post-copyright-info"><a href="https://iliyian.com/en/posts/a73562c5/">https://iliyian.com/en/posts/a73562c5/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>Copyright Notice: </span><span class="post-copyright-info">All articles on this blog are licensed under <a target="_blank" rel="noopener external nofollow noreferrer" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> unless otherwise stated.</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/en/tags/%E5%AD%A6%E4%B9%A0/">学习</a><a class="post-meta__tags" href="/en/tags/%E7%94%9F%E7%89%A9/">生物</a></div><div class="post-share"><div class="social-share" data-image="https://r2-imgs.iliyian.com/img/生物错误点.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><a class="pagination-related" href="/en/posts/c2a822d8/" title="The Origin of Sovereignty, A Book Report on *The Social Contract*"><img class="cover" src="https://r2-imgs.iliyian.com/img/loading-cat.gif" data-lazy-src="https://r2-imgs.iliyian.com/img/rousseau.jpg" onerror="onerror=null;src='https://http.cat/404'" alt="cover of previous post"><div class="info"><div class="info-1"><div class="info-item-1">Previous</div><div class="info-item-2">The Origin of Sovereignty, A Book Report on *The Social Contract*</div></div><div class="info-2"><div class="info-item-1">The Origin of Sovereignty — A Book Report on The Social Contract The Social Contract (also transl...</div></div></div></a><a class="pagination-related" href="/en/posts/e894c0ee/" title="A Playful Assay at Derivatives"><img class="cover" src="https://r2-imgs.iliyian.com/img/loading-cat.gif" data-lazy-src="https://r2-imgs.iliyian.com/img/dafenqi_hailuo.jpg" onerror="onerror=null;src='https://http.cat/404'" alt="cover of next post"><div class="info text-right"><div class="info-1"><div class="info-item-1">Next</div><div class="info-item-2">A Playful Assay at Derivatives</div></div><div class="info-2"><div class="info-item-1">A Playful Foray into Derivatives Author: Yi’an (Yet another essay submission)  Derivatives are a ...</div></div></div></a></nav><hr class="custom-hr"/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> Comments</span></div><div class="comment-switch"><span class="first-comment">Waline</span><span id="switch-btn"></span><span class="second-comment">Gitalk</span></div></div><div class="comment-wrap"><div><div id="waline-wrap"></div></div><div><div id="gitalk-container"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="https://r2-imgs.iliyian.com/img/loading-cat.gif" data-lazy-src="https://r2-imgs.iliyian.com/img/37.jpg" onerror="this.onerror=null;this.src='https://http.cat/404'" alt="avatar"/></div><div class="author-info-name">iliyian</div><div class="author-info-description">A Lovely Girl</div><div class="site-data"><a href="/en/archives/"><div class="headline">Articles</div><div class="length-num">47</div></a><a href="/en/tags/"><div class="headline">Tags</div><div class="length-num">19</div></a><a href="/en/categories/"><div class="headline">Categories</div><div class="length-num">8</div></a></div><a id="card-info-btn" target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/iliyian"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons"><a class="social-icon" href="https://github.com/iliyian" rel="external nofollow noreferrer" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="https://t.me/iliyian" rel="external nofollow noreferrer" target="_blank" title="Telegram"><i class="fab fa-telegram"></i></a><a class="social-icon" href="https://steamcommunity.com/id/iliyian/" rel="external nofollow noreferrer" target="_blank" title="Steam"><i class="fab fa-steam"></i></a><a class="social-icon" href="https://space.bilibili.com/299627858" rel="external nofollow noreferrer" target="_blank" title="Bilibili"><i class="iconfont icon-bilibili2"></i></a><a class="social-icon" href="https://codeforces.com/profile/iliyian" rel="external nofollow noreferrer" target="_blank" title="Codeforces"><i class="iconfont icon-codeforces2"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>Announcement</span></div><div class="announcement_content">The slanting sun, I have failed you in this waning spring, with lines of tears.</div></div><div class="sticky_layout"></div></div></main><footer id="footer" style="background-image: url(https://r2-imgs.iliyian.com/cdn-cgi/image/format=webp,quality=80/img/%E7%94%9F%E7%89%A9%E9%94%99%E8%AF%AF%E7%82%B9.jpg);" data-cover-src="https://r2-imgs.iliyian.com/img/生物错误点.jpg"><div class="footer-other"><div class="footer-copyright"><span class="copyright">&copy;&nbsp;2021 - 2026 By iliyian</span><span class="framework-info"><span>Framework </span><a target="_blank" rel="noopener external nofollow noreferrer" href="https://hexo.io">Hexo 7.3.0</a><span class="footer-separator">|</span><span>Theme </span><a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly 5.7.1.260810</a></span></div><div class="footer_custom_text">To Be A Great Poet.<br/><a href="https://icp.gov.moe/?keyword=20232063" rel="external nofollow noreferrer" target="_blank">MoeICP Registration No. 20232063</a><br/>Translated w/ Gemini 4 Argon</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="Reading Mode"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="Toggle Between Light and Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle Between Single-column and Double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="Settings"><i class="fas fa-cog fa-spin"></i></button><a id="to_comment" href="#post-comment" title="Scroll to Comments"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="Back to Top"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/en/js/utils.js" defer></script><script src="/en/js/main.js" defer></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js" defer></script><div class="js-pjax"><script>(async () => {
+  const showKatex = () => {
+    document.querySelectorAll('#article-container .katex').forEach(el => el.classList.add('katex-show'))
+  }
+
+  if (!window.katex_js_css) {
+    window.katex_js_css = true
+    try {
+      await btf.getCSS('https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css')
+      if (true) {
+        await btf.getScript('https://cdn.jsdelivr.net/npm/katex/dist/contrib/copy-tex.min.js')
+      }
+    } catch (e) {
+      console.error('[katex] failed to load assets, showing formulas anyway:', e)
+    }
+  }
+
+  showKatex()
+  btf.addGlobalFn('encrypt', showKatex, 'katex')
+})()</script><script>(() => {
+  const parseViewBox = viewBox => {
+    if (!viewBox) return null
+    const parts = viewBox.trim().split(/[\s,]+/).map(n => Number(n))
+    if (parts.length !== 4 || parts.some(n => Number.isNaN(n))) return null
+    return parts
+  }
+
+  const getSvgViewBox = svg => {
+    const attr = parseViewBox(svg.getAttribute('viewBox'))
+    if (attr) return attr
+
+    // Fallback: use bbox to build a viewBox
+    try {
+      const bbox = svg.getBBox()
+      if (bbox && bbox.width && bbox.height) return [bbox.x, bbox.y, bbox.width, bbox.height]
+    } catch (e) {
+      // getBBox may fail on some edge cases; ignore
+    }
+
+    const w = Number(svg.getAttribute('width')) || 0
+    const h = Number(svg.getAttribute('height')) || 0
+    if (w > 0 && h > 0) return [0, 0, w, h]
+    return [0, 0, 100, 100]
+  }
+
+  const setSvgViewBox = (svg, vb) => {
+    svg.setAttribute('viewBox', `${vb[0]} ${vb[1]} ${vb[2]} ${vb[3]}`)
+  }
+
+  const clamp = (v, min, max) => Math.max(min, Math.min(max, v))
+
+  const openSvgInNewTab = ({ source, initViewBox }) => {
+    const getClonedSvg = () => {
+      if (typeof source === 'string') {
+        const template = document.createElement('template')
+        template.innerHTML = source.trim()
+        const svg = template.content.querySelector('svg')
+        return svg ? svg.cloneNode(true) : null
+      }
+      if (source && typeof source.cloneNode === 'function') {
+        return source.cloneNode(true)
+      }
+      return null
+    }
+
+    const clone = getClonedSvg()
+    if (!clone) return
+    if (initViewBox && initViewBox.length === 4) {
+      clone.setAttribute('viewBox', initViewBox.join(' '))
+    }
+    if (!clone.getAttribute('xmlns')) clone.setAttribute('xmlns', 'http://www.w3.org/2000/svg')
+    if (!clone.getAttribute('xmlns:xlink') && clone.innerHTML.includes('xlink:')) {
+      clone.setAttribute('xmlns:xlink', 'http://www.w3.org/1999/xlink')
+    }
+    // inject background to match current theme
+    const isDark = document.documentElement.getAttribute('data-theme') === 'dark'
+    const bg = getComputedStyle(document.body).backgroundColor || (isDark ? '#1e1e1e' : '#ffffff')
+    if (!clone.style.background) clone.style.background = bg
+
+    const serializer = new XMLSerializer()
+    const svgSource = serializer.serializeToString(clone)
+    const htmlSource = `<!doctype html><html><head><meta charset="utf-8" />
+      <style>
+        html, body { width: 100%; height: 100%; margin: 0; display: flex; align-items: center; justify-content: center; background: ${bg}; }
+        svg { max-width: 100%; max-height: 100%; height: auto; width: auto; }
+      </style>
+      </head><body>${svgSource}</body></html>`
+    const blob = new Blob([htmlSource], { type: 'text/html;charset=utf-8' })
+    const url = URL.createObjectURL(blob)
+    window.open(url, '_blank', 'noopener')
+
+    setTimeout(() => URL.revokeObjectURL(url), 5000)
+  }
+
+  const attachMermaidViewerButton = wrap => {
+    let btn = wrap.querySelector('.mermaid-open-btn')
+    if (!btn) {
+      btn = document.createElement('button')
+      btn.type = 'button'
+      btn.className = 'mermaid-open-btn'
+      wrap.appendChild(btn)
+    }
+
+    btn.innerHTML = '<i class="fa fa-search fa-fw" aria-hidden="true"></i>'
+
+    if (!btn.__mermaidViewerBound) {
+      btn.addEventListener('click', e => {
+        e.preventDefault()
+        e.stopPropagation()
+        const svg = wrap.__mermaidOriginalSvg || wrap.querySelector('svg')
+        if (!svg) return
+        const initViewBox = wrap.__mermaidInitViewBox
+        openSvgInNewTab({ source: svg, initViewBox })
+      })
+      btn.__mermaidViewerBound = true
+    }
+  }
+
+  // Zoom around a point (px, py) in the SVG viewport (in viewBox coordinates)
+  const zoomAtPoint = (vb, factor, px, py) => {
+    const w = vb[2] * factor
+    const h = vb[3] * factor
+    const nx = px - (px - vb[0]) * factor
+    const ny = py - (py - vb[1]) * factor
+    return [nx, ny, w, h]
+  }
+
+  const initMermaidGestures = wrap => {
+    // Clean up previous event listeners and pending frames
+    if (wrap.__mermaidAbortController) {
+      wrap.__mermaidAbortController.abort()
+      if (wrap.__mermaidRafId) cancelAnimationFrame(wrap.__mermaidRafId)
+    }
+    const ac = new AbortController()
+    wrap.__mermaidAbortController = ac
+    const svg = wrap.querySelector('svg')
+    if (!svg) return
+
+    // Ensure viewBox exists so gestures always work
+    const initVb = getSvgViewBox(svg)
+    wrap.__mermaidInitViewBox = initVb
+    wrap.__mermaidCurViewBox = initVb.slice()
+    setSvgViewBox(svg, initVb)
+    // Disable default gestures to prevent scroll chaining and pinch-zoom penetration in Chrome
+    svg.style.touchAction = 'none'
+
+    // Cache BoundingClientRect, throttled on scroll to reduce reflow
+    let cachedRect = svg.getBoundingClientRect()
+    let rectDirty = false
+    const markRectDirty = () => { rectDirty = true }
+    window.addEventListener('resize', markRectDirty, { signal: ac.signal })
+    window.addEventListener('scroll', markRectDirty, { signal: ac.signal, capture: true })
+    const getRect = () => {
+      if (rectDirty) {
+        cachedRect = svg.getBoundingClientRect()
+        rectDirty = false
+      }
+      return cachedRect
+    }
+
+    // Precompute clamp bounds from initial viewBox
+    const minW = initVb[2] * 0.1
+    const maxW = initVb[2] * 10
+    const minH = initVb[3] * 0.1
+    const maxH = initVb[3] * 10
+    const clampVb = vb => {
+      const out = vb.slice()
+      out[2] = clamp(out[2], minW, maxW)
+      out[3] = clamp(out[3], minH, maxH)
+      return out
+    }
+
+    // Throttle DOM updates using requestAnimationFrame
+    let pendingVb = null
+    let rafId = null
+    const applyVb = () => {
+      if (pendingVb) {
+        wrap.__mermaidCurViewBox = pendingVb
+        setSvgViewBox(svg, pendingVb)
+        pendingVb = null
+      }
+      rafId = null
+      wrap.__mermaidRafId = null
+    }
+    const setCurVb = vb => {
+      pendingVb = clampVb(vb)
+      if (!rafId) {
+        rafId = requestAnimationFrame(applyVb)
+        wrap.__mermaidRafId = rafId
+      }
+    }
+
+    const state = {
+      pointers: new Map(),
+      startVb: null,
+      startDist: 0,
+      lastPointerX: 0,
+      lastPointerY: 0
+    }
+
+    const onPointerDown = e => {
+      if (e.pointerType === 'mouse' && e.button !== 0) return
+      svg.setPointerCapture(e.pointerId)
+      const curVb = wrap.__mermaidCurViewBox
+      state.pointers.set(e.pointerId, { x: e.clientX, y: e.clientY })
+      if (state.pointers.size === 1) {
+        state.startVb = curVb.slice()
+        state.lastPointerX = e.clientX
+        state.lastPointerY = e.clientY
+      } else if (state.pointers.size === 2) {
+        const pts = [...state.pointers.values()]
+        const dx = pts[0].x - pts[1].x
+        const dy = pts[0].y - pts[1].y
+        state.startDist = Math.hypot(dx, dy)
+        state.startVb = curVb.slice()
+      }
+    }
+
+    const onPointerMove = e => {
+      if (!state.pointers.has(e.pointerId)) return
+      state.pointers.set(e.pointerId, { x: e.clientX, y: e.clientY })
+      const curVb = wrap.__mermaidCurViewBox
+      const rect = getRect()
+      if (state.pointers.size === 1 && state.startVb) {
+        const p = state.pointers.values().next().value
+        const dxClient = p.x - state.lastPointerX
+        const dyClient = p.y - state.lastPointerY
+        state.lastPointerX = p.x
+        state.lastPointerY = p.y
+        const dx = dxClient * (curVb[2] / rect.width)
+        const dy = dyClient * (curVb[3] / rect.height)
+        setCurVb([curVb[0] - dx, curVb[1] - dy, curVb[2], curVb[3]])
+        return
+      }
+      if (state.pointers.size === 2 && state.startVb && state.startDist > 0) {
+        const pts = [...state.pointers.values()]
+        const dx = pts[0].x - pts[1].x
+        const dy = pts[0].y - pts[1].y
+        const dist = Math.hypot(dx, dy)
+        if (!dist) return
+        const factor = state.startDist / dist
+        const cx = (pts[0].x + pts[1].x) / 2
+        const cy = (pts[0].y + pts[1].y) / 2
+        const px = curVb[0] + (cx - rect.left) * (curVb[2] / rect.width)
+        const py = curVb[1] + (cy - rect.top) * (curVb[3] / rect.height)
+        setCurVb(zoomAtPoint(state.startVb, factor, px, py))
+      }
+    }
+
+    const onPointerUpOrCancel = e => {
+      // Release PointerCapture to avoid event capture anomalies
+      if (svg.hasPointerCapture && svg.hasPointerCapture(e.pointerId)) {
+        svg.releasePointerCapture(e.pointerId)
+      }
+      state.pointers.delete(e.pointerId)
+      if (state.pointers.size === 0) {
+        state.startVb = null
+        state.startDist = 0
+      } else if (state.pointers.size === 1) {
+        const p = state.pointers.values().next().value
+        state.lastPointerX = p.x
+        state.lastPointerY = p.y
+      }
+    }
+
+    const onWheel = e => {
+      // Prevent event bubbling from triggering external scroll
+      e.preventDefault()
+      e.stopPropagation()
+      // Normalize deltaY across deltaMode (Chrome uses pixels, Safari uses lines)
+      let delta = e.deltaY
+      if (e.deltaMode === 1) delta *= 16
+      else if (e.deltaMode === 2) delta *= 400
+
+      // Continuous zoom factor: smoother than fixed 1.1/0.9 steps
+      const zoomFactor = Math.pow(1.001, delta)
+
+      const curVb = wrap.__mermaidCurViewBox
+      const rect = getRect()
+      const px = curVb[0] + (e.clientX - rect.left) * (curVb[2] / rect.width)
+      const py = curVb[1] + (e.clientY - rect.top) * (curVb[3] / rect.height)
+      setCurVb(zoomAtPoint(curVb, zoomFactor, px, py))
+    }
+
+    const onDblClick = () => {
+      const init = wrap.__mermaidInitViewBox
+      if (init) setCurVb(init)
+    }
+
+    svg.addEventListener('pointerdown', onPointerDown, { signal: ac.signal })
+    svg.addEventListener('pointermove', onPointerMove, { signal: ac.signal })
+    svg.addEventListener('pointerup', onPointerUpOrCancel, { signal: ac.signal })
+    svg.addEventListener('pointercancel', onPointerUpOrCancel, { signal: ac.signal })
+    svg.addEventListener('wheel', onWheel, { passive: false, signal: ac.signal })
+    svg.addEventListener('dblclick', onDblClick, { signal: ac.signal })
+  }
+
+  const runMermaid = ele => {
+    window.loadMermaid = true
+    const theme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'default'
+    ele.forEach((item, index) => {
+      const mermaidSrc = item.firstElementChild
+      // Clean up event listeners and stale content before re-rendering
+      if (item.__mermaidAbortController) {
+        item.__mermaidAbortController.abort()
+      }
+      const oldSvg = item.querySelector('svg')
+      if (oldSvg) oldSvg.remove()
+      const oldError = item.querySelector('.mermaid-error')
+      if (oldError) oldError.remove()
+      let config = {}
+      try {
+        config = mermaidSrc.dataset.config ? JSON.parse(mermaidSrc.dataset.config) : {}
+      } catch (e) {
+        console.warn('[mermaid] failed to parse dataset.config:', e)
+      }
+      if (!config.theme) {
+        config.theme = theme
+      }
+      const mermaidThemeConfig = `%%{init: ${JSON.stringify(config)}}%%\n`
+      const mermaidID = `mermaid-${index}`
+      const mermaidDefinition = mermaidThemeConfig + mermaidSrc.textContent
+
+      const renderMermaid = svg => {
+        mermaidSrc.insertAdjacentHTML('afterend', svg)
+        if (true) initMermaidGestures(item)
+        item.__mermaidOriginalSvg = svg
+        if (true) attachMermaidViewerButton(item)
+      }
+
+      const handleError = err => {
+        console.error(`[mermaid] render failed for block #${index}:`, err)
+        const errorEl = document.createElement('div')
+        errorEl.className = 'mermaid-error'
+        errorEl.textContent = `Mermaid render error: ${err.message || err}`
+        mermaidSrc.insertAdjacentElement('afterend', errorEl)
+      }
+
+      try {
+        const renderFn = mermaid.render(mermaidID, mermaidDefinition)
+        // mermaid v9 and v10 compatibility
+        if (typeof renderFn === 'string') {
+          renderMermaid(renderFn)
+        } else {
+          renderFn.then(({ svg }) => renderMermaid(svg)).catch(handleError)
+        }
+      } catch (err) {
+        handleError(err)
+      }
+    })
+  }
+
+  const codeToMermaid = $article => {
+    const codeMermaidEle = $article.querySelectorAll('pre > code.mermaid')
+    if (codeMermaidEle.length === 0) return
+
+    codeMermaidEle.forEach(ele => {
+      const preEle = document.createElement('pre')
+      preEle.className = 'mermaid-src'
+      preEle.hidden = true
+      preEle.textContent = ele.textContent
+      const newEle = document.createElement('div')
+      newEle.className = 'mermaid-wrap'
+      newEle.appendChild(preEle)
+      ele.parentNode.replaceWith(newEle)
+    })
+  }
+
+  const loadMermaid = () => {
+    const $article = document.getElementById('article-container')
+    if (!$article) return
+
+    if (true) codeToMermaid($article)
+    const $mermaid = $article.querySelectorAll('.mermaid-wrap')
+    if ($mermaid.length === 0) return
+
+    const runMermaidFn = () => runMermaid($mermaid)
+    btf.addGlobalFn('themeChange', runMermaidFn, 'mermaid')
+    window.loadMermaid ? runMermaidFn() : btf.getScript('https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js').then(runMermaidFn)
+  }
+
+  btf.addGlobalFn('encrypt', loadMermaid, 'mermaid')
+  window.pjax ? loadMermaid() : document.addEventListener('DOMContentLoaded', loadMermaid)
+})()</script><script>(() => {
+  let initFn = window.walineFn || null
+  const isShuoshuo = GLOBAL_CONFIG_SITE.pageType === 'shuoshuo'
+  const option = {"locale":{"placeholder":"O Troupe of little vagrants of the world, leave your footprints in my words.","sofa":"Her wishful face haunts my dreams like the rain at night."},"reaction":true,"turnstileKey":"0x4AAAAAAB6dmP1fw7Iw96wn"}
+
+  const destroyWaline = ele => ele.destroy()
+
+  const initWaline = (Fn, el = document, path = window.location.pathname) => {
+    const waline = Fn({
+      el: el.querySelector('#waline-wrap'),
+      serverURL: 'https://waline.iliyian.com/',
+      pageview: false,
+      dark: 'html[data-theme="dark"]',
+      comment: false,
+      ...option,
+      path: isShuoshuo ? path : (option && option.path) || path
+    })
+
+    let lightboxObserver = null
+    if (GLOBAL_CONFIG.lightbox !== 'null') {
+      const wrap = el.querySelector('#waline-wrap')
+      if (wrap) {
+        lightboxObserver = new MutationObserver(mutations => {
+          const imgs = []
+          mutations.forEach(mutation => {
+            mutation.addedNodes.forEach(node => {
+              if (node.nodeType !== 1) return
+              const nodeImgs = node.matches && node.matches('img') ? [node] : node.querySelectorAll('img')
+              nodeImgs.forEach(img => imgs.push(img))
+            })
+          })
+          const lightboxImgs = imgs.filter(img => img.closest('.wl-content') && !img.classList.contains('wl-emoji'))
+          if (lightboxImgs.length) btf.loadLightbox(lightboxImgs)
+        })
+        lightboxObserver.observe(wrap, { childList: true, subtree: true })
+      }
+    }
+
+    if (isShuoshuo) {
+      window.shuoshuoComment.destroyWaline = () => {
+        lightboxObserver && lightboxObserver.disconnect()
+        destroyWaline(waline)
+        if (el.children.length) {
+          el.innerHTML = ''
+          el.classList.add('no-comment')
+        }
+      }
+    }
+  }
+
+  const loadWaline = (el, path) => {
+    if (initFn) initWaline(initFn, el, path)
+    else {
+      btf.getCSS('https://cdn.jsdelivr.net/npm/@waline/client/dist/waline.min.css')
+        .then(() => import('https://cdn.jsdelivr.net/npm/@waline/client/dist/waline.min.js'))
+        .then(({ init }) => {
+          initFn = init || Waline.init
+          initWaline(initFn, el, path)
+          window.walineFn = initFn
+        })
+    }
+  }
+
+  if (isShuoshuo) {
+    'Waline' === 'Waline'
+      ? window.shuoshuoComment = { loadComment: loadWaline }
+      : window.loadOtherComment = loadWaline
+    return
+  }
+
+  if ('Waline' === 'Waline' || !false) {
+    if (false) btf.loadComment(document.getElementById('waline-wrap'),loadWaline)
+    else setTimeout(loadWaline, 0)
+  } else {
+    window.loadOtherComment = loadWaline
+  }
+})()</script><script>(() => {
+  const isShuoshuo = GLOBAL_CONFIG_SITE.pageType === 'shuoshuo'
+  const option = null
+
+  const commentCount = n => {
+    const isCommentCount = document.querySelector('#post-meta .gitalk-comment-count')
+    if (isCommentCount) {
+      isCommentCount.textContent= n
+    }
+  }
+
+  const initGitalk = (el, path) => {
+    if (isShuoshuo) {
+      window.shuoshuoComment.destroyGitalk = () => {
+        if (el.children.length) {
+          el.innerHTML = ''
+          el.classList.add('no-comment')
+        }
+      }
+    }
+
+    const gitalk = new Gitalk({
+      clientID: '82d3ae30fb1309b8aef2',
+      clientSecret: '9a7da5f699aaa02763e4ad89e662fff858e00511',
+      repo: 'blog_comments',
+      owner: 'iliyian',
+      admin: ['iliyian'],
+      updateCountCallback: commentCount,
+      ...option,
+      id: isShuoshuo ? path : (option && option.id) || '6f83962894b7bc03ac192b403c02e0b3'
+    })
+
+    gitalk.render('gitalk-container')
+  }
+
+  const loadGitalk = async(el, path) => {
+    if (typeof Gitalk === 'function') initGitalk(el, path)
+    else {
+      await btf.getCSS('https://cdn.jsdelivr.net/npm/gitalk/dist/gitalk.min.css')
+      await btf.getScript('https://cdn.jsdelivr.net/npm/gitalk/dist/gitalk.min.js')
+      initGitalk(el, path)
+    }
+  }
+
+  if (isShuoshuo) {
+    'Waline' === 'Gitalk'
+      ? window.shuoshuoComment = { loadComment: loadGitalk }
+      : window.loadOtherComment = loadGitalk
+    return
+  }
+
+  if ('Waline' === 'Gitalk' || !false) {
+    if (false) btf.loadComment(document.getElementById('gitalk-container'), loadGitalk)
+    else loadGitalk()
+  } else {
+    window.loadOtherComment = loadGitalk
+  }
+})()</script></div><script defer src="/js/cover-colors.js"></script><script defer src="/en/js/cover-accent.js"></script><script defer src="/en/js/seal.js"></script><script defer src="/en/js/a11y.js"></script><script defer src="/en/js/pjax-transition.js"></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css" media="print" onload="this.media='all'"><script defer src="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js"></script><script defer src="/en/js/Meting.min.js"></script><script>var meting_api='https://meting-api.iliyian.com/api?server=:server&type=:type&id=:id&auth=:auth&r=:r';</script><meting-js server="tencent" type="playlist" id="2374187585" fixed="true" autoplay="false" list-folded="true" order="random" preload="none"></meting-js><script> (function() { var meting = document.querySelector('meting-js[fixed="true"]'); if (meting) { meting.addEventListener('load', function(e) { var ap = e.detail.aplayer; if (ap) { setTimeout(function() { var btn = ap.template.lrcButton; if (btn && !btn.classList.contains('aplayer-icon-lrc-inactivity')) { btn.click(); } }, 300); } }); } })(); </script><script defer pjax data-api="https://busuanzi.iliyian.com/api" data-prefix="busuanzi_value" src="https://busuanzi.iliyian.com/js"></script><script>
+document.addEventListener('pjax:complete', function () {
+  if (window._paq) {
+    _paq.push(['setCustomUrl', location.href]);
+    _paq.push(['setDocumentTitle', document.title]);
+    _paq.push(['trackPageView']);
+  }
+});
+</script>
+<script src="/en/js/music.js" defer></script><script defer src="/en/js/blog-live2d.js"></script><script>
+function initTranslateBtn(){
+  if(document.querySelector('.post-meta-translate')) return;
+  if(document.querySelector('#post-meta')){
+    const path = location.pathname;
+
+    const separator = document.createElement('span');
+    separator.className = 'post-meta-separator';
+    separator.innerHTML = ' | ';
+
+    const wrapper = document.createElement('span');
+    wrapper.className = 'post-meta-translate';
+
+    const icon = document.createElement('i');
+    icon.className = 'fas fa-language fa-fw post-meta-icon';
+
+    const btn = document.createElement('a');
+    if(path.startsWith('/en/')){
+      btn.href = path.replace('/en/', '/');
+      btn.innerHTML = '中文';
+    } else {
+      btn.href = '/en' + path;
+      btn.innerHTML = 'English';
+    }
+    btn.style.cssText = 'color: #ffffff; text-decoration: none; transition: all .2s; border-bottom: 1px solid var(--light-grey);';
+    btn.onmouseover = function(){ this.style.color = '#4a7a94'; this.style.borderBottomColor = '#4a7a94'; };
+    btn.onmouseout = function(){ this.style.color = '#ffffff'; this.style.borderBottomColor = 'var(--light-grey)'; };
+    // 中英两站是独立构建，样式与 GLOBAL_CONFIG 不同，必须整页跳转
+    btn.addEventListener('click', function(e){
+      e.preventDefault();
+      window.location.href = btn.href;
+    });
+
+    wrapper.appendChild(icon);
+    wrapper.appendChild(btn);
+
+    const meta = document.querySelector('#post-meta .meta-firstline');
+    if(meta) {
+      meta.appendChild(separator);
+      meta.appendChild(wrapper);
+    }
+  }
+}
+document.addEventListener('DOMContentLoaded', initTranslateBtn);
+document.addEventListener('pjax:complete', initTranslateBtn);
+</script>
+<script id="click-show-text" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/click-show-text.min.js" data-mobile="true" data-text="I,LOVE,YOU" data-fontsize="15px" data-random="false" async="async"></script><script src="https://cdn.jsdelivr.net/npm/pjax/pjax.min.js" defer="defer"></script><script>document.addEventListener('DOMContentLoaded', () => {
+  const pjaxSelectors = ["head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+
+  window.pjax = new Pjax({
+    elements: 'a:not([target="_blank"]):not([data-fancybox]):not([href="/music/"]):not([href="https://iliyian.com/music/"]):not([href="https://iliyian.com"]):not([href="https://iliyian.com/"])',
+    selectors: pjaxSelectors,
+    cacheBust: false,
+    analytics: false,
+    scrollRestoration: false
+  })
+
+  const triggerPjaxFn = (val) => {
+    if (!val) return
+    Object.values(val).forEach(fn => {
+      try {
+        fn()
+      } catch (err) {
+        console.debug('Pjax callback failed:', err)
+      }
+    })
+  }
+
+  document.addEventListener('pjax:send', () => {
+    // removeEventListener
+    btf.removeGlobalFnEvent('pjaxSendOnce')
+    btf.removeGlobalFnEvent('themeChange')
+
+    // reset readmode
+    const $bodyClassList = document.body.classList
+    if ($bodyClassList.contains('read-mode')) $bodyClassList.remove('read-mode')
+
+    triggerPjaxFn(window.globalFn.pjaxSend)
+  })
+
+  document.addEventListener('pjax:complete', () => {
+    btf.removeGlobalFnEvent('pjaxCompleteOnce')
+    document.querySelectorAll('script[data-pjax]').forEach(item => {
+      if (!item.parentNode) return
+      const newScript = document.createElement('script')
+      const content = item.text || item.textContent || ''
+      Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+      newScript.appendChild(document.createTextNode(content))
+      item.parentNode.replaceChild(newScript, item)
+    })
+
+    triggerPjaxFn(window.globalFn.pjaxComplete)
+  })
+
+  document.addEventListener('pjax:error', e => {
+    const responseURL = e.request && e.request.responseURL
+    if (e.request && e.request.status === 404) {
+      true
+        ? pjax.loadUrl('/en/404.html')
+        : responseURL && (window.location.href = responseURL)
+    } else if (responseURL) {
+      window.location.href = responseURL
+    }
+  })
+})</script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">Search</span><i class="fas fa-spinner fa-pulse" id="loading-status" hidden="hidden"></i><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="text-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  Loading Database</span></div><div class="local-search-input"><input placeholder="Search for Posts" type="text"/></div><hr/><div id="local-search-results"></div><div class="ais-Pagination" id="local-search-pagination" style="display:none;"><ul class="ais-Pagination-list"></ul></div><div id="local-search-stats"></div></div><div id="search-mask"></div><script>(function(){var src="/en/js/search/local-search-lazy.js";var loaded=false,loading=false;function load(cb){if(loaded){cb&&cb();return}if(loading)return;loading=true;var s=document.createElement("script");s.src=src;s.onload=function(){loading=false;loaded=true;cb&&cb()};s.onerror=function(){loading=false};document.head.appendChild(s)}document.addEventListener("click",function(e){var b=e.target.closest&&e.target.closest("#search-button");if(!b||loaded)return;e.preventDefault();e.stopImmediatePropagation();load(function(){var t=document.querySelector("#search-button > .search");t&&t.click()})},true);})();</script></div></div></body></html>

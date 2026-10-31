@@ -18,7 +18,8 @@
     cursor: pointer;
 }
 
-.cover {
+/* 限定在音乐播放器内，避免影响 pagination-related 等同样使用 .cover 的图片 */
+div[music] .player .cover {
     width: 100%;
     height: 100%;
     background-size: cover;

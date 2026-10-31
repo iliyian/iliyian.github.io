@@ -100,9 +100,11 @@
 .fa-spinner{--fa:"\f110"}
 .fa-external-link-square,.fa-square-arrow-up-right{--fa:"\f14c"}
 .fa-thumbs-up{--fa:"\f164"}
+.fa-thumbs-down{--fa:"\f165"}
 .fa-archive,.fa-box-archive{--fa:"\f187"}
 .fa-language{--fa:"\f1ab"}
 .fa-file-word{--fa:"\f1c2"}
+.fa-circle-notch{--fa:"\f1ce"}
 .fa-clock-rotate-left,.fa-history{--fa:"\f1da"}
 .fa-chart-line,.fa-line-chart{--fa:"\f201"}
 .fa-comment-alt,.fa-message{--fa:"\f27a"}
@@ -121,6 +123,7 @@
 @font-face{font-family:"Font Awesome 7 Brands";font-style:normal;font-weight:400;font-display:block;src:url(../fonts/fa-brands-subset.woff2)}
 .fa-brands,.fa-classic.fa-brands,.fab{--fa-family:var(--fa-family-brands);--fa-style:400}
 .fa-github{--fa:"\f09b"}
+.fa-steam{--fa:"\f1b6"}
 .fa-telegram,.fa-telegram-plane{--fa:"\f2c6"}
 :host,:root{--fa-font-regular:normal 400 1em/1 var(--fa-family-classic)}
 .far{--fa-family:var(--fa-family-classic)}

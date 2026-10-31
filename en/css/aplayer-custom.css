@@ -497,3 +497,8 @@
 [data-theme="dark"] .aplayer .aplayer-list ol::-webkit-scrollbar-thumb:hover {
     background-color: rgba(155, 139, 170, 0.4);
 }
+
+/* 上游 5.7.0 移除了主题内的深色滤镜，这里补回原来的观感 */
+[data-theme="dark"] .aplayer {
+    filter: brightness(.8);
+}

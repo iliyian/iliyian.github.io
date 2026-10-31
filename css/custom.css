@@ -36,6 +36,18 @@
     font-display: swap;
 }
 
+@font-face {
+    font-family: "LXGW-Screen";
+    src: url(/fonts/LXGWWenKai-Screen.woff2);
+    font-display: swap;
+}
+
+/* 页头/导航优先使用小字体；缺字自动回退到全站字体 */
+#page-header,
+#nav {
+    font-family: "LXGW-Screen", "LXGW", "Noto Serif SC", serif;
+}
+
 /* @font-face {
     font-family: 'Er Ci Yuan';
     src: url(https://r2-imgs.iliyian.com/css/二次元字体.ttf);
@@ -267,4 +279,291 @@
     box-shadow:
         inset 0 0 0 3px rgba(var(--cover-accent), .10),
         var(--card-hover-box-shadow) !important;
+}
+
+/* 头图顶部加深，保证导航白字在亮色图片上依然可读 */
+#page-header:not(.not-top-img)::before {
+    background-image: linear-gradient(180deg,
+        rgba(0, 0, 0, .45) 0,
+        rgba(0, 0, 0, .18) 72px,
+        rgba(0, 0, 0, 0) 150px);
+}
+
+/* 非固定状态下，导航加文字阴影 */
+#page-header:not(.nav-fixed) #nav a,
+#page-header:not(.nav-fixed) #nav .site-page,
+#page-header:not(.nav-fixed) #blog-info .site-name {
+    text-shadow: 0 1px 4px rgba(0, 0, 0, .55);
+}
+
+/* 首页大标题与副标题 */
+#page-header #site-title,
+#page-header #site-subtitle {
+    text-shadow: 0 2px 8px rgba(0, 0, 0, .55), 0 0 2px rgba(0, 0, 0, .35);
+}
+
+/* 文章页标题与元信息 */
+#post-info .post-title,
+#post-info #post-meta,
+#post-info #post-meta a {
+    text-shadow: 0 2px 6px rgba(0, 0, 0, .55), 0 0 2px rgba(0, 0, 0, .4);
+}
+
+/* 标签云对比度（覆盖主题生成的内联颜色） */
+.card-tag-cloud a {
+    color: #5f5f5f !important;
+}
+
+/* iconfont 图标默认是 inline，transform 不生效；让侧边栏社交图标可旋转 */
+.card-info-social-icons .social-icon i {
+    display: inline-block;
+}
+
+/* pjax 同文档切换：新旧页面 crossfade，固定播放器/背景保持稳定 */
+::view-transition-old(root) {
+    animation: none;
+}
+
+::view-transition-new(root) {
+    animation: pjax-page-in 260ms cubic-bezier(.22, .61, .36, 1) both;
+}
+
+@keyframes pjax-page-in {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* pjax 切页后由 View Transition 接管进场，避免主题动画叠加 */
+html.vt-swapping #content-inner,
+html.vt-swapping #footer,
+html.vt-swapping #page-header,
+html.vt-swapping #nav.show,
+html.vt-swapping #site-title,
+html.vt-swapping #site-subtitle {
+    animation: none !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    ::view-transition-new(root) {
+        animation: none !important;
+    }
+}
+
+/* ===== 朱砂印章系统 ===== */
+.yy-seal {
+    --seal-color: #b0473c;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: var(--seal-color);
+    border: 2px solid var(--seal-color);
+    border-radius: 4px 3px 5px 2px;
+    font-family: "LXGW", "Noto Serif SC", serif;
+    font-weight: 600;
+    line-height: 1.04;
+    letter-spacing: 0;
+    text-align: center;
+    transform: rotate(-4deg);
+    box-shadow: inset 0 0 0 1px rgba(176, 71, 60, .28);
+    opacity: .92;
+    pointer-events: none;
+    user-select: none;
+    -webkit-font-smoothing: antialiased;
+}
+
+.yy-seal span {
+    display: block;
+    line-height: 1.04;
+}
+
+[data-theme="dark"] .yy-seal {
+    --seal-color: #d07a6e;
+    box-shadow: inset 0 0 0 1px rgba(208, 122, 110, .28);
+}
+
+/* 导航栏：单字小印 */
+.yy-seal--nav {
+    width: 23px;
+    height: 23px;
+    margin-left: 9px;
+    font-size: 13px;
+    border-width: 1.5px;
+    vertical-align: middle;
+    transform: rotate(-4deg) translateY(-1px);
+}
+
+/* 置顶文章：标题前的原位小印 */
+.yy-seal--inline {
+    width: 27px;
+    height: 27px;
+    margin-right: 8px;
+    font-size: 9px;
+    border-width: 1.5px;
+    vertical-align: middle;
+    background: rgba(246, 240, 228, .65);
+    box-shadow:
+        inset 0 0 0 1px rgba(176, 71, 60, .26),
+        0 1px 3px rgba(0, 0, 0, .12);
+}
+
+[data-theme="dark"] .yy-seal--inline {
+    background: rgba(26, 26, 46, .55);
+}
+
+/* 英文站置顶：横向 TOP 印 */
+.yy-seal--inline-en {
+    flex-direction: row;
+    width: 34px;
+    height: 20px;
+    font-size: 8px;
+    letter-spacing: .8px;
+}
+
+/* 文章结尾落款 */
+.yy-seal--signature {
+    width: 46px;
+    height: 46px;
+    font-size: 14px;
+    background: rgba(246, 240, 228, .18);
+}
+
+.post-signature {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 12px;
+    margin: 30px 0 18px;
+    padding-top: 16px;
+    border-top: 1px solid rgba(176, 71, 60, .16);
+}
+
+.yy-signature-caption {
+    font-size: 12px;
+    letter-spacing: .16em;
+    color: #6f5f54;
+    opacity: 1;
+}
+
+[data-theme="dark"] .yy-signature-caption {
+    color: #b8a99c;
+}
+
+@media (max-width: 768px) {
+    .yy-seal--inline {
+        width: 25px;
+        height: 25px;
+        margin-right: 6px;
+        font-size: 8.5px;
+    }
+
+    .yy-seal--inline-en {
+        width: 32px;
+        height: 18px;
+        font-size: 7.5px;
+    }
+
+    .yy-seal--signature {
+        width: 42px;
+        height: 42px;
+        font-size: 13px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .yy-seal {
+        transform: none;
+    }
+}
+
+/* ===== 无障碍补强 ===== */
+/* 键盘跳转链接：Tab 首次进入时出现 */
+.yy-skip-link {
+    position: fixed;
+    top: 8px;
+    left: 8px;
+    z-index: 100000;
+    padding: 10px 14px;
+    border-radius: 6px;
+    background: #b0473c;
+    color: #fff !important;
+    font-size: 14px;
+    text-decoration: none;
+    transform: translateY(-200%);
+    transition: transform .2s ease;
+}
+
+.yy-skip-link:focus,
+.yy-skip-link:focus-visible {
+    transform: translateY(0);
+    outline: 2px solid #fff;
+    outline-offset: 2px;
+}
+
+[data-theme="dark"] .yy-skip-link {
+    background: #d07a6e;
+    color: #1a1a2e !important;
+}
+
+/* 统一可见焦点环 */
+a:focus-visible,
+button:focus-visible,
+[role="button"]:focus-visible {
+    outline: 2px solid #b0473c !important;
+    outline-offset: 3px;
+    border-radius: 4px;
+}
+
+[data-theme="dark"] a:focus-visible,
+[data-theme="dark"] button:focus-visible,
+[data-theme="dark"] [role="button"]:focus-visible {
+    outline-color: #d07a6e !important;
+}
+
+#search-button,
+#toggle-menu {
+    cursor: pointer;
+}
+
+/* 移动端触摸目标不小于 44px */
+@media screen and (max-width: 768px) {
+    #search-button,
+    #toggle-menu {
+        min-width: 44px;
+        min-height: 44px;
+        display: inline-flex !important;
+        align-items: center;
+        justify-content: center;
+    }
+
+    #search-button > .site-page,
+    #toggle-menu > .site-page {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        min-height: 44px;
+    }
+
+    #site_social_icons .social-icon,
+    .card-info-social-icons .social-icon {
+        min-width: 44px;
+        min-height: 44px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .search-close-button {
+        min-width: 44px;
+        min-height: 44px;
+    }
+
+    #pagination .page-number,
+    #pagination .extend,
+    #pagination .space {
+        min-width: 44px;
+        min-height: 44px;
+        line-height: 44px;
+    }
 }

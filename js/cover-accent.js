@@ -144,8 +144,9 @@
     var bg = item.querySelector('.post-bg');
     if (!bg) return null;
     if (bg.tagName === 'IMG') {
+      var original = bg.getAttribute('data-cover-src');
       var lazy = bg.getAttribute('data-lazy-src');
-      var src = lazy || bg.currentSrc || bg.src;
+      var src = original || lazy || bg.currentSrc || bg.src;
       return src ? { type: 'img', url: src, el: bg, ready: lazy ? bg.getAttribute('data-ll-status') === 'loaded' : bg.complete } : null;
     }
     // div 形式：<div class="post-bg" style="background: ...">
@@ -161,6 +162,14 @@
   // 封面图盖在左侧自然过渡，信息区透明叠在染色卡片上，避免外露白边。
   function apply(item, rgb) {
     item.style.setProperty('--cover-accent', rgb[0] + ',' + rgb[1] + ',' + rgb[2]);
+  }
+
+  // 构建时预计算的颜色表；命中时不需要再下载/采样图片。
+  function precomputedColor(url) {
+    var map = window.__COVER_COLORS;
+    if (!map || !url || !Object.prototype.hasOwnProperty.call(map, url)) return undefined;
+    var rgb = map[url];
+    return rgb && rgb.length === 3 ? rgb : false;
   }
 
   function sampleAndApply(item, url) {
@@ -179,6 +188,9 @@
     var c = getCoverInfo(item);
     if (!c) return;
     if (c.type === 'color') { apply(item, c.color); return; }
+    var pre = precomputedColor(c.url);
+    if (pre === false) return;
+    if (pre) { apply(item, pre); return; }
     if (c.ready) { sampleAndApply(item, c.url); return; }
     // 真图尚未加载：等 lazyload swap 真图触发 load 后再取色
     if (!c.el) return;
@@ -197,8 +209,11 @@
     var header = document.getElementById('page-header');
     if (!header || !header.classList.contains('post-bg')) return;
     var val = header.getAttribute('style') || '';
-    var url = urlFromBgValue(val);
+    var url = header.getAttribute('data-cover-src') || urlFromBgValue(val);
     if (url) {
+      var pre = precomputedColor(url);
+      if (pre === false) return;
+      if (pre) { apply(post, pre); return; }
       if (cache[url]) { apply(post, cache[url]); return; }
       loadAndSample(url, function (rgb) {
         if (!rgb) return;
