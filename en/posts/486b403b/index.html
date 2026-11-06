@@ -1,0 +1,1912 @@
+<!DOCTYPE html><html lang="en" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>Using BBR on an Android device | Yian's World</title><meta name="author" content="iliyian"><meta name="copyright" content="iliyian"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#f8f6f4"><meta name="description" content="A long-cherished wish for years now, you could say.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Using BBR on an Android device">
+<meta property="og:url" content="https://iliyian.com/en/posts/486b403b/index.html">
+<meta property="og:site_name" content="Yian&#39;s World">
+<meta property="og:description" content="A long-cherished wish for years now, you could say.">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://r2-imgs.iliyian.com/img/vertin_sleeping.jpg">
+<meta property="article:published_time" content="2026-11-02T09:53:09.000Z">
+<meta property="article:modified_time" content="2026-11-06T15:19:02.016Z">
+<meta property="article:author" content="iliyian">
+<meta property="article:tag" content="AI SLOP">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://r2-imgs.iliyian.com/img/vertin_sleeping.jpg"><script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Using BBR on an Android device",
+  "url": "https://iliyian.com/en/posts/486b403b/",
+  "image": "https://r2-imgs.iliyian.com/img/vertin_sleeping.jpg",
+  "datePublished": "2026-11-02T09:53:09.000Z",
+  "dateModified": "2026-11-06T15:19:02.016Z",
+  "author": [
+    {
+      "@type": "Person",
+      "name": "iliyian",
+      "url": "https://iliyian.com"
+    }
+  ]
+}</script><link rel="shortcut icon" href="https://r2-imgs.iliyian.com/img/bookgirl_ico.jpg"><link rel="canonical" href="https://iliyian.com/en/posts/486b403b/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="stylesheet" href="/en/css/index.css"><link rel="stylesheet" href="/en/css/fontawesome-subset.css"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        try {
+          const data = { value }
+
+          if (ttl != null) {
+            data.expiry = Date.now() + ttl * 86400000
+          }
+
+          localStorage.setItem(key, JSON.stringify(data))
+        } catch (e) {
+          console.error(e)
+        }
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return
+
+        try {
+          const data = JSON.parse(itemStr)
+
+          if (data.expiry && Date.now() > data.expiry) {
+            localStorage.removeItem(key)
+            return
+          }
+
+          return data.value
+        } catch {
+          localStorage.removeItem(key)
+        }
+      }
+    }
+
+    const scriptCache = new Map()
+    const cssCache = new Map()
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => {
+        if (scriptCache.has(url)) {
+          return scriptCache.get(url)
+        }
+
+        const promise = new Promise((resolve, reject) => {
+          const script = document.createElement('script')
+
+          script.src = url
+          script.async = true
+
+          for (const key in attr) {
+            script.setAttribute(key, attr[key])
+          }
+
+          script.onload = resolve
+          script.onerror = reject
+
+          document.head.appendChild(script)
+        })
+
+        scriptCache.set(url, promise)
+
+        return promise
+      },
+      getCSS: (url, id) => {
+        if (cssCache.has(url)) {
+          return cssCache.get(url)
+        }
+
+        const promise = new Promise((resolve, reject) => {
+          const link = document.createElement('link')
+
+          link.rel = 'stylesheet'
+          link.href = url
+
+          if (id) {
+            link.id = id
+          }
+
+          link.onload = resolve
+          link.onerror = reject
+
+          document.head.appendChild(link)
+        })
+
+        cssCache.set(url, promise)
+
+        return promise
+      },
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!true && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const metaThemeColor = document.querySelector('meta[name="theme-color"]')
+      const activateDarkMode = () => {
+        document.documentElement.dataset.theme = 'dark'
+        if (metaThemeColor !== null) {
+          metaThemeColor.setAttribute('content', '#1a1a2e')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.dataset.theme = 'light'
+        if (metaThemeColor !== null) {
+          metaThemeColor.setAttribute('content', '#f8f6f4')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/en/',
+  algolia: undefined,
+  localSearch: {"path":"/en/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"pagination":{"enable":false,"hitsPerPage":8},"languages":{"hits_empty":"No results found for: ${query}","hits_stats":"${hits} articles found"}},
+  translate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":true},
+  copy: {
+    success: 'Copy Successful',
+    error: 'Copy Failed',
+    noSupport: 'Browser Not Supported'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: 'days',
+  dateSuffix: {
+    just: 'Just now',
+    min: 'minutes ago',
+    hour: 'hours ago',
+    day: 'days ago',
+    month: 'months ago'
+  },
+  copyright: undefined,
+  lightbox: 'null',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid/dist/infinitegrid.min.js',
+    buttonText: 'Load More'
+  },
+  isPhotoFigcaption: true,
+  islazyloadPlugin: true,
+  isAnchor: true,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'Using BBR on an Android device',
+  isHighlightShrink: true,
+  isToc: true,
+  pageType: 'post'
+}</script><script>window.loadMeting = window.loadMeting || function () {};</script><link rel="preload" href="/fonts/LXGWWenKai-Screen.woff2" as="font" type="font/woff2" crossorigin><link rel="stylesheet" href="/en/css/custom.css" media="defer" onload="this.media='all'"><link rel="stylesheet" href="/en/css/iconfont.css" media="defer" onload="this.media='all'"><link rel="stylesheet" href="/en/css/music.css" media="defer" onload="this.media='all'"><link rel="stylesheet" href="/en/css/aplayer-custom.css" media="defer" onload="this.media='all'"><!-- Matomo -->
+<script>
+  var _paq = window._paq = window._paq || [];
+  /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//mat.iliyian.com/";
+    _paq.push(['setTrackerUrl', u+'t']);
+    _paq.push(['setSiteId', '1']);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.async=true; g.src=u+'mat.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<!-- End Matomo Code -->
+<script>
+  !function(t,e){var o,n,p,r;e.__SV||(window.posthog && window.posthog.__loaded)||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.crossOrigin="anonymous",p.async=!0,p.src=s.api_host.replace(".i.posthog.com","-assets.i.posthog.com")+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"},o="Ji Yi init fn mn Ur pn bn cn capture calculateEventProperties Sn register register_once register_for_session unregister unregister_for_session Tn getFeatureFlag getFeatureFlagPayload getFeatureFlagResult getAllFeatureFlags isFeatureEnabled reloadFeatureFlags updateFlags updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures on onFeatureFlags onSurveysLoaded onSessionId getSurveys getActiveMatchingSurveys renderSurvey displaySurvey cancelPendingSurvey canRenderSurvey canRenderSurveyAsync Mn identify setPersonProperties unsetPersonProperties group resetGroups setPersonPropertiesForFlags resetPersonPropertiesForFlags setGroupPropertiesForFlags resetGroupPropertiesForFlags reset shutdown setIdentity clearIdentity get_distinct_id getGroups get_session_id get_session_replay_url alias set_config startSessionRecording stopSessionRecording sessionRecordingStarted captureException addExceptionStep captureLog startExceptionAutocapture stopExceptionAutocapture loadToolbar get_property getSessionProperty Cn xn createPersonProfile setInternalOrTestUser In hn Pn opt_in_capturing opt_out_capturing has_opted_in_capturing has_opted_out_capturing get_explicit_consent_status is_capturing clear_opt_in_out_capturing debug Vr Rt getPageViewId captureTraceFeedback captureTraceMetric an".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
+  posthog.init('phc_wib2S3JfFRaaaAVNFN4miJq2S8zKquKuZa9nQuV3hL2y', {
+      api_host: 'https://posth.iliyian.com',
+      defaults: '2026-05-30',
+      person_profiles: 'always', // or 'always' to create profiles for anonymous users as well
+      capture_copied_text: true
+  })
+</script>
+<meta name="generator" content="Hexo 7.3.0"><link rel="alternate" href="/en/atom.xml" title="Yian's World" type="application/atom+xml">
+</head><body><div class="bg-animation" id="web_bg" style="background-image: url(https://r2-imgs.iliyian.com/img/雨に耳を傾ける.avif);"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="https://r2-imgs.iliyian.com/img/loading-cat.gif" data-lazy-src="https://r2-imgs.iliyian.com/img/37.jpg" onerror="this.onerror=null;this.src='https://http.cat/404'" alt="avatar"/></div><div class="site-data text-center"><a href="/en/archives/"><div class="headline">Articles</div><div class="length-num">48</div></a><a href="/en/tags/"><div class="headline">Tags</div><div class="length-num">20</div></a><a href="/en/categories/"><div class="headline">Categories</div><div class="length-num">9</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="https://iliyian.com"><i class="fa-fw fas fa-language"></i><span> 中文</span></a></div><div class="menus_item"><a class="site-page" href="https://iliyian.com/music/"><i class="fa-fw fas fa-music"></i><span> Music</span></a></div><div class="menus_item"><a class="site-page" href="/en/link/"><i class="fa-fw fas fa-link"></i><span> Dokodemo-Door</span></a></div><div class="menus_item"><a class="site-page" href="/en/game/"><i class="fa-fw fas fa-chess-queen"></i><span> Paradise</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url(https://r2-imgs.iliyian.com/cdn-cgi/image/format=webp,quality=80/img/vertin_sleeping.jpg);" data-cover-src="https://r2-imgs.iliyian.com/img/vertin_sleeping.jpg"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/en/"><span class="site-name">Yian's World</span></a><a class="nav-page-title" href="/en/"><span class="site-name">Using BBR on an Android device</span><span class="site-name"><i class="fa-solid fa-circle-arrow-left"></i><span>  Back to Home</span></span></a></span><div id="menus"><div id="search-button"><span class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> Search</span></span></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="https://iliyian.com"><i class="fa-fw fas fa-language"></i><span> 中文</span></a></div><div class="menus_item"><a class="site-page" href="https://iliyian.com/music/"><i class="fa-fw fas fa-music"></i><span> Music</span></a></div><div class="menus_item"><a class="site-page" href="/en/link/"><i class="fa-fw fas fa-link"></i><span> Dokodemo-Door</span></a></div><div class="menus_item"><a class="site-page" href="/en/game/"><i class="fa-fw fas fa-chess-queen"></i><span> Paradise</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="post-info"><h1 class="post-title">Using BBR on an Android device<a class="post-edit-link" href="https://github.com/iliyian/blogxyz/edit/main/source/_posts/在安卓机上使用BBR.md" rel="external nofollow noreferrer" title="Edit" target="_blank"><i class="fas fa-pencil-alt"></i></a></h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="fa-fw post-meta-icon far fa-calendar-alt"></i><span class="post-meta-label">Created</span><time datetime="2026-11-02T09:53:09.000Z" title="Created 2026-11-02 17:53:09">2026-11-02</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/en/categories/%E7%A7%91%E6%8A%80/">科技</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">Word Count:</span><span class="word-count">7746</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">Reading Time:</span><span>49 mins</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">Post Views:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="container post-content" id="article-container"><h1>Enabling BBR on Redmi K80 via a Kernel Module</h1>
+<p>Device: Redmi K80 (zorn / 24117RK2CC)<br>
+System: HyperOS OS3.0.309.0.WOKCNXM / Android 16<br>
+Kernel: <code>6.1.138-android14-11-g965475777129-mi</code><br>
+Root: SukiSU Ultra 4.3.0 (LKM mode)</p>
+<p>Result: BBR and fq are now up and running on this device, persisting across reboots. No kernel flashing, no waiting for Xiaomi to release the kernel source, and none of the screen flickering issues seen with GKI.</p>
+<p>This post documents the entire process: how to confirm BBR is missing from the kernel, why a standard <code>insmod</code> fails, how to track down the matching source tree and compiler, how to avoid instant reboots upon loading, and finally how to package it into an auto-starting KernelSU module.</p>
+<h2 id="First-What-Is-BBR">First, What Is BBR?</h2>
+<p>BBR is a TCP congestion control algorithm introduced by Google in 2016. Traditional algorithms like cubic rely on packet loss to detect congestion: the moment packets start dropping, cubic drastically cuts its sending rate. BBR takes a different approach—it estimates the bottleneck bandwidth and round-trip propagation time of the link, then paces packet transmission according to that model.</p>
+<p>This difference is most noticeable on weak, high-latency links with some random packet loss. BBR generally keeps sender throughput higher while keeping queues short, preventing latency from piling up. That said, it is not a “speed hack”: peak bandwidth won’t magically increase out of thin air, and download speeds depend largely on the server’s congestion control algorithm and the link itself.</p>
+<p>Android kernels don’t always ship with BBR compiled in. Many OEM configurations only keep <code>reno</code> and <code>cubic</code> to save build size and reduce behavioral variables. That is exactly the case on this K80.</p>
+<h2 id="Checking-Kernel-Support">Checking Kernel Support</h2>
+<p>First, check the currently available congestion control algorithms:</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">$ <span class="built_in">cat</span> /proc/sys/net/ipv4/tcp_available_congestion_control</span><br><span class="line">reno cubic</span><br><span class="line"></span><br><span class="line">$ <span class="built_in">cat</span> /proc/sys/net/ipv4/tcp_congestion_control</span><br><span class="line">cubic</span><br></pre></td></tr></table></figure>
+<p>Next, check the kernel configuration:</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">$ zcat /proc/config.gz | grep TCP_CONG</span><br><span class="line">CONFIG_TCP_CONG_CUBIC=y</span><br><span class="line">CONFIG_DEFAULT_TCP_CONG=<span class="string">&quot;cubic&quot;</span></span><br><span class="line"><span class="comment"># CONFIG_TCP_CONG_ADVANCED is not set</span></span><br></pre></td></tr></table></figure>
+<p><code>CONFIG_TCP_CONG_ADVANCED</code> is not enabled, so BBR was never compiled at all. There is no <code>tcp_bbr.ko</code> under <code>/vendor/lib/modules</code>, and no <code>bbr</code> symbols in the kernel symbol table either.</p>
+<p>In other words, it’s not a matter of a toggle being left off—the algorithm simply isn’t in the kernel.</p>
+<h2 id="Why-Not-Just-Build-a-Full-Kernel">Why Not Just Build a Full Kernel?</h2>
+<p>The standard approach would be to compile a full kernel with BBR enabled and flash it to the boot partition. There are two problems with that here.</p>
+<p>First, Xiaomi hasn’t released the source code for <code>6.1.138-mi</code>. MiCode only has the older <code>bsp-zorn-v-oss</code> (6.1.68 / Android 15), with no branch corresponding to Android 16.</p>
+<p>Second, flashing a generic GKI or third-party kernel breaks the HyperOS display stack. I tested both a generic GKI 6.1.145 and a third-party zorn 6.1.176 kernel on this phone; both booted, but the screen flickered constantly while the vendor HWC/DRM repeatedly spammed <code>COMMIT failed: 11</code>. At the time, it looked like the vendor display modules were tightly coupled to the exact kernel version, meaning any kernel swap would break the display.</p>
+<blockquote>
+<p><strong>2026-11-05 Correction</strong>: That assessment was only half right. The flickering wasn’t because “newer kernels are inherently incompatible,” but rather because a DRM validation check introduced in stable 6.1.141 conflicted with <code>possible_clones</code> in zorn’s vendor <code>msm_drm</code>. Reverting that check fixed the display on 6.1.176. See “6.1.176: Display Compatibility and Dual BBR” at the end of this post for details.</p>
+</blockquote>
+<p>So while building a full kernel seemed like a dead end at the time, it later proved to be fixable rather than impossible.</p>
+<h2 id="The-Third-Way-Loading-a-Module-at-Runtime">The Third Way: Loading a Module at Runtime</h2>
+<p>Even without replacing the full kernel, the stock kernel itself supports loadable modules. If we can compile a <code>tcp_bbr.ko</code> and load it at runtime, we don’t need to touch the boot partition or risk disturbing the display stack.</p>
+<p>The catch is that standard <code>insmod</code> will reject the module.</p>
+<p>There are three checks between a module and the kernel:</p>
+<ol>
+<li><strong>vermagic</strong>: The kernel version string embedded in the module at build time must match the running kernel;</li>
+<li><strong>MODVERSIONS</strong>: If the kernel has <code>CONFIG_MODVERSIONS</code> enabled, every external symbol referenced by the module carries a CRC checksum that the kernel verifies one by one;</li>
+<li><strong>Symbol export</strong>: Symbols referenced by the module must exist in the kernel’s export table.</li>
+</ol>
+<p>This phone’s kernel has <code>CONFIG_MODVERSIONS=y</code>, and the OEM didn’t provide <code>Module.symvers</code>, so a self-compiled module won’t have matching CRCs. Its vermagic will also mismatch because it lacks the <code>-mi</code> suffix.</p>
+<p>A direct <code>insmod</code> will fail at the first or second check.</p>
+<h2 id="What-ksud-insmod-Does">What ksud insmod Does</h2>
+<p><code>ksud insmod</code> in SukiSU 4.3.0 doesn’t just blindly call <code>init_module</code>. It includes a userspace module loader that roughly does the following:</p>
+<ol>
+<li>Reads the <code>.ko</code> and parses undefined symbols in the ELF;</li>
+<li>Resolves the address of each symbol via the kernel symbol query interface (UAPI 6) or <code>/proc/kallsyms</code>;</li>
+<li>Rewrites the symbol table entries to <code>SHN_ABS</code> with their values set to the real addresses;</li>
+<li>Calls <code>init_module</code>;</li>
+<li>If the kernel rejects the module due to a vermagic mismatch, reads the expected vermagic from the kernel log, patches the string inside the <code>.ko</code>, and retries.</li>
+</ol>
+<p>Once the symbols are rewritten as absolute addresses, the kernel no longer checks the export table or CRCs during module loading, and the vermagic is patched to match the device’s actual string. That’s how it manages to load “foreign” <code>.ko</code> files.</p>
+<p><code>vpnhide_kmod.ko</code> on the phone is a ready-made example. Its vermagic says <code>6.1.166-dirty</code>, yet it loads and works fine on this <code>6.1.138-mi</code> kernel.</p>
+<p>Keep in mind, however, that <code>ksud insmod</code> only bypasses symbol and version checks. If struct layouts or CFI hashes don’t match, the module will still crash the kernel—often causing an instant reboot upon loading before any logs can be saved.</p>
+<h2 id="Hurdle-1-The-Source-Must-Be-ACK">Hurdle 1: The Source Must Be ACK</h2>
+<p>My first build of the module used upstream stable 6.1.138 from <a target="_blank" rel="noopener external nofollow noreferrer" href="http://kernel.org">kernel.org</a>. It compiled cleanly, but when I compared the device BTF against the module BTF, every single struct size was off:</p>
+<table>
+<thead>
+<tr>
+<th>Struct</th>
+<th style="text-align:right">Device BTF</th>
+<th style="text-align:right">stable 6.1.138</th>
+<th style="text-align:right">Diff</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>sock</code></td>
+<td style="text-align:right">856</td>
+<td style="text-align:right">768</td>
+<td style="text-align:right">88</td>
+</tr>
+<tr>
+<td><code>inet_sock</code></td>
+<td style="text-align:right">1088</td>
+<td style="text-align:right">984</td>
+<td style="text-align:right">104</td>
+</tr>
+<tr>
+<td><code>inet_connection_sock</code></td>
+<td style="text-align:right">1536</td>
+<td style="text-align:right">1392</td>
+<td style="text-align:right">144</td>
+</tr>
+<tr>
+<td><code>tcp_sock</code></td>
+<td style="text-align:right">2368</td>
+<td style="text-align:right">2200</td>
+<td style="text-align:right">168</td>
+</tr>
+<tr>
+<td><code>module</code></td>
+<td style="text-align:right">1088</td>
+<td style="text-align:right">1024</td>
+<td style="text-align:right">64</td>
+</tr>
+</tbody>
+</table>
+<p>The kernel version string is <code>6.1.138-android14-11-g965475777129-mi</code>. There is more information packed in here than just “6.1.138”:</p>
+<ul>
+<li><code>6.1.138</code> is the upstream stable version;</li>
+<li><code>-android14-11</code> indicates the <code>android14-6.1</code> branch of the Android Common Kernel (ACK);</li>
+<li><code>-g965475777129</code> is the commit hash of the build tree;</li>
+<li><code>-mi</code> represents Xiaomi’s own patches.</li>
+</ul>
+<p>ACK is not mainline. It includes Android-specific patches and adds extra fields to kernel structs:</p>
+<ul>
+<li><code>android_kabi_reserved*</code>, controlled by <code>CONFIG_ANDROID_KABI_RESERVE</code>;</li>
+<li><code>android_oem_data1</code>, controlled by <code>CONFIG_ANDROID_VENDOR_OEM_DATA</code>;</li>
+<li>Backported ACK fields like <code>sk_wait_pending</code>;</li>
+<li><code>btf_data_size</code> / <code>btf_data</code> inside <code>struct module</code>.</li>
+</ul>
+<p><code>tcp_sock</code> was shifted by a full 168 bytes. When BBR tried to read <code>snd_cwnd</code>, <code>delivered</code>, or <code>app_limited</code>, it would hit completely wrong memory offsets. A bug like this might not crash immediately, waiting instead to trigger on a retransmission or RTT sample.</p>
+<p>So the source tree had to be switched to an official ACK tag. I used the GKI release tag from the TUNA mirror:</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">git fetch --depth 1 origin refs/tags/android14-6.1.138_r00</span><br><span class="line">git checkout FETCH_HEAD</span><br></pre></td></tr></table></figure>
+<p>Verify the version:</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="built_in">head</span> -5 Makefile</span><br><span class="line"><span class="comment"># VERSION = 6</span></span><br><span class="line"><span class="comment"># PATCHLEVEL = 1</span></span><br><span class="line"><span class="comment"># SUBLEVEL = 138</span></span><br></pre></td></tr></table></figure>
+<p>The <code>g965475777129</code> hash in <code>uname -r</code> is from Xiaomi’s internal build tree and does not exist in the public ACK repository. Searching public repos for that hash won’t turn up anything.</p>
+<h2 id="Hurdle-2-Matching-the-Compiler-to-the-Kernel">Hurdle 2: Matching the Compiler to the Kernel</h2>
+<p>The device configuration contains this line:</p>
+<figure class="highlight vim"><table><tr><td class="code"><pre><span class="line">CONFIG_CC_VERSION_TEXT=<span class="comment">&quot;Android (10087095, +pgo, +bolt, +lto, -mlgo,</span></span><br><span class="line">  based <span class="keyword">on</span> r487747c) clang <span class="keyword">version</span> <span class="number">17.0</span>.<span class="number">2</span> ...<span class="comment">&quot;</span></span><br></pre></td></tr></table></figure>
+<p>And the kernel also enables:</p>
+<figure class="highlight ini"><table><tr><td class="code"><pre><span class="line"><span class="attr">CONFIG_CFI_CLANG</span>=y</span><br><span class="line"><span class="comment"># CONFIG_CFI_PERMISSIVE is not set</span></span><br><span class="line"><span class="attr">CONFIG_LTO_CLANG_THIN</span>=y</span><br></pre></td></tr></table></figure>
+<p>BBR’s function pointers are called indirectly by the kernel through <code>struct tcp_congestion_ops</code>. At indirect call sites, kCFI checks the type hash at the target function’s entry point. Because <code>CFI_PERMISSIVE</code> is not set, a hash mismatch causes an immediate kernel panic.</p>
+<p>This means you can’t just pick any random compiler. It’s best to use the exact same AOSP clang <code>r487747c</code> (17.0.2) that built the kernel.</p>
+<p>You can do a sparse checkout from TUNA’s <code>platform/prebuilts/clang/host/linux-x86</code> repository:</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">git <span class="built_in">clone</span> --filter=blob:none --no-checkout --depth 1 \</span><br><span class="line">  https://mirrors.tuna.tsinghua.edu.cn/git/AOSP/platform/prebuilts/clang/host/linux-x86.git clangpre</span><br><span class="line"><span class="built_in">cd</span> clangpre</span><br><span class="line">git fetch --depth 1 origin android14-release</span><br><span class="line">git sparse-checkout init --cone</span><br><span class="line">git sparse-checkout <span class="built_in">set</span> clang-r487747c</span><br><span class="line">git checkout FETCH_HEAD</span><br><span class="line"><span class="built_in">export</span> PATH=<span class="variable">$PWD</span>/clang-r487747c/bin:<span class="variable">$PATH</span></span><br></pre></td></tr></table></figure>
+<p>This directory is about 2.3GB.</p>
+<p>I also compared the kCFI hashes generated by clang 17.0.2 and 18.1.3 for the function prototypes in <code>tcp_congestion_ops</code>, and they turned out identical. Still, IR and ABI details can vary across compiler versions, so stick to the exact kernel compiler version whenever possible.</p>
+<h2 id="Hurdle-3-struct-module-Missing-16-Bytes">Hurdle 3: struct module Missing 16 Bytes</h2>
+<p>This was the trickiest part of the whole process, and the real culprit behind the “instant reboot upon loading.”</p>
+<p>To avoid needing a locally built <code>vmlinux</code> for BTF encoding, I initially disabled these two options:</p>
+<figure class="highlight asciidoc"><table><tr><td class="code"><pre><span class="line">CONFIG<span class="emphasis">_DEBUG_INFO_BTF</span></span><br><span class="line"><span class="emphasis">CONFIG_DEBUG_INFO_BTF_</span>MODULES</span><br></pre></td></tr></table></figure>
+<p>The module compiled fine, and <code>ksud insmod</code> made it to the loading stage—whereupon the phone instantly rebooted. <code>/sys/fs/pstore</code> was empty, <code>/proc/last_kmsg</code> didn’t exist, and <code>dmesg</code> retained nothing from the previous boot.</p>
+<p>With no logs, I had to look at the ABI. Pulling the device BTF and module BTF for a field-by-field comparison revealed:</p>
+<figure class="highlight ocaml"><table><tr><td class="code"><pre><span class="line"><span class="keyword">struct</span> <span class="keyword">module</span>   <span class="type">Device</span>: <span class="number">1088</span> <span class="built_in">bytes</span></span><br><span class="line">                <span class="type">Module</span>: <span class="number">1024</span> <span class="built_in">bytes</span></span><br></pre></td></tr></table></figure>
+<p>The device had two extra 8-byte fields:</p>
+<figure class="highlight apache"><table><tr><td class="code"><pre><span class="line"><span class="attribute">btf_data_size</span>   offset <span class="number">840</span></span><br><span class="line"><span class="attribute">btf_data</span>        offset <span class="number">848</span></span><br></pre></td></tr></table></figure>
+<p>These are guarded by <code>CONFIG_DEBUG_INFO_BTF_MODULES</code>. Because the module was missing those 16 bytes, the kernel read the module’s <code>.gnu.linkonce.this_module</code> section using its own <code>struct module</code> layout. <code>mod-&gt;init</code> ended up pointing to a bogus address; the kernel jumped to an invalid pointer, and the phone rebooted.</p>
+<p>The fix isn’t simply turning BTF back on. If you turn it on, the module build tries to generate BTF, which in turn requires compiling a full local <code>vmlinux</code> with BTF—a massive undertaking.</p>
+<p>The actual trick is to keep the macros enabled during C compilation while skipping the BTF encoding step in <code>make</code>:</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">make ARCH=arm64 LLVM=1 -j8 M=<span class="string">&quot;<span class="variable">$MODDIR</span>&quot;</span> \</span><br><span class="line">    CONFIG_DEBUG_INFO_BTF= CONFIG_DEBUG_INFO_BTF_MODULES= modules</span><br></pre></td></tr></table></figure>
+<p>This way, both macros remain defined in <code>include/generated/autoconf.h</code>, so the C code sees the exact right <code>struct module</code> layout, while passing empty variables on the <code>make</code> command line skips the BTF generation step.</p>
+<p>Check the section size in the compiled module:</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">llvm-readelf -S tcp_bbr.ko | grep this_module</span><br><span class="line"><span class="comment"># Expected size 0x440 (1088)</span></span><br></pre></td></tr></table></figure>
+<p>This is quite counterintuitive: <strong>for the module to load, you must <em>not</em> disable the BTF config options</strong>. The config header dictates struct layout, whereas the build rules dictate whether BTF data is actually generated—the two have to be handled separately.</p>
+<h2 id="Other-Build-Pitfalls">Other Build Pitfalls</h2>
+<p>Aside from the three major hurdles above, I ran into a few smaller snags during the build.</p>
+<h3 id="TRIM-UNUSED-KSYMS">TRIM_UNUSED_KSYMS</h3>
+<p>The device config contains:</p>
+<figure class="highlight ini"><table><tr><td class="code"><pre><span class="line"><span class="attr">CONFIG_TRIM_UNUSED_KSYMS</span>=y</span><br><span class="line"><span class="attr">CONFIG_UNUSED_KSYMS_WHITELIST</span>=<span class="string">&quot;abi_symbollist.raw&quot;</span></span><br></pre></td></tr></table></figure>
+<p>The source tree doesn’t have <code>abi_symbollist.raw</code>, causing <code>make prepare</code> to fail immediately with:</p>
+<figure class="highlight subunit"><table><tr><td class="code"><pre><span class="line"><span class="keyword">ERROR: </span>&#x27;.../abi_symbollist.raw&#x27; whitelist file not found</span><br></pre></td></tr></table></figure>
+<p>The fix is to disable symbol trimming:</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">scripts/config --<span class="built_in">disable</span> TRIM_UNUSED_KSYMS</span><br><span class="line">scripts/config --set-str UNUSED_KSYMS_WHITELIST <span class="string">&quot;&quot;</span></span><br></pre></td></tr></table></figure>
+<p>This has no effect on the module’s ABI.</p>
+<h3 id="Missing-asm-offsets-h">Missing asm-offsets.h</h3>
+<p><code>modules_prepare</code> doesn’t always generate <code>include/generated/asm-offsets.h</code>. Without it, compilation fails with:</p>
+<figure class="highlight go"><table><tr><td class="code"><pre><span class="line">clang: <span class="type">error</span>: invalid value <span class="string">&#x27;&#x27;</span> in <span class="string">&#x27;mstack-protector-guard-offset=&#x27;</span></span><br></pre></td></tr></table></figure>
+<p>Generate it manually:</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">make ARCH=arm64 LLVM=1 prepare</span><br><span class="line">make ARCH=arm64 LLVM=1 <span class="built_in">arch</span>/arm64/kernel/asm-offsets.s</span><br></pre></td></tr></table></figure>
+<h3 id="Missing-scripts-module-lds">Missing scripts/module.lds</h3>
+<p>Linking the module may fail with:</p>
+<figure class="highlight pgsql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">No</span> <span class="keyword">rule</span> <span class="keyword">to</span> make target <span class="string">&#x27;scripts/module.lds&#x27;</span></span><br></pre></td></tr></table></figure>
+<p>Generate it with:</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">make ARCH=arm64 LLVM=1 scripts/module.lds</span><br></pre></td></tr></table></figure>
+<h3 id="Module-Compression">Module Compression</h3>
+<p><code>CONFIG_MODULE_COMPRESS_*</code> produces <code>.ko.zst</code> or <code>.ko.xz</code> files, whereas <code>ksud insmod</code> expects a raw <code>.ko</code>. I disabled compression in the build script.</p>
+<h3 id="modpost-undefined-Warnings">modpost undefined Warnings</h3>
+<p>Without <code>Module.symvers</code>, <code>modpost</code> will spit out a bunch of warnings like:</p>
+<figure class="highlight asciidoc"><table><tr><td class="code"><pre><span class="line"><span class="symbol">WARNING: </span>modpost: &quot;tcp_register_congestion_control&quot; [.../tcp_bbr.ko] undefined!</span><br></pre></td></tr></table></figure>
+<p>This is normal. Those symbols will be resolved at load time by <code>ksud insmod</code> via kallsyms and don’t need to be resolved at build time.</p>
+<h2 id="Verifying-the-ABI-with-BTF">Verifying the ABI with BTF</h2>
+<p>Just because a module loads doesn’t mean its ABI is valid. A much more reliable check is comparing the device BTF against the module BTF.</p>
+<ol>
+<li>Pull <code>/sys/kernel/btf/vmlinux</code> from the phone;</li>
+<li>Generate BTF from the module’s DWARF info using <code>pahole --btf_encode_detached</code>;</li>
+<li>Dump both sides using <code>bpftool btf dump ... format raw</code>;</li>
+<li>Compare them field by field.</li>
+</ol>
+<p>All key structs must match completely in the end:</p>
+<table>
+<thead>
+<tr>
+<th>Struct</th>
+<th style="text-align:right">Device</th>
+<th style="text-align:right">Module</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>tcp_sock</code></td>
+<td style="text-align:right">2368</td>
+<td style="text-align:right">2368</td>
+</tr>
+<tr>
+<td><code>tcp_congestion_ops</code></td>
+<td style="text-align:right">192</td>
+<td style="text-align:right">192</td>
+</tr>
+<tr>
+<td><code>rate_sample</code></td>
+<td style="text-align:right">72</td>
+<td style="text-align:right">72</td>
+</tr>
+<tr>
+<td><code>sock</code></td>
+<td style="text-align:right">856</td>
+<td style="text-align:right">856</td>
+</tr>
+<tr>
+<td><code>inet_sock</code></td>
+<td style="text-align:right">1088</td>
+<td style="text-align:right">1088</td>
+</tr>
+<tr>
+<td><code>inet_connection_sock</code></td>
+<td style="text-align:right">1536</td>
+<td style="text-align:right">1536</td>
+</tr>
+<tr>
+<td><code>module</code></td>
+<td style="text-align:right">1088</td>
+<td style="text-align:right">1088</td>
+</tr>
+</tbody>
+</table>
+<p>If you see any <code>only-in-device</code>, <code>only-in-module</code>, or <code>MISMATCH</code>, do not load the module. Double-check your source tree, config, and compiler first—never take “it didn’t crash when loaded” as proof that the ABI is right.</p>
+<p><code>scripts/verify-layouts.py</code> in the repository automates this check.</p>
+<h2 id="Loading-the-Module-and-Setting-Up-qdisc">Loading the Module and Setting Up qdisc</h2>
+<p>Load the module:</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">su -c <span class="string">&#x27;ksud insmod /data/adb/modules/tcp_bbr_kmod/tcp_bbr.ko&#x27;</span></span><br><span class="line">su -c <span class="string">&#x27;sysctl -w net.ipv4.tcp_congestion_control=bbr&#x27;</span></span><br></pre></td></tr></table></figure>
+<p>Confirm that the module registered successfully:</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">su -c <span class="string">&#x27;cat /proc/sys/net/ipv4/tcp_available_congestion_control&#x27;</span></span><br><span class="line"><span class="comment"># reno cubic bbr</span></span><br></pre></td></tr></table></figure>
+<p>The OEM default qdisc is <code>mq + pfifo_fast</code>. While BBR has internal pacing, it works best when paired with <code>fq</code>:</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">su -c <span class="string">&#x27;tc qdisc replace dev wlan0 root fq&#x27;</span></span><br><span class="line">su -c <span class="string">&#x27;tc qdisc replace dev rmnet_data1 root fq&#x27;</span></span><br></pre></td></tr></table></figure>
+<p>On multi-queue devices, setting <code>net.core.default_qdisc=fq</code> won’t override the <code>mq</code> default, so you have to replace the qdisc on each interface individually.</p>
+<p>Replacing it doesn’t flatten the hardware queues into a single queue. In Linux 6.1, <code>qdisc_restart()</code> still uses <code>skb_get_tx_queue(dev, skb)</code> to select the hardware queue based on <code>queue_mapping</code>. What changes is the software scheduling layer: multiple TX queues now share a single <code>fq</code> instance, and enqueue/dequeue operations across all queues contend on the same qdisc lock.</p>
+<p>On a phone, this trade-off is completely fine. Wi-Fi and cellular speeds are nowhere near high enough for a single qdisc lock to become a bottleneck, whereas <code>fq</code>’s pacing and per-flow queuing are much more beneficial to BBR.</p>
+<p>Finally, I packaged everything into a KernelSU module:</p>
+<ul>
+<li><code>post-fs-data.sh</code>: loads the <code>.ko</code> as early as possible;</li>
+<li><code>service.sh</code>: sets <code>bbr</code> and <code>fq</code>;</li>
+<li>Background watchdog: checks the qdisc every 30 seconds to prevent <code>netd</code> from resetting <code>fq</code> back to <code>pfifo_fast</code> during network switches.</li>
+</ul>
+<p>Verified across reboots: the default CC is <code>bbr</code>, relevant interfaces use <code>fq</code> as their qdisc, and the watchdog runs cleanly under <code>init</code>.</p>
+<h2 id="Real-World-Performance-of-This-Setup">Real-World Performance of This Setup</h2>
+<p>BBR primarily improves queuing latency under load rather than consistently boosting peak throughput. The noticeable difference in daily use comes from responsiveness, not speedtest numbers.</p>
+<p>If your goal is “faster downloads,” changing congestion control on the phone usually yields very little benefit because the download direction is governed by the server. BBR’s impact is much more direct when the phone is the sender—such as uploads, proxy tunnels, and mobile hotspot sharing.</p>
+<h3 id="Methodology">Methodology</h3>
+<p>From the afternoon into the evening of 2026-11-02, I ran A/B comparisons over Zhejiang Unicom 5G, followed by an additional evening peak session from 22:42 to 22:56. The device was the Redmi K80 on kernel 6.1.138 using <code>tcp_bbr.ko</code> (BBRv1) from the repo. Testing took place indoors on campus, with RSRP hovering just above -100 dBm and SINR ranging from -1 to 14 across different rounds.</p>
+<p>There were two test arms:</p>
+<table>
+<thead>
+<tr>
+<th>Arm</th>
+<th>Congestion Control</th>
+<th>qdisc</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A</td>
+<td>cubic</td>
+<td>mq + pfifo_fast (OEM default)</td>
+</tr>
+<tr>
+<td>C</td>
+<td>bbr</td>
+<td>fq</td>
+</tr>
+</tbody>
+</table>
+<p>Only the phone side was changed; the servers remained untouched. Three speedtest servers were used: netcup Manassas (~290 ms), Alibaba Cloud Japan (~110 ms), and Alibaba Cloud Beijing (default config, untuned, ~70 ms). The server software was <a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/iliyian/minimal-speedtest">iliyian/minimal-speedtest</a>. Each round spun up a fresh <code>curl</code> connection in an alternating ABBA pattern with a 3-second pause between rounds; downloads transferred 32 MB and uploads 8 MB. During testing, the module’s 30-second qdisc watchdog was paused, and each round verified the active qdisc via <code>tc</code> and confirmed via <code>ss</code> that the socket actually used the intended CC.</p>
+<p>For downloads, the client only sees received bytes—<code>cwnd</code> and <code>delivery_rate</code> in <code>ss</code> are sender-side metrics and remain static on the phone. Therefore, download evaluation looked only at application-layer throughput, loaded ping, and NIC byte counters.</p>
+<h3 id="Downloads">Downloads</h3>
+<p>None of the three servers showed a reproducible difference in download speeds:</p>
+<table>
+<thead>
+<tr>
+<th>Server</th>
+<th style="text-align:right">CUBIC</th>
+<th style="text-align:right">BBR</th>
+<th style="text-align:right">Paired Median Diff</th>
+<th style="text-align:right">BBR Wins</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>netcup Manassas</td>
+<td style="text-align:right">31.50 Mbps</td>
+<td style="text-align:right">30.45 Mbps</td>
+<td style="text-align:right">-0.7%</td>
+<td style="text-align:right">3/6</td>
+</tr>
+<tr>
+<td>Alibaba Cloud Japan</td>
+<td style="text-align:right">~42.2 Mbps</td>
+<td style="text-align:right">~42.2 Mbps</td>
+<td style="text-align:right">Geometric +2.1%</td>
+<td style="text-align:right">4/5</td>
+</tr>
+<tr>
+<td>Alibaba Cloud Beijing (Normal Signal)</td>
+<td style="text-align:right">24.59 Mbps</td>
+<td style="text-align:right">24.59 Mbps</td>
+<td style="text-align:right">-17.6%</td>
+<td style="text-align:right">2/6</td>
+</tr>
+<tr>
+<td>Alibaba Cloud Beijing (Evening Peak)</td>
+<td style="text-align:right">20.45 Mbps</td>
+<td style="text-align:right">22.75 Mbps</td>
+<td style="text-align:right">+2.2%</td>
+<td style="text-align:right">3/6</td>
+</tr>
+</tbody>
+</table>
+<p>In the Beijing normal-signal row, the medians of both arms were identical, though the BBR arm had two rounds dip to 8.6 / 10.5 Mbps, with pair-wise differences swinging from -57% to +29% and showing no consistent direction. In the evening peak row, the arm medians differed by just 2.2%, with pair-wise swings from -54% to +236%—again, no consistent trend. The Japan figures exclude one round with a sudden signal drop and another interrupted by an incoming phone call.</p>
+<p>Beijing also saw one weak-signal session (SINR 0–6) where the BBR arm’s median download was 26% higher, but pair-wise differences ranged from -52% to +102%. Under those conditions, results are dominated by radio-layer retransmissions and scheduling rather than BBR.</p>
+<p>The reason is simple: during downloads, the phone is the receiver, and congestion control lives on the server. Changing the CC on the phone doesn’t change how the server sends packets; it only affects the ACK path. To actually get BBR benefits on downloads, BBR has to be enabled on the server.</p>
+<h3 id="Uploads">Uploads</h3>
+<p>The upload direction was much more consistent. Here the phone is the sender, so its CC is actively in charge. BBR didn’t win on throughput, but its send queues were dramatically shorter:</p>
+<table>
+<thead>
+<tr>
+<th>Server</th>
+<th style="text-align:right">CUBIC</th>
+<th style="text-align:right">BBR</th>
+<th style="text-align:right">Sender RTT</th>
+<th style="text-align:right">cwnd</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>netcup Manassas</td>
+<td style="text-align:right">4.97 Mbps</td>
+<td style="text-align:right">3.52 Mbps</td>
+<td style="text-align:right">866 → 670 ms</td>
+<td style="text-align:right">1309 → 376 segs</td>
+</tr>
+<tr>
+<td>Alibaba Cloud Japan</td>
+<td style="text-align:right">6.92 Mbps</td>
+<td style="text-align:right">6.97 Mbps</td>
+<td style="text-align:right">443–683 → 190–214 ms</td>
+<td style="text-align:right">923–1046 → 135–206 segs</td>
+</tr>
+<tr>
+<td>Alibaba Cloud Beijing (Normal Signal)</td>
+<td style="text-align:right">5.46 Mbps</td>
+<td style="text-align:right">4.40 Mbps</td>
+<td style="text-align:right">804 → 193 ms</td>
+<td style="text-align:right">883 → 76 segs</td>
+</tr>
+<tr>
+<td>Alibaba Cloud Beijing (Evening Peak)</td>
+<td style="text-align:right">1.66 Mbps</td>
+<td style="text-align:right">1.10 Mbps</td>
+<td style="text-align:right">3983 → 321 ms</td>
+<td style="text-align:right">809 → 46 segs</td>
+</tr>
+</tbody>
+</table>
+<p>The Beijing normal-signal set is the clearest illustration: loaded upload ping p95 dropped from 237 ms to 64 ms, at the cost of ~15% lower throughput. The evening peak set was even more dramatic: with upload speeds constrained to 1–2 Mbps, CUBIC pushed sender RTT to 3.98 s with a 4.09% retransmission rate, whereas BBR kept RTT at 321 ms and retransmissions at 0.99%—trading ~12% throughput for vastly better latency and packet loss. On the Japan server, throughput was basically a tie while BBR shaved 250–480 ms off latency. On netcup, where RTT is high and the path more congested, BBR lost the most throughput, yet still brought RTT down from 866 ms to 670 ms.</p>
+<p>This aligns with how BBR works: it paces traffic according to estimated bandwidth instead of filling up buffers, whereas CUBIC grows its window until packet loss occurs, easily bloating deep cellular uplink buffers. On links like this, throughput and latency are a trade-off.</p>
+<h3 id="A-Packet-Loss-Incident">A Packet Loss Incident</h3>
+<p>During testing, an incoming call rang for 3 seconds before being declined. In that round, BBR’s retransmission rate spiked to 5.32%, transmit overhead hit 7.3%, and throughput dropped from ~7 Mbps to 3.9 Mbps. BBRv1 backs off noticeably when encountering packet loss; under weak signal or link jitter, it won’t necessarily outperform CUBIC.</p>
+<h3 id="Conclusion">Conclusion</h3>
+<p>On this phone, BBR behaves exactly as designed: its job isn’t to inflate peak bandwidth, but to keep queuing delay down.</p>
+<p>The most immediate gains are on uploads. Against the default-configured Beijing server, sender RTT dropped from 804 ms to 193 ms and loaded upload ping p95 dropped from 237 ms to 64 ms, while sacrificing only ~15% throughput. During evening peak hours, CUBIC hit 4-second RTTs and 4% retransmissions compared to BBR’s 0.3 seconds and 1%, with only a ~12% throughput difference. Against the Japan server, throughput was essentially tied while shaving 250–480 ms of latency. For video calls, remote desktop, or hotspot sharing, BBR will feel noticeably snappier than CUBIC.</p>
+<p>In the download direction, there was neither a reproducible improvement nor a consistent regression. As noted earlier, downloads are dictated by the server’s CC, so enabling BBR on the client shouldn’t be expected to speed them up; server-side configuration is what matters there.</p>
+<p>Achieving these latency gains without flashing a custom kernel or wiping the device means this module setup has met its goal. If you care more about peak upload throughput, switching back to CUBIC temporarily is just a single <code>sysctl</code> command away, or you can disable the module to keep CUBIC permanently. If you care about responsiveness and low latency during uploads, BBR is well worth keeping.</p>
+<p>These figures apply specifically to BBRv1, this China Unicom link, and these three servers; different networks, servers, or kernel versions may yield different results. Full methodology, round-by-round data, and limitations are available in the repo:</p>
+<ul>
+<li>Report: <a href="bench/2026-11-02-bbr-vs-cubic.md">docs/bench/2026-11-02-bbr-vs-cubic.md</a></li>
+<li>Per-round CSV: <a href="bench/data/2026-11-02-runs.csv">docs/bench/data/2026-11-02-runs.csv</a></li>
+<li>Per-sample data: <a href="bench/data/2026-11-02-samples-ss.csv">ss</a> / <a href="bench/data/2026-11-02-samples-ping.csv">ping</a></li>
+<li>Repository: <a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/iliyian/k80-zorn-bbr">https://github.com/iliyian/k80-zorn-bbr</a></li>
+</ul>
+<h2 id="BBRv2-and-BBRv3">BBRv2 and BBRv3</h2>
+<p>I also evaluated both newer versions along the way.</p>
+<p><strong>BBRv3 cannot be built as a standalone module.</strong> It depends on new fields and functions in the core networking stack:</p>
+<ul>
+<li><code>struct rate_sample</code> adds <code>tx_in_flight</code>, <code>is_ece</code>, and <code>is_acking_tlp_retrans_seq</code>, which are populated by the core TCP stack;</li>
+<li><code>struct tcp_sock</code> adds <code>fast_ack_mode</code> and <code>tlp_orig_data_app_limited</code>;</li>
+<li>New helper functions like <code>tcp_plb_*</code> and <code>tcp_skb_tx_in_flight_is_suspicious</code>;</li>
+<li><code>ICSK_CA_PRIV_SIZE</code> increases from 104 bytes to 144 bytes.</li>
+</ul>
+<p>All of these require modifying kernel headers and recompiling the entire kernel, which a loadable module cannot do. Google’s v3 branch is distributed as a full kernel tree for this reason.</p>
+<p><strong>2026-11-04 Update: BBRv3 has now been backported to the ACK 6.1.138 kernel and verified on the device.</strong><br>
+<code>bbr3</code> registers and switches cleanly, with boot, audio, and module loading all working normally. For the porting process, core stack patches,<br>
+BTF/CRC verification, and troubleshooting notes, see <a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/iliyian/k80-zorn-bbr/tree/main/bbrv3"><code>bbrv3/README.md</code></a>.<br>
+The point that “it cannot be built as a module” still stands—this is a full kernel patchset, not a <code>.ko</code>.</p>
+<p><strong>BBRv2 is a different story.</strong> Compiling <code>tcp_bbr.c</code> from <code>v2alpha-2022-08-28</code> against ACK 6.1.138 only requires removing the deprecated <code>.tso_segs</code> field; <code>sizeof(struct bbr)</code> is 104 bytes, matching 6.1’s <code>icsk_ca_priv</code> exactly, so <code>BUILD_BUG_ON</code> passes. It only uses fields already present in 6.1 without touching the core stack.</p>
+<p>However, v2 is an experimental branch from 2022 that never made it into mainline, and its behavior on mobile networks hasn’t been validated. It would also need to be renamed to <code>bbr2</code> to coexist with the existing <code>bbr</code>. It’s a viable direction for future tinkering, but I didn’t deploy it this time.</p>
+<h2 id="BBRv3-Benchmarks-Latency-Gains-No-Throughput-Gains">BBRv3 Benchmarks: Latency Gains, No Throughput Gains</h2>
+<p>Late on 2026-11-04 into the early hours of 11-05, I ran another A/B test on the same K80 with the <code>bbr3</code> kernel port. This session focused purely on benchmarking without any kernel or patch changes. The network was switched to the default SIM card (China Telecom), which fell back to LTE during testing (download RSRP −87 dBm / SNR 24, upload −94 / SNR 17) rather than the Unicom 5G link from 11-02. The server was still the default-configured Alibaba Cloud Beijing instance.</p>
+<p>The test arms matched the previous setup:</p>
+<table>
+<thead>
+<tr>
+<th>Arm</th>
+<th>Congestion Control</th>
+<th>qdisc</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A</td>
+<td>cubic</td>
+<td>mq + pfifo_fast (OEM default)</td>
+</tr>
+<tr>
+<td>C</td>
+<td>bbr3</td>
+<td>fq</td>
+</tr>
+</tbody>
+</table>
+<p>Each round launched a fresh <code>curl</code> in an alternating ABBA pattern with a 3-second gap between rounds; 6 pairs of 32 MiB downloads and 4 pairs of 8 MiB uploads were run. The <code>bbr3_fq</code> module’s watchdog was paused during testing, and each round verified the qdisc via <code>tc</code>, confirmed the active socket CC via <code>ss</code>, and checked that routing bypassed <code>tun</code>. The unmodified <code>cc_bench.sh</code> harness was used.</p>
+<h3 id="Downloads-2">Downloads</h3>
+<table>
+<thead>
+<tr>
+<th></th>
+<th style="text-align:right">cubic + mq</th>
+<th style="text-align:right">bbr3 + fq</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Median</td>
+<td style="text-align:right">28.9 Mbps</td>
+<td style="text-align:right">32.8 Mbps</td>
+</tr>
+<tr>
+<td>Mean</td>
+<td style="text-align:right">28.3 Mbps</td>
+<td style="text-align:right">32.2 Mbps</td>
+</tr>
+<tr>
+<td>Paired Median Diff</td>
+<td style="text-align:right">—</td>
+<td style="text-align:right">+15.8%, 4/6 wins</td>
+</tr>
+</tbody>
+</table>
+<p>In pair 4, cubic dipped to 14.8 Mbps (compared to 28–39 Mbps in the other rounds); excluding that outlier reduces the paired median difference to just +2.9% with no consistent direction. Since the phone is the receiver during downloads and congestion control runs on the server, client-side <code>bbr3</code> only affects ACKs, so any difference cannot be attributed to it.</p>
+<h3 id="Uploads-2">Uploads</h3>
+<p>Throughput showed no consistent difference:</p>
+<table>
+<thead>
+<tr>
+<th>Pair</th>
+<th style="text-align:right">cubic</th>
+<th style="text-align:right">bbr3</th>
+<th style="text-align:right">Diff</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td style="text-align:right">2.11 Mbps</td>
+<td style="text-align:right">2.04 Mbps</td>
+<td style="text-align:right">−3.5%</td>
+</tr>
+<tr>
+<td>2</td>
+<td style="text-align:right">2.72 Mbps</td>
+<td style="text-align:right">3.18 Mbps</td>
+<td style="text-align:right">+17.1%</td>
+</tr>
+<tr>
+<td>3</td>
+<td style="text-align:right">1.60 Mbps</td>
+<td style="text-align:right">2.10 Mbps</td>
+<td style="text-align:right">+31.3%</td>
+</tr>
+<tr>
+<td>4</td>
+<td style="text-align:right">3.56 Mbps</td>
+<td style="text-align:right">1.97 Mbps</td>
+<td style="text-align:right">−44.6%</td>
+</tr>
+</tbody>
+</table>
+<p>Paired median difference was +6.8%, geometric mean was −4.8%, with 2/4 wins; arm medians were 2.41 vs 2.07 Mbps. There is no reproducible throughput gain.</p>
+<p>Queue metrics, on the other hand, showed complete separation:</p>
+<table>
+<thead>
+<tr>
+<th>Metric</th>
+<th style="text-align:right">cubic</th>
+<th style="text-align:right">bbr3</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Sender RTT p50</td>
+<td style="text-align:right">1491 ms</td>
+<td style="text-align:right"><strong>197 ms</strong></td>
+</tr>
+<tr>
+<td>Sender RTT p95</td>
+<td style="text-align:right">2683 ms</td>
+<td style="text-align:right"><strong>388 ms</strong></td>
+</tr>
+<tr>
+<td>Sender RTT p99</td>
+<td style="text-align:right">3084 ms</td>
+<td style="text-align:right"><strong>515 ms</strong></td>
+</tr>
+<tr>
+<td>cwnd p50</td>
+<td style="text-align:right">779 segs</td>
+<td style="text-align:right"><strong>56 segs</strong></td>
+</tr>
+<tr>
+<td>cwnd p95</td>
+<td style="text-align:right">805 segs</td>
+<td style="text-align:right"><strong>69 segs</strong></td>
+</tr>
+<tr>
+<td>unacked p50</td>
+<td style="text-align:right">340 segs</td>
+<td style="text-align:right"><strong>50 segs</strong></td>
+</tr>
+<tr>
+<td>Loaded Upload Ping p50</td>
+<td style="text-align:right">80.5 ms</td>
+<td style="text-align:right"><strong>36.7 ms</strong></td>
+</tr>
+<tr>
+<td>Loaded Upload Ping p95</td>
+<td style="text-align:right">237 ms</td>
+<td style="text-align:right"><strong>135 ms</strong></td>
+</tr>
+<tr>
+<td>Samples with RTT &gt; 1 s</td>
+<td style="text-align:right">48–95%</td>
+<td style="text-align:right">0% (excl. 1st round)</td>
+</tr>
+</tbody>
+</table>
+<p>Looking round by round, cubic’s RTT p95 ranged from 1.9 to 4.8 s, while bbr3 stayed at 0.30–0.42 s (excluding the first round); cwnd p95 was 747–1069 segments vs 57–76 segments (234 in the first round). Cubic’s p95 essentially reflects its buffer ceiling, whereas bbr3’s p95 comes from probe cycles nudging cwnd from ~50 up to ~70.</p>
+<p>A sample size of 4 pairs is small. Queue metrics achieved 4/4 complete separation: an exact paired sign-flip test gives p=0.125 (the minimum possible for n=4), and a paired t-test gives p=0.0005–0.011 (assuming normality); paired tests for throughput give p=0.81–0.88. An unpaired permutation test would yield p=0.029 for the queue metrics, but given the paired ABBA design, that figure is overly optimistic and shouldn’t be used to draw conclusions.</p>
+<h3 id="Comparison-with-BBRv1">Comparison with BBRv1</h3>
+<p>Recalculating the 11-02 BBRv1 data (Unicom 5G, 12 upload pairs) using the exact same steady-state criteria:</p>
+<table>
+<thead>
+<tr>
+<th>Metric</th>
+<th style="text-align:right">BBRv1</th>
+<th style="text-align:right">BBRv3</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Sender RTT p50</td>
+<td style="text-align:right">198 ms</td>
+<td style="text-align:right">197 ms</td>
+</tr>
+<tr>
+<td>Sender RTT p95</td>
+<td style="text-align:right">368 ms</td>
+<td style="text-align:right">388 ms</td>
+</tr>
+<tr>
+<td>Sender RTT p99</td>
+<td style="text-align:right">419 ms</td>
+<td style="text-align:right">515 ms</td>
+</tr>
+<tr>
+<td>cwnd p95</td>
+<td style="text-align:right">125 segs</td>
+<td style="text-align:right">69 segs</td>
+</tr>
+<tr>
+<td>Throughput vs cubic</td>
+<td style="text-align:right">Geometric −10.2%</td>
+<td style="text-align:right">Geometric −4.8%</td>
+</tr>
+<tr>
+<td>Retransmissions</td>
+<td style="text-align:right">0.45–3.17% (Evening Peak)</td>
+<td style="text-align:right">0.28%</td>
+</tr>
+</tbody>
+</table>
+<p>There is no distinguishable difference between the two in latency or throughput, though v3 is slightly more conservative with <code>cwnd</code>. However, since this compares data across different days, carriers, and kernels, it shouldn’t be treated as a strict v1-vs-v3 A/B test.</p>
+<h3 id="Why-There-Were-No-Extra-Gains">Why There Were No Extra Gains</h3>
+<ul>
+<li>The port used a 2025-03 v3 snapshot with PLB and <code>ecn_low</code> stripped out; those paths would have been dead code on this device anyway, leaving behavior very close to v1.</li>
+<li>v3’s main improvements over v1 revolve around loss recovery, ECN, and PLB. In this test, total TCP retransmissions on both sides were just 69 segments (0.28%), with zero RTOs, zero SYN retransmits, and no ECN—giving those mechanisms nothing to do.</li>
+<li>The bottleneck was LTE uplink scheduling at just 2–3.5 Mbps. Both versions kept a <code>cwnd</code> more than large enough to saturate the uplink; any excess <code>cwnd</code> simply turns into queuing delay.</li>
+<li>On a single flow over a clean link, BBR’s fairness and coexistence improvements don’t come into play either.</li>
+</ul>
+<h3 id="Measurement-Pitfalls">Measurement Pitfalls</h3>
+<ul>
+<li>The download direction is structurally invalid for client-side CC testing: the phone is the receiver and CC runs on the server, so nothing changed on the phone can improve download throughput.</li>
+<li>A 4-pair sample requires paired statistical tests; unpaired permutation artificially lowers p to 0.029, whereas an ABBA design must be analyzed in pairs.</li>
+<li><code>ping</code>’s <code>icmp_seq</code> starts at 1. Assuming it starts at 0 fabricates 0.5–2.9% phantom packet loss; actual ICMP loss in this session was 0.</li>
+<li>Cubic’s deep queue drain can pollute the immediately following bbr3 round. The first bbr3 round had a p95 of 1546 ms compared to 300–415 ms in the subsequent three rounds; a 3-second cooldown isn’t enough—it’s better to wait for the queue to drain completely or add a few extra seconds.</li>
+<li>The final snapshot from <code>ss</code> sometimes omits the <code>retrans:</code> field, so retransmission counts should be calculated from <code>/proc/net/snmp</code> deltas before and after each run.</li>
+<li>Active VPNs or multiple interfaces can trick older scripts into monitoring the wrong NIC; in this run, routing went directly out through <code>rmnet_data5</code>, and the results were only valid once the script resolved that interface properly.</li>
+</ul>
+<h3 id="Conclusion-2">Conclusion</h3>
+<p>On this link, BBRv3’s benefit lies in queue control and tail latency rather than throughput: upload RTT dropped from 1.5 s to 0.2 s, p95 dropped from 2.7 s to 0.4 s, and <code>cwnd</code> shrank from ~780 segments to ~56 segments, at the cost of flat to slightly lower throughput. Compared to BBRv1, there was no distinguishable extra gain, as v3’s loss recovery and ECN had nothing to trigger them on a link with 0.28% retransmissions.</p>
+<p>Answering “v1 vs v3” properly requires compiling official BBRv1 into the exact same kernel for a strict A/B test; validating v3’s loss recovery requires testing under weak signal, handovers, or competing flows. Neither was done in this session.</p>
+<h2 id="Open-Source-Repository">Open Source Repository</h2>
+<p>The build scripts, KernelSU module, ABI comparison tools, and full troubleshooting notes are all available at:</p>
+<p><a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/iliyian/k80-zorn-bbr">https://github.com/iliyian/k80-zorn-bbr</a></p>
+<p>The speedtest server used for benchmarking is in a separate repo: <a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/iliyian/minimal-speedtest">iliyian/minimal-speedtest</a>.</p>
+<p>The repository includes:</p>
+<ul>
+<li><code>scripts/bench/</code>: benchmarking harness and analysis scripts;</li>
+<li>One-click build script: fetches ACK, fetches AOSP clang, reads device config, compiles, and packages the module;</li>
+<li>KernelSU module template: module loading, sysctl, fq setup, and watchdog;</li>
+<li><code>verify-layouts.py</code>: compares device BTF against module BTF;</li>
+<li><code>cfi-hash-test.sh</code>: compares kCFI hashes across different clang versions;</li>
+<li>Troubleshooting docs and K80 benchmark reports;</li>
+<li>Prebuilt <code>.ko</code> and module zip for the K80.</li>
+</ul>
+<p>The prebuilt artifacts are strictly for <code>6.1.138-android14-11-g965475777129-mi</code>. Other devices or kernel versions must recompile from source and re-run BTF verification. Although the 6.1.176 kernel now works with normal display output and module loading, the prebuilt <code>.ko</code> in the repo still targets 6.1.138 only; moving to 6.1.176 requires re-verifying or recompiling against the new kernel.</p>
+<p>Basic usage of the build script looks like this:</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">CONFIG_GZ=<span class="variable">$PWD</span>/config.gz ./scripts/build-bbr-module.sh</span><br></pre></td></tr></table></figure>
+<p>Export <code>config.gz</code> from the device:</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">adb exec-out su -c <span class="string">&#x27;cat /proc/config.gz&#x27;</span> &gt; config.gz</span><br></pre></td></tr></table></figure>
+<p>By default, the script fetches the ACK tag and AOSP clang from TUNA, though you can also point it to local paths.</p>
+<h2 id="Caveats">Caveats</h2>
+<ol>
+<li>A version string containing <code>-androidXX</code> indicates ACK rather than mainline; use the corresponding ACK tag for your source tree.</li>
+<li>Check <code>CONFIG_CC_VERSION_TEXT</code> for the compiler version. If CFI is enabled, use the exact same clang version.</li>
+<li>Do not disable <code>CONFIG_DEBUG_INFO_BTF*</code>, as doing so alters the layout of <code>struct module</code>.</li>
+<li>Always compare BTF before loading a module—never treat “it didn’t crash” as proof of ABI compatibility.</li>
+<li><code>ksud insmod</code> can bypass symbol versioning and vermagic, but it cannot bypass ABI mismatches or CFI checks.</li>
+<li>Replace <code>fq</code> per interface; <code>default_qdisc</code> does not take effect automatically on multi-queue devices.</li>
+<li>Disable the module before installing system OTAs. Kernel updates may change the ABI, requiring a fresh build against the new kernel.</li>
+<li>Instant rollback: <code>sysctl -w net.ipv4.tcp_congestion_control=cubic</code>; permanent removal: disable or delete the KernelSU module and reboot.</li>
+</ol>
+<h2 id="6-1-176-Display-Compatibility-and-Dual-BBR">6.1.176: Display Compatibility and Dual BBR</h2>
+<p>On 2026-11-05, I tracked down the 6.1.176 screen flickering to a specific upstream patch rather than “generic kernels being fundamentally incompatible.”</p>
+<h3 id="Root-Cause-of-the-Screen-Flickering">Root Cause of the Screen Flickering</h3>
+<ul>
+<li>Stable <strong>6.1.141</strong> backported upstream commit <code>41b4b11da0215</code> (<code>drm: Add valid clones check</code>). With it, <code>drm_atomic_helper_check_modeset()</code> started requiring <code>possible_clones</code> across all encoders attached to the same CRTC to be mutually inclusive.</li>
+<li>On zorn, the vendor <code>msm_drm.ko</code> (compiled against 6.1.68) attaches both a DSI encoder and a Virtual encoder (<code>encoder_mask=0x6</code>) to <strong>CRTC 203</strong>, and their <code>possible_clones</code> masks are not reciprocal. As a result, <code>drm_atomic_check_only()</code> returns <code>-EINVAL</code>, causing SDM to fail and retry on every single frame:</li>
+</ul>
+<figure class="highlight smali"><table><tr><td class="code"><pre><span class="line">[drm:drm_atomic_helper_check_modeset] crtc203 failed valid clone<span class="built_in"> check </span>for mask 0x6</span><br><span class="line">SDM: drmModeAtomicCommit failed with error 22 (Invalid argument). crtc=203</span><br><span class="line">SDM: COMMIT failed: 11</span><br><span class="line">HwcComposer: presentOrValidateDisplay 0 presentFence:-1</span><br></pre></td></tr></table></figure>
+<ul>
+<li>Version boundary: <strong>6.1.138, 139, and 140 do not have this check; it was introduced in 6.1.141</strong>. My earlier conclusion that “6.1.138 is the ceiling for display compatibility” based on 6.1.145/6.1.176 flickering was an overgeneralization—the real culprit was this single stable patch.</li>
+<li>After reverting <code>drm_atomic_check_valid_clones()</code> and its call site, display output on 6.1.176 works normally, and <code>COMMIT failed</code> / <code>drmModeAtomicCommit failed</code> errors drop from once per frame to 0. Visual output was confirmed normal in real-world use.</li>
+</ul>
+<h3 id="Dual-BBR">Dual BBR</h3>
+<ul>
+<li>Both BBRv1 (<code>bbr</code>) and BBRv3 (<code>bbr3</code>) are now compiled into 6.1.176 simultaneously. BBRv3 lives in a separate <code>net/ipv4/tcp_bbr3.c</code> and registers as <code>bbr3</code>; BBRv1 is retained alongside it, with <code>min_tso_segs</code> adapted to the new <code>tso_segs(sk, mss_now)</code> callback.</li>
+<li>Defaults are set to:</li>
+</ul>
+<figure class="highlight ini"><table><tr><td class="code"><pre><span class="line"><span class="attr">CONFIG_DEFAULT_TCP_CONG</span>=<span class="string">&quot;bbr3&quot;</span></span><br><span class="line"><span class="attr">CONFIG_DEFAULT_NET_SCH</span>=<span class="string">&quot;fq&quot;</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>On-device verification: <code>tcp_available_congestion_control = reno bbr bbr3 cubic</code>, default CC is <code>bbr3</code>, and <code>default_qdisc=fq</code>. Both <code>bbr</code> and <code>bbr3</code> can be switched on the fly and pass live HTTP 200 traffic tests.</li>
+<li>Display, audio, module loading (501 modules), and KSU root all work normally, with <code>Failed to insmod=0</code>.</li>
+</ul>
+<h3 id="Trade-offs-and-Next-Steps">Trade-offs and Next Steps</h3>
+<ul>
+<li>Because BBRv3 modifies <code>struct rate_sample</code>, <code>tcp_skb_cb</code>, and <code>tcp_congestion_ops</code>, <code>genksyms</code> generates new CRCs for ~691 exported symbols, causing mismatches against <code>__versions</code> in stock vendor modules. The current test kernel bypasses mismatches inside <code>check_version()</code>; this is a <strong>global relaxation</strong>, which should later be tightened into a per-symbol stock CRC allowlist or avoided by hiding the new fields from <code>genksyms</code> via <code>__GENKSYMS__</code>.</li>
+<li>A ThinLTO build and initial on-device verification are complete: <code>-j8</code> took 24:44.91 with a cgroup peak memory of 6.38 GB, and <code>vmlinux.symvers</code> matches the <code>LTO_NONE</code> build 100%. Boot, display, audio, module loading, and BBR all work normally, with a single-sample boot time ~1% faster; proper performance A/B testing is still pending. See Appendix A.7 for details.</li>
+<li>For full details, patches, and build configs, see <a href="../gki176/README.md"><code>gki176/README.md</code></a> and Sections 20–22 of <a href="../bbrv3/docs/BBRV3_PHONE_JOURNAL.md"><code>BBRV3_PHONE_JOURNAL.md</code></a>.</li>
+</ul>
+<hr>
+<h2 id="Appendix-A-Complete-Experiment-Log">Appendix A: Complete Experiment Log</h2>
+<p>While the main text focuses on how to use the module and what the benchmarks showed, this appendix consolidates the failed attempts, build metrics, and implementation details from the working journal. The timeline spans 2026-11-01 to 11-05, all on the same <code>zorn</code> device.</p>
+<h3 id="A-1-Device-and-Constraints">A.1 Device and Constraints</h3>
+<ul>
+<li>Device: Redmi K80 (<code>zorn</code> / <code>24117RK2CC</code>), HyperOS <code>OS3.0.309.0.WOKCNXM</code> / Android 16.</li>
+<li>Stock kernel: <code>6.1.138-android14-11-g965475777129-mi</code>, KMI <code>android14-6.1</code>, A/B partitioning, unlocked bootloader.</li>
+<li>Vendor module version skew: <code>msm_drm.ko</code> in <code>/vendor/lib/modules</code> has vermagic <code>6.1.68-android14-11-gef5271fe2aef-dirty</code>, while <code>/system_dlkm/lib/modules</code> is on 6.1.138. Both belong to the <code>android14-6.1</code> KMI, allowing them to load across sublevels; jumping to 6.6 or 6.12 would break compatibility.</li>
+<li>Root: SukiSU Ultra 4.3.0 LKM patched into <code>init_boot_a</code>; <code>boot_a</code> is stock.</li>
+<li>This bootloader <strong>ignores <code>fastboot boot</code></strong>, requiring <code>fastboot flash boot_a</code> for every test; <code>ramoops</code> is cleared on every reboot, so <code>pstore</code> never retains crash logs.</li>
+</ul>
+<h3 id="A-2-Early-Attempts-Flashing-Generic-Third-Party-Kernels-Directly">A.2 Early Attempts: Flashing Generic / Third-Party Kernels Directly</h3>
+<table>
+<thead>
+<tr>
+<th>Kernel</th>
+<th>Result</th>
+<th>Key Observations</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Droidspaces 6.1.176 (nbkernel / non-nbkernel)</td>
+<td>Boots, constant screen flicker</td>
+<td>736 / 757 lines of <code>COMMIT failed: 11</code>, <code>presentFence:-1</code>; flashing the zip directly yields the exact same kernel</td>
+</tr>
+<tr>
+<td>ShirkNeko 6.1.124</td>
+<td>Daily-driver usable</td>
+<td><code>6.1.124-android14-11</code>, <code>boot_completed=1</code>; recovers after 363 early <code>COMMIT failed</code> lines; WiFi SSID <code>40</code>, 11ax/1200Mbps/WPA3-SAE; 8 camera devices; fingerprint HAL alive with 4 enrolled prints; audio HAL/devices normal (untested with actual playback); built-in KSU <code>v4.1.3</code>, <code>adb shell</code> runs as uid 2000</td>
+</tr>
+<tr>
+<td>ShirkNeko 6.1.145</td>
+<td>Boots, audio normal, display unusable</td>
+<td>1127 lines of <code>COMMIT failed</code>/<code>presentFence</code>, constant screen flicker</td>
+</tr>
+<tr>
+<td>Self-built Shirk 6.1.138</td>
+<td>Stuck on Redmi logo</td>
+<td>Compiled cleanly with AOSP clang r487747c/ThinLTO; one failed hunk in <code>fs/namespace.c</code>, empty pstore; later confirmed that hunk wasn’t the root cause</td>
+</tr>
+<tr>
+<td>Google GKI 6.1.124</td>
+<td>Display normal, audio broken</td>
+<td>442 modules loaded; 54 lines of <code>Failed to insmod ... Permission denied</code>; <code>/dev/snd</code> only has <code>timer</code>; <code>/proc/asound/cards</code> empty; <code>va-macro not registered yet, defer</code> 10 times; <code>boot_completed</code> empty</td>
+</tr>
+<tr>
+<td>Google GKI 6.1.134</td>
+<td>Downloaded, not boot-tested</td>
+<td>Kept for reference only</td>
+</tr>
+<tr>
+<td>Google GKI 6.1.138 + <code>MODULE_SIG_PROTECT=n</code></td>
+<td>Working baseline</td>
+<td>501 modules loaded; sound card <code>pineapple-mtp-snd-card</code> registered at 6.536 s; 0 <code>va-macro defer</code> occurrences; display/audio/WiFi/5G/camera/fingerprint/KSU root/BBR all normal; actual audio playback confirmed working</td>
+</tr>
+</tbody>
+</table>
+<p>Several candidate sources and prebuilts that were ruled out:</p>
+<ul>
+<li><strong>Allay-OS</strong>: <code>android_kernel_xiaomi_sm8650</code>, 6.1.138, <code>lineage-23.2</code>, zorn/POCO F7 Pro, 14 commits, ~2.0 GB; contains audio/display/vendor modules, but lacks zorn DTS and isn’t a self-contained buildable tree.</li>
+<li><strong>Xiaomi 6.1.68 OSS</strong>: <code>bsp-zorn-v-oss</code> in <code>MiCode/Xiaomi_Kernel_OpenSource</code>, based on Qualcomm <code>LA.VENDOR.14.3.0.r1</code>; <code>arch/arm64/boot/dts/vendor</code> is a broken symlink, and <code>techpack/audio</code> is missing from the public repo; usable only as a reference/donor.</li>
+<li><strong>Sakura prebuilt</strong>: <code>Sakura-Devices/device_xiaomi_zorn-kernel</code> is actually <code>6.1.118-android14-11</code>, not 6.1.138; useful for DTB/vendor module reference, but not a matching baseline.</li>
+<li><strong>WildKernels</strong>: Generic GKI 6.1.157 etc., incompatible with zorn’s vendor display stack out of the box.</li>
+<li><strong>KyuharuTE/Droidspaces-Kernel-For-K80</strong>: The release <code>Image</code> SHAs match the two flickering builds tested above; the repo README also explicitly notes it hasn’t been tested on hardware.</li>
+</ul>
+<p>Takeaway: With generic/third-party kernels, newer version numbers don’t guarantee usability—vendor display stack compatibility and module protection are what make or break a build. That 6.1.138 worked at the time didn’t mean 6.1.145+ was fundamentally impossible, as the later 6.1.176 experiments proved.</p>
+<h3 id="A-3-The-Real-Cause-of-Audio-Hangs-GKI-Module-Protection">A.3 The Real Cause of Audio Hangs: GKI Module Protection</h3>
+<p>Google GKI 6.1.124’s audio failure wasn’t caused by missing config options or SELinux:</p>
+<ul>
+<li><code>dmesg</code> showed 54 lines of <code>Failed to insmod '/system_dlkm/.../xxx.ko': Permission denied</code>;</li>
+<li>Zero <code>avc: denied &#123; module_load &#125;</code> entries;</li>
+<li>Still returned <code>EACCES</code> after <code>setenforce 0</code>;</li>
+<li>Kernel cmdline <code>androidboot.selinux=permissive</code> was forced back to Enforcing by user-build <code>init</code> (<code>CONFIG_SECURITY_SELINUX_BOOTPARAM</code> was disabled);</li>
+<li><code>modules_disabled=0</code>, no kernel lockdown, and no <code>sig_enforce</code>.</li>
+</ul>
+<p>The culprit lives in <code>kernel/module/main.c</code> on <code>android14-6.1</code>:</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> (!mod-&gt;sig_ok &amp;&amp; gki_is_module_protected_export(kernel_symbol_name(s))) &#123;</span><br><span class="line">    pr_err(<span class="string">&quot;%s: exports protected symbol %s\n&quot;</span>, mod-&gt;name, ...);</span><br><span class="line">    <span class="keyword">return</span> -EACCES;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>Google’s certified GKI builds ship with a full KMI protected-export table and <code>CONFIG_MODULE_SIG_PROTECT=y</code>;</li>
+<li>zorn’s stock modules were compiled against Xiaomi’s 6.1.138 key, so on Google’s 6.1.124 GKI they have <code>sig_ok=false</code>. Because they also export protected symbols, the kernel immediately rejects them with <code>-EACCES</code>;</li>
+<li>Shirk’s standalone ACK build didn’t generate a protection table (<code>NR_UNPROTECTED_SYMBOLS == 0</code>), allowing those exact same modules to load without issue;</li>
+<li>The failed module loads altered probe ordering: on certified GKI, <code>pineapple-asoc-snd</code> repeatedly hit <code>va-macro not registered yet, defer</code> and the sound card never materialized; on Shirk’s build, it hit 0 defers and registered the sound card in 6.455 s.</li>
+</ul>
+<p>Thus, the working baseline for 6.1.138 is simply <code>gki_defconfig</code> + <code>CONFIG_MODULE_SIG_PROTECT=n</code>, rather than hunting down missing audio config options. This finding in Section 18 corrected the earlier hypothesis from Section 8.5.</p>
+<h3 id="A-4-Why-BBRv3-Cannot-Be-a-Module">A.4 Why BBRv3 Cannot Be a Module</h3>
+<p>BBRv3 isn’t a drop-in <code>tcp_bbr.c</code> replacement; it relies on new struct fields and hooks in the core TCP stack that a loadable module cannot touch:</p>
+<table>
+<thead>
+<tr>
+<th>Dependency</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>rate_sample.prior_lost / tx_in_flight / lost / is_acking_tlp_retrans_seq / is_ece</code></td>
+<td>Inflight and loss modeling</td>
+</tr>
+<tr>
+<td><code>tcp_skb_cb.tx.in_flight / lost</code>, <code>first_tx_mstamp/delivered_mstamp</code> u64→u32</td>
+<td>Per-skb inflight/loss snapshots</td>
+</tr>
+<tr>
+<td><code>ca_ops.skb_marked_lost</code></td>
+<td>Callback notifying the CA when the core marks an skb lost</td>
+</tr>
+<tr>
+<td><code>CA_EVENT_TLP_RECOVERY</code></td>
+<td>Notification when a TLP probe recovers a loss</td>
+</tr>
+<tr>
+<td><code>ca_ops.tso_segs(sk, mss_now)</code></td>
+<td>BBRv3 TSO/GSO sizing budget</td>
+</tr>
+<tr>
+<td><code>fast_ack_mode</code>, <code>tlp_orig_data_app_limited</code></td>
+<td>Receiver fast ACK and TLP app-limited snapshot</td>
+</tr>
+</tbody>
+</table>
+<p>Attempting to compile the official v3 <code>tcp_bbr.c</code> in the standalone module environment immediately fails with errors like:</p>
+<figure class="highlight perl"><table><tr><td class="code"><pre><span class="line"><span class="keyword">use</span> of undeclared identifier <span class="string">&#x27;CA_EVENT_TLP_RECOVERY&#x27;</span></span><br><span class="line"><span class="keyword">no</span> member named <span class="string">&#x27;lost&#x27;</span> in <span class="string">&#x27;struct rate_sample&#x27;</span></span><br><span class="line"><span class="keyword">no</span> member named <span class="string">&#x27;tx_in_flight&#x27;</span> in <span class="string">&#x27;struct rate_sample&#x27;</span></span><br><span class="line"><span class="keyword">no</span> member named <span class="string">&#x27;is_acking_tlp_retrans_seq&#x27;</span> in <span class="string">&#x27;struct rate_sample&#x27;</span></span><br></pre></td></tr></table></figure>
+<p>While <code>ksud</code> can work around unexported symbols, it cannot add missing struct fields or make the core kernel populate and invoke them.</p>
+<p>Ultimately, the core patch touched 9 files: <code>include/linux/tcp.h</code>, <code>include/net/tcp.h</code>, <code>include/uapi/linux/inet_diag.h</code>, <code>net/ipv4/tcp.c</code>, <code>tcp_cong.c</code>, <code>tcp_input.c</code>, <code>tcp_output.c</code>, <code>tcp_rate.c</code>, and <code>tcp_timer.c</code>. Adapting the congestion control algorithm file itself involved four changes:</p>
+<ol>
+<li>Stripping <code>__bpf_kfunc</code> annotations and BTF kfunc registration;</li>
+<li>Stripping PLB and <code>ecn_low</code> paths (this kernel lacks <code>RTAX_FEATURE_ECN_LOW</code>, making them dead code);</li>
+<li>Adapting <code>cong_control</code> to 6.1’s <code>(sk, rs)</code> signature;</li>
+<li>Moving BBR state from inline storage to dynamic allocation and registering under the name <code>bbr3</code>.</li>
+</ol>
+<p>Why dynamic state allocation? Even after stripping PLB, <code>struct bbr</code> is still 144 bytes, whereas 6.1’s <code>ICSK_CA_PRIV_SIZE</code> is only 104 bytes. Enlarging <code>icsk_ca_priv</code> would shift every subsequent field in <code>tcp_sock</code> by 40 bytes, breaking ABI compatibility for all vendor networking modules. Instead, <code>icsk_ca_priv</code> stores a compact <code>&#123;state, owner, magic&#125;</code> pointer header while the actual state is allocated via <code>kmalloc</code> and freed in <code>.release</code>, with <code>owner</code> preventing accidental sharing across <code>accept()</code> clones.</p>
+<p>Static verification:</p>
+<ul>
+<li>BTF comparison: <code>tcp_sock</code> stays at 2368 bytes with all existing field offsets unchanged; <code>inet_connection_sock</code> stays at 1536 bytes; <code>rate_sample</code> grows 72→88, <code>tcp_congestion_ops</code> stays 192→192, and <code>tcp_skb_cb</code> shrinks 48→44 (the <code>tx</code> sub-struct size is unchanged, while union alignment drops from 8 to 4).</li>
+<li>QEMU aarch64 <code>virt</code>: a core-only kernel booted to <code>VFS: Unable to mount root fs</code> in 4.3 seconds with zero panics or BUGs.</li>
+</ul>
+<p>The biggest trap was <strong>collateral damage from genksyms CRC changes</strong>:</p>
+<ul>
+<li>Touching the TCP headers caused <code>genksyms</code> to compute new CRCs for 691 exported symbols—including functions like <code>skb_put</code> and <code>__alloc_skb</code> whose actual ABIs hadn’t changed at all;</li>
+<li><code>audio_pkt_dlkm.ko</code>’s <code>__versions</code> section expected <code>skb_put=0xac7a3881</code>, whereas the new kernel generated <code>0x385a34f9</code>;</li>
+<li>When <code>check_version()</code> returns 0 on a mismatch, the module loader fails with <code>-EINVAL</code>. Audio modules fail to load → AudioService/HAL hangs → the phone enters a bootloop;</li>
+<li>You cannot simply turn off <code>CONFIG_MODVERSIONS</code>: doing so drops the <code>modversions</code> token from vermagic, and since <code>same_magic()</code> compares everything after the first space, every vendor module gets rejected for a vermagic mismatch;</li>
+<li>The working workaround keeps <code>MODVERSIONS=y</code> and changes the <code>bad_version</code> path in <code>kernel/module/version.c</code> to return 1 (logging via <code>pr_warn_once</code> and allowing the load). This is a pragmatic compromise for a test kernel, not a security hardening measure; proper follow-ups would be a per-symbol stock CRC allowlist or wrapping the new struct fields in <code>#ifndef __GENKSYMS__</code>.</li>
+</ul>
+<p>Known limitations: the old standalone <code>tcp_bbr.ko</code> (BBRv1) cannot be loaded on this patched kernel; ECN and PLB are stripped; and this port is based on the 2025-03 BBRv3 snapshot rather than the newer 2026-09 revision (which adjusts DRAIN gain, undo state, and <code>cwnd_event_tx_start</code>).</p>
+<h3 id="A-5-Root-Cause-of-the-valid-clones-Issue-on-6-1-176">A.5 Root Cause of the valid-clones Issue on 6.1.176</h3>
+<p>A pure ACK 6.1.176 build booted fine: <code>boot_completed=1</code>, 501 modules loaded, <code>Failed to insmod=0</code>, working sound card, and working KSU root. However, the screen flickered relentlessly.</p>
+<p>Logs showed:</p>
+<figure class="highlight apache"><table><tr><td class="code"><pre><span class="line"><span class="attribute">SDM</span>: DRMAtomicReq::Commit: drmModeAtomicCommit failed with error <span class="number">22</span> (Invalid argument). crtc=<span class="number">203</span></span><br><span class="line"><span class="attribute">SDM</span>: DisplayBase::PerformCommit: COMMIT failed: <span class="number">11</span></span><br><span class="line"><span class="attribute">HwcComposer</span>: presentOrValidateDisplay <span class="number">0</span> presentFence:-<span class="number">1</span></span><br></pre></td></tr></table></figure>
+<p>Enabling DRM debug logging revealed the smoking gun:</p>
+<figure class="highlight smali"><table><tr><td class="code"><pre><span class="line">[drm:drm_atomic_helper_check_modeset] crtc203 failed valid clone<span class="built_in"> check </span>for mask 0x6</span><br></pre></td></tr></table></figure>
+<p>Pinpointing the return value via <code>kretprobe</code>:</p>
+<figure class="highlight apache"><table><tr><td class="code"><pre><span class="line"><span class="attribute">katomic_check</span>: (drm_atomic_nonblocking_commit+<span class="number">0</span>x1c/<span class="number">0</span>x90 &lt;- drm_atomic_check_only) arg1=<span class="number">0</span>xffffffea</span><br><span class="line"><span class="attribute">kioctl</span>:        (drm_ioctl_kernel+<span class="number">0</span>xf8/<span class="number">0</span>x184 &lt;- drm_mode_atomic_ioctl)          arg1=<span class="number">0</span>xffffffea</span><br></pre></td></tr></table></figure>
+<p><code>0xffffffea</code> is <code>-22</code> (<code>-EINVAL</code>), confirming the failure originates inside <code>drm_atomic_check_only()</code>.</p>
+<p>Root cause:</p>
+<ul>
+<li>Stable <strong>6.1.141</strong> backported upstream commit <code>41b4b11da02157c7474caf41d56baae0e941d01a</code> (<code>drm: Add valid clones check</code>);</li>
+<li><code>drm_atomic_check_valid_clones()</code> requires <code>possible_clones</code> across all encoders attached to the same CRTC to be mutually inclusive;</li>
+<li>zorn’s vendor <code>msm_drm.ko</code> (built on 6.1.68) attaches both DSI and Virtual encoders (<code>encoder_mask=0x6</code>) to CRTC 203 without reciprocal <code>possible_clones</code> masks;</li>
+<li>Consequently, every modeset involving both encoders fails with <code>-EINVAL</code>, causing HWC to retry on every frame and making the screen flicker.</li>
+</ul>
+<p>Version boundary: inspecting <code>drivers/gpu/drm/drm_atomic_helper.c</code> across stable 6.1.138–6.1.176 confirms that <strong>6.1.138, 139, and 140 do not contain this function; it arrived in 6.1.141</strong>. Thus, the flickering on 6.1.145 (Shirk) and 6.1.176 (Droidspaces / pure ACK) shared the exact same root cause, disproving the earlier theory that “6.1.138 is the hard ceiling for display compatibility.”</p>
+<p>Fix: remove <code>drm_atomic_check_valid_clones()</code> and its call site, restoring 6.1.140 behavior. With Image <code>841b819e...</code> and boot <code>d34718c8...</code> flashed, <code>COMMIT failed</code> and <code>drmModeAtomicCommit failed</code> dropped from once per frame to 0. While 163 <code>presentFence:-1</code> lines still appeared, the known-good 6.1.138 baseline exhibits similar bursts (241 lines recorded in §18.5 with completely normal visual output), so that log line alone is not a failure indicator.</p>
+<h3 id="A-6-Dual-BBR-Implementation-and-Verification">A.6 Dual BBR Implementation and Verification</h3>
+<p>Building on top of the 6.1.176 + valid-clones revert baseline:</p>
+<ul>
+<li>BBRv1: retains stock <code>net/ipv4/tcp_bbr.c</code>, registering as <code>bbr</code>;</li>
+<li>BBRv3: adds <code>net/ipv4/tcp_bbr3.c</code> (copied from the adapted 6.1.138 v3 port), registering as <code>bbr3</code>;</li>
+<li>Core patch <code>0001-tcp-core-bbrv3.patch</code> applied cleanly to 6.1.176 with 0 rejects, needing only minor line offsets and 1 hunk at fuzz 1;</li>
+<li>The fuzz 1 hunk was at <code>tcp_process_tlp_ack(sk, ack, flag, &amp;rs)</code>, where 6.1.176 added a nearby <code>tcp_in_ack_event(sk, flag)</code> call; the resulting code is completely valid;</li>
+<li>BBRv1 needed a small adaptation for the new <code>tso_segs(sk, mss_now)</code> callback: added <code>bbr_tso_segs()</code> replicating <code>tcp_tso_autosize()</code>, preserved BBRv1’s min-of-1/2 pacing rate cap, and updated the ops struct member from <code>.min_tso_segs</code> to <code>.tso_segs</code>;</li>
+<li>Updated <code>Kconfig</code> and <code>Makefile</code> with <code>TCP_CONG_BBR3</code>, <code>DEFAULT_BBR3</code>, <code>default &quot;bbr3&quot; if DEFAULT_BBR3</code>, and <code>obj-$(CONFIG_TCP_CONG_BBR3) += tcp_bbr3.o</code>;</li>
+<li>Config settings: <code>TCP_CONG_BBR=y</code>, <code>TCP_CONG_BBR3=y</code>, <code>DEFAULT_BBR3=y</code>, <code>DEFAULT_TCP_CONG=&quot;bbr3&quot;</code>, <code>NET_SCH_DEFAULT=y</code>, <code>DEFAULT_FQ=y</code>, and <code>DEFAULT_NET_SCH=&quot;fq&quot;</code>;</li>
+<li>The old <code>tcp_bbr_kmod</code> module remains disabled, while the <code>bbr3_fq</code> KSU module continues to enforce <code>bbr3 + fq</code> during <code>post-fs-data</code>/<code>service</code> and attaches <code>fq</code> to <code>rmnet_data*</code> and <code>wlan*</code>.</li>
+</ul>
+<p>On-device verification results:</p>
+<table>
+<thead>
+<tr>
+<th>Item</th>
+<th>Result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>uname -r</code></td>
+<td><code>6.1.176-android14-11+</code></td>
+</tr>
+<tr>
+<td><code>tcp_available_congestion_control</code></td>
+<td><code>reno bbr bbr3 cubic</code></td>
+</tr>
+<tr>
+<td>Default CC / qdisc</td>
+<td><code>bbr3</code> / <code>fq</code></td>
+</tr>
+<tr>
+<td>Switching to <code>bbr</code> / back to <code>bbr3</code></td>
+<td>Both succeed</td>
+</tr>
+<tr>
+<td>Loaded modules / <code>Failed to insmod</code></td>
+<td>501 / 0</td>
+</tr>
+<tr>
+<td>CRC tolerance log</td>
+<td>1 line (<code>tolerating symbol version mismatch</code>, matching the 6.1.138 baseline)</td>
+</tr>
+<tr>
+<td>Sound card / root / display</td>
+<td>Normal / KSU LKM / <code>COMMIT failed=0</code></td>
+</tr>
+<tr>
+<td>Live traffic</td>
+<td><code>curl https://www.baidu.com</code> returns HTTP 200 under both <code>bbr3</code> and <code>bbr</code>; <code>ss -tin</code> confirms <code>bbr3</code> and <code>bbr</code> respectively</td>
+</tr>
+</tbody>
+</table>
+<h3 id="A-7-ThinLTO-Build-and-Initial-Verification">A.7 ThinLTO Build and Initial Verification</h3>
+<p>The stock zorn kernel is built with ThinLTO; this iteration recompiled the exact same 6.1.176 + dual BBR + display fix tree with ThinLTO enabled to verify whether it can replace the <code>LTO_NONE</code> build.</p>
+<p>Configuration and toolchain:</p>
+<ul>
+<li><code>CONFIG_LTO_CLANG_THIN=y</code>, <code># CONFIG_LTO_NONE is not set</code>, <code>CONFIG_LTO_CLANG_FULL</code> disabled;</li>
+<li><code>CONFIG_CFI_CLANG=y</code>, <code>CONFIG_MODVERSIONS=y</code>, <code>CONFIG_MODULE_SIG_PROTECT=n</code>;</li>
+<li>Defaults set to <code>bbr3</code> + <code>fq</code>;</li>
+<li>Built with Ubuntu clang 17.0.6 (official ACK pin is AOSP <code>r487747c</code> / 17.0.2);</li>
+<li>Built via <code>make -j8 Image</code> with output in <code>/root/gki176-thinlto</code>.</li>
+</ul>
+<p>Build metrics:</p>
+<table>
+<thead>
+<tr>
+<th>Metric</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Wall time</td>
+<td>24:44.91</td>
+</tr>
+<tr>
+<td>User / sys</td>
+<td>9358.30 s / 1004.97 s</td>
+</tr>
+<tr>
+<td>CPU utilization</td>
+<td>697%</td>
+</tr>
+<tr>
+<td><code>time -v</code> max RSS</td>
+<td>6,124,300 KiB (~5.84 GiB)</td>
+</tr>
+<tr>
+<td>cgroup <code>memory.peak</code></td>
+<td>6,381,436,928 B (~5.94 GiB)</td>
+</tr>
+<tr>
+<td><code>memory.swap.peak</code></td>
+<td>1,368,064 B (~1.3 MiB)</td>
+</tr>
+<tr>
+<td><code>memory.events</code></td>
+<td><code>oom=0</code>, <code>oom_kill=0</code></td>
+</tr>
+<tr>
+<td>Image</td>
+<td>36,760,064 B, SHA256 <code>59fdfaab...</code></td>
+</tr>
+</tbody>
+</table>
+<p>Compared to <code>LTO_NONE</code>: Image size grew from 35,645,952 B to 36,760,064 B (+3.1%). Exact <code>time</code> and peak memory metrics weren’t recorded for the <code>LTO_NONE</code> run, so build times cannot be compared directly.</p>
+<p>ABI check: a full diff (stripped of comments and sorted) between <code>/root/gki176-noprot/vmlinux.symvers</code> and <code>/root/gki176-thinlto/vmlinux.symvers</code> produced <strong>0 lines of difference</strong>; <code>module_layout=0xea759d7f</code>, <code>skb_put=0x385a34f9</code>, and <code>__alloc_skb=0x3a1c9278</code> are identical across both builds. ThinLTO only affects code generation and does not alter <code>genksyms</code> symbol CRCs.</p>
+<p>On-device verification:</p>
+<table>
+<thead>
+<tr>
+<th>Item</th>
+<th>Result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>uname -r</code></td>
+<td><code>6.1.176-android14-11+</code></td>
+</tr>
+<tr>
+<td><code>/proc/config.gz</code></td>
+<td><code>CONFIG_LTO_CLANG_THIN=y</code>, <code>CONFIG_CFI_CLANG=y</code></td>
+</tr>
+<tr>
+<td><code>sys.boot_completed</code></td>
+<td>1</td>
+</tr>
+<tr>
+<td>Modules / <code>Failed to insmod</code></td>
+<td>501 / 0</td>
+</tr>
+<tr>
+<td>CC / qdisc</td>
+<td><code>bbr3</code> / <code>fq</code></td>
+</tr>
+<tr>
+<td>Sound card / root / display</td>
+<td>Normal / KSU LKM / <code>COMMIT failed=0</code></td>
+</tr>
+</tbody>
+</table>
+<p>Boot progress (single sample):</p>
+<table>
+<thead>
+<tr>
+<th>Metric</th>
+<th style="text-align:right">LTO_NONE</th>
+<th style="text-align:right">ThinLTO</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>boot_progress_enable_screen</code></td>
+<td style="text-align:right">16022 ms</td>
+<td style="text-align:right">15871 ms</td>
+</tr>
+<tr>
+<td><code>sf_stop_bootanim</code></td>
+<td style="text-align:right">17730 ms</td>
+<td style="text-align:right">17447 ms</td>
+</tr>
+</tbody>
+</table>
+<p>Roughly -0.9% and -1.6% faster respectively, though with a single sample and varying background tasks, this cannot be claimed as a statistically significant improvement. CPU, storage, and UI A/B benchmarks have not been run yet.</p>
+<h3 id="A-8-Artifacts-and-Hashes">A.8 Artifacts and Hashes</h3>
+<table>
+<thead>
+<tr>
+<th>Artifact</th>
+<th>SHA256</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>6.1.176 LTO_NONE Image</td>
+<td><code>263d14815f0d9f58a2e37dff0b8d67a58baa5ca8046f61f1eeb4b7532bb0c47f</code></td>
+</tr>
+<tr>
+<td>6.1.176 LTO_NONE boot</td>
+<td><code>827f8865666e709059230b76c640a1cc35cdea10d49f7253faf9935499440475</code></td>
+</tr>
+<tr>
+<td>6.1.176 ThinLTO Image</td>
+<td><code>59fdfaabfb4bb94239a37b2d1b851be3bcb6bc75a105d83d8296528c34514d559</code></td>
+</tr>
+<tr>
+<td>6.1.176 ThinLTO boot</td>
+<td><code>6637585575048818a2276dd68796ed09094536e013bf2ebcc122517d8221a02b</code></td>
+</tr>
+<tr>
+<td>6.1.176 Display Fix boot</td>
+<td><code>d34718c8fdade3deb08d94319024f451847703a34c1878ca155fd3015bcd609e</code></td>
+</tr>
+<tr>
+<td>6.1.138 BBRv3 Image</td>
+<td><code>43b72d3d06717e1df376abf1331d1ca784323914b4e53b5d49c41643ff9e5934</code></td>
+</tr>
+<tr>
+<td>6.1.138 BBRv3 boot</td>
+<td><code>8e6bacabedc9e347cc41a68a77dc9b630bbd6b6dffcb000adc8aa82784e28354</code></td>
+</tr>
+<tr>
+<td>stock boot_a</td>
+<td><code>a1a041eb90226266244844c45adf650f665e930f622cc1db56afb95aba38affd</code></td>
+</tr>
+</tbody>
+</table>
+<p>GitHub release: <a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/iliyian/k80-zorn-bbr/releases/tag/v0.2.0-6.1.176">https://github.com/iliyian/k80-zorn-bbr/releases/tag/v0.2.0-6.1.176</a></p>
+<h3 id="A-9-Open-Items-and-Risks">A.9 Open Items and Risks</h3>
+<ul>
+<li><code>check_version()</code> currently relaxes CRC checks <strong>globally</strong>; this should be narrowed down to a per-symbol stock CRC allowlist or avoided by hiding the new fields from <code>genksyms</code> via <code>__GENKSYMS__</code>.</li>
+<li><code>CONFIG_MODULE_SIG_PROTECT=n</code> is a deliberate trade-off to allow stock vendor modules to load; <code>MODULE_SIG_FORCE</code> was never enabled to begin with, as <code>MODULE_SIG_PROTECT</code> is Android’s extra gatekeeper.</li>
+<li>Reverting <code>valid-clones</code> removes a DRM validation check rather than a display feature; it restores 6.1.140 behavior, though strictly speaking it drops a sanity check that upstream intended to enforce.</li>
+<li>The BBRv3 port strips out ECN and PLB, and the newer 2026-09 snapshot has not been ported yet.</li>
+<li>WiFi, camera, fingerprint, and actual speaker/headphone playback have not yet undergone systematic regression testing on 6.1.176, nor have long-term stability, thermals, or weak-signal/high-loss scenarios been stress-tested.</li>
+<li>Performance A/B testing for ThinLTO is still pending; PGO and AutoFDO lack out-of-the-box support on 6.1 ACK and would require additional patchsets and profile collection.</li>
+<li>The old standalone <code>tcp_bbr.ko</code> cannot be loaded on the new custom kernels; the prebuilt <code>.ko</code> in the repository remains strictly for stock 6.1.138.</li>
+</ul>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>Author: </span><span class="post-copyright-info"><a href="https://iliyian.com">iliyian</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>Link: </span><span class="post-copyright-info"><a href="https://iliyian.com/en/posts/486b403b/">https://iliyian.com/en/posts/486b403b/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>Copyright Notice: </span><span class="post-copyright-info">All articles on this blog are licensed under <a target="_blank" rel="noopener external nofollow noreferrer" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> unless otherwise stated.</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/en/tags/AI-SLOP/">AI SLOP</a></div><div class="post-share"><div class="social-share" data-image="https://r2-imgs.iliyian.com/img/vertin_sleeping.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><a class="pagination-related full-width" href="/en/posts/b970bd74/" title="World is Collapsing"><img class="cover" src="https://r2-imgs.iliyian.com/img/loading-cat.gif" data-lazy-src="https://r2-imgs.iliyian.com/img/vertin_sleeping.jpg" onerror="onerror=null;src='https://http.cat/404'" alt="cover of next post"><div class="info text-right"><div class="info-1"><div class="info-item-1">Next</div><div class="info-item-2">World is Collapsing</div></div><div class="info-2"><div class="info-item-1">World is Collapsing The Greatest Sorrow ever eventually immersed me, after all the good news scie...</div></div></div></a></nav><hr class="custom-hr"/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> Comments</span></div><div class="comment-switch"><span class="first-comment">Waline</span><span id="switch-btn"></span><span class="second-comment">Gitalk</span></div></div><div class="comment-wrap"><div><div id="waline-wrap"></div></div><div><div id="gitalk-container"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="https://r2-imgs.iliyian.com/img/loading-cat.gif" data-lazy-src="https://r2-imgs.iliyian.com/img/37.jpg" onerror="this.onerror=null;this.src='https://http.cat/404'" alt="avatar"/></div><div class="author-info-name">iliyian</div><div class="author-info-description">A Lovely Girl</div><div class="site-data"><a href="/en/archives/"><div class="headline">Articles</div><div class="length-num">48</div></a><a href="/en/tags/"><div class="headline">Tags</div><div class="length-num">20</div></a><a href="/en/categories/"><div class="headline">Categories</div><div class="length-num">9</div></a></div><a id="card-info-btn" target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/iliyian"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons"><a class="social-icon" href="https://github.com/iliyian" rel="external nofollow noreferrer" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="https://t.me/iliyian" rel="external nofollow noreferrer" target="_blank" title="Telegram"><i class="fab fa-telegram"></i></a><a class="social-icon" href="https://steamcommunity.com/id/iliyian/" rel="external nofollow noreferrer" target="_blank" title="Steam"><i class="fab fa-steam"></i></a><a class="social-icon" href="https://space.bilibili.com/299627858" rel="external nofollow noreferrer" target="_blank" title="Bilibili"><i class="iconfont icon-bilibili2"></i></a><a class="social-icon" href="https://codeforces.com/profile/iliyian" rel="external nofollow noreferrer" target="_blank" title="Codeforces"><i class="iconfont icon-codeforces2"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>Announcement</span></div><div class="announcement_content">The slanting sun, I have failed you in this waning spring, with lines of tears.</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>Contents</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">Enabling BBR on Redmi K80 via a Kernel Module</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#First-What-Is-BBR"><span class="toc-number">1.1.</span> <span class="toc-text">First, What Is BBR?</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Checking-Kernel-Support"><span class="toc-number">1.2.</span> <span class="toc-text">Checking Kernel Support</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Why-Not-Just-Build-a-Full-Kernel"><span class="toc-number">1.3.</span> <span class="toc-text">Why Not Just Build a Full Kernel?</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#The-Third-Way-Loading-a-Module-at-Runtime"><span class="toc-number">1.4.</span> <span class="toc-text">The Third Way: Loading a Module at Runtime</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#What-ksud-insmod-Does"><span class="toc-number">1.5.</span> <span class="toc-text">What ksud insmod Does</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Hurdle-1-The-Source-Must-Be-ACK"><span class="toc-number">1.6.</span> <span class="toc-text">Hurdle 1: The Source Must Be ACK</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Hurdle-2-Matching-the-Compiler-to-the-Kernel"><span class="toc-number">1.7.</span> <span class="toc-text">Hurdle 2: Matching the Compiler to the Kernel</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Hurdle-3-struct-module-Missing-16-Bytes"><span class="toc-number">1.8.</span> <span class="toc-text">Hurdle 3: struct module Missing 16 Bytes</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Other-Build-Pitfalls"><span class="toc-number">1.9.</span> <span class="toc-text">Other Build Pitfalls</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#TRIM-UNUSED-KSYMS"><span class="toc-number">1.9.1.</span> <span class="toc-text">TRIM_UNUSED_KSYMS</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Missing-asm-offsets-h"><span class="toc-number">1.9.2.</span> <span class="toc-text">Missing asm-offsets.h</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Missing-scripts-module-lds"><span class="toc-number">1.9.3.</span> <span class="toc-text">Missing scripts&#x2F;module.lds</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Module-Compression"><span class="toc-number">1.9.4.</span> <span class="toc-text">Module Compression</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#modpost-undefined-Warnings"><span class="toc-number">1.9.5.</span> <span class="toc-text">modpost undefined Warnings</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Verifying-the-ABI-with-BTF"><span class="toc-number">1.10.</span> <span class="toc-text">Verifying the ABI with BTF</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Loading-the-Module-and-Setting-Up-qdisc"><span class="toc-number">1.11.</span> <span class="toc-text">Loading the Module and Setting Up qdisc</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Real-World-Performance-of-This-Setup"><span class="toc-number">1.12.</span> <span class="toc-text">Real-World Performance of This Setup</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Methodology"><span class="toc-number">1.12.1.</span> <span class="toc-text">Methodology</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Downloads"><span class="toc-number">1.12.2.</span> <span class="toc-text">Downloads</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Uploads"><span class="toc-number">1.12.3.</span> <span class="toc-text">Uploads</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#A-Packet-Loss-Incident"><span class="toc-number">1.12.4.</span> <span class="toc-text">A Packet Loss Incident</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Conclusion"><span class="toc-number">1.12.5.</span> <span class="toc-text">Conclusion</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#BBRv2-and-BBRv3"><span class="toc-number">1.13.</span> <span class="toc-text">BBRv2 and BBRv3</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#BBRv3-Benchmarks-Latency-Gains-No-Throughput-Gains"><span class="toc-number">1.14.</span> <span class="toc-text">BBRv3 Benchmarks: Latency Gains, No Throughput Gains</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Downloads-2"><span class="toc-number">1.14.1.</span> <span class="toc-text">Downloads</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Uploads-2"><span class="toc-number">1.14.2.</span> <span class="toc-text">Uploads</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Comparison-with-BBRv1"><span class="toc-number">1.14.3.</span> <span class="toc-text">Comparison with BBRv1</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Why-There-Were-No-Extra-Gains"><span class="toc-number">1.14.4.</span> <span class="toc-text">Why There Were No Extra Gains</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Measurement-Pitfalls"><span class="toc-number">1.14.5.</span> <span class="toc-text">Measurement Pitfalls</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Conclusion-2"><span class="toc-number">1.14.6.</span> <span class="toc-text">Conclusion</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Open-Source-Repository"><span class="toc-number">1.15.</span> <span class="toc-text">Open Source Repository</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Caveats"><span class="toc-number">1.16.</span> <span class="toc-text">Caveats</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-1-176-Display-Compatibility-and-Dual-BBR"><span class="toc-number">1.17.</span> <span class="toc-text">6.1.176: Display Compatibility and Dual BBR</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Root-Cause-of-the-Screen-Flickering"><span class="toc-number">1.17.1.</span> <span class="toc-text">Root Cause of the Screen Flickering</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Dual-BBR"><span class="toc-number">1.17.2.</span> <span class="toc-text">Dual BBR</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Trade-offs-and-Next-Steps"><span class="toc-number">1.17.3.</span> <span class="toc-text">Trade-offs and Next Steps</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Appendix-A-Complete-Experiment-Log"><span class="toc-number">1.18.</span> <span class="toc-text">Appendix A: Complete Experiment Log</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#A-1-Device-and-Constraints"><span class="toc-number">1.18.1.</span> <span class="toc-text">A.1 Device and Constraints</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#A-2-Early-Attempts-Flashing-Generic-Third-Party-Kernels-Directly"><span class="toc-number">1.18.2.</span> <span class="toc-text">A.2 Early Attempts: Flashing Generic &#x2F; Third-Party Kernels Directly</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#A-3-The-Real-Cause-of-Audio-Hangs-GKI-Module-Protection"><span class="toc-number">1.18.3.</span> <span class="toc-text">A.3 The Real Cause of Audio Hangs: GKI Module Protection</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#A-4-Why-BBRv3-Cannot-Be-a-Module"><span class="toc-number">1.18.4.</span> <span class="toc-text">A.4 Why BBRv3 Cannot Be a Module</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#A-5-Root-Cause-of-the-valid-clones-Issue-on-6-1-176"><span class="toc-number">1.18.5.</span> <span class="toc-text">A.5 Root Cause of the valid-clones Issue on 6.1.176</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#A-6-Dual-BBR-Implementation-and-Verification"><span class="toc-number">1.18.6.</span> <span class="toc-text">A.6 Dual BBR Implementation and Verification</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#A-7-ThinLTO-Build-and-Initial-Verification"><span class="toc-number">1.18.7.</span> <span class="toc-text">A.7 ThinLTO Build and Initial Verification</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#A-8-Artifacts-and-Hashes"><span class="toc-number">1.18.8.</span> <span class="toc-text">A.8 Artifacts and Hashes</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#A-9-Open-Items-and-Risks"><span class="toc-number">1.18.9.</span> <span class="toc-text">A.9 Open Items and Risks</span></a></li></ol></li></ol></li></ol></div></div></div></div></main><footer id="footer" style="background-image: url(https://r2-imgs.iliyian.com/cdn-cgi/image/format=webp,quality=80/img/vertin_sleeping.jpg);" data-cover-src="https://r2-imgs.iliyian.com/img/vertin_sleeping.jpg"><div class="footer-other"><div class="footer-copyright"><span class="copyright">&copy;&nbsp;2021 - 2026 By iliyian</span><span class="framework-info"><span>Framework </span><a target="_blank" rel="noopener external nofollow noreferrer" href="https://hexo.io">Hexo 7.3.0</a><span class="footer-separator">|</span><span>Theme </span><a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly 5.7.1.260810</a></span></div><div class="footer_custom_text">To Be A Great Poet.<br/><a href="https://icp.gov.moe/?keyword=20232063" rel="external nofollow noreferrer" target="_blank">MoeICP Registration No. 20232063</a><br/>Translated w/ Gemini 4 Argon</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="Reading Mode"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="Toggle Between Light and Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle Between Single-column and Double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="Settings"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="Table of Contents"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="Scroll to Comments"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="Back to Top"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/en/js/utils.js" defer></script><script src="/en/js/main.js" defer></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js" defer></script><div class="js-pjax"><script>(async () => {
+  const showKatex = () => {
+    document.querySelectorAll('#article-container .katex').forEach(el => el.classList.add('katex-show'))
+  }
+
+  if (!window.katex_js_css) {
+    window.katex_js_css = true
+    try {
+      await btf.getCSS('https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css')
+      if (true) {
+        await btf.getScript('https://cdn.jsdelivr.net/npm/katex/dist/contrib/copy-tex.min.js')
+      }
+    } catch (e) {
+      console.error('[katex] failed to load assets, showing formulas anyway:', e)
+    }
+  }
+
+  showKatex()
+  btf.addGlobalFn('encrypt', showKatex, 'katex')
+})()</script><script>(() => {
+  const parseViewBox = viewBox => {
+    if (!viewBox) return null
+    const parts = viewBox.trim().split(/[\s,]+/).map(n => Number(n))
+    if (parts.length !== 4 || parts.some(n => Number.isNaN(n))) return null
+    return parts
+  }
+
+  const getSvgViewBox = svg => {
+    const attr = parseViewBox(svg.getAttribute('viewBox'))
+    if (attr) return attr
+
+    // Fallback: use bbox to build a viewBox
+    try {
+      const bbox = svg.getBBox()
+      if (bbox && bbox.width && bbox.height) return [bbox.x, bbox.y, bbox.width, bbox.height]
+    } catch (e) {
+      // getBBox may fail on some edge cases; ignore
+    }
+
+    const w = Number(svg.getAttribute('width')) || 0
+    const h = Number(svg.getAttribute('height')) || 0
+    if (w > 0 && h > 0) return [0, 0, w, h]
+    return [0, 0, 100, 100]
+  }
+
+  const setSvgViewBox = (svg, vb) => {
+    svg.setAttribute('viewBox', `${vb[0]} ${vb[1]} ${vb[2]} ${vb[3]}`)
+  }
+
+  const clamp = (v, min, max) => Math.max(min, Math.min(max, v))
+
+  const openSvgInNewTab = ({ source, initViewBox }) => {
+    const getClonedSvg = () => {
+      if (typeof source === 'string') {
+        const template = document.createElement('template')
+        template.innerHTML = source.trim()
+        const svg = template.content.querySelector('svg')
+        return svg ? svg.cloneNode(true) : null
+      }
+      if (source && typeof source.cloneNode === 'function') {
+        return source.cloneNode(true)
+      }
+      return null
+    }
+
+    const clone = getClonedSvg()
+    if (!clone) return
+    if (initViewBox && initViewBox.length === 4) {
+      clone.setAttribute('viewBox', initViewBox.join(' '))
+    }
+    if (!clone.getAttribute('xmlns')) clone.setAttribute('xmlns', 'http://www.w3.org/2000/svg')
+    if (!clone.getAttribute('xmlns:xlink') && clone.innerHTML.includes('xlink:')) {
+      clone.setAttribute('xmlns:xlink', 'http://www.w3.org/1999/xlink')
+    }
+    // inject background to match current theme
+    const isDark = document.documentElement.getAttribute('data-theme') === 'dark'
+    const bg = getComputedStyle(document.body).backgroundColor || (isDark ? '#1e1e1e' : '#ffffff')
+    if (!clone.style.background) clone.style.background = bg
+
+    const serializer = new XMLSerializer()
+    const svgSource = serializer.serializeToString(clone)
+    const htmlSource = `<!doctype html><html><head><meta charset="utf-8" />
+      <style>
+        html, body { width: 100%; height: 100%; margin: 0; display: flex; align-items: center; justify-content: center; background: ${bg}; }
+        svg { max-width: 100%; max-height: 100%; height: auto; width: auto; }
+      </style>
+      </head><body>${svgSource}</body></html>`
+    const blob = new Blob([htmlSource], { type: 'text/html;charset=utf-8' })
+    const url = URL.createObjectURL(blob)
+    window.open(url, '_blank', 'noopener')
+
+    setTimeout(() => URL.revokeObjectURL(url), 5000)
+  }
+
+  const attachMermaidViewerButton = wrap => {
+    let btn = wrap.querySelector('.mermaid-open-btn')
+    if (!btn) {
+      btn = document.createElement('button')
+      btn.type = 'button'
+      btn.className = 'mermaid-open-btn'
+      wrap.appendChild(btn)
+    }
+
+    btn.innerHTML = '<i class="fa fa-search fa-fw" aria-hidden="true"></i>'
+
+    if (!btn.__mermaidViewerBound) {
+      btn.addEventListener('click', e => {
+        e.preventDefault()
+        e.stopPropagation()
+        const svg = wrap.__mermaidOriginalSvg || wrap.querySelector('svg')
+        if (!svg) return
+        const initViewBox = wrap.__mermaidInitViewBox
+        openSvgInNewTab({ source: svg, initViewBox })
+      })
+      btn.__mermaidViewerBound = true
+    }
+  }
+
+  // Zoom around a point (px, py) in the SVG viewport (in viewBox coordinates)
+  const zoomAtPoint = (vb, factor, px, py) => {
+    const w = vb[2] * factor
+    const h = vb[3] * factor
+    const nx = px - (px - vb[0]) * factor
+    const ny = py - (py - vb[1]) * factor
+    return [nx, ny, w, h]
+  }
+
+  const initMermaidGestures = wrap => {
+    // Clean up previous event listeners and pending frames
+    if (wrap.__mermaidAbortController) {
+      wrap.__mermaidAbortController.abort()
+      if (wrap.__mermaidRafId) cancelAnimationFrame(wrap.__mermaidRafId)
+    }
+    const ac = new AbortController()
+    wrap.__mermaidAbortController = ac
+    const svg = wrap.querySelector('svg')
+    if (!svg) return
+
+    // Ensure viewBox exists so gestures always work
+    const initVb = getSvgViewBox(svg)
+    wrap.__mermaidInitViewBox = initVb
+    wrap.__mermaidCurViewBox = initVb.slice()
+    setSvgViewBox(svg, initVb)
+    // Disable default gestures to prevent scroll chaining and pinch-zoom penetration in Chrome
+    svg.style.touchAction = 'none'
+
+    // Cache BoundingClientRect, throttled on scroll to reduce reflow
+    let cachedRect = svg.getBoundingClientRect()
+    let rectDirty = false
+    const markRectDirty = () => { rectDirty = true }
+    window.addEventListener('resize', markRectDirty, { signal: ac.signal })
+    window.addEventListener('scroll', markRectDirty, { signal: ac.signal, capture: true })
+    const getRect = () => {
+      if (rectDirty) {
+        cachedRect = svg.getBoundingClientRect()
+        rectDirty = false
+      }
+      return cachedRect
+    }
+
+    // Precompute clamp bounds from initial viewBox
+    const minW = initVb[2] * 0.1
+    const maxW = initVb[2] * 10
+    const minH = initVb[3] * 0.1
+    const maxH = initVb[3] * 10
+    const clampVb = vb => {
+      const out = vb.slice()
+      out[2] = clamp(out[2], minW, maxW)
+      out[3] = clamp(out[3], minH, maxH)
+      return out
+    }
+
+    // Throttle DOM updates using requestAnimationFrame
+    let pendingVb = null
+    let rafId = null
+    const applyVb = () => {
+      if (pendingVb) {
+        wrap.__mermaidCurViewBox = pendingVb
+        setSvgViewBox(svg, pendingVb)
+        pendingVb = null
+      }
+      rafId = null
+      wrap.__mermaidRafId = null
+    }
+    const setCurVb = vb => {
+      pendingVb = clampVb(vb)
+      if (!rafId) {
+        rafId = requestAnimationFrame(applyVb)
+        wrap.__mermaidRafId = rafId
+      }
+    }
+
+    const state = {
+      pointers: new Map(),
+      startVb: null,
+      startDist: 0,
+      lastPointerX: 0,
+      lastPointerY: 0
+    }
+
+    const onPointerDown = e => {
+      if (e.pointerType === 'mouse' && e.button !== 0) return
+      svg.setPointerCapture(e.pointerId)
+      const curVb = wrap.__mermaidCurViewBox
+      state.pointers.set(e.pointerId, { x: e.clientX, y: e.clientY })
+      if (state.pointers.size === 1) {
+        state.startVb = curVb.slice()
+        state.lastPointerX = e.clientX
+        state.lastPointerY = e.clientY
+      } else if (state.pointers.size === 2) {
+        const pts = [...state.pointers.values()]
+        const dx = pts[0].x - pts[1].x
+        const dy = pts[0].y - pts[1].y
+        state.startDist = Math.hypot(dx, dy)
+        state.startVb = curVb.slice()
+      }
+    }
+
+    const onPointerMove = e => {
+      if (!state.pointers.has(e.pointerId)) return
+      state.pointers.set(e.pointerId, { x: e.clientX, y: e.clientY })
+      const curVb = wrap.__mermaidCurViewBox
+      const rect = getRect()
+      if (state.pointers.size === 1 && state.startVb) {
+        const p = state.pointers.values().next().value
+        const dxClient = p.x - state.lastPointerX
+        const dyClient = p.y - state.lastPointerY
+        state.lastPointerX = p.x
+        state.lastPointerY = p.y
+        const dx = dxClient * (curVb[2] / rect.width)
+        const dy = dyClient * (curVb[3] / rect.height)
+        setCurVb([curVb[0] - dx, curVb[1] - dy, curVb[2], curVb[3]])
+        return
+      }
+      if (state.pointers.size === 2 && state.startVb && state.startDist > 0) {
+        const pts = [...state.pointers.values()]
+        const dx = pts[0].x - pts[1].x
+        const dy = pts[0].y - pts[1].y
+        const dist = Math.hypot(dx, dy)
+        if (!dist) return
+        const factor = state.startDist / dist
+        const cx = (pts[0].x + pts[1].x) / 2
+        const cy = (pts[0].y + pts[1].y) / 2
+        const px = curVb[0] + (cx - rect.left) * (curVb[2] / rect.width)
+        const py = curVb[1] + (cy - rect.top) * (curVb[3] / rect.height)
+        setCurVb(zoomAtPoint(state.startVb, factor, px, py))
+      }
+    }
+
+    const onPointerUpOrCancel = e => {
+      // Release PointerCapture to avoid event capture anomalies
+      if (svg.hasPointerCapture && svg.hasPointerCapture(e.pointerId)) {
+        svg.releasePointerCapture(e.pointerId)
+      }
+      state.pointers.delete(e.pointerId)
+      if (state.pointers.size === 0) {
+        state.startVb = null
+        state.startDist = 0
+      } else if (state.pointers.size === 1) {
+        const p = state.pointers.values().next().value
+        state.lastPointerX = p.x
+        state.lastPointerY = p.y
+      }
+    }
+
+    const onWheel = e => {
+      // Prevent event bubbling from triggering external scroll
+      e.preventDefault()
+      e.stopPropagation()
+      // Normalize deltaY across deltaMode (Chrome uses pixels, Safari uses lines)
+      let delta = e.deltaY
+      if (e.deltaMode === 1) delta *= 16
+      else if (e.deltaMode === 2) delta *= 400
+
+      // Continuous zoom factor: smoother than fixed 1.1/0.9 steps
+      const zoomFactor = Math.pow(1.001, delta)
+
+      const curVb = wrap.__mermaidCurViewBox
+      const rect = getRect()
+      const px = curVb[0] + (e.clientX - rect.left) * (curVb[2] / rect.width)
+      const py = curVb[1] + (e.clientY - rect.top) * (curVb[3] / rect.height)
+      setCurVb(zoomAtPoint(curVb, zoomFactor, px, py))
+    }
+
+    const onDblClick = () => {
+      const init = wrap.__mermaidInitViewBox
+      if (init) setCurVb(init)
+    }
+
+    svg.addEventListener('pointerdown', onPointerDown, { signal: ac.signal })
+    svg.addEventListener('pointermove', onPointerMove, { signal: ac.signal })
+    svg.addEventListener('pointerup', onPointerUpOrCancel, { signal: ac.signal })
+    svg.addEventListener('pointercancel', onPointerUpOrCancel, { signal: ac.signal })
+    svg.addEventListener('wheel', onWheel, { passive: false, signal: ac.signal })
+    svg.addEventListener('dblclick', onDblClick, { signal: ac.signal })
+  }
+
+  const runMermaid = ele => {
+    window.loadMermaid = true
+    const theme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'default'
+    ele.forEach((item, index) => {
+      const mermaidSrc = item.firstElementChild
+      // Clean up event listeners and stale content before re-rendering
+      if (item.__mermaidAbortController) {
+        item.__mermaidAbortController.abort()
+      }
+      const oldSvg = item.querySelector('svg')
+      if (oldSvg) oldSvg.remove()
+      const oldError = item.querySelector('.mermaid-error')
+      if (oldError) oldError.remove()
+      let config = {}
+      try {
+        config = mermaidSrc.dataset.config ? JSON.parse(mermaidSrc.dataset.config) : {}
+      } catch (e) {
+        console.warn('[mermaid] failed to parse dataset.config:', e)
+      }
+      if (!config.theme) {
+        config.theme = theme
+      }
+      const mermaidThemeConfig = `%%{init: ${JSON.stringify(config)}}%%\n`
+      const mermaidID = `mermaid-${index}`
+      const mermaidDefinition = mermaidThemeConfig + mermaidSrc.textContent
+
+      const renderMermaid = svg => {
+        mermaidSrc.insertAdjacentHTML('afterend', svg)
+        if (true) initMermaidGestures(item)
+        item.__mermaidOriginalSvg = svg
+        if (true) attachMermaidViewerButton(item)
+      }
+
+      const handleError = err => {
+        console.error(`[mermaid] render failed for block #${index}:`, err)
+        const errorEl = document.createElement('div')
+        errorEl.className = 'mermaid-error'
+        errorEl.textContent = `Mermaid render error: ${err.message || err}`
+        mermaidSrc.insertAdjacentElement('afterend', errorEl)
+      }
+
+      try {
+        const renderFn = mermaid.render(mermaidID, mermaidDefinition)
+        // mermaid v9 and v10 compatibility
+        if (typeof renderFn === 'string') {
+          renderMermaid(renderFn)
+        } else {
+          renderFn.then(({ svg }) => renderMermaid(svg)).catch(handleError)
+        }
+      } catch (err) {
+        handleError(err)
+      }
+    })
+  }
+
+  const codeToMermaid = $article => {
+    const codeMermaidEle = $article.querySelectorAll('pre > code.mermaid')
+    if (codeMermaidEle.length === 0) return
+
+    codeMermaidEle.forEach(ele => {
+      const preEle = document.createElement('pre')
+      preEle.className = 'mermaid-src'
+      preEle.hidden = true
+      preEle.textContent = ele.textContent
+      const newEle = document.createElement('div')
+      newEle.className = 'mermaid-wrap'
+      newEle.appendChild(preEle)
+      ele.parentNode.replaceWith(newEle)
+    })
+  }
+
+  const loadMermaid = () => {
+    const $article = document.getElementById('article-container')
+    if (!$article) return
+
+    if (true) codeToMermaid($article)
+    const $mermaid = $article.querySelectorAll('.mermaid-wrap')
+    if ($mermaid.length === 0) return
+
+    const runMermaidFn = () => runMermaid($mermaid)
+    btf.addGlobalFn('themeChange', runMermaidFn, 'mermaid')
+    window.loadMermaid ? runMermaidFn() : btf.getScript('https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js').then(runMermaidFn)
+  }
+
+  btf.addGlobalFn('encrypt', loadMermaid, 'mermaid')
+  window.pjax ? loadMermaid() : document.addEventListener('DOMContentLoaded', loadMermaid)
+})()</script><script>(() => {
+  let initFn = window.walineFn || null
+  const isShuoshuo = GLOBAL_CONFIG_SITE.pageType === 'shuoshuo'
+  const option = {"locale":{"placeholder":"O Troupe of little vagrants of the world, leave your footprints in my words.","sofa":"Her wishful face haunts my dreams like the rain at night.","reactionTitle":"Leave a note","reaction0":"Good","reaction1":"Nice","reaction2":"Moved","reaction3":"Hmm","reaction4":"Ha"},"reaction":["data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7","data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7","data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7","data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7","data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"],"turnstileKey":"0x4AAAAAAB6dmP1fw7Iw96wn"}
+
+  const destroyWaline = ele => ele.destroy()
+
+  const initWaline = (Fn, el = document, path = window.location.pathname) => {
+    const waline = Fn({
+      el: el.querySelector('#waline-wrap'),
+      serverURL: 'https://waline.iliyian.com/',
+      pageview: false,
+      dark: 'html[data-theme="dark"]',
+      comment: false,
+      ...option,
+      path: isShuoshuo ? path : (option && option.path) || path
+    })
+
+    let lightboxObserver = null
+    if (GLOBAL_CONFIG.lightbox !== 'null') {
+      const wrap = el.querySelector('#waline-wrap')
+      if (wrap) {
+        lightboxObserver = new MutationObserver(mutations => {
+          const imgs = []
+          mutations.forEach(mutation => {
+            mutation.addedNodes.forEach(node => {
+              if (node.nodeType !== 1) return
+              const nodeImgs = node.matches && node.matches('img') ? [node] : node.querySelectorAll('img')
+              nodeImgs.forEach(img => imgs.push(img))
+            })
+          })
+          const lightboxImgs = imgs.filter(img => img.closest('.wl-content') && !img.classList.contains('wl-emoji'))
+          if (lightboxImgs.length) btf.loadLightbox(lightboxImgs)
+        })
+        lightboxObserver.observe(wrap, { childList: true, subtree: true })
+      }
+    }
+
+    if (isShuoshuo) {
+      window.shuoshuoComment.destroyWaline = () => {
+        lightboxObserver && lightboxObserver.disconnect()
+        destroyWaline(waline)
+        if (el.children.length) {
+          el.innerHTML = ''
+          el.classList.add('no-comment')
+        }
+      }
+    }
+  }
+
+  const loadWaline = (el, path) => {
+    if (initFn) initWaline(initFn, el, path)
+    else {
+      btf.getCSS('https://cdn.jsdelivr.net/npm/@waline/client/dist/waline.min.css')
+        .then(() => import('https://cdn.jsdelivr.net/npm/@waline/client/dist/waline.min.js'))
+        .then(({ init }) => {
+          initFn = init || Waline.init
+          initWaline(initFn, el, path)
+          window.walineFn = initFn
+        })
+    }
+  }
+
+  if (isShuoshuo) {
+    'Waline' === 'Waline'
+      ? window.shuoshuoComment = { loadComment: loadWaline }
+      : window.loadOtherComment = loadWaline
+    return
+  }
+
+  if ('Waline' === 'Waline' || !false) {
+    if (false) btf.loadComment(document.getElementById('waline-wrap'),loadWaline)
+    else setTimeout(loadWaline, 0)
+  } else {
+    window.loadOtherComment = loadWaline
+  }
+})()</script><script>(() => {
+  const isShuoshuo = GLOBAL_CONFIG_SITE.pageType === 'shuoshuo'
+  const option = null
+
+  const commentCount = n => {
+    const isCommentCount = document.querySelector('#post-meta .gitalk-comment-count')
+    if (isCommentCount) {
+      isCommentCount.textContent= n
+    }
+  }
+
+  const initGitalk = (el, path) => {
+    if (isShuoshuo) {
+      window.shuoshuoComment.destroyGitalk = () => {
+        if (el.children.length) {
+          el.innerHTML = ''
+          el.classList.add('no-comment')
+        }
+      }
+    }
+
+    const gitalk = new Gitalk({
+      clientID: '82d3ae30fb1309b8aef2',
+      clientSecret: '9a7da5f699aaa02763e4ad89e662fff858e00511',
+      repo: 'blog_comments',
+      owner: 'iliyian',
+      admin: ['iliyian'],
+      updateCountCallback: commentCount,
+      ...option,
+      id: isShuoshuo ? path : (option && option.id) || '85c8d2bf5cf0efd7b34b25c0fe1246cc'
+    })
+
+    gitalk.render('gitalk-container')
+  }
+
+  const loadGitalk = async(el, path) => {
+    if (typeof Gitalk === 'function') initGitalk(el, path)
+    else {
+      await btf.getCSS('https://cdn.jsdelivr.net/npm/gitalk/dist/gitalk.min.css')
+      await btf.getScript('https://cdn.jsdelivr.net/npm/gitalk/dist/gitalk.min.js')
+      initGitalk(el, path)
+    }
+  }
+
+  if (isShuoshuo) {
+    'Waline' === 'Gitalk'
+      ? window.shuoshuoComment = { loadComment: loadGitalk }
+      : window.loadOtherComment = loadGitalk
+    return
+  }
+
+  if ('Waline' === 'Gitalk' || !false) {
+    if (false) btf.loadComment(document.getElementById('gitalk-container'), loadGitalk)
+    else loadGitalk()
+  } else {
+    window.loadOtherComment = loadGitalk
+  }
+})()</script></div><script defer src="/js/cover-colors.js"></script><script defer src="/en/js/cover-accent.js"></script><script defer src="/en/js/seal.js"></script><script defer src="/en/js/a11y.js"></script><script defer src="/en/js/sidebar-nav.js"></script><script defer src="/en/js/turnstile-fix.js"></script><script defer src="/en/js/pjax-transition.js"></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css" media="print" onload="this.media='all'"><script defer src="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js"></script><script defer src="/en/js/Meting.min.js"></script><script>var meting_api='https://meting-api.iliyian.com/api?server=:server&type=:type&id=:id&auth=:auth&r=:r';</script><meting-js server="tencent" type="playlist" id="2374187585" fixed="true" autoplay="false" list-folded="true" order="random" preload="none"></meting-js><script> (function() { var meting = document.querySelector('meting-js[fixed="true"]'); if (meting) { meting.addEventListener('load', function(e) { var ap = e.detail.aplayer; if (ap) { setTimeout(function() { var btn = ap.template.lrcButton; if (btn && !btn.classList.contains('aplayer-icon-lrc-inactivity')) { btn.click(); } }, 300); } }); } })(); </script><script defer pjax data-api="https://busuanzi.iliyian.com/api" data-prefix="busuanzi_value" src="https://busuanzi.iliyian.com/js"></script><script>
+document.addEventListener('pjax:complete', function () {
+  if (window._paq) {
+    _paq.push(['setCustomUrl', location.href]);
+    _paq.push(['setDocumentTitle', document.title]);
+    _paq.push(['trackPageView']);
+  }
+});
+</script>
+<script src="/en/js/music.js" defer></script><script defer src="/en/js/blog-live2d.js"></script><script>
+function initTranslateBtn(){
+  if(document.querySelector('.post-meta-translate')) return;
+  if(document.querySelector('#post-meta')){
+    const path = location.pathname;
+
+    const separator = document.createElement('span');
+    separator.className = 'post-meta-separator';
+    separator.innerHTML = ' | ';
+
+    const wrapper = document.createElement('span');
+    wrapper.className = 'post-meta-translate';
+
+    const icon = document.createElement('i');
+    icon.className = 'fas fa-language fa-fw post-meta-icon';
+
+    const btn = document.createElement('a');
+    if(path.startsWith('/en/')){
+      btn.href = path.replace('/en/', '/');
+      btn.innerHTML = '中文';
+    } else {
+      btn.href = '/en' + path;
+      btn.innerHTML = 'English';
+    }
+    btn.style.cssText = 'color: #ffffff; text-decoration: none; transition: all .2s; border-bottom: 1px solid var(--light-grey);';
+    btn.onmouseover = function(){ this.style.color = '#4a7a94'; this.style.borderBottomColor = '#4a7a94'; };
+    btn.onmouseout = function(){ this.style.color = '#ffffff'; this.style.borderBottomColor = 'var(--light-grey)'; };
+    // 中英两站是独立构建，样式与 GLOBAL_CONFIG 不同，必须整页跳转
+    btn.addEventListener('click', function(e){
+      e.preventDefault();
+      window.location.href = btn.href;
+    });
+
+    wrapper.appendChild(icon);
+    wrapper.appendChild(btn);
+
+    const meta = document.querySelector('#post-meta .meta-firstline');
+    if(meta) {
+      meta.appendChild(separator);
+      meta.appendChild(wrapper);
+    }
+  }
+}
+document.addEventListener('DOMContentLoaded', initTranslateBtn);
+document.addEventListener('pjax:complete', initTranslateBtn);
+</script>
+<script id="click-show-text" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/click-show-text.min.js" data-mobile="true" data-text="I,LOVE,YOU" data-fontsize="15px" data-random="false" async="async"></script><script src="https://cdn.jsdelivr.net/npm/pjax/pjax.min.js" defer="defer"></script><script>document.addEventListener('DOMContentLoaded', () => {
+  const pjaxSelectors = ["head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+
+  window.pjax = new Pjax({
+    elements: 'a:not([target="_blank"]):not([data-fancybox]):not([href="/music/"]):not([href="https://iliyian.com/music/"]):not([href="https://iliyian.com"]):not([href="https://iliyian.com/"])',
+    selectors: pjaxSelectors,
+    cacheBust: false,
+    analytics: false,
+    scrollRestoration: false
+  })
+
+  const triggerPjaxFn = (val) => {
+    if (!val) return
+    Object.values(val).forEach(fn => {
+      try {
+        fn()
+      } catch (err) {
+        console.debug('Pjax callback failed:', err)
+      }
+    })
+  }
+
+  document.addEventListener('pjax:send', () => {
+    // removeEventListener
+    btf.removeGlobalFnEvent('pjaxSendOnce')
+    btf.removeGlobalFnEvent('themeChange')
+
+    // reset readmode
+    const $bodyClassList = document.body.classList
+    if ($bodyClassList.contains('read-mode')) $bodyClassList.remove('read-mode')
+
+    triggerPjaxFn(window.globalFn.pjaxSend)
+  })
+
+  document.addEventListener('pjax:complete', () => {
+    btf.removeGlobalFnEvent('pjaxCompleteOnce')
+    document.querySelectorAll('script[data-pjax]').forEach(item => {
+      if (!item.parentNode) return
+      const newScript = document.createElement('script')
+      const content = item.text || item.textContent || ''
+      Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+      newScript.appendChild(document.createTextNode(content))
+      item.parentNode.replaceChild(newScript, item)
+    })
+
+    triggerPjaxFn(window.globalFn.pjaxComplete)
+  })
+
+  document.addEventListener('pjax:error', e => {
+    const responseURL = e.request && e.request.responseURL
+    if (e.request && e.request.status === 404) {
+      true
+        ? pjax.loadUrl('/en/404.html')
+        : responseURL && (window.location.href = responseURL)
+    } else if (responseURL) {
+      window.location.href = responseURL
+    }
+  })
+})</script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">Search</span><i class="fas fa-spinner fa-pulse" id="loading-status" hidden="hidden"></i><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="text-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  Loading Database</span></div><div class="local-search-input"><input placeholder="Search for Posts" type="text"/></div><hr/><div id="local-search-results"></div><div class="ais-Pagination" id="local-search-pagination" style="display:none;"><ul class="ais-Pagination-list"></ul></div><div id="local-search-stats"></div></div><div id="search-mask"></div><script>(function(){var src="/en/js/search/local-search-lazy.js";var loaded=false,loading=false;function load(cb){if(loaded){cb&&cb();return}if(loading)return;loading=true;var s=document.createElement("script");s.src=src;s.onload=function(){loading=false;loaded=true;cb&&cb()};s.onerror=function(){loading=false};document.head.appendChild(s)}document.addEventListener("click",function(e){var b=e.target.closest&&e.target.closest("#search-button");if(!b||loaded)return;e.preventDefault();e.stopImmediatePropagation();load(function(){var t=document.querySelector("#search-button > .search");t&&t.click()})},true);})();</script></div></div></body></html>

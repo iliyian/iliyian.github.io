@@ -176,6 +176,52 @@
     }
   });
 
+  function enhanceReactions() {
+    document.querySelectorAll('.wl-reaction-item').forEach((item) => {
+      if (item.dataset.yyReaction) return;
+      item.dataset.yyReaction = '1';
+      item.setAttribute('role', 'button');
+      item.setAttribute('tabindex', '0');
+
+      const label = item.querySelector('.wl-reaction-text')?.textContent?.trim() || '';
+      const votes = item.querySelector('.wl-reaction-votes');
+      if (votes) votes.setAttribute('aria-hidden', 'true');
+
+      const sync = () => {
+        item.setAttribute('aria-pressed', item.classList.contains('active') ? 'true' : 'false');
+        if (!label) {
+          item.removeAttribute('aria-label');
+          return;
+        }
+        const count = parseInt(votes?.textContent || '0', 10) || 0;
+        item.setAttribute('aria-label', count > 0
+          ? text(`${label}，${count} 人`, `${label}, ${count} reaction${count === 1 ? '' : 's'}`)
+          : label);
+      };
+      sync();
+      new MutationObserver(sync).observe(item, { attributes: true, attributeFilter: ['class'] });
+      if (votes) {
+        new MutationObserver(sync).observe(votes, { childList: true, characterData: true, subtree: true });
+      }
+
+      item.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ' || e.key === 'Spacebar') {
+          e.preventDefault();
+          item.click();
+        }
+      });
+    });
+  }
+
+  function observeReactions() {
+    const wrap = document.getElementById('waline-wrap');
+    if (!wrap) return;
+    enhanceReactions();
+    if (wrap.dataset.yyReactionObserved) return;
+    wrap.dataset.yyReactionObserved = '1';
+    new MutationObserver(enhanceReactions).observe(wrap, { childList: true, subtree: true });
+  }
+
   function apply() {
     addSkipLink();
     enhanceSearch();
@@ -185,6 +231,7 @@
     observeShare();
     enhanceCardTitles();
     hideDecorativeIcons();
+    observeReactions();
   }
 
   document.addEventListener('DOMContentLoaded', apply);

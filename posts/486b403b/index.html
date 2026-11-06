@@ -1,0 +1,1912 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>在安卓机上使用 BBR | 易安的小世界</title><meta name="author" content="iliyian"><meta name="copyright" content="iliyian"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#f8f6f4"><meta name="description" content="多年的夙愿了说是">
+<meta property="og:type" content="article">
+<meta property="og:title" content="在安卓机上使用 BBR">
+<meta property="og:url" content="https://iliyian.com/posts/486b403b/index.html">
+<meta property="og:site_name" content="易安的小世界">
+<meta property="og:description" content="多年的夙愿了说是">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://r2-imgs.iliyian.com/img/vertin_sleeping.jpg">
+<meta property="article:published_time" content="2026-11-02T09:53:09.000Z">
+<meta property="article:modified_time" content="2026-11-06T15:19:00.576Z">
+<meta property="article:author" content="iliyian">
+<meta property="article:tag" content="AI SLOP">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://r2-imgs.iliyian.com/img/vertin_sleeping.jpg"><script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "在安卓机上使用 BBR",
+  "url": "https://iliyian.com/posts/486b403b/",
+  "image": "https://r2-imgs.iliyian.com/img/vertin_sleeping.jpg",
+  "datePublished": "2026-11-02T09:53:09.000Z",
+  "dateModified": "2026-11-06T15:19:00.576Z",
+  "author": [
+    {
+      "@type": "Person",
+      "name": "iliyian",
+      "url": "https://iliyian.com"
+    }
+  ]
+}</script><link rel="shortcut icon" href="https://r2-imgs.iliyian.com/img/bookgirl_ico.jpg"><link rel="canonical" href="https://iliyian.com/posts/486b403b/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="/css/fontawesome-subset.css"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        try {
+          const data = { value }
+
+          if (ttl != null) {
+            data.expiry = Date.now() + ttl * 86400000
+          }
+
+          localStorage.setItem(key, JSON.stringify(data))
+        } catch (e) {
+          console.error(e)
+        }
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return
+
+        try {
+          const data = JSON.parse(itemStr)
+
+          if (data.expiry && Date.now() > data.expiry) {
+            localStorage.removeItem(key)
+            return
+          }
+
+          return data.value
+        } catch {
+          localStorage.removeItem(key)
+        }
+      }
+    }
+
+    const scriptCache = new Map()
+    const cssCache = new Map()
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => {
+        if (scriptCache.has(url)) {
+          return scriptCache.get(url)
+        }
+
+        const promise = new Promise((resolve, reject) => {
+          const script = document.createElement('script')
+
+          script.src = url
+          script.async = true
+
+          for (const key in attr) {
+            script.setAttribute(key, attr[key])
+          }
+
+          script.onload = resolve
+          script.onerror = reject
+
+          document.head.appendChild(script)
+        })
+
+        scriptCache.set(url, promise)
+
+        return promise
+      },
+      getCSS: (url, id) => {
+        if (cssCache.has(url)) {
+          return cssCache.get(url)
+        }
+
+        const promise = new Promise((resolve, reject) => {
+          const link = document.createElement('link')
+
+          link.rel = 'stylesheet'
+          link.href = url
+
+          if (id) {
+            link.id = id
+          }
+
+          link.onload = resolve
+          link.onerror = reject
+
+          document.head.appendChild(link)
+        })
+
+        cssCache.set(url, promise)
+
+        return promise
+      },
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!true && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const metaThemeColor = document.querySelector('meta[name="theme-color"]')
+      const activateDarkMode = () => {
+        document.documentElement.dataset.theme = 'dark'
+        if (metaThemeColor !== null) {
+          metaThemeColor.setAttribute('content', '#1a1a2e')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.dataset.theme = 'light'
+        if (metaThemeColor !== null) {
+          metaThemeColor.setAttribute('content', '#f8f6f4')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"pagination":{"enable":false,"hitsPerPage":8},"languages":{"hits_empty":"未找到符合您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":true},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'null',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: true,
+  islazyloadPlugin: true,
+  isAnchor: true,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '在安卓机上使用 BBR',
+  isHighlightShrink: true,
+  isToc: true,
+  pageType: 'post'
+}</script><script>window.loadMeting = window.loadMeting || function () {};</script><link rel="preload" href="/fonts/LXGWWenKai-Screen.woff2" as="font" type="font/woff2" crossorigin><link rel="stylesheet" href="/css/custom.css" media="defer" onload="this.media='all'"><link rel="stylesheet" href="/css/iconfont.css" media="defer" onload="this.media='all'"><link rel="stylesheet" href="/css/music.css" media="defer" onload="this.media='all'"><link rel="stylesheet" href="/css/aplayer-custom.css" media="defer" onload="this.media='all'"><!-- Matomo -->
+<script>
+  var _paq = window._paq = window._paq || [];
+  /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//mat.iliyian.com/";
+    _paq.push(['setTrackerUrl', u+'t']);
+    _paq.push(['setSiteId', '1']);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.async=true; g.src=u+'mat.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<!-- End Matomo Code -->
+<script>
+  !function(t,e){var o,n,p,r;e.__SV||(window.posthog && window.posthog.__loaded)||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.crossOrigin="anonymous",p.async=!0,p.src=s.api_host.replace(".i.posthog.com","-assets.i.posthog.com")+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"},o="Ji Yi init fn mn Ur pn bn cn capture calculateEventProperties Sn register register_once register_for_session unregister unregister_for_session Tn getFeatureFlag getFeatureFlagPayload getFeatureFlagResult getAllFeatureFlags isFeatureEnabled reloadFeatureFlags updateFlags updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures on onFeatureFlags onSurveysLoaded onSessionId getSurveys getActiveMatchingSurveys renderSurvey displaySurvey cancelPendingSurvey canRenderSurvey canRenderSurveyAsync Mn identify setPersonProperties unsetPersonProperties group resetGroups setPersonPropertiesForFlags resetPersonPropertiesForFlags setGroupPropertiesForFlags resetGroupPropertiesForFlags reset shutdown setIdentity clearIdentity get_distinct_id getGroups get_session_id get_session_replay_url alias set_config startSessionRecording stopSessionRecording sessionRecordingStarted captureException addExceptionStep captureLog startExceptionAutocapture stopExceptionAutocapture loadToolbar get_property getSessionProperty Cn xn createPersonProfile setInternalOrTestUser In hn Pn opt_in_capturing opt_out_capturing has_opted_in_capturing has_opted_out_capturing get_explicit_consent_status is_capturing clear_opt_in_out_capturing debug Vr Rt getPageViewId captureTraceFeedback captureTraceMetric an".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
+  posthog.init('phc_wib2S3JfFRaaaAVNFN4miJq2S8zKquKuZa9nQuV3hL2y', {
+      api_host: 'https://posth.iliyian.com',
+      defaults: '2026-05-30',
+      person_profiles: 'always', // or 'always' to create profiles for anonymous users as well
+      capture_copied_text: true
+  })
+</script>
+<meta name="generator" content="Hexo 7.3.0"><link rel="alternate" href="/atom.xml" title="易安的小世界" type="application/atom+xml">
+</head><body><div class="bg-animation" id="web_bg" style="background-image: url(https://r2-imgs.iliyian.com/img/雨に耳を傾ける.avif);"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="https://r2-imgs.iliyian.com/img/loading-cat.gif" data-lazy-src="https://r2-imgs.iliyian.com/img/37.jpg" onerror="this.onerror=null;this.src='https://http.cat/404'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">47</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">20</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">9</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/en/"><i class="fa-fw fas fa-language"></i><span> English</span></a></div><div class="menus_item"><a class="site-page" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐馆</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 任意门</span></a></div><div class="menus_item"><a class="site-page" href="/game/"><i class="fa-fw fas fa-chess-queen"></i><span> 游乐园</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url(https://r2-imgs.iliyian.com/cdn-cgi/image/format=webp,quality=80/img/vertin_sleeping.jpg);" data-cover-src="https://r2-imgs.iliyian.com/img/vertin_sleeping.jpg"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">易安的小世界</span></a><a class="nav-page-title" href="/"><span class="site-name">在安卓机上使用 BBR</span><span class="site-name"><i class="fa-solid fa-circle-arrow-left"></i><span>  返回首页</span></span></a></span><div id="menus"><div id="search-button"><span class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></span></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/en/"><i class="fa-fw fas fa-language"></i><span> English</span></a></div><div class="menus_item"><a class="site-page" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐馆</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 任意门</span></a></div><div class="menus_item"><a class="site-page" href="/game/"><i class="fa-fw fas fa-chess-queen"></i><span> 游乐园</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="post-info"><h1 class="post-title">在安卓机上使用 BBR<a class="post-edit-link" href="https://github.com/iliyian/blogxyz/edit/main/source/_posts/在安卓机上使用BBR.md" rel="external nofollow noreferrer" title="编辑" target="_blank"><i class="fas fa-pencil-alt"></i></a></h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="fa-fw post-meta-icon far fa-calendar-alt"></i><span class="post-meta-label">发表于</span><time datetime="2026-11-02T09:53:09.000Z" title="发表于 2026-11-02 17:53:09">2026-11-02</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E7%A7%91%E6%8A%80/">科技</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">总字数:</span><span class="word-count">9770</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>41 分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">浏览量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="container post-content" id="article-container"><h1>在 Redmi K80 上用内核模块启用 BBR</h1>
+<p>设备：Redmi K80（zorn / 24117RK2CC）<br>
+系统：HyperOS OS3.0.309.0.WOKCNXM / Android 16<br>
+内核：<code>6.1.138-android14-11-g965475777129-mi</code><br>
+Root：SukiSU Ultra 4.3.0（LKM 模式）</p>
+<p>结果：BBR 和 fq 已经在这台机器上跑起来，重启后自动恢复。没有刷内核，没有等小米开源，也没有出现 GKI 的闪屏问题。</p>
+<p>这篇文章把整个过程记录下来：怎么确认内核没有 BBR、为什么普通 <code>insmod</code> 不行、怎么找到匹配的源码和编译器、怎么避免“加载就重启”，以及最后怎么把它做成开机自启的 KernelSU 模块。</p>
+<h2 id="先说说-BBR-是什么">先说说 BBR 是什么</h2>
+<p>BBR 是 Google 在 2016 年提出的 TCP 拥塞控制算法。常见的 cubic 靠丢包判断拥塞：网络一开始丢包，它就大幅降低发送速度。BBR 不这么判断，它估算链路能提供多少带宽、往返时间是多少，再按照这个模型控制发送节奏。</p>
+<p>这个区别在弱网、高延迟、有一定随机丢包的链路上比较明显。BBR 通常能让发送端维持更高的吞吐，同时把队列压短，延迟不容易堆起来。它也不是“提速挂”：峰值带宽不会凭空变高，下载速度更多取决于服务器那边的拥塞控制和链路本身。</p>
+<p>Android 内核不一定编了 BBR。很多厂商配置只保留 <code>reno</code> 和 <code>cubic</code>，省编译体积，也少一些行为变量。这台 K80 就是这种情况。</p>
+<h2 id="检查内核支持情况">检查内核支持情况</h2>
+<p>先看当前可用的拥塞控制算法：</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">$ <span class="built_in">cat</span> /proc/sys/net/ipv4/tcp_available_congestion_control</span><br><span class="line">reno cubic</span><br><span class="line"></span><br><span class="line">$ <span class="built_in">cat</span> /proc/sys/net/ipv4/tcp_congestion_control</span><br><span class="line">cubic</span><br></pre></td></tr></table></figure>
+<p>再看内核配置：</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">$ zcat /proc/config.gz | grep TCP_CONG</span><br><span class="line">CONFIG_TCP_CONG_CUBIC=y</span><br><span class="line">CONFIG_DEFAULT_TCP_CONG=<span class="string">&quot;cubic&quot;</span></span><br><span class="line"><span class="comment"># CONFIG_TCP_CONG_ADVANCED is not set</span></span><br></pre></td></tr></table></figure>
+<p><code>CONFIG_TCP_CONG_ADVANCED</code> 没开，BBR 根本没有参与编译。<code>/vendor/lib/modules</code> 里也找不到 <code>tcp_bbr.ko</code>，内核符号里同样没有 <code>bbr</code>。</p>
+<p>也就是说，不是“有个开关没打开”，而是这个算法不在内核里。</p>
+<h2 id="为什么不能直接编内核">为什么不能直接编内核</h2>
+<p>常规做法是编一个带 BBR 的完整内核，刷进 boot 分区。这里有两个问题。</p>
+<p>第一，小米没有发布 <code>6.1.138-mi</code> 的源码。MiCode 上只有更早的 <code>bsp-zorn-v-oss</code>（6.1.68 / Android 15），没有 Android 16 对应的分支。</p>
+<p>第二，刷通用 GKI 或第三方内核会破坏 HyperOS 的显示栈。这台机器试过通用 GKI 6.1.145 和第三方 zorn 6.1.176 内核，都能启动，但屏幕会闪，vendor 的 HWC/DRM 反复报 <code>COMMIT failed: 11</code>。当时看起来像是显示 vendor 模块和内核版本绑死，换内核就会出问题。</p>
+<blockquote>
+<p><strong>2026-11-05 更正</strong>：这个判断只对了一半。闪屏不是“新内核一定不兼容”，而是 stable 6.1.141 引入的一个 DRM 校验和 zorn vendor <code>msm_drm</code> 的 <code>possible_clones</code> 冲突；回退该检查后 6.1.176 显示正常。详见文末“6.1.176：显示兼容性与双 BBR”。</p>
+</blockquote>
+<p>所以完整内核这条路在当时看来走不通，但后来证明它是可修的，不是死路。</p>
+<h2 id="第三条路：运行时加载模块">第三条路：运行时加载模块</h2>
+<p>完整内核不能换，但内核本身是支持模块的。如果能编出一个 <code>tcp_bbr.ko</code>，在运行时加载，就不需要碰 boot 分区，也不会影响显示栈。</p>
+<p>问题是，普通 <code>insmod</code> 不会接受这个模块。</p>
+<p>模块和内核之间有三道检查：</p>
+<ol>
+<li><strong>vermagic</strong>：模块编译时的内核版本字符串必须和运行中的内核一致；</li>
+<li><strong>MODVERSIONS</strong>：如果内核开了 <code>CONFIG_MODVERSIONS</code>，模块里每个外部符号都要带 CRC，内核会逐个校验；</li>
+<li><strong>符号导出</strong>：模块引用的符号必须在内核的导出表里。</li>
+</ol>
+<p>这台机器的内核开了 <code>CONFIG_MODVERSIONS=y</code>，厂商又没有提供 <code>Module.symvers</code>，自己编的模块 CRC 对不上；vermagic 也会因为少了 <code>-mi</code> 后缀而不匹配。</p>
+<p>直接 <code>insmod</code> 在第一道或第二道检查就会失败。</p>
+<h2 id="ksud-insmod-做的事">ksud insmod 做的事</h2>
+<p>SukiSU 4.3.0 的 <code>ksud insmod</code> 不是简单调 <code>init_module</code>。它自带一个用户态模块加载器，大致流程是：</p>
+<ol>
+<li>读取 <code>.ko</code>，解析 ELF 里的未定义符号；</li>
+<li>通过内核符号查询接口（UAPI 6）或 <code>/proc/kallsyms</code> 找到每个符号的地址；</li>
+<li>把符号表项改写成 <code>SHN_ABS</code>，值设成真实地址；</li>
+<li>调用 <code>init_module</code>；</li>
+<li>如果内核因为 vermagic 不匹配拒绝加载，就从 kernel log 里读出期望的 vermagic，改写 <code>.ko</code> 里的字符串，再重试一次。</li>
+</ol>
+<p>符号被改写成绝对地址后，内核加载模块时不会再走导出表和 CRC 校验，vermagic 也被改成了设备实际的值。这就是它能加载“来路不明”的 <code>.ko</code> 的原因。</p>
+<p>手机上的 <code>vpnhide_kmod.ko</code> 是个现成的例子。它的 vermagic 写着 <code>6.1.166-dirty</code>，在这台 <code>6.1.138-mi</code> 上照样加载并工作。</p>
+<p>但要注意，<code>ksud insmod</code> 只解决符号和版本检查。结构体布局不对、CFI 哈希不对，模块仍然会崩，而且可能是加载瞬间就重启，连日志都来不及留下。</p>
+<h2 id="第一关：源码必须是-ACK">第一关：源码必须是 ACK</h2>
+<p>第一版模块是用 <a target="_blank" rel="noopener external nofollow noreferrer" href="http://kernel.org">kernel.org</a> 的 stable 6.1.138 编的。编译没问题，但把设备 BTF 和模块 BTF 一对比，结构体尺寸全对不上：</p>
+<table>
+<thead>
+<tr>
+<th>结构体</th>
+<th style="text-align:right">设备 BTF</th>
+<th style="text-align:right">stable 6.1.138</th>
+<th style="text-align:right">差值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>sock</code></td>
+<td style="text-align:right">856</td>
+<td style="text-align:right">768</td>
+<td style="text-align:right">88</td>
+</tr>
+<tr>
+<td><code>inet_sock</code></td>
+<td style="text-align:right">1088</td>
+<td style="text-align:right">984</td>
+<td style="text-align:right">104</td>
+</tr>
+<tr>
+<td><code>inet_connection_sock</code></td>
+<td style="text-align:right">1536</td>
+<td style="text-align:right">1392</td>
+<td style="text-align:right">144</td>
+</tr>
+<tr>
+<td><code>tcp_sock</code></td>
+<td style="text-align:right">2368</td>
+<td style="text-align:right">2200</td>
+<td style="text-align:right">168</td>
+</tr>
+<tr>
+<td><code>module</code></td>
+<td style="text-align:right">1088</td>
+<td style="text-align:right">1024</td>
+<td style="text-align:right">64</td>
+</tr>
+</tbody>
+</table>
+<p>内核版本号是 <code>6.1.138-android14-11-g965475777129-mi</code>。这里的信息不止“6.1.138”：</p>
+<ul>
+<li><code>6.1.138</code> 是上游稳定版号；</li>
+<li><code>-android14-11</code> 表示它是 Android Common Kernel（ACK）的 android14-6.1 分支；</li>
+<li><code>-g965475777129</code> 是构建树的 commit；</li>
+<li><code>-mi</code> 是小米自己的补丁。</li>
+</ul>
+<p>ACK 不是 mainline。它包含 Android 需要的补丁，结构体里也多了一些字段：</p>
+<ul>
+<li><code>android_kabi_reserved*</code>，由 <code>CONFIG_ANDROID_KABI_RESERVE</code> 控制；</li>
+<li><code>android_oem_data1</code>，由 <code>CONFIG_ANDROID_VENDOR_OEM_DATA</code> 控制；</li>
+<li><code>sk_wait_pending</code> 这类 ACK 回移字段；</li>
+<li><code>struct module</code> 里的 <code>btf_data_size</code> / <code>btf_data</code>。</li>
+</ul>
+<p><code>tcp_sock</code> 整体偏移了 168 字节。BBR 读 <code>snd_cwnd</code>、<code>delivered</code>、<code>app_limited</code> 时会落在错误的位置。这种错误不一定会立刻崩，可能在某次重传或 RTT 采样时才触发。</p>
+<p>所以源码要换成 ACK 自己的标签。我用的是 TUNA 镜像上的 GKI 发布标签：</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">git fetch --depth 1 origin refs/tags/android14-6.1.138_r00</span><br><span class="line">git checkout FETCH_HEAD</span><br></pre></td></tr></table></figure>
+<p>验证一下版本：</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="built_in">head</span> -5 Makefile</span><br><span class="line"><span class="comment"># VERSION = 6</span></span><br><span class="line"><span class="comment"># PATCHLEVEL = 1</span></span><br><span class="line"><span class="comment"># SUBLEVEL = 138</span></span><br></pre></td></tr></table></figure>
+<p><code>uname -r</code> 里的 <code>g965475777129</code> 是小米构建树的 commit，不在公开 ACK 仓库里。拿这个 hash 去找源码是找不到的。</p>
+<h2 id="第二关：编译器和内核一致">第二关：编译器和内核一致</h2>
+<p>设备配置里有这一行：</p>
+<figure class="highlight vim"><table><tr><td class="code"><pre><span class="line">CONFIG_CC_VERSION_TEXT=<span class="comment">&quot;Android (10087095, +pgo, +bolt, +lto, -mlgo,</span></span><br><span class="line">  based <span class="keyword">on</span> r487747c) clang <span class="keyword">version</span> <span class="number">17.0</span>.<span class="number">2</span> ...<span class="comment">&quot;</span></span><br></pre></td></tr></table></figure>
+<p>内核还开了：</p>
+<figure class="highlight ini"><table><tr><td class="code"><pre><span class="line"><span class="attr">CONFIG_CFI_CLANG</span>=y</span><br><span class="line"><span class="comment"># CONFIG_CFI_PERMISSIVE is not set</span></span><br><span class="line"><span class="attr">CONFIG_LTO_CLANG_THIN</span>=y</span><br></pre></td></tr></table></figure>
+<p>BBR 的函数指针会通过 <code>struct tcp_congestion_ops</code> 被内核间接调用。kCFI 会在间接调用点检查目标函数入口的类型哈希。哈希不匹配时，因为 <code>CFI_PERMISSIVE</code> 没开，内核会直接 panic。</p>
+<p>这意味着编译器不能随便选。最好用和内核完全相同的 AOSP clang <code>r487747c</code>（17.0.2）。</p>
+<p>可以从 TUNA 的 <code>platform/prebuilts/clang/host/linux-x86</code> 仓库稀疏检出：</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">git <span class="built_in">clone</span> --filter=blob:none --no-checkout --depth 1 \</span><br><span class="line">  https://mirrors.tuna.tsinghua.edu.cn/git/AOSP/platform/prebuilts/clang/host/linux-x86.git clangpre</span><br><span class="line"><span class="built_in">cd</span> clangpre</span><br><span class="line">git fetch --depth 1 origin android14-release</span><br><span class="line">git sparse-checkout init --cone</span><br><span class="line">git sparse-checkout <span class="built_in">set</span> clang-r487747c</span><br><span class="line">git checkout FETCH_HEAD</span><br><span class="line"><span class="built_in">export</span> PATH=<span class="variable">$PWD</span>/clang-r487747c/bin:<span class="variable">$PATH</span></span><br></pre></td></tr></table></figure>
+<p>这个目录大约 2.3GB。</p>
+<p>我额外比较过 clang 17.0.2 和 18.1.3 对 <code>tcp_congestion_ops</code> 那组函数原型生成的 kCFI 哈希，结果相同。但不同版本的 IR、ABI 细节仍可能有差异，能用内核同版本就用同版本。</p>
+<h2 id="第三关：struct-module-少了-16-字节">第三关：struct module 少了 16 字节</h2>
+<p>这是整个过程里最麻烦的一处，也是“加载就重启”的真正原因。</p>
+<p>为了绕开 BTF 编码需要本地 vmlinux 的问题，我一开始把这两个选项关掉了：</p>
+<figure class="highlight asciidoc"><table><tr><td class="code"><pre><span class="line">CONFIG<span class="emphasis">_DEBUG_INFO_BTF</span></span><br><span class="line"><span class="emphasis">CONFIG_DEBUG_INFO_BTF_</span>MODULES</span><br></pre></td></tr></table></figure>
+<p>模块编译成功，<code>ksud insmod</code> 也走到了加载阶段，然后手机直接重启。<code>/sys/fs/pstore</code> 是空的，<code>/proc/last_kmsg</code> 也没有，dmesg 里没有上一次启动的记录。</p>
+<p>没有日志，只能从 ABI 入手。把设备 BTF 和模块 BTF 拉出来逐字段对比，看到：</p>
+<figure class="highlight d"><table><tr><td class="code"><pre><span class="line"><span class="keyword">struct</span> <span class="keyword">module</span>   设备: <span class="number">1088</span> 字节</span><br><span class="line">                模块: <span class="number">1024</span> 字节</span><br></pre></td></tr></table></figure>
+<p>设备多出两个 8 字节字段：</p>
+<figure class="highlight apache"><table><tr><td class="code"><pre><span class="line"><span class="attribute">btf_data_size</span>   offset <span class="number">840</span></span><br><span class="line"><span class="attribute">btf_data</span>        offset <span class="number">848</span></span><br></pre></td></tr></table></figure>
+<p>它们由 <code>CONFIG_DEBUG_INFO_BTF_MODULES</code> 控制。模块里少了这 16 字节，内核仍然按自己的 <code>struct module</code> 布局读取模块的 <code>.gnu.linkonce.this_module</code>。<code>mod-&gt;init</code> 取到的是错误的指针，内核跳到无效地址，手机就重启了。</p>
+<p>修复方法不是简单地重新打开 BTF。打开之后，编译模块会尝试生成 BTF，而这又需要本地编译出带 BTF 的 vmlinux，工作量很大。</p>
+<p>实际做法是：让宏参与 C 编译，但跳过 make 里的 BTF 编码步骤。</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">make ARCH=arm64 LLVM=1 -j8 M=<span class="string">&quot;<span class="variable">$MODDIR</span>&quot;</span> \</span><br><span class="line">    CONFIG_DEBUG_INFO_BTF= CONFIG_DEBUG_INFO_BTF_MODULES= modules</span><br></pre></td></tr></table></figure>
+<p>这样 <code>include/generated/autoconf.h</code> 里仍然定义了这两个宏，C 代码看到的 <code>struct module</code> 布局是正确的；而 make 命令行上的空变量会让 BTF 编码那一步不执行。</p>
+<p>检查模块里的 section：</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">llvm-readelf -S tcp_bbr.ko | grep this_module</span><br><span class="line"><span class="comment"># 期望大小 0x440 (1088)</span></span><br></pre></td></tr></table></figure>
+<p>这一点很反直觉：<strong>为了模块能加载，反而不能关掉 BTF 相关的配置</strong>。配置决定结构体布局，构建步骤才决定要不要生成 BTF 数据，两者要分开处理。</p>
+<h2 id="其他构建坑">其他构建坑</h2>
+<p>除了上面三个大头，构建过程中还踩了几个小坑。</p>
+<h3 id="TRIM-UNUSED-KSYMS">TRIM_UNUSED_KSYMS</h3>
+<p>设备配置里有：</p>
+<figure class="highlight ini"><table><tr><td class="code"><pre><span class="line"><span class="attr">CONFIG_TRIM_UNUSED_KSYMS</span>=y</span><br><span class="line"><span class="attr">CONFIG_UNUSED_KSYMS_WHITELIST</span>=<span class="string">&quot;abi_symbollist.raw&quot;</span></span><br></pre></td></tr></table></figure>
+<p>源码树里没有 <code>abi_symbollist.raw</code>，<code>make prepare</code> 会直接报：</p>
+<figure class="highlight subunit"><table><tr><td class="code"><pre><span class="line"><span class="keyword">ERROR: </span>&#x27;.../abi_symbollist.raw&#x27; whitelist file not found</span><br></pre></td></tr></table></figure>
+<p>处理方式是关掉裁剪：</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">scripts/config --<span class="built_in">disable</span> TRIM_UNUSED_KSYMS</span><br><span class="line">scripts/config --set-str UNUSED_KSYMS_WHITELIST <span class="string">&quot;&quot;</span></span><br></pre></td></tr></table></figure>
+<p>这不影响模块的 ABI。</p>
+<h3 id="asm-offsets-h-缺失">asm-offsets.h 缺失</h3>
+<p><code>modules_prepare</code> 不一定会生成 <code>include/generated/asm-offsets.h</code>。缺少它时，编译会报：</p>
+<figure class="highlight go"><table><tr><td class="code"><pre><span class="line">clang: <span class="type">error</span>: invalid value <span class="string">&#x27;&#x27;</span> in <span class="string">&#x27;mstack-protector-guard-offset=&#x27;</span></span><br></pre></td></tr></table></figure>
+<p>补上：</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">make ARCH=arm64 LLVM=1 prepare</span><br><span class="line">make ARCH=arm64 LLVM=1 <span class="built_in">arch</span>/arm64/kernel/asm-offsets.s</span><br></pre></td></tr></table></figure>
+<h3 id="scripts-module-lds-缺失">scripts/module.lds 缺失</h3>
+<p>链接模块时可能报：</p>
+<figure class="highlight arduino"><table><tr><td class="code"><pre><span class="line">没有规则可制作目标“scripts/<span class="keyword">module</span>.lds”</span><br></pre></td></tr></table></figure>
+<p>补：</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">make ARCH=arm64 LLVM=1 scripts/module.lds</span><br></pre></td></tr></table></figure>
+<h3 id="模块压缩">模块压缩</h3>
+<p><code>CONFIG_MODULE_COMPRESS_*</code> 会生成 <code>.ko.zst</code> 或 <code>.ko.xz</code>，而 <code>ksud insmod</code> 需要原始 <code>.ko</code>。构建脚本里把压缩关掉了。</p>
+<h3 id="modpost-的-undefined-警告">modpost 的 undefined 警告</h3>
+<p>没有 <code>Module.symvers</code> 时，<code>modpost</code> 会输出一堆：</p>
+<figure class="highlight asciidoc"><table><tr><td class="code"><pre><span class="line"><span class="symbol">WARNING: </span>modpost: &quot;tcp_register_congestion_control&quot; [.../tcp_bbr.ko] undefined!</span><br></pre></td></tr></table></figure>
+<p>这是正常的。符号会在加载时由 <code>ksud insmod</code> 通过 kallsyms 解析，不需要在构建阶段解决。</p>
+<h2 id="用-BTF-校验-ABI">用 BTF 校验 ABI</h2>
+<p>模块能加载不等于 ABI 正确。比较可靠的做法是对比设备 BTF 和模块 BTF。</p>
+<ol>
+<li>从手机拉 <code>/sys/kernel/btf/vmlinux</code>；</li>
+<li>用 <code>pahole --btf_encode_detached</code> 从模块 DWARF 生成 BTF；</li>
+<li>两边用 <code>bpftool btf dump ... format raw</code> 导出；</li>
+<li>逐字段比较。</li>
+</ol>
+<p>关键结构体最终要全部一致：</p>
+<table>
+<thead>
+<tr>
+<th>结构体</th>
+<th style="text-align:right">设备</th>
+<th style="text-align:right">模块</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>tcp_sock</code></td>
+<td style="text-align:right">2368</td>
+<td style="text-align:right">2368</td>
+</tr>
+<tr>
+<td><code>tcp_congestion_ops</code></td>
+<td style="text-align:right">192</td>
+<td style="text-align:right">192</td>
+</tr>
+<tr>
+<td><code>rate_sample</code></td>
+<td style="text-align:right">72</td>
+<td style="text-align:right">72</td>
+</tr>
+<tr>
+<td><code>sock</code></td>
+<td style="text-align:right">856</td>
+<td style="text-align:right">856</td>
+</tr>
+<tr>
+<td><code>inet_sock</code></td>
+<td style="text-align:right">1088</td>
+<td style="text-align:right">1088</td>
+</tr>
+<tr>
+<td><code>inet_connection_sock</code></td>
+<td style="text-align:right">1536</td>
+<td style="text-align:right">1536</td>
+</tr>
+<tr>
+<td><code>module</code></td>
+<td style="text-align:right">1088</td>
+<td style="text-align:right">1088</td>
+</tr>
+</tbody>
+</table>
+<p>只要出现 <code>only-in-device</code>、<code>only-in-module</code> 或 <code>MISMATCH</code>，就不要加载。先检查源码、配置和编译器，不要用“加载后没崩”当 ABI 正确的证据。</p>
+<p>仓库里的 <code>scripts/verify-layouts.py</code> 就是做这件事的。</p>
+<h2 id="加载和-qdisc">加载和 qdisc</h2>
+<p>加载：</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">su -c <span class="string">&#x27;ksud insmod /data/adb/modules/tcp_bbr_kmod/tcp_bbr.ko&#x27;</span></span><br><span class="line">su -c <span class="string">&#x27;sysctl -w net.ipv4.tcp_congestion_control=bbr&#x27;</span></span><br></pre></td></tr></table></figure>
+<p>确认模块注册成功：</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">su -c <span class="string">&#x27;cat /proc/sys/net/ipv4/tcp_available_congestion_control&#x27;</span></span><br><span class="line"><span class="comment"># reno cubic bbr</span></span><br></pre></td></tr></table></figure>
+<p>厂商默认的 qdisc 是 <code>mq + pfifo_fast</code>。BBR 有内部 pacing，但配合 <code>fq</code> 效果更好：</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">su -c <span class="string">&#x27;tc qdisc replace dev wlan0 root fq&#x27;</span></span><br><span class="line">su -c <span class="string">&#x27;tc qdisc replace dev rmnet_data1 root fq&#x27;</span></span><br></pre></td></tr></table></figure>
+<p>多队列设备上，<code>net.core.default_qdisc=fq</code> 不会覆盖 <code>mq</code> 的默认值，所以必须逐接口替换。</p>
+<p>替换后并没有把硬件队列“压成单队列”。Linux 6.1 的 <code>qdisc_restart()</code> 仍然用 <code>skb_get_tx_queue(dev, skb)</code> 根据 <code>queue_mapping</code> 选择硬件队列。变化的是软件调度层：多个 TX 队列共享同一个 fq 实例，所有队列的 enqueue/dequeue 走同一把 qdisc 锁。</p>
+<p>手机上这个代价可以接受。Wi-Fi 和蜂窝的速率远没到单 qdisc 锁成为瓶颈的量级，而 fq 的 pacing 和按流排队对 BBR 更有用。</p>
+<p>最后把它做成 KernelSU 模块：</p>
+<ul>
+<li><code>post-fs-data.sh</code>：尽早加载 <code>.ko</code>；</li>
+<li><code>service.sh</code>：设置 <code>bbr</code> 和 <code>fq</code>；</li>
+<li>后台看门狗：每 30 秒检查一次 qdisc，防止 netd 在网络切换时把 fq 重置回 <code>pfifo_fast</code>。</li>
+</ul>
+<p>重启后确认过：默认 CC 是 bbr，相关接口的 qdisc 是 fq，看门狗正常挂在 init 下。</p>
+<h2 id="这套方案的效果">这套方案的效果</h2>
+<p>BBR 主要改善的是满载时的排队延迟，峰值吞吐没有稳定提升。体感上的变化更多来自响应速度，而不是测速数字。</p>
+<p>如果目标是“下载更快”，换手机端拥塞控制通常收益有限，因为下载方向由服务器决定。上传、代理隧道、热点共享这类手机作为发送端的场景，BBR 的作用更直接。</p>
+<h3 id="怎么测的">怎么测的</h3>
+<p>2026-11-02 下午到晚上，在浙江联通 5G 上做了对比，晚上 22:42–22:56 又补了一轮晚高峰。设备是 Redmi K80，内核 6.1.138，模块就是仓库里的 <code>tcp_bbr.ko</code>（BBRv1）。室内校园环境，RSRP 一直在 -100 dBm 出头，SINR 在不同轮次从 -1 到 14 都有。</p>
+<p>对照组只有两组：</p>
+<table>
+<thead>
+<tr>
+<th>组</th>
+<th>拥塞控制</th>
+<th>qdisc</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A</td>
+<td>cubic</td>
+<td>mq + pfifo_fast（厂商默认）</td>
+</tr>
+<tr>
+<td>C</td>
+<td>bbr</td>
+<td>fq</td>
+</tr>
+</tbody>
+</table>
+<p>只改手机端，服务端不动。测速服务器三台：netcup Manassas（约 290 ms）、阿里云日本（约 110 ms）、阿里云北京（默认配置、未调参，约 70 ms）。测速服务端用的是 <a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/iliyian/minimal-speedtest">iliyian/minimal-speedtest</a>。每轮新起 <code>curl</code> 连接，ABBA 交替，轮间 3 秒；下载 32 MB，上传 8 MB。测试时暂停模块的 30 秒 qdisc 看门狗，每轮用 <code>tc</code> 读回 qdisc、用 <code>ss</code> 确认 socket 真的用了当轮 CC。</p>
+<p>下载方向客户端只能看到接收字节，<code>ss</code> 里的 <code>cwnd</code> / <code>delivery_rate</code> 是发送端字段，在手机上是冻结的；所以下载只看应用层吞吐、压载 ping 和网卡字节计数。</p>
+<h3 id="下载">下载</h3>
+<p>三台服务器都没有测出可复现的差异：</p>
+<table>
+<thead>
+<tr>
+<th>服务器</th>
+<th style="text-align:right">CUBIC</th>
+<th style="text-align:right">BBR</th>
+<th style="text-align:right">配对中位差</th>
+<th style="text-align:right">BBR 胜</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>netcup Manassas</td>
+<td style="text-align:right">31.50 Mbps</td>
+<td style="text-align:right">30.45 Mbps</td>
+<td style="text-align:right">-0.7%</td>
+<td style="text-align:right">3/6</td>
+</tr>
+<tr>
+<td>阿里云日本</td>
+<td style="text-align:right">约 42.2 Mbps</td>
+<td style="text-align:right">约 42.2 Mbps</td>
+<td style="text-align:right">几何 +2.1%</td>
+<td style="text-align:right">4/5</td>
+</tr>
+<tr>
+<td>阿里云北京（正常信号）</td>
+<td style="text-align:right">24.59 Mbps</td>
+<td style="text-align:right">24.59 Mbps</td>
+<td style="text-align:right">-17.6%</td>
+<td style="text-align:right">2/6</td>
+</tr>
+<tr>
+<td>阿里云北京（晚高峰）</td>
+<td style="text-align:right">20.45 Mbps</td>
+<td style="text-align:right">22.75 Mbps</td>
+<td style="text-align:right">+2.2%</td>
+<td style="text-align:right">3/6</td>
+</tr>
+</tbody>
+</table>
+<p>北京正常信号那行两臂中位数完全相同，但 BBR 组有两轮掉到 8.6 / 10.5 Mbps，逐对差异从 -57% 到 +29%，方向并不稳定。晚高峰那行两臂中位只差 2.2%，逐对从 -54% 到 +236%，同样没有稳定方向。日本那台是剔除一轮信号骤降和一轮电话污染之后的数据。</p>
+<p>北京还测到过一轮 SINR 0–6 的弱信号：BBR 组下载中位高 26%，但逐对从 -52% 到 +102%。这种条件下，结果主要取决于无线侧的重传和调度，不能当成 BBR 的收益。</p>
+<p>原因不复杂：下载时手机是接收方，拥塞控制在服务端。手机端换 CC 改变不了服务端怎么发；它只能影响 ACK 的路径。想让下载真正吃到 BBR，得在服务器上开。</p>
+<h3 id="上传">上传</h3>
+<p>上传方向一致得多。手机是发送端，CC 真正生效。BBR 的吞吐没有优势，但发送队列明显更短：</p>
+<table>
+<thead>
+<tr>
+<th>服务器</th>
+<th style="text-align:right">CUBIC</th>
+<th style="text-align:right">BBR</th>
+<th style="text-align:right">发送侧 RTT</th>
+<th style="text-align:right">cwnd</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>netcup Manassas</td>
+<td style="text-align:right">4.97 Mbps</td>
+<td style="text-align:right">3.52 Mbps</td>
+<td style="text-align:right">866 → 670 ms</td>
+<td style="text-align:right">1309 → 376 段</td>
+</tr>
+<tr>
+<td>阿里云日本</td>
+<td style="text-align:right">6.92 Mbps</td>
+<td style="text-align:right">6.97 Mbps</td>
+<td style="text-align:right">443–683 → 190–214 ms</td>
+<td style="text-align:right">923–1046 → 135–206 段</td>
+</tr>
+<tr>
+<td>阿里云北京（正常信号）</td>
+<td style="text-align:right">5.46 Mbps</td>
+<td style="text-align:right">4.40 Mbps</td>
+<td style="text-align:right">804 → 193 ms</td>
+<td style="text-align:right">883 → 76 段</td>
+</tr>
+<tr>
+<td>阿里云北京（晚高峰）</td>
+<td style="text-align:right">1.66 Mbps</td>
+<td style="text-align:right">1.10 Mbps</td>
+<td style="text-align:right">3983 → 321 ms</td>
+<td style="text-align:right">809 → 46 段</td>
+</tr>
+</tbody>
+</table>
+<p>北京正常信号那组最直观：上传压载 ping 的 p95 从 237 ms 降到 64 ms，吞吐低约 15%。晚高峰更夸张：上传只有 1–2 Mbps，CUBIC 的发送侧 RTT 到 3.98 s、重传 4.09%，BBR 是 321 ms、0.99%；吞吐低约 12%，但延迟和丢包好很多。日本那组吞吐基本打平，延迟去掉 250–480 ms。netcup 因为 RTT 高、路径更拥塞，BBR 吞吐吃亏最多，但 RTT 还是从 866 ms 降到 670 ms。</p>
+<p>这和 BBR 的工作方式对得上：它按估计带宽 pacing，不把缓冲区填满；CUBIC 靠丢包反馈加窗，容易把深缓冲的蜂窝上行塞满。吞吐和延迟在这条路上是取舍关系。</p>
+<h3 id="一次丢包事件">一次丢包事件</h3>
+<p>测试期间来了一通 3 秒的拒接电话。那一轮 BBR 的重传率升到 5.32%，发送开销 7.3%，吞吐从约 7 Mbps 掉到 3.9 Mbps。BBRv1 遇到丢包会退让，这次掉得很明显；弱信号或链路抖动时，它不一定比 CUBIC 好。</p>
+<h3 id="结论">结论</h3>
+<p>放到这台手机上，BBR 的表现和它的设计目标一致：它不负责把峰值带宽拉高，而是把排队延迟压下来。</p>
+<p>最直接的收益在上传。北京那台默认配置的服务器上，发送侧 RTT 从 804 ms 降到 193 ms，上传压载 ping 的 p95 从 237 ms 降到 64 ms，吞吐只低约 15%；晚高峰时 CUBIC 的 RTT 到 4 秒、重传 4%，BBR 是 0.3 秒、1%，吞吐只差约 12%；日本那台吞吐基本打平，延迟去掉 250–480 ms。视频通话、远程操作、热点共享这类场景，体感会比 CUBIC 更跟手。</p>
+<p>下载方向没有可复现的提升，也没有稳定的退化。原因前面说过：下载由服务端 CC 决定，手机端改 BBR 本来就不该指望它提速；真正能让下载变快的是服务端那一侧的配置。</p>
+<p>能在不改内核、不刷机的情况下拿到这个延迟收益，这套模块已经达到目标。如果你更在意上传峰值吞吐，临时切回 CUBIC 只是一条 <code>sysctl</code>；要长期保留 CUBIC 就禁用模块。如果在意响应速度和上传时的延迟，BBR 值得保留。</p>
+<p>这些数据只对应 BBRv1、这条联通线路和这三台服务器；换网络、换服务端或换内核版本，结论可能不同。完整的测试方法、逐轮数据和限制条件在仓库里：</p>
+<ul>
+<li>报告：<a href="bench/2026-11-02-bbr-vs-cubic.md">docs/bench/2026-11-02-bbr-vs-cubic.md</a></li>
+<li>逐轮 CSV：<a href="bench/data/2026-11-02-runs.csv">docs/bench/data/2026-11-02-runs.csv</a></li>
+<li>逐采样：<a href="bench/data/2026-11-02-samples-ss.csv">ss</a> / <a href="bench/data/2026-11-02-samples-ping.csv">ping</a></li>
+<li>仓库：<a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/iliyian/k80-zorn-bbr">https://github.com/iliyian/k80-zorn-bbr</a></li>
+</ul>
+<h2 id="BBRv2-和-BBRv3">BBRv2 和 BBRv3</h2>
+<p>顺手评估过这两个版本。</p>
+<p><strong>BBRv3 不能作为模块使用。</strong> 它依赖新内核的核心字段和函数：</p>
+<ul>
+<li><code>struct rate_sample</code> 新增 <code>tx_in_flight</code>、<code>is_ece</code>、<code>is_acking_tlp_retrans_seq</code>，这些值由核心 TCP 栈填充；</li>
+<li><code>struct tcp_sock</code> 新增 <code>fast_ack_mode</code>、<code>tlp_orig_data_app_limited</code>；</li>
+<li><code>tcp_plb_*</code>、<code>tcp_skb_tx_in_flight_is_suspicious</code> 等新函数；</li>
+<li><code>ICSK_CA_PRIV_SIZE</code> 从 104 字节增加到 144 字节。</li>
+</ul>
+<p>这些都要改内核头文件并重新编译整个内核，模块做不到。Google 的 v3 分支本身是一整棵内核树。</p>
+<p><strong>2026-11-04 更新：BBRv3 已经在 ACK 6.1.138 上完成内核移植并真机验证。</strong><br>
+<code>bbr3</code> 注册成功、可切换，开机/音频/模块加载正常。移植过程、核心栈补丁、<br>
+BTF/CRC 验证和踩坑记录见 <a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/iliyian/k80-zorn-bbr/tree/main/bbrv3"><code>bbrv3/README.md</code></a>。<br>
+“不能作为模块” 这一条仍然成立——它是内核 patchset，不是 <code>.ko</code>。</p>
+<p><strong>BBRv2 的情况不同。</strong> 拿 <code>v2alpha-2022-08-28</code> 的 <code>tcp_bbr.c</code> 对着 ACK 6.1.138 编译，只需要删掉已废弃的 <code>.tso_segs</code> 字段；<code>sizeof(struct bbr)</code> 是 104 字节，刚好等于 6.1 的 <code>icsk_ca_priv</code>，<code>BUILD_BUG_ON</code> 能通过。它只使用 6.1 已有的字段，不需要改核心栈。</p>
+<p>但 v2 是 2022 年的实验分支，没有进主线，手机上的表现也没有验证。它还需要改名为 <code>bbr2</code>，才能和现有的 <code>bbr</code> 并存。这个方向可以继续试，但这次没有部署。</p>
+<h2 id="BBRv3-实测：延迟有收益，吞吐没有">BBRv3 实测：延迟有收益，吞吐没有</h2>
+<p>2026-11-04 深夜到 11-05 凌晨，在已经移植好 <code>bbr3</code> 的同一台 K80 上补了一组 A/B。这次只做评测，内核和补丁都没有改动；网络换成了默认数据卡中国电信，测试时回落到 LTE（下载 RSRP −87 dBm / SNR 24，上传 −94 / SNR 17），不再是 11-02 那次的联通 5G。服务端仍是阿里云北京那台默认配置的测速机。</p>
+<p>对照组和上次一致：</p>
+<table>
+<thead>
+<tr>
+<th>组</th>
+<th>拥塞控制</th>
+<th>qdisc</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A</td>
+<td>cubic</td>
+<td>mq + pfifo_fast（厂商默认）</td>
+</tr>
+<tr>
+<td>C</td>
+<td>bbr3</td>
+<td>fq</td>
+</tr>
+</tbody>
+</table>
+<p>每轮新起 <code>curl</code>，ABBA 交替，轮间 3 秒；下载 32 MiB × 6 对，上传 8 MiB × 4 对；测试时暂停 <code>bbr3_fq</code> 模块的看门狗，逐轮用 <code>tc</code> 读回 qdisc、用 <code>ss</code> 确认 socket 真的用了当轮 CC、检查路由没有经过 <code>tun</code>。用的是原版 <code>cc_bench.sh</code>，没有改 harness。</p>
+<h3 id="下载-2">下载</h3>
+<table>
+<thead>
+<tr>
+<th></th>
+<th style="text-align:right">cubic + mq</th>
+<th style="text-align:right">bbr3 + fq</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>中位</td>
+<td style="text-align:right">28.9 Mbps</td>
+<td style="text-align:right">32.8 Mbps</td>
+</tr>
+<tr>
+<td>平均</td>
+<td style="text-align:right">28.3 Mbps</td>
+<td style="text-align:right">32.2 Mbps</td>
+</tr>
+<tr>
+<td>配对中位差</td>
+<td style="text-align:right">—</td>
+<td style="text-align:right">+15.8%，4/6 胜</td>
+</tr>
+</tbody>
+</table>
+<p>第 4 对 cubic 只有 14.8 Mbps（其余 28–39 Mbps），剔除后配对中位只剩 +2.9%，方向不稳。下载方向手机只是接收方，拥塞控制在服务端；客户端 bbr3 只影响 ACK，差异不能归因。</p>
+<h3 id="上传-2">上传</h3>
+<p>吞吐没有稳定差异：</p>
+<table>
+<thead>
+<tr>
+<th>对次</th>
+<th style="text-align:right">cubic</th>
+<th style="text-align:right">bbr3</th>
+<th style="text-align:right">差值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td style="text-align:right">2.11 Mbps</td>
+<td style="text-align:right">2.04 Mbps</td>
+<td style="text-align:right">−3.5%</td>
+</tr>
+<tr>
+<td>2</td>
+<td style="text-align:right">2.72 Mbps</td>
+<td style="text-align:right">3.18 Mbps</td>
+<td style="text-align:right">+17.1%</td>
+</tr>
+<tr>
+<td>3</td>
+<td style="text-align:right">1.60 Mbps</td>
+<td style="text-align:right">2.10 Mbps</td>
+<td style="text-align:right">+31.3%</td>
+</tr>
+<tr>
+<td>4</td>
+<td style="text-align:right">3.56 Mbps</td>
+<td style="text-align:right">1.97 Mbps</td>
+<td style="text-align:right">−44.6%</td>
+</tr>
+</tbody>
+</table>
+<p>配对中位 +6.8%，几何平均 −4.8%，2/4 胜；两臂中位是 2.41 vs 2.07 Mbps。吞吐没有可复现的收益。</p>
+<p>队列指标则是完全分离：</p>
+<table>
+<thead>
+<tr>
+<th>指标</th>
+<th style="text-align:right">cubic</th>
+<th style="text-align:right">bbr3</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>发送侧 RTT p50</td>
+<td style="text-align:right">1491 ms</td>
+<td style="text-align:right"><strong>197 ms</strong></td>
+</tr>
+<tr>
+<td>发送侧 RTT p95</td>
+<td style="text-align:right">2683 ms</td>
+<td style="text-align:right"><strong>388 ms</strong></td>
+</tr>
+<tr>
+<td>发送侧 RTT p99</td>
+<td style="text-align:right">3084 ms</td>
+<td style="text-align:right"><strong>515 ms</strong></td>
+</tr>
+<tr>
+<td>cwnd p50</td>
+<td style="text-align:right">779 段</td>
+<td style="text-align:right"><strong>56 段</strong></td>
+</tr>
+<tr>
+<td>cwnd p95</td>
+<td style="text-align:right">805 段</td>
+<td style="text-align:right"><strong>69 段</strong></td>
+</tr>
+<tr>
+<td>unacked p50</td>
+<td style="text-align:right">340 段</td>
+<td style="text-align:right"><strong>50 段</strong></td>
+</tr>
+<tr>
+<td>上传压载 ping p50</td>
+<td style="text-align:right">80.5 ms</td>
+<td style="text-align:right"><strong>36.7 ms</strong></td>
+</tr>
+<tr>
+<td>上传压载 ping p95</td>
+<td style="text-align:right">237 ms</td>
+<td style="text-align:right"><strong>135 ms</strong></td>
+</tr>
+<tr>
+<td>样本 RTT &gt; 1 s</td>
+<td style="text-align:right">48–95%</td>
+<td style="text-align:right">0%（首轮除外）</td>
+</tr>
+</tbody>
+</table>
+<p>逐轮看，cubic 的 RTT p95 是 1.9–4.8 s，bbr3 是 0.30–0.42 s（首轮除外）；cwnd p95 是 747–1069 段 vs 57–76 段（首轮 234）。cubic 的 p95 基本等于它的上限，bbr3 的 p95 是探测周期把 cwnd 从 ~50 推到 ~70。</p>
+<p>4 对的样本量很小。队列指标 4/4 完全分离：配对符号翻转精确检验 p=0.125（n=4 能取到的最小值），配对 t 检验 p=0.0005–0.011（假设正态）；吞吐的配对检验 p=0.81–0.88。非配对置换会给队列指标 0.029，但这次是 ABBA 配对设计，那个数偏乐观，不能拿来当结论。</p>
+<h3 id="和-BBRv1-比">和 BBRv1 比</h3>
+<p>把 11-02 的 BBRv1 数据（联通 5G，12 对上传）用同样的稳态口径重算：</p>
+<table>
+<thead>
+<tr>
+<th>指标</th>
+<th style="text-align:right">BBRv1</th>
+<th style="text-align:right">BBRv3</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>发送侧 RTT p50</td>
+<td style="text-align:right">198 ms</td>
+<td style="text-align:right">197 ms</td>
+</tr>
+<tr>
+<td>发送侧 RTT p95</td>
+<td style="text-align:right">368 ms</td>
+<td style="text-align:right">388 ms</td>
+</tr>
+<tr>
+<td>发送侧 RTT p99</td>
+<td style="text-align:right">419 ms</td>
+<td style="text-align:right">515 ms</td>
+</tr>
+<tr>
+<td>cwnd p95</td>
+<td style="text-align:right">125 段</td>
+<td style="text-align:right">69 段</td>
+</tr>
+<tr>
+<td>吞吐 vs cubic</td>
+<td style="text-align:right">几何 −10.2%</td>
+<td style="text-align:right">几何 −4.8%</td>
+</tr>
+<tr>
+<td>重传</td>
+<td style="text-align:right">0.45–3.17%（晚高峰）</td>
+<td style="text-align:right">0.28%</td>
+</tr>
+</tbody>
+</table>
+<p>两者在延迟和吞吐上没有可分辨的差异；v3 的 cwnd 更保守一些。但这是跨天、跨运营商、跨内核的比较，不能当成严格的 v1-vs-v3 A/B。</p>
+<h3 id="为什么没有额外收益">为什么没有额外收益</h3>
+<ul>
+<li>移植用的是 2025-03 的 v3 快照，PLB / ecn_low 被裁掉；在这台机器上它们本来就是死代码，剩下的行为和 v1 很接近。</li>
+<li>v3 相对 v1 的主要改进是丢包恢复、ECN、PLB。这次 TCP 重传两边合计都是 69 段 / 0.28%，没有 RTO、没有 SYN 重传、没有 ECN，这些机制没有工作可做。</li>
+<li>瓶颈是 LTE 上行调度，只有 2–3.5 Mbps。两版的 cwnd 都足够填满上行，多出来的 cwnd 只会变成排队。</li>
+<li>单流、干净链路，BBR 的公平性/竞争性优势也体现不出来。</li>
+</ul>
+<h3 id="几个测量坑">几个测量坑</h3>
+<ul>
+<li>下载方向是结构性无效：手机是接收端，CC 在服务端，手机端换什么都没法提高下载吞吐。</li>
+<li>4 对样本要用配对检验；非配对置换会把 p 算小到 0.029，但 ABBA 设计应该按配对来。</li>
+<li><code>ping</code> 的 <code>icmp_seq</code> 从 1 开始。按 seq 0 计算会凭空多出 0.5–2.9% 丢包；这次实际 ICMP 丢包是 0。</li>
+<li>cubic 的深队列会污染紧接其后的 bbr3 轮。第一对 bbr3 的 p95 是 1546 ms，后面三轮是 300–415 ms；3 秒冷却不够，最好等队列排空或多留几秒。</li>
+<li><code>ss</code> 的最后一帧可能没有 <code>retrans:</code> 字段，判断重传要用 <code>/proc/net/snmp</code> 的前后差值。</li>
+<li>接口和 VPN 会让旧脚本解析到错误网卡；这次最后路由直连到 <code>rmnet_data5</code>，脚本自己解析对了才跑对。</li>
+</ul>
+<h3 id="结论-2">结论</h3>
+<p>BBRv3 在这条链路上的收益是队列和尾延迟，不是吞吐：上传 RTT 从 1.5 s 压到 0.2 s，p95 从 2.7 s 压到 0.4 s，cwnd 从 ~780 段压到 ~56 段，代价是吞吐持平到略低。和 BBRv1 比没有可分辨的额外提升；v3 的丢包恢复/ECN 在这条 0.28% 重传的链路上没有触发条件。</p>
+<p>要回答“v1 vs v3”只能把官方 BBRv1 编进同一内核做严格 A/B；要验证 v3 的丢包恢复，需要在弱信号、切换或竞争流下测。这两项这次都没有做。</p>
+<h2 id="开源仓库">开源仓库</h2>
+<p>构建脚本、KernelSU 模块、ABI 对比工具和完整的踩坑记录都在：</p>
+<p><a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/iliyian/k80-zorn-bbr">https://github.com/iliyian/k80-zorn-bbr</a></p>
+<p>测试用的测速服务端在另一个仓库：<a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/iliyian/minimal-speedtest">iliyian/minimal-speedtest</a>。</p>
+<p>仓库里有：</p>
+<ul>
+<li><code>scripts/bench/</code>：实测 harness 和分析脚本；</li>
+<li>一键构建脚本：拉 ACK、拉 AOSP clang、读取设备配置、编译、打包；</li>
+<li>KernelSU 模块模板：加载、sysctl、fq、看门狗；</li>
+<li><code>verify-layouts.py</code>：对比设备 BTF 和模块 BTF；</li>
+<li><code>cfi-hash-test.sh</code>：比较不同 clang 的 kCFI 哈希；</li>
+<li>踩坑文档和 K80 实测记录；</li>
+<li>K80 对应的预编译 <code>.ko</code> 和模块 zip。</li>
+</ul>
+<p>预编译产物只适用于 <code>6.1.138-android14-11-g965475777129-mi</code>。其他设备或内核必须重新编译，并重新做 BTF 校验。6.1.176 内核现在可以正常显示和加载模块，但仓库里的预编译 <code>.ko</code> 仍然只针对 6.1.138；换到 6.1.176 需要按新内核重新验证或编译。</p>
+<p>构建脚本大致这样用：</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">CONFIG_GZ=<span class="variable">$PWD</span>/config.gz ./scripts/build-bbr-module.sh</span><br></pre></td></tr></table></figure>
+<p><code>config.gz</code> 从设备导出：</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">adb exec-out su -c <span class="string">&#x27;cat /proc/config.gz&#x27;</span> &gt; config.gz</span><br></pre></td></tr></table></figure>
+<p>脚本默认从 TUNA 拉 ACK 标签和 AOSP clang，也可以用自己的本地路径。</p>
+<h2 id="注意事项">注意事项</h2>
+<ol>
+<li>版本串里带 <code>-androidXX</code> 的是 ACK，不是 mainline，源码要用对应的 ACK 标签。</li>
+<li>编译器看 <code>CONFIG_CC_VERSION_TEXT</code>。开了 CFI 就用同版本 clang。</li>
+<li>不要关闭 <code>CONFIG_DEBUG_INFO_BTF*</code>，它会改变 <code>struct module</code> 布局。</li>
+<li>加载前对比 BTF，不要用“没崩”当 ABI 正确的证据。</li>
+<li><code>ksud insmod</code> 能绕过符号版本和 vermagic，但绕不过 ABI 和 CFI。</li>
+<li>fq 要逐接口替换，多队列设备的 <code>default_qdisc</code> 不会自动生效。</li>
+<li>系统 OTA 前先禁用模块。内核更新后 ABI 可能变化，需要按新版本重新编译。</li>
+<li>立即回退：<code>sysctl -w net.ipv4.tcp_congestion_control=cubic</code>；永久关闭：禁用或删除 KernelSU 模块后重启。</li>
+</ol>
+<h2 id="6-1-176：显示兼容性与双-BBR">6.1.176：显示兼容性与双 BBR</h2>
+<p>2026-11-05 把 6.1.176 的闪屏定位到了具体补丁，而不是“通用内核不行”。</p>
+<h3 id="闪屏根因">闪屏根因</h3>
+<ul>
+<li>stable <strong>6.1.141</strong> 引入上游 <code>41b4b11da0215</code>（<code>drm: Add valid clones check</code>）。<code>drm_atomic_helper_check_modeset()</code> 开始要求同一个 CRTC 上所有 encoder 的 <code>possible_clones</code> 互相覆盖。</li>
+<li>zorn 的 vendor <code>msm_drm.ko</code>（6.1.68 编）在 <strong>CRTC 203</strong> 上同时挂了 DSI 和 Virtual 两个 encoder（<code>encoder_mask=0x6</code>），它们的 <code>possible_clones</code> 不互反。于是 <code>drm_atomic_check_only()</code> 返回 <code>-EINVAL</code>，SDM 每帧重试失败：</li>
+</ul>
+<figure class="highlight smali"><table><tr><td class="code"><pre><span class="line">[drm:drm_atomic_helper_check_modeset] crtc203 failed valid clone<span class="built_in"> check </span>for mask 0x6</span><br><span class="line">SDM: drmModeAtomicCommit failed with error 22 (Invalid argument). crtc=203</span><br><span class="line">SDM: COMMIT failed: 11</span><br><span class="line">HwcComposer: presentOrValidateDisplay 0 presentFence:-1</span><br></pre></td></tr></table></figure>
+<ul>
+<li>版本边界：<strong>6.1.138 / 139 / 140 没有这个检查，6.1.141 起才有</strong>。所以之前把 6.1.145/6.1.176 的闪屏归因为“6.1.138 是显示上限”是过度结论；真正原因是这一个 stable 补丁。</li>
+<li>回退 <code>drm_atomic_check_valid_clones()</code> 及其调用后，6.1.176 显示正常，<code>COMMIT failed</code> / <code>drmModeAtomicCommit failed</code> 从每帧一条降到 0。用户实测视觉正常。</li>
+</ul>
+<h3 id="双-BBR">双 BBR</h3>
+<ul>
+<li>6.1.176 上同时编入 BBRv1（<code>bbr</code>）和 BBRv3（<code>bbr3</code>）。BBRv3 用独立的 <code>net/ipv4/tcp_bbr3.c</code>，注册名 <code>bbr3</code>；BBRv1 保留，只把 <code>min_tso_segs</code> 适配成新的 <code>tso_segs(sk, mss_now)</code> 回调。</li>
+<li>默认值改为：</li>
+</ul>
+<figure class="highlight ini"><table><tr><td class="code"><pre><span class="line"><span class="attr">CONFIG_DEFAULT_TCP_CONG</span>=<span class="string">&quot;bbr3&quot;</span></span><br><span class="line"><span class="attr">CONFIG_DEFAULT_NET_SCH</span>=<span class="string">&quot;fq&quot;</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>真机结果：<code>tcp_available_congestion_control = reno bbr bbr3 cubic</code>，默认 <code>bbr3</code>，<code>default_qdisc=fq</code>；<code>bbr</code> / <code>bbr3</code> 都能切换，并各自跑通 HTTP 200。</li>
+<li>显示、audio、模块加载（501 个）、KSU root 都正常；<code>Failed to insmod=0</code>。</li>
+</ul>
+<h3 id="代价与后续">代价与后续</h3>
+<ul>
+<li>BBRv3 改 <code>struct rate_sample</code> / <code>tcp_skb_cb</code> / <code>tcp_congestion_ops</code> 后，genksyms 会给约 691 个导出符号生成新 CRC，stock vendor 模块的 <code>__versions</code> 对不上。当前测试内核在 <code>check_version()</code> 里放行不匹配；这是<strong>全局放宽</strong>，后续应该收紧成按符号的 stock CRC 白名单，或用 <code>__GENKSYMS__</code> 把新字段对 genksyms 隐藏。</li>
+<li>ThinLTO 已完成构建和首轮真机验证：<code>-j8</code> 24:44.91，cgroup 峰值 6.38 GB，<code>vmlinux.symvers</code> 与 LTO_NONE 全量一致；开机/显示/audio/模块/BBR 正常，单次开机快约 1%，性能 A/B 待补。详见附录 A.7。</li>
+<li>细节、patch 和构建配置见 <a href="../gki176/README.md"><code>gki176/README.md</code></a> 和 <a href="../bbrv3/docs/BBRV3_PHONE_JOURNAL.md"><code>BBRV3_PHONE_JOURNAL.md</code></a> 第 20–22 节。</li>
+</ul>
+<hr>
+<h2 id="附录-A：完整实验记录">附录 A：完整实验记录</h2>
+<p>正文讲“怎么用”和“测到什么”，这一节把 journal 里的失败路径、构建数据和实现细节整理进来。时间线从 2026-11-01 到 11-05，设备始终是 zorn。</p>
+<h3 id="A-1-设备与约束">A.1 设备与约束</h3>
+<ul>
+<li>设备：Redmi K80（<code>zorn</code> / <code>24117RK2CC</code>），HyperOS <code>OS3.0.309.0.WOKCNXM</code> / Android 16。</li>
+<li>stock 内核：<code>6.1.138-android14-11-g965475777129-mi</code>，KMI <code>android14-6.1</code>，A/B，bootloader 已解锁。</li>
+<li>vendor 模块版本不一致：<code>/vendor/lib/modules</code> 里 <code>msm_drm.ko</code> 的 vermagic 是 <code>6.1.68-android14-11-gef5271fe2aef-dirty</code>；<code>/system_dlkm/lib/modules</code> 是 6.1.138。两者都属于 android14-6.1 KMI，所以能跨 sublevel 加载；换成 6.6/6.12 就不行。</li>
+<li>root：SukiSU Ultra 4.3.0 LKM，patch <code>init_boot_a</code>；<code>boot_a</code> 原厂。</li>
+<li>该 bootloader <strong>忽略 <code>fastboot boot</code></strong>，只能 <code>fastboot flash boot_a</code>；ramoops 每次启动被清，pstore 拿不到崩溃日志。</li>
+</ul>
+<h3 id="A-2-早期路线：直接刷通用-第三方内核">A.2 早期路线：直接刷通用/第三方内核</h3>
+<table>
+<thead>
+<tr>
+<th>内核</th>
+<th>结果</th>
+<th>关键数据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Droidspaces 6.1.176（nbkernel / non-nbkernel）</td>
+<td>能启动，持续闪屏</td>
+<td>736 / 757 条 <code>COMMIT failed: 11</code>、<code>presentFence:-1</code>；直接刷 zip 也是同一内核</td>
+</tr>
+<tr>
+<td>ShirkNeko 6.1.124</td>
+<td>可日常使用</td>
+<td><code>6.1.124-android14-11</code>，<code>boot_completed=1</code>；早期 363 条 <code>COMMIT failed</code> 后恢复；WiFi SSID <code>40</code>，11ax/1200Mbps/WPA3-SAE；相机 8 个 device；指纹 HAL alive，4 枚；audio HAL/设备正常（未实际放音）；内置 KSU <code>v4.1.3</code>，<code>adb shell</code> 是 uid 2000</td>
+</tr>
+<tr>
+<td>ShirkNeko 6.1.145</td>
+<td>能开机、audio 正常，显示不可用</td>
+<td>1127 条 <code>COMMIT failed</code>/<code>presentFence</code>，持续闪屏</td>
+</tr>
+<tr>
+<td>Shirk 6.1.138 自编</td>
+<td>卡 Redmi logo</td>
+<td>编译成功，AOSP clang r487747c/ThinLTO；<code>fs/namespace.c</code> 有 hunk 失败，pstore 为空；后来确认这个 hunk 不是根因</td>
+</tr>
+<tr>
+<td>Google GKI 6.1.124</td>
+<td>显示正常，audio 失败</td>
+<td>442 个模块；54 条 <code>Failed to insmod ... Permission denied</code>；<code>/dev/snd</code> 只有 <code>timer</code>；<code>/proc/asound/cards</code> 为空；<code>va-macro not registered yet, defer</code> 10 次；<code>boot_completed</code> 为空</td>
+</tr>
+<tr>
+<td>Google GKI 6.1.134</td>
+<td>下载了，未做启动测试</td>
+<td>仅作为对照</td>
+</tr>
+<tr>
+<td>Google GKI 6.1.138 + <code>MODULE_SIG_PROTECT=n</code></td>
+<td>成功基线</td>
+<td>501 个模块；声卡 <code>pineapple-mtp-snd-card</code> 6.536 s 注册；<code>va-macro defer</code> 0 次；显示/audio/WiFi/5G/相机/指纹/KSU root/BBR 正常；用户实测放音正常</td>
+</tr>
+</tbody>
+</table>
+<p>几个被排除的源/预编译：</p>
+<ul>
+<li><strong>Allay-OS</strong>：<code>android_kernel_xiaomi_sm8650</code>，6.1.138、<code>lineage-23.2</code>、zorn/POCO F7 Pro，14 个 commit，约 2.0 GB；有 audio/display/vendor 模块，但没有 zorn DTS，也不是可直接 build 的整机树。</li>
+<li><strong>小米 6.1.68 OSS</strong>：<code>MiCode/Xiaomi_Kernel_OpenSource</code> 的 <code>bsp-zorn-v-oss</code>，基于高通 <code>LA.VENDOR.14.3.0.r1</code>；<code>arch/arm64/boot/dts/vendor</code> 是坏符号链接，<code>techpack/audio</code> 不在公开 repo；只能当参考/供体。</li>
+<li><strong>Sakura 预编译</strong>：<code>Sakura-Devices/device_xiaomi_zorn-kernel</code> 的 kernel 实际是 <code>6.1.118-android14-11</code>，不是 6.1.138；可做 DTB/vendor 模块参考，不是同版本基线。</li>
+<li><strong>WildKernels</strong>：通用 GKI 6.1.157 等，不支持 zorn 的 vendor 显示栈。</li>
+<li><strong>KyuharuTE/Droidspaces-Kernel-For-K80</strong>：release 的 <code>Image</code> SHA 就是上面实测闪屏的两个 build；repo README 也写明未做真机验证。</li>
+</ul>
+<p>结论：通用/第三方内核不是“版本号新就行”，决定能不能用的是 vendor 显示栈和模块保护；6.1.138 当时能跑，并不代表 6.1.145+ 一定不行。后来的 6.1.176 实验证明了这一点。</p>
+<h3 id="A-3-audio-卡死的真正原因：GKI-module-protection">A.3 audio 卡死的真正原因：GKI module protection</h3>
+<p>Google GKI 6.1.124 的失败点不是 config，也不是 SELinux：</p>
+<ul>
+<li>dmesg 有 54 条 <code>Failed to insmod '/system_dlkm/.../xxx.ko': Permission denied</code>；</li>
+<li>没有 <code>avc: denied &#123; module_load &#125;</code>；</li>
+<li><code>setenforce 0</code> 后仍是 EACCES；</li>
+<li>启动参数 <code>androidboot.selinux=permissive</code> 被 user build 的 init 强制回 Enforcing（<code>CONFIG_SECURITY_SELINUX_BOOTPARAM</code> 没开）；</li>
+<li><code>modules_disabled=0</code>，没有 lockdown，没有 <code>sig_enforce</code>。</li>
+</ul>
+<p>机制在 android14-6.1 的 <code>kernel/module/main.c</code>：</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> (!mod-&gt;sig_ok &amp;&amp; gki_is_module_protected_export(kernel_symbol_name(s))) &#123;</span><br><span class="line">    pr_err(<span class="string">&quot;%s: exports protected symbol %s\n&quot;</span>, mod-&gt;name, ...);</span><br><span class="line">    <span class="keyword">return</span> -EACCES;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>Google certified GKI 带完整的 KMI protected-export 表，<code>CONFIG_MODULE_SIG_PROTECT=y</code>；</li>
+<li>zorn 的 stock 模块是 6.1.138 编的，在 6.1.124 GKI 上 <code>sig_ok=false</code>，又导出了受保护符号，直接 <code>-EACCES</code>；</li>
+<li>Shirk 的 standalone ACK 构建没有生成保护表（<code>NR_UNPROTECTED_SYMBOLS == 0</code>），同样的模块全部加载成功；</li>
+<li>模块加载失败改变了 probe 顺序：GKI 上 <code>pineapple-asoc-snd</code> 反复 <code>va-macro not registered yet, defer</code>，声卡永远不出现；Shirk 上 0 次 defer，6.455 s 注册声卡。</li>
+</ul>
+<p>所以 6.1.138 的成功基线是 <code>gki_defconfig</code> + <code>CONFIG_MODULE_SIG_PROTECT=n</code>，不是“补 audio config”。这个结论在第 18 节修正了第 8.5 节的旧判断。</p>
+<h3 id="A-4-BBRv3-为什么不能做模块">A.4 BBRv3 为什么不能做模块</h3>
+<p>BBRv3 不是单个 <code>tcp_bbr.c</code>，它依赖核心 TCP 栈的新字段和调用点，模块改不了：</p>
+<table>
+<thead>
+<tr>
+<th>依赖</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>rate_sample.prior_lost / tx_in_flight / lost / is_acking_tlp_retrans_seq / is_ece</code></td>
+<td>inflight/loss 模型</td>
+</tr>
+<tr>
+<td><code>tcp_skb_cb.tx.in_flight / lost</code>，<code>first_tx_mstamp/delivered_mstamp</code> u64→u32</td>
+<td>每个 skb 的在途/丢包快照</td>
+</tr>
+<tr>
+<td><code>ca_ops.skb_marked_lost</code></td>
+<td>核心标记 skb 丢失时回调 CA</td>
+</tr>
+<tr>
+<td><code>CA_EVENT_TLP_RECOVERY</code></td>
+<td>TLP 探针救回时通知</td>
+</tr>
+<tr>
+<td><code>ca_ops.tso_segs(sk, mss_now)</code></td>
+<td>BBRv3 的 TSO/GSO 预算</td>
+</tr>
+<tr>
+<td><code>fast_ack_mode</code>、<code>tlp_orig_data_app_limited</code></td>
+<td>接收端快速 ACK、TLP app-limited 快照</td>
+</tr>
+</tbody>
+</table>
+<p>实际试过把官方 v3 <code>tcp_bbr.c</code> 放进模块环境，报错包括：</p>
+<figure class="highlight perl"><table><tr><td class="code"><pre><span class="line"><span class="keyword">use</span> of undeclared identifier <span class="string">&#x27;CA_EVENT_TLP_RECOVERY&#x27;</span></span><br><span class="line"><span class="keyword">no</span> member named <span class="string">&#x27;lost&#x27;</span> in <span class="string">&#x27;struct rate_sample&#x27;</span></span><br><span class="line"><span class="keyword">no</span> member named <span class="string">&#x27;tx_in_flight&#x27;</span> in <span class="string">&#x27;struct rate_sample&#x27;</span></span><br><span class="line"><span class="keyword">no</span> member named <span class="string">&#x27;is_acking_tlp_retrans_seq&#x27;</span> in <span class="string">&#x27;struct rate_sample&#x27;</span></span><br></pre></td></tr></table></figure>
+<p><code>ksud</code> 能解决“符号没导出”，解决不了“结构体没字段/核心不填/核心不调用”。</p>
+<p>最终 core patch 改了 9 个文件：<code>include/linux/tcp.h</code>、<code>include/net/tcp.h</code>、<code>include/uapi/linux/inet_diag.h</code>、<code>net/ipv4/tcp.c</code>、<code>tcp_cong.c</code>、<code>tcp_input.c</code>、<code>tcp_output.c</code>、<code>tcp_rate.c</code>、<code>tcp_timer.c</code>。算法文件适配上做了四类改动：</p>
+<ol>
+<li>删除 <code>__bpf_kfunc</code> / BTF kfunc 注册；</li>
+<li>删除 PLB 和 <code>ecn_low</code> 路径（本机没有 <code>RTAX_FEATURE_ECN_LOW</code>，是死代码）；</li>
+<li><code>cong_control</code> 适配 6.1 的 <code>(sk, rs)</code> 签名；</li>
+<li>状态从内联改为动态分配，注册名 <code>bbr3</code>。</li>
+</ol>
+<p>动态状态的原因：去掉 PLB 后 <code>struct bbr</code> 仍是 144 字节，6.1 的 <code>ICSK_CA_PRIV_SIZE</code> 只有 104；不能加大 <code>icsk_ca_priv</code>，否则 <code>tcp_sock</code> 所有字段平移 40 字节，vendor 模块 ABI 全坏。做法是 <code>icsk_ca_priv</code> 放 <code>&#123;state, owner, magic&#125;</code> 指针头，状态 <code>kmalloc</code>，<code>.release</code> 释放，<code>owner</code> 防止 accept 克隆共享。</p>
+<p>静态验证：</p>
+<ul>
+<li>BTF 对比：<code>tcp_sock</code> 2368 字节不变，所有既有字段偏移一致；<code>inet_connection_sock</code> 1536 字节不变；<code>rate_sample</code> 72→88，<code>tcp_congestion_ops</code> 192→192，<code>tcp_skb_cb</code> 48→44（tx 区不变，union 对齐从 8 降到 4）。</li>
+<li>QEMU aarch64 virt：core-only 内核 4.3 秒启动到 <code>VFS: Unable to mount root fs</code>，没有 panic/BUG。</li>
+</ul>
+<p>最大坑是 <strong>genksyms CRC 误伤</strong>：</p>
+<ul>
+<li>头文件改动让 691 个导出符号生成了新 CRC，包括 <code>skb_put</code>、<code>__alloc_skb</code> 这种 ABI 没变的；</li>
+<li><code>audio_pkt_dlkm.ko</code> 的 <code>__versions</code> 期望 <code>skb_put=0xac7a3881</code>，新内核是 <code>0x385a34f9</code>；</li>
+<li><code>check_version()</code> 不匹配返回 0，调用方 <code>-EINVAL</code>，audio 模块不加载 → AudioService/HAL 卡死 → 开机循环；</li>
+<li>不能直接关 <code>CONFIG_MODVERSIONS</code>：vermagic 会少 <code>modversions</code> 标记，<code>same_magic()</code> 比较第一个空格之后的内容，模块会报 version magic 不匹配；</li>
+<li>最终保留 <code>MODVERSIONS=y</code>，把 <code>kernel/module/version.c</code> 的 <code>bad_version</code> 返回改成 1（<code>pr_warn_once</code> 放行）。这是测试内核的妥协，不是安全加固；后续应改成按符号的 stock CRC 白名单，或用 <code>__GENKSYMS__</code> 隐藏新字段。</li>
+</ul>
+<p>已知限制：旧的 <code>tcp_bbr.ko</code>（BBRv1）不能在这个内核上加载；ECN/PLB 被裁掉；当前是 2025-03 版 BBRv3，2026-09 版（DRAIN gain、undo state、<code>cwnd_event_tx_start</code>）尚未移植。</p>
+<h3 id="A-5-6-1-176-的-valid-clones-根因">A.5 6.1.176 的 valid-clones 根因</h3>
+<p>6.1.176 纯 ACK 能开机：<code>boot_completed=1</code>，501 个模块，<code>Failed to insmod=0</code>，声卡正常，KSU root 正常。但屏幕持续闪屏。</p>
+<p>日志：</p>
+<figure class="highlight apache"><table><tr><td class="code"><pre><span class="line"><span class="attribute">SDM</span>: DRMAtomicReq::Commit: drmModeAtomicCommit failed with error <span class="number">22</span> (Invalid argument). crtc=<span class="number">203</span></span><br><span class="line"><span class="attribute">SDM</span>: DisplayBase::PerformCommit: COMMIT failed: <span class="number">11</span></span><br><span class="line"><span class="attribute">HwcComposer</span>: presentOrValidateDisplay <span class="number">0</span> presentFence:-<span class="number">1</span></span><br></pre></td></tr></table></figure>
+<p>打开 DRM debug 后拿到直接证据：</p>
+<figure class="highlight smali"><table><tr><td class="code"><pre><span class="line">[drm:drm_atomic_helper_check_modeset] crtc203 failed valid clone<span class="built_in"> check </span>for mask 0x6</span><br></pre></td></tr></table></figure>
+<p>kretprobe 定位：</p>
+<figure class="highlight apache"><table><tr><td class="code"><pre><span class="line"><span class="attribute">katomic_check</span>: (drm_atomic_nonblocking_commit+<span class="number">0</span>x1c/<span class="number">0</span>x90 &lt;- drm_atomic_check_only) arg1=<span class="number">0</span>xffffffea</span><br><span class="line"><span class="attribute">kioctl</span>:        (drm_ioctl_kernel+<span class="number">0</span>xf8/<span class="number">0</span>x184 &lt;- drm_mode_atomic_ioctl)          arg1=<span class="number">0</span>xffffffea</span><br></pre></td></tr></table></figure>
+<p><code>0xffffffea</code> = <code>-22</code> = <code>-EINVAL</code>，失败发生在 <code>drm_atomic_check_only()</code> 内部。</p>
+<p>根因：</p>
+<ul>
+<li>stable <strong>6.1.141</strong> 引入上游 <code>41b4b11da02157c7474caf41d56baae0e941d01a</code>（<code>drm: Add valid clones check</code>）；</li>
+<li><code>drm_atomic_check_valid_clones()</code> 要求同一 CRTC 上所有 encoder 的 <code>possible_clones</code> 互相覆盖；</li>
+<li>zorn 的 vendor <code>msm_drm.ko</code>（6.1.68 编）在 CRTC 203 上同时挂 DSI 和 Virtual encoder（<code>encoder_mask=0x6</code>），它们的 <code>possible_clones</code> 不互反；</li>
+<li>于是每次带这两个 encoder 的 modeset 都返回 <code>-EINVAL</code>，HWC 每帧重试，屏幕闪。</li>
+</ul>
+<p>版本边界：逐个读 stable 6.1.138–6.1.176 的 <code>drivers/gpu/drm/drm_atomic_helper.c</code>，<strong>6.1.138/139/140 没有这个函数，6.1.141 起才有</strong>。所以 6.1.145（Shirk）和 6.1.176（Droidspaces/纯 ACK）的闪屏是同一个原因，不是“6.1.138 是显示上限”。</p>
+<p>修复：删除 <code>drm_atomic_check_valid_clones()</code> 及其调用，等价恢复 6.1.140 行为。Image <code>841b819e...</code>，boot <code>d34718c8...</code>；刷入后 <code>COMMIT failed</code> / <code>drmModeAtomicCommit failed</code> 从每帧一条降到 0，<code>presentFence:-1</code> 仍有 163 条，但 6.1.138 正常基线也有类似突发（§18.5 记录 241 条，视觉正常），单独不作为判据。</p>
+<h3 id="A-6-双-BBR-的实现与验证">A.6 双 BBR 的实现与验证</h3>
+<p>在 6.1.176 + valid-clones revert 基线上：</p>
+<ul>
+<li>BBRv1：保留 stock <code>net/ipv4/tcp_bbr.c</code>，注册名 <code>bbr</code>；</li>
+<li>BBRv3：新增 <code>net/ipv4/tcp_bbr3.c</code>（由 6.1.138 上已适配的 v3 算法复制），注册名 <code>bbr3</code>；</li>
+<li>core patch <code>0001-tcp-core-bbrv3.patch</code> 应用到 6.1.176，全部 hunk 成功，0 reject；只有 stable 偏移和 1 个 fuzz 1；</li>
+<li>fuzz 1 位于 <code>tcp_process_tlp_ack(sk, ack, flag, &amp;rs)</code>：6.1.176 在附近多了 <code>tcp_in_ack_event(sk, flag)</code>，最终代码正确；</li>
+<li>BBRv1 需要适配新的 <code>tso_segs(sk, mss_now)</code> 回调：新增 <code>bbr_tso_segs()</code>，复刻 <code>tcp_tso_autosize()</code>，保留 BBRv1 按 pacing rate 取 1/2 的最小值，并把 ops 成员从 <code>.min_tso_segs</code> 改成 <code>.tso_segs</code>；</li>
+<li>Kconfig/Makefile 增加 <code>TCP_CONG_BBR3</code>、<code>DEFAULT_BBR3</code>、<code>default &quot;bbr3&quot; if DEFAULT_BBR3</code>、<code>obj-$(CONFIG_TCP_CONG_BBR3) += tcp_bbr3.o</code>；</li>
+<li>config：<code>TCP_CONG_BBR=y</code>、<code>TCP_CONG_BBR3=y</code>、<code>DEFAULT_BBR3=y</code>、<code>DEFAULT_TCP_CONG=&quot;bbr3&quot;</code>、<code>NET_SCH_DEFAULT=y</code>、<code>DEFAULT_FQ=y</code>、<code>DEFAULT_NET_SCH=&quot;fq&quot;</code>；</li>
+<li>旧的 <code>tcp_bbr_kmod</code> 保持禁用；<code>bbr3_fq</code> KSU 模块继续在 post-fs-data/service 阶段兜底 bbr3 + fq，并给 <code>rmnet_data*</code> / <code>wlan*</code> 挂 fq。</li>
+</ul>
+<p>真机结果：</p>
+<table>
+<thead>
+<tr>
+<th>项</th>
+<th>结果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>uname -r</code></td>
+<td><code>6.1.176-android14-11+</code></td>
+</tr>
+<tr>
+<td><code>tcp_available_congestion_control</code></td>
+<td><code>reno bbr bbr3 cubic</code></td>
+</tr>
+<tr>
+<td>默认 CC / qdisc</td>
+<td><code>bbr3</code> / <code>fq</code></td>
+</tr>
+<tr>
+<td>切 <code>bbr</code> / 切回 <code>bbr3</code></td>
+<td>均成功</td>
+</tr>
+<tr>
+<td>模块数 / <code>Failed to insmod</code></td>
+<td>501 / 0</td>
+</tr>
+<tr>
+<td>CRC tolerance 日志</td>
+<td>1 条（<code>tolerating symbol version mismatch</code>，与 6.1.138 基线一致）</td>
+</tr>
+<tr>
+<td>声卡 / root / 显示</td>
+<td>正常 / KSU LKM / <code>COMMIT failed=0</code></td>
+</tr>
+<tr>
+<td>实际流量</td>
+<td><code>curl https://www.baidu.com</code> 在 <code>bbr3</code> 和 <code>bbr</code> 下均返回 HTTP 200；<code>ss -tin</code> 分别显示 <code>bbr3</code> / <code>bbr</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="A-7-ThinLTO-构建与首轮验证">A.7 ThinLTO 构建与首轮验证</h3>
+<p>stock zorn 内核用 ThinLTO；这版把同一 6.1.176 + 双 BBR + 显示修复的树用 ThinLTO 重编，验证能否替代 LTO_NONE。</p>
+<p>配置与工具链：</p>
+<ul>
+<li><code>CONFIG_LTO_CLANG_THIN=y</code>、<code># CONFIG_LTO_NONE is not set</code>、<code>CONFIG_LTO_CLANG_FULL</code> 关闭；</li>
+<li><code>CONFIG_CFI_CLANG=y</code>、<code>CONFIG_MODVERSIONS=y</code>、<code>CONFIG_MODULE_SIG_PROTECT=n</code>；</li>
+<li>默认 <code>bbr3</code> + <code>fq</code>；</li>
+<li>Ubuntu clang 17.0.6（ACK 官方 pin 是 AOSP <code>r487747c</code> / 17.0.2）；</li>
+<li><code>make -j8 Image</code>，输出 <code>/root/gki176-thinlto</code>。</li>
+</ul>
+<p>构建数据：</p>
+<table>
+<thead>
+<tr>
+<th>项</th>
+<th>结果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>wall time</td>
+<td>24:44.91</td>
+</tr>
+<tr>
+<td>user / sys</td>
+<td>9358.30 s / 1004.97 s</td>
+</tr>
+<tr>
+<td>CPU</td>
+<td>697%</td>
+</tr>
+<tr>
+<td><code>time -v</code> max RSS</td>
+<td>6,124,300 KiB（约 5.84 GiB）</td>
+</tr>
+<tr>
+<td>cgroup <code>memory.peak</code></td>
+<td>6,381,436,928 B（约 5.94 GiB）</td>
+</tr>
+<tr>
+<td><code>memory.swap.peak</code></td>
+<td>1,368,064 B（约 1.3 MiB）</td>
+</tr>
+<tr>
+<td><code>memory.events</code></td>
+<td><code>oom=0</code>、<code>oom_kill=0</code></td>
+</tr>
+<tr>
+<td>Image</td>
+<td>36,760,064 B，SHA256 <code>59fdfaab...</code></td>
+</tr>
+</tbody>
+</table>
+<p>对比 LTO_NONE：Image 35,645,952 B → 36,760,064 B，增加约 3.1%。LTO_NONE 那次没有精确的 <code>time</code>/峰值记录，不能直接比构建耗时。</p>
+<p>ABI：<code>/root/gki176-noprot/vmlinux.symvers</code> 与 <code>/root/gki176-thinlto/vmlinux.symvers</code> 全量 diff（去注释、排序）为 <strong>0 行</strong>；<code>module_layout=0xea759d7f</code>、<code>skb_put=0x385a34f9</code>、<code>__alloc_skb=0x3a1c9278</code> 两边一致。ThinLTO 只改代码生成，不改 genksyms 的符号 CRC。</p>
+<p>真机：</p>
+<table>
+<thead>
+<tr>
+<th>项</th>
+<th>结果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>uname -r</code></td>
+<td><code>6.1.176-android14-11+</code></td>
+</tr>
+<tr>
+<td><code>/proc/config.gz</code></td>
+<td><code>CONFIG_LTO_CLANG_THIN=y</code>、<code>CONFIG_CFI_CLANG=y</code></td>
+</tr>
+<tr>
+<td><code>sys.boot_completed</code></td>
+<td>1</td>
+</tr>
+<tr>
+<td>模块 / <code>Failed to insmod</code></td>
+<td>501 / 0</td>
+</tr>
+<tr>
+<td>CC / qdisc</td>
+<td><code>bbr3</code> / <code>fq</code></td>
+</tr>
+<tr>
+<td>声卡 / root / 显示</td>
+<td>正常 / KSU LKM / <code>COMMIT failed=0</code></td>
+</tr>
+</tbody>
+</table>
+<p>开机进度（单次样本）：</p>
+<table>
+<thead>
+<tr>
+<th>指标</th>
+<th style="text-align:right">LTO_NONE</th>
+<th style="text-align:right">ThinLTO</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>boot_progress_enable_screen</code></td>
+<td style="text-align:right">16022 ms</td>
+<td style="text-align:right">15871 ms</td>
+</tr>
+<tr>
+<td><code>sf_stop_bootanim</code></td>
+<td style="text-align:right">17730 ms</td>
+<td style="text-align:right">17447 ms</td>
+</tr>
+</tbody>
+</table>
+<p>分别约 -0.9% 和 -1.6%，只有单次样本，后台任务也不同，不能据此认为有稳定收益。CPU/存储/UI 的 A/B 尚未做。</p>
+<h3 id="A-8-产物与哈希">A.8 产物与哈希</h3>
+<table>
+<thead>
+<tr>
+<th>产物</th>
+<th>SHA256</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>6.1.176 LTO_NONE Image</td>
+<td><code>263d14815f0d9f58a2e37dff0b8d67a58baa5ca8046f61f1eeb4b7532bb0c47f</code></td>
+</tr>
+<tr>
+<td>6.1.176 LTO_NONE boot</td>
+<td><code>827f8865666e709059230b76c640a1cc35cdea10d49f7253faf9935499440475</code></td>
+</tr>
+<tr>
+<td>6.1.176 ThinLTO Image</td>
+<td><code>59fdfaabfb4bb94239a3b2d1b851be3bcb6bc75a105d83d8296528c34514d559</code></td>
+</tr>
+<tr>
+<td>6.1.176 ThinLTO boot</td>
+<td><code>6637585575048818a2276dd68796ed09094536e013bf2ebcc122517d8221a02b</code></td>
+</tr>
+<tr>
+<td>6.1.176 显示修复 boot</td>
+<td><code>d34718c8fdade3deb08d94319024f451847703a34c1878ca155fd3015bcd609e</code></td>
+</tr>
+<tr>
+<td>6.1.138 BBRv3 Image</td>
+<td><code>43b72d3d06717e1df376abf1331d1ca784323914b4e53b5d49c41643ff9e5934</code></td>
+</tr>
+<tr>
+<td>6.1.138 BBRv3 boot</td>
+<td><code>8e6bacabedc9e347cc41a68a77dc9b630bbd6b6dffcb000adc8aa82784e28354</code></td>
+</tr>
+<tr>
+<td>stock boot_a</td>
+<td><code>a1a041eb90226266244844c45adf650f665e930f622cc1db56afb95aba38affd</code></td>
+</tr>
+</tbody>
+</table>
+<p>GitHub release：<a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/iliyian/k80-zorn-bbr/releases/tag/v0.2.0-6.1.176">https://github.com/iliyian/k80-zorn-bbr/releases/tag/v0.2.0-6.1.176</a></p>
+<h3 id="A-9-未完成与风险">A.9 未完成与风险</h3>
+<ul>
+<li><code>check_version()</code> 目前是<strong>全局</strong>放宽 CRC；后续应改成按符号的 stock CRC 白名单，或用 <code>__GENKSYMS__</code> 隐藏新字段。</li>
+<li><code>CONFIG_MODULE_SIG_PROTECT=n</code> 是为 stock vendor 模块加载做的取舍；<code>MODULE_SIG_FORCE</code> 本来就没开，<code>MODULE_SIG_PROTECT</code> 是 Android 额外那道门。</li>
+<li>valid-clones 回退删掉的是 DRM 校验，不是显示功能；它恢复 6.1.140 行为，但严格说减少了上游想加的一层检查。</li>
+<li>BBRv3 裁掉了 ECN/PLB；2026-09 版尚未移植。</li>
+<li>6.1.176 上 WiFi、相机、指纹、实际放音还没有逐项回归；长稳、发热、弱网/丢包场景也没有跑。</li>
+<li>ThinLTO 的性能 A/B 还没完成；PGO/AutoFDO 在 6.1 ACK 上没有现成支持，需要额外 patchset 和 profile 采集。</li>
+<li>旧的 <code>tcp_bbr.ko</code> 不能在新内核加载；仓库里的预编译 <code>.ko</code> 仍只针对 6.1.138。</li>
+</ul>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="https://iliyian.com">iliyian</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="https://iliyian.com/posts/486b403b/">https://iliyian.com/posts/486b403b/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="external nofollow noreferrer" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来源 <a href="https://iliyian.com" target="_blank">易安的小世界</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/AI-SLOP/">AI SLOP</a></div><div class="post-share"><div class="social-share" data-image="https://r2-imgs.iliyian.com/img/vertin_sleeping.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><a class="pagination-related full-width" href="/posts/b970bd74/" title="World is Collapsing"><img class="cover" src="https://r2-imgs.iliyian.com/img/loading-cat.gif" data-lazy-src="https://r2-imgs.iliyian.com/img/vertin_sleeping.jpg" onerror="onerror=null;src='https://http.cat/404'" alt="cover of next post"><div class="info text-right"><div class="info-1"><div class="info-item-1">下一篇</div><div class="info-item-2">World is Collapsing</div></div><div class="info-2"><div class="info-item-1">World is Collapsing The Greatest Sorrow ever eventually immersed me, after all the good news scie...</div></div></div></a></nav><hr class="custom-hr"/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div><div class="comment-switch"><span class="first-comment">Waline</span><span id="switch-btn"></span><span class="second-comment">Gitalk</span></div></div><div class="comment-wrap"><div><div id="waline-wrap"></div></div><div><div id="gitalk-container"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="https://r2-imgs.iliyian.com/img/loading-cat.gif" data-lazy-src="https://r2-imgs.iliyian.com/img/37.jpg" onerror="this.onerror=null;this.src='https://http.cat/404'" alt="avatar"/></div><div class="author-info-name">iliyian</div><div class="author-info-description">是小可爱</div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">47</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">20</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">9</div></a></div><a id="card-info-btn" target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/iliyian"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons"><a class="social-icon" href="https://github.com/iliyian" rel="external nofollow noreferrer" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="https://t.me/iliyian" rel="external nofollow noreferrer" target="_blank" title="Telegram"><i class="fab fa-telegram"></i></a><a class="social-icon" href="https://steamcommunity.com/id/iliyian/" rel="external nofollow noreferrer" target="_blank" title="Steam"><i class="fab fa-steam"></i></a><a class="social-icon" href="https://space.bilibili.com/299627858" rel="external nofollow noreferrer" target="_blank" title="Bilibili"><i class="iconfont icon-bilibili2"></i></a><a class="social-icon" href="https://codeforces.com/profile/iliyian" rel="external nofollow noreferrer" target="_blank" title="Codeforces"><i class="iconfont icon-codeforces2"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">斜阳，负你残春泪几行。</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">在 Redmi K80 上用内核模块启用 BBR</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%88%E8%AF%B4%E8%AF%B4-BBR-%E6%98%AF%E4%BB%80%E4%B9%88"><span class="toc-number">1.1.</span> <span class="toc-text">先说说 BBR 是什么</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A3%80%E6%9F%A5%E5%86%85%E6%A0%B8%E6%94%AF%E6%8C%81%E6%83%85%E5%86%B5"><span class="toc-number">1.2.</span> <span class="toc-text">检查内核支持情况</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E4%B8%8D%E8%83%BD%E7%9B%B4%E6%8E%A5%E7%BC%96%E5%86%85%E6%A0%B8"><span class="toc-number">1.3.</span> <span class="toc-text">为什么不能直接编内核</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E4%B8%89%E6%9D%A1%E8%B7%AF%EF%BC%9A%E8%BF%90%E8%A1%8C%E6%97%B6%E5%8A%A0%E8%BD%BD%E6%A8%A1%E5%9D%97"><span class="toc-number">1.4.</span> <span class="toc-text">第三条路：运行时加载模块</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ksud-insmod-%E5%81%9A%E7%9A%84%E4%BA%8B"><span class="toc-number">1.5.</span> <span class="toc-text">ksud insmod 做的事</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E4%B8%80%E5%85%B3%EF%BC%9A%E6%BA%90%E7%A0%81%E5%BF%85%E9%A1%BB%E6%98%AF-ACK"><span class="toc-number">1.6.</span> <span class="toc-text">第一关：源码必须是 ACK</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E4%BA%8C%E5%85%B3%EF%BC%9A%E7%BC%96%E8%AF%91%E5%99%A8%E5%92%8C%E5%86%85%E6%A0%B8%E4%B8%80%E8%87%B4"><span class="toc-number">1.7.</span> <span class="toc-text">第二关：编译器和内核一致</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E4%B8%89%E5%85%B3%EF%BC%9Astruct-module-%E5%B0%91%E4%BA%86-16-%E5%AD%97%E8%8A%82"><span class="toc-number">1.8.</span> <span class="toc-text">第三关：struct module 少了 16 字节</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%B6%E4%BB%96%E6%9E%84%E5%BB%BA%E5%9D%91"><span class="toc-number">1.9.</span> <span class="toc-text">其他构建坑</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#TRIM-UNUSED-KSYMS"><span class="toc-number">1.9.1.</span> <span class="toc-text">TRIM_UNUSED_KSYMS</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#asm-offsets-h-%E7%BC%BA%E5%A4%B1"><span class="toc-number">1.9.2.</span> <span class="toc-text">asm-offsets.h 缺失</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#scripts-module-lds-%E7%BC%BA%E5%A4%B1"><span class="toc-number">1.9.3.</span> <span class="toc-text">scripts&#x2F;module.lds 缺失</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A8%A1%E5%9D%97%E5%8E%8B%E7%BC%A9"><span class="toc-number">1.9.4.</span> <span class="toc-text">模块压缩</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#modpost-%E7%9A%84-undefined-%E8%AD%A6%E5%91%8A"><span class="toc-number">1.9.5.</span> <span class="toc-text">modpost 的 undefined 警告</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%94%A8-BTF-%E6%A0%A1%E9%AA%8C-ABI"><span class="toc-number">1.10.</span> <span class="toc-text">用 BTF 校验 ABI</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8A%A0%E8%BD%BD%E5%92%8C-qdisc"><span class="toc-number">1.11.</span> <span class="toc-text">加载和 qdisc</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BF%99%E5%A5%97%E6%96%B9%E6%A1%88%E7%9A%84%E6%95%88%E6%9E%9C"><span class="toc-number">1.12.</span> <span class="toc-text">这套方案的效果</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%8E%E4%B9%88%E6%B5%8B%E7%9A%84"><span class="toc-number">1.12.1.</span> <span class="toc-text">怎么测的</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%8B%E8%BD%BD"><span class="toc-number">1.12.2.</span> <span class="toc-text">下载</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%8A%E4%BC%A0"><span class="toc-number">1.12.3.</span> <span class="toc-text">上传</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%80%E6%AC%A1%E4%B8%A2%E5%8C%85%E4%BA%8B%E4%BB%B6"><span class="toc-number">1.12.4.</span> <span class="toc-text">一次丢包事件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BB%93%E8%AE%BA"><span class="toc-number">1.12.5.</span> <span class="toc-text">结论</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#BBRv2-%E5%92%8C-BBRv3"><span class="toc-number">1.13.</span> <span class="toc-text">BBRv2 和 BBRv3</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#BBRv3-%E5%AE%9E%E6%B5%8B%EF%BC%9A%E5%BB%B6%E8%BF%9F%E6%9C%89%E6%94%B6%E7%9B%8A%EF%BC%8C%E5%90%9E%E5%90%90%E6%B2%A1%E6%9C%89"><span class="toc-number">1.14.</span> <span class="toc-text">BBRv3 实测：延迟有收益，吞吐没有</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%8B%E8%BD%BD-2"><span class="toc-number">1.14.1.</span> <span class="toc-text">下载</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%8A%E4%BC%A0-2"><span class="toc-number">1.14.2.</span> <span class="toc-text">上传</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%92%8C-BBRv1-%E6%AF%94"><span class="toc-number">1.14.3.</span> <span class="toc-text">和 BBRv1 比</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E6%B2%A1%E6%9C%89%E9%A2%9D%E5%A4%96%E6%94%B6%E7%9B%8A"><span class="toc-number">1.14.4.</span> <span class="toc-text">为什么没有额外收益</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%87%A0%E4%B8%AA%E6%B5%8B%E9%87%8F%E5%9D%91"><span class="toc-number">1.14.5.</span> <span class="toc-text">几个测量坑</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BB%93%E8%AE%BA-2"><span class="toc-number">1.14.6.</span> <span class="toc-text">结论</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BC%80%E6%BA%90%E4%BB%93%E5%BA%93"><span class="toc-number">1.15.</span> <span class="toc-text">开源仓库</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9"><span class="toc-number">1.16.</span> <span class="toc-text">注意事项</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-1-176%EF%BC%9A%E6%98%BE%E7%A4%BA%E5%85%BC%E5%AE%B9%E6%80%A7%E4%B8%8E%E5%8F%8C-BBR"><span class="toc-number">1.17.</span> <span class="toc-text">6.1.176：显示兼容性与双 BBR</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%97%AA%E5%B1%8F%E6%A0%B9%E5%9B%A0"><span class="toc-number">1.17.1.</span> <span class="toc-text">闪屏根因</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%8C-BBR"><span class="toc-number">1.17.2.</span> <span class="toc-text">双 BBR</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%A3%E4%BB%B7%E4%B8%8E%E5%90%8E%E7%BB%AD"><span class="toc-number">1.17.3.</span> <span class="toc-text">代价与后续</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%99%84%E5%BD%95-A%EF%BC%9A%E5%AE%8C%E6%95%B4%E5%AE%9E%E9%AA%8C%E8%AE%B0%E5%BD%95"><span class="toc-number">1.18.</span> <span class="toc-text">附录 A：完整实验记录</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#A-1-%E8%AE%BE%E5%A4%87%E4%B8%8E%E7%BA%A6%E6%9D%9F"><span class="toc-number">1.18.1.</span> <span class="toc-text">A.1 设备与约束</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#A-2-%E6%97%A9%E6%9C%9F%E8%B7%AF%E7%BA%BF%EF%BC%9A%E7%9B%B4%E6%8E%A5%E5%88%B7%E9%80%9A%E7%94%A8-%E7%AC%AC%E4%B8%89%E6%96%B9%E5%86%85%E6%A0%B8"><span class="toc-number">1.18.2.</span> <span class="toc-text">A.2 早期路线：直接刷通用&#x2F;第三方内核</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#A-3-audio-%E5%8D%A1%E6%AD%BB%E7%9A%84%E7%9C%9F%E6%AD%A3%E5%8E%9F%E5%9B%A0%EF%BC%9AGKI-module-protection"><span class="toc-number">1.18.3.</span> <span class="toc-text">A.3 audio 卡死的真正原因：GKI module protection</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#A-4-BBRv3-%E4%B8%BA%E4%BB%80%E4%B9%88%E4%B8%8D%E8%83%BD%E5%81%9A%E6%A8%A1%E5%9D%97"><span class="toc-number">1.18.4.</span> <span class="toc-text">A.4 BBRv3 为什么不能做模块</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#A-5-6-1-176-%E7%9A%84-valid-clones-%E6%A0%B9%E5%9B%A0"><span class="toc-number">1.18.5.</span> <span class="toc-text">A.5 6.1.176 的 valid-clones 根因</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#A-6-%E5%8F%8C-BBR-%E7%9A%84%E5%AE%9E%E7%8E%B0%E4%B8%8E%E9%AA%8C%E8%AF%81"><span class="toc-number">1.18.6.</span> <span class="toc-text">A.6 双 BBR 的实现与验证</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#A-7-ThinLTO-%E6%9E%84%E5%BB%BA%E4%B8%8E%E9%A6%96%E8%BD%AE%E9%AA%8C%E8%AF%81"><span class="toc-number">1.18.7.</span> <span class="toc-text">A.7 ThinLTO 构建与首轮验证</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#A-8-%E4%BA%A7%E7%89%A9%E4%B8%8E%E5%93%88%E5%B8%8C"><span class="toc-number">1.18.8.</span> <span class="toc-text">A.8 产物与哈希</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#A-9-%E6%9C%AA%E5%AE%8C%E6%88%90%E4%B8%8E%E9%A3%8E%E9%99%A9"><span class="toc-number">1.18.9.</span> <span class="toc-text">A.9 未完成与风险</span></a></li></ol></li></ol></li></ol></div></div></div></div></main><footer id="footer" style="background-image: url(https://r2-imgs.iliyian.com/cdn-cgi/image/format=webp,quality=80/img/vertin_sleeping.jpg);" data-cover-src="https://r2-imgs.iliyian.com/img/vertin_sleeping.jpg"><div class="footer-other"><div class="footer-copyright"><span class="copyright">&copy;&nbsp;2021 - 2026 By iliyian</span><span class="framework-info"><span>框架 </span><a target="_blank" rel="noopener external nofollow noreferrer" href="https://hexo.io">Hexo 7.3.0</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly 5.7.1.260810</a></span></div><div class="footer_custom_text">To Be A Great Poet.<br/><a href="https://icp.gov.moe/?keyword=20232063" rel="external nofollow noreferrer" target="_blank">萌ICP备20232063号</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="translateLink" type="button" title="简繁转换">簡</button><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="前往评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js" defer></script><script src="/js/main.js" defer></script><script>(function(){var src="/js/tw_cn-lazy.js";var loaded=!!window.translateFn,loading=false;window.translateFn=window.translateFn||{translateInitialization:function(){},translatePage:function(){},Traditionalized:function(s){return s},Simplized:function(s){return s}};function load(cb){if(loaded){cb&&cb();return}if(loading)return;loading=true;var s=document.createElement("script");s.src=src;s.onload=function(){loading=false;loaded=true;cb&&cb()};s.onerror=function(){loading=false};document.head.appendChild(s)}var saved=false;try{var v=JSON.parse(localStorage.getItem("translate-chn-cht"));saved=!!(v&&v.value)}catch(e){}if(saved)load();document.addEventListener("click",function(e){var el=e.target.closest&&e.target.closest("#translateLink");if(!el||loaded)return;e.preventDefault();e.stopImmediatePropagation();load(function(){window.translateFn.translatePage()})},true);})();</script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js" defer></script><div class="js-pjax"><script>(async () => {
+  const showKatex = () => {
+    document.querySelectorAll('#article-container .katex').forEach(el => el.classList.add('katex-show'))
+  }
+
+  if (!window.katex_js_css) {
+    window.katex_js_css = true
+    try {
+      await btf.getCSS('https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css')
+      if (true) {
+        await btf.getScript('https://cdn.jsdelivr.net/npm/katex/dist/contrib/copy-tex.min.js')
+      }
+    } catch (e) {
+      console.error('[katex] failed to load assets, showing formulas anyway:', e)
+    }
+  }
+
+  showKatex()
+  btf.addGlobalFn('encrypt', showKatex, 'katex')
+})()</script><script>(() => {
+  const parseViewBox = viewBox => {
+    if (!viewBox) return null
+    const parts = viewBox.trim().split(/[\s,]+/).map(n => Number(n))
+    if (parts.length !== 4 || parts.some(n => Number.isNaN(n))) return null
+    return parts
+  }
+
+  const getSvgViewBox = svg => {
+    const attr = parseViewBox(svg.getAttribute('viewBox'))
+    if (attr) return attr
+
+    // Fallback: use bbox to build a viewBox
+    try {
+      const bbox = svg.getBBox()
+      if (bbox && bbox.width && bbox.height) return [bbox.x, bbox.y, bbox.width, bbox.height]
+    } catch (e) {
+      // getBBox may fail on some edge cases; ignore
+    }
+
+    const w = Number(svg.getAttribute('width')) || 0
+    const h = Number(svg.getAttribute('height')) || 0
+    if (w > 0 && h > 0) return [0, 0, w, h]
+    return [0, 0, 100, 100]
+  }
+
+  const setSvgViewBox = (svg, vb) => {
+    svg.setAttribute('viewBox', `${vb[0]} ${vb[1]} ${vb[2]} ${vb[3]}`)
+  }
+
+  const clamp = (v, min, max) => Math.max(min, Math.min(max, v))
+
+  const openSvgInNewTab = ({ source, initViewBox }) => {
+    const getClonedSvg = () => {
+      if (typeof source === 'string') {
+        const template = document.createElement('template')
+        template.innerHTML = source.trim()
+        const svg = template.content.querySelector('svg')
+        return svg ? svg.cloneNode(true) : null
+      }
+      if (source && typeof source.cloneNode === 'function') {
+        return source.cloneNode(true)
+      }
+      return null
+    }
+
+    const clone = getClonedSvg()
+    if (!clone) return
+    if (initViewBox && initViewBox.length === 4) {
+      clone.setAttribute('viewBox', initViewBox.join(' '))
+    }
+    if (!clone.getAttribute('xmlns')) clone.setAttribute('xmlns', 'http://www.w3.org/2000/svg')
+    if (!clone.getAttribute('xmlns:xlink') && clone.innerHTML.includes('xlink:')) {
+      clone.setAttribute('xmlns:xlink', 'http://www.w3.org/1999/xlink')
+    }
+    // inject background to match current theme
+    const isDark = document.documentElement.getAttribute('data-theme') === 'dark'
+    const bg = getComputedStyle(document.body).backgroundColor || (isDark ? '#1e1e1e' : '#ffffff')
+    if (!clone.style.background) clone.style.background = bg
+
+    const serializer = new XMLSerializer()
+    const svgSource = serializer.serializeToString(clone)
+    const htmlSource = `<!doctype html><html><head><meta charset="utf-8" />
+      <style>
+        html, body { width: 100%; height: 100%; margin: 0; display: flex; align-items: center; justify-content: center; background: ${bg}; }
+        svg { max-width: 100%; max-height: 100%; height: auto; width: auto; }
+      </style>
+      </head><body>${svgSource}</body></html>`
+    const blob = new Blob([htmlSource], { type: 'text/html;charset=utf-8' })
+    const url = URL.createObjectURL(blob)
+    window.open(url, '_blank', 'noopener')
+
+    setTimeout(() => URL.revokeObjectURL(url), 5000)
+  }
+
+  const attachMermaidViewerButton = wrap => {
+    let btn = wrap.querySelector('.mermaid-open-btn')
+    if (!btn) {
+      btn = document.createElement('button')
+      btn.type = 'button'
+      btn.className = 'mermaid-open-btn'
+      wrap.appendChild(btn)
+    }
+
+    btn.innerHTML = '<i class="fa fa-search fa-fw" aria-hidden="true"></i>'
+
+    if (!btn.__mermaidViewerBound) {
+      btn.addEventListener('click', e => {
+        e.preventDefault()
+        e.stopPropagation()
+        const svg = wrap.__mermaidOriginalSvg || wrap.querySelector('svg')
+        if (!svg) return
+        const initViewBox = wrap.__mermaidInitViewBox
+        openSvgInNewTab({ source: svg, initViewBox })
+      })
+      btn.__mermaidViewerBound = true
+    }
+  }
+
+  // Zoom around a point (px, py) in the SVG viewport (in viewBox coordinates)
+  const zoomAtPoint = (vb, factor, px, py) => {
+    const w = vb[2] * factor
+    const h = vb[3] * factor
+    const nx = px - (px - vb[0]) * factor
+    const ny = py - (py - vb[1]) * factor
+    return [nx, ny, w, h]
+  }
+
+  const initMermaidGestures = wrap => {
+    // Clean up previous event listeners and pending frames
+    if (wrap.__mermaidAbortController) {
+      wrap.__mermaidAbortController.abort()
+      if (wrap.__mermaidRafId) cancelAnimationFrame(wrap.__mermaidRafId)
+    }
+    const ac = new AbortController()
+    wrap.__mermaidAbortController = ac
+    const svg = wrap.querySelector('svg')
+    if (!svg) return
+
+    // Ensure viewBox exists so gestures always work
+    const initVb = getSvgViewBox(svg)
+    wrap.__mermaidInitViewBox = initVb
+    wrap.__mermaidCurViewBox = initVb.slice()
+    setSvgViewBox(svg, initVb)
+    // Disable default gestures to prevent scroll chaining and pinch-zoom penetration in Chrome
+    svg.style.touchAction = 'none'
+
+    // Cache BoundingClientRect, throttled on scroll to reduce reflow
+    let cachedRect = svg.getBoundingClientRect()
+    let rectDirty = false
+    const markRectDirty = () => { rectDirty = true }
+    window.addEventListener('resize', markRectDirty, { signal: ac.signal })
+    window.addEventListener('scroll', markRectDirty, { signal: ac.signal, capture: true })
+    const getRect = () => {
+      if (rectDirty) {
+        cachedRect = svg.getBoundingClientRect()
+        rectDirty = false
+      }
+      return cachedRect
+    }
+
+    // Precompute clamp bounds from initial viewBox
+    const minW = initVb[2] * 0.1
+    const maxW = initVb[2] * 10
+    const minH = initVb[3] * 0.1
+    const maxH = initVb[3] * 10
+    const clampVb = vb => {
+      const out = vb.slice()
+      out[2] = clamp(out[2], minW, maxW)
+      out[3] = clamp(out[3], minH, maxH)
+      return out
+    }
+
+    // Throttle DOM updates using requestAnimationFrame
+    let pendingVb = null
+    let rafId = null
+    const applyVb = () => {
+      if (pendingVb) {
+        wrap.__mermaidCurViewBox = pendingVb
+        setSvgViewBox(svg, pendingVb)
+        pendingVb = null
+      }
+      rafId = null
+      wrap.__mermaidRafId = null
+    }
+    const setCurVb = vb => {
+      pendingVb = clampVb(vb)
+      if (!rafId) {
+        rafId = requestAnimationFrame(applyVb)
+        wrap.__mermaidRafId = rafId
+      }
+    }
+
+    const state = {
+      pointers: new Map(),
+      startVb: null,
+      startDist: 0,
+      lastPointerX: 0,
+      lastPointerY: 0
+    }
+
+    const onPointerDown = e => {
+      if (e.pointerType === 'mouse' && e.button !== 0) return
+      svg.setPointerCapture(e.pointerId)
+      const curVb = wrap.__mermaidCurViewBox
+      state.pointers.set(e.pointerId, { x: e.clientX, y: e.clientY })
+      if (state.pointers.size === 1) {
+        state.startVb = curVb.slice()
+        state.lastPointerX = e.clientX
+        state.lastPointerY = e.clientY
+      } else if (state.pointers.size === 2) {
+        const pts = [...state.pointers.values()]
+        const dx = pts[0].x - pts[1].x
+        const dy = pts[0].y - pts[1].y
+        state.startDist = Math.hypot(dx, dy)
+        state.startVb = curVb.slice()
+      }
+    }
+
+    const onPointerMove = e => {
+      if (!state.pointers.has(e.pointerId)) return
+      state.pointers.set(e.pointerId, { x: e.clientX, y: e.clientY })
+      const curVb = wrap.__mermaidCurViewBox
+      const rect = getRect()
+      if (state.pointers.size === 1 && state.startVb) {
+        const p = state.pointers.values().next().value
+        const dxClient = p.x - state.lastPointerX
+        const dyClient = p.y - state.lastPointerY
+        state.lastPointerX = p.x
+        state.lastPointerY = p.y
+        const dx = dxClient * (curVb[2] / rect.width)
+        const dy = dyClient * (curVb[3] / rect.height)
+        setCurVb([curVb[0] - dx, curVb[1] - dy, curVb[2], curVb[3]])
+        return
+      }
+      if (state.pointers.size === 2 && state.startVb && state.startDist > 0) {
+        const pts = [...state.pointers.values()]
+        const dx = pts[0].x - pts[1].x
+        const dy = pts[0].y - pts[1].y
+        const dist = Math.hypot(dx, dy)
+        if (!dist) return
+        const factor = state.startDist / dist
+        const cx = (pts[0].x + pts[1].x) / 2
+        const cy = (pts[0].y + pts[1].y) / 2
+        const px = curVb[0] + (cx - rect.left) * (curVb[2] / rect.width)
+        const py = curVb[1] + (cy - rect.top) * (curVb[3] / rect.height)
+        setCurVb(zoomAtPoint(state.startVb, factor, px, py))
+      }
+    }
+
+    const onPointerUpOrCancel = e => {
+      // Release PointerCapture to avoid event capture anomalies
+      if (svg.hasPointerCapture && svg.hasPointerCapture(e.pointerId)) {
+        svg.releasePointerCapture(e.pointerId)
+      }
+      state.pointers.delete(e.pointerId)
+      if (state.pointers.size === 0) {
+        state.startVb = null
+        state.startDist = 0
+      } else if (state.pointers.size === 1) {
+        const p = state.pointers.values().next().value
+        state.lastPointerX = p.x
+        state.lastPointerY = p.y
+      }
+    }
+
+    const onWheel = e => {
+      // Prevent event bubbling from triggering external scroll
+      e.preventDefault()
+      e.stopPropagation()
+      // Normalize deltaY across deltaMode (Chrome uses pixels, Safari uses lines)
+      let delta = e.deltaY
+      if (e.deltaMode === 1) delta *= 16
+      else if (e.deltaMode === 2) delta *= 400
+
+      // Continuous zoom factor: smoother than fixed 1.1/0.9 steps
+      const zoomFactor = Math.pow(1.001, delta)
+
+      const curVb = wrap.__mermaidCurViewBox
+      const rect = getRect()
+      const px = curVb[0] + (e.clientX - rect.left) * (curVb[2] / rect.width)
+      const py = curVb[1] + (e.clientY - rect.top) * (curVb[3] / rect.height)
+      setCurVb(zoomAtPoint(curVb, zoomFactor, px, py))
+    }
+
+    const onDblClick = () => {
+      const init = wrap.__mermaidInitViewBox
+      if (init) setCurVb(init)
+    }
+
+    svg.addEventListener('pointerdown', onPointerDown, { signal: ac.signal })
+    svg.addEventListener('pointermove', onPointerMove, { signal: ac.signal })
+    svg.addEventListener('pointerup', onPointerUpOrCancel, { signal: ac.signal })
+    svg.addEventListener('pointercancel', onPointerUpOrCancel, { signal: ac.signal })
+    svg.addEventListener('wheel', onWheel, { passive: false, signal: ac.signal })
+    svg.addEventListener('dblclick', onDblClick, { signal: ac.signal })
+  }
+
+  const runMermaid = ele => {
+    window.loadMermaid = true
+    const theme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'default'
+    ele.forEach((item, index) => {
+      const mermaidSrc = item.firstElementChild
+      // Clean up event listeners and stale content before re-rendering
+      if (item.__mermaidAbortController) {
+        item.__mermaidAbortController.abort()
+      }
+      const oldSvg = item.querySelector('svg')
+      if (oldSvg) oldSvg.remove()
+      const oldError = item.querySelector('.mermaid-error')
+      if (oldError) oldError.remove()
+      let config = {}
+      try {
+        config = mermaidSrc.dataset.config ? JSON.parse(mermaidSrc.dataset.config) : {}
+      } catch (e) {
+        console.warn('[mermaid] failed to parse dataset.config:', e)
+      }
+      if (!config.theme) {
+        config.theme = theme
+      }
+      const mermaidThemeConfig = `%%{init: ${JSON.stringify(config)}}%%\n`
+      const mermaidID = `mermaid-${index}`
+      const mermaidDefinition = mermaidThemeConfig + mermaidSrc.textContent
+
+      const renderMermaid = svg => {
+        mermaidSrc.insertAdjacentHTML('afterend', svg)
+        if (true) initMermaidGestures(item)
+        item.__mermaidOriginalSvg = svg
+        if (true) attachMermaidViewerButton(item)
+      }
+
+      const handleError = err => {
+        console.error(`[mermaid] render failed for block #${index}:`, err)
+        const errorEl = document.createElement('div')
+        errorEl.className = 'mermaid-error'
+        errorEl.textContent = `Mermaid render error: ${err.message || err}`
+        mermaidSrc.insertAdjacentElement('afterend', errorEl)
+      }
+
+      try {
+        const renderFn = mermaid.render(mermaidID, mermaidDefinition)
+        // mermaid v9 and v10 compatibility
+        if (typeof renderFn === 'string') {
+          renderMermaid(renderFn)
+        } else {
+          renderFn.then(({ svg }) => renderMermaid(svg)).catch(handleError)
+        }
+      } catch (err) {
+        handleError(err)
+      }
+    })
+  }
+
+  const codeToMermaid = $article => {
+    const codeMermaidEle = $article.querySelectorAll('pre > code.mermaid')
+    if (codeMermaidEle.length === 0) return
+
+    codeMermaidEle.forEach(ele => {
+      const preEle = document.createElement('pre')
+      preEle.className = 'mermaid-src'
+      preEle.hidden = true
+      preEle.textContent = ele.textContent
+      const newEle = document.createElement('div')
+      newEle.className = 'mermaid-wrap'
+      newEle.appendChild(preEle)
+      ele.parentNode.replaceWith(newEle)
+    })
+  }
+
+  const loadMermaid = () => {
+    const $article = document.getElementById('article-container')
+    if (!$article) return
+
+    if (true) codeToMermaid($article)
+    const $mermaid = $article.querySelectorAll('.mermaid-wrap')
+    if ($mermaid.length === 0) return
+
+    const runMermaidFn = () => runMermaid($mermaid)
+    btf.addGlobalFn('themeChange', runMermaidFn, 'mermaid')
+    window.loadMermaid ? runMermaidFn() : btf.getScript('https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js').then(runMermaidFn)
+  }
+
+  btf.addGlobalFn('encrypt', loadMermaid, 'mermaid')
+  window.pjax ? loadMermaid() : document.addEventListener('DOMContentLoaded', loadMermaid)
+})()</script><script>(() => {
+  let initFn = window.walineFn || null
+  const isShuoshuo = GLOBAL_CONFIG_SITE.pageType === 'shuoshuo'
+  const option = {"locale":{"placeholder":"世界上的一队小小的漂泊者呀，请留下你们的足印在我的文字里","sofa":"她的热切的脸，如夜雨似的，搅扰着我的梦魂。","reactionTitle":"留下批语","reaction0":"好","reaction1":"妙","reaction2":"叹","reaction3":"思","reaction4":"笑"},"reaction":["data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7","data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7","data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7","data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7","data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"],"turnstileKey":"0x4AAAAAAB6dmP1fw7Iw96wn"}
+
+  const destroyWaline = ele => ele.destroy()
+
+  const initWaline = (Fn, el = document, path = window.location.pathname) => {
+    const waline = Fn({
+      el: el.querySelector('#waline-wrap'),
+      serverURL: 'https://waline.iliyian.com/',
+      pageview: false,
+      dark: 'html[data-theme="dark"]',
+      comment: false,
+      ...option,
+      path: isShuoshuo ? path : (option && option.path) || path
+    })
+
+    let lightboxObserver = null
+    if (GLOBAL_CONFIG.lightbox !== 'null') {
+      const wrap = el.querySelector('#waline-wrap')
+      if (wrap) {
+        lightboxObserver = new MutationObserver(mutations => {
+          const imgs = []
+          mutations.forEach(mutation => {
+            mutation.addedNodes.forEach(node => {
+              if (node.nodeType !== 1) return
+              const nodeImgs = node.matches && node.matches('img') ? [node] : node.querySelectorAll('img')
+              nodeImgs.forEach(img => imgs.push(img))
+            })
+          })
+          const lightboxImgs = imgs.filter(img => img.closest('.wl-content') && !img.classList.contains('wl-emoji'))
+          if (lightboxImgs.length) btf.loadLightbox(lightboxImgs)
+        })
+        lightboxObserver.observe(wrap, { childList: true, subtree: true })
+      }
+    }
+
+    if (isShuoshuo) {
+      window.shuoshuoComment.destroyWaline = () => {
+        lightboxObserver && lightboxObserver.disconnect()
+        destroyWaline(waline)
+        if (el.children.length) {
+          el.innerHTML = ''
+          el.classList.add('no-comment')
+        }
+      }
+    }
+  }
+
+  const loadWaline = (el, path) => {
+    if (initFn) initWaline(initFn, el, path)
+    else {
+      btf.getCSS('https://cdn.jsdelivr.net/npm/@waline/client/dist/waline.min.css')
+        .then(() => import('https://cdn.jsdelivr.net/npm/@waline/client/dist/waline.min.js'))
+        .then(({ init }) => {
+          initFn = init || Waline.init
+          initWaline(initFn, el, path)
+          window.walineFn = initFn
+        })
+    }
+  }
+
+  if (isShuoshuo) {
+    'Waline' === 'Waline'
+      ? window.shuoshuoComment = { loadComment: loadWaline }
+      : window.loadOtherComment = loadWaline
+    return
+  }
+
+  if ('Waline' === 'Waline' || !false) {
+    if (false) btf.loadComment(document.getElementById('waline-wrap'),loadWaline)
+    else setTimeout(loadWaline, 0)
+  } else {
+    window.loadOtherComment = loadWaline
+  }
+})()</script><script>(() => {
+  const isShuoshuo = GLOBAL_CONFIG_SITE.pageType === 'shuoshuo'
+  const option = null
+
+  const commentCount = n => {
+    const isCommentCount = document.querySelector('#post-meta .gitalk-comment-count')
+    if (isCommentCount) {
+      isCommentCount.textContent= n
+    }
+  }
+
+  const initGitalk = (el, path) => {
+    if (isShuoshuo) {
+      window.shuoshuoComment.destroyGitalk = () => {
+        if (el.children.length) {
+          el.innerHTML = ''
+          el.classList.add('no-comment')
+        }
+      }
+    }
+
+    const gitalk = new Gitalk({
+      clientID: '82d3ae30fb1309b8aef2',
+      clientSecret: '9a7da5f699aaa02763e4ad89e662fff858e00511',
+      repo: 'blog_comments',
+      owner: 'iliyian',
+      admin: ['iliyian'],
+      updateCountCallback: commentCount,
+      ...option,
+      id: isShuoshuo ? path : (option && option.id) || '30b64dc97b5ed4f28fe789165f83769a'
+    })
+
+    gitalk.render('gitalk-container')
+  }
+
+  const loadGitalk = async(el, path) => {
+    if (typeof Gitalk === 'function') initGitalk(el, path)
+    else {
+      await btf.getCSS('https://cdn.jsdelivr.net/npm/gitalk/dist/gitalk.min.css')
+      await btf.getScript('https://cdn.jsdelivr.net/npm/gitalk/dist/gitalk.min.js')
+      initGitalk(el, path)
+    }
+  }
+
+  if (isShuoshuo) {
+    'Waline' === 'Gitalk'
+      ? window.shuoshuoComment = { loadComment: loadGitalk }
+      : window.loadOtherComment = loadGitalk
+    return
+  }
+
+  if ('Waline' === 'Gitalk' || !false) {
+    if (false) btf.loadComment(document.getElementById('gitalk-container'), loadGitalk)
+    else loadGitalk()
+  } else {
+    window.loadOtherComment = loadGitalk
+  }
+})()</script></div><script defer src="/js/cover-colors.js"></script><script defer src="/js/cover-accent.js"></script><script defer src="/js/seal.js"></script><script defer src="/js/a11y.js"></script><script defer src="/js/sidebar-nav.js"></script><script defer src="/js/turnstile-fix.js"></script><script defer src="/js/pjax-transition.js"></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css" media="print" onload="this.media='all'"><script defer src="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js"></script><script defer src="/js/Meting.min.js"></script><script>var meting_api='https://meting-api.iliyian.com/api?server=:server&type=:type&id=:id&auth=:auth&r=:r';</script><meting-js server="tencent" type="playlist" id="2374187585" fixed="true" autoplay="false" list-folded="true" order="random" preload="none"></meting-js><script> (function() { var meting = document.querySelector('meting-js[fixed="true"]'); if (meting) { meting.addEventListener('load', function(e) { var ap = e.detail.aplayer; if (ap) { setTimeout(function() { var btn = ap.template.lrcButton; if (btn && !btn.classList.contains('aplayer-icon-lrc-inactivity')) { btn.click(); } }, 300); } }); } })(); </script><script defer pjax data-api="https://busuanzi.iliyian.com/api" data-prefix="busuanzi_value" src="https://busuanzi.iliyian.com/js"></script><script>
+document.addEventListener('pjax:complete', function () {
+  if (window._paq) {
+    _paq.push(['setCustomUrl', location.href]);
+    _paq.push(['setDocumentTitle', document.title]);
+    _paq.push(['trackPageView']);
+  }
+});
+</script>
+<script src="/js/music.js" defer></script><script defer src="/js/blog-live2d.js"></script><script>
+function initTranslateBtn(){
+  if(document.querySelector('.post-meta-translate')) return;
+  if(document.querySelector('#post-meta')){
+    const path = location.pathname;
+
+    const separator = document.createElement('span');
+    separator.className = 'post-meta-separator';
+    separator.innerHTML = ' | ';
+
+    const wrapper = document.createElement('span');
+    wrapper.className = 'post-meta-translate';
+
+    const icon = document.createElement('i');
+    icon.className = 'fas fa-language fa-fw post-meta-icon';
+
+    const btn = document.createElement('a');
+    if(path.startsWith('/en/')){
+      btn.href = path.replace('/en/', '/');
+      btn.innerHTML = '中文';
+    } else {
+      btn.href = '/en' + path;
+      btn.innerHTML = 'English';
+    }
+    btn.style.cssText = 'color: #ffffff; text-decoration: none; transition: all .2s; border-bottom: 1px solid var(--light-grey);';
+    btn.onmouseover = function(){ this.style.color = '#4a7a94'; this.style.borderBottomColor = '#4a7a94'; };
+    btn.onmouseout = function(){ this.style.color = '#ffffff'; this.style.borderBottomColor = 'var(--light-grey)'; };
+    // 中英两站是独立构建，样式与 GLOBAL_CONFIG 不同，必须整页跳转
+    btn.addEventListener('click', function(e){
+      e.preventDefault();
+      window.location.href = btn.href;
+    });
+
+    wrapper.appendChild(icon);
+    wrapper.appendChild(btn);
+
+    const meta = document.querySelector('#post-meta .meta-firstline');
+    if(meta) {
+      meta.appendChild(separator);
+      meta.appendChild(wrapper);
+    }
+  }
+}
+document.addEventListener('DOMContentLoaded', initTranslateBtn);
+document.addEventListener('pjax:complete', initTranslateBtn);
+</script>
+<script id="click-show-text" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/click-show-text.min.js" data-mobile="true" data-text="I,LOVE,YOU" data-fontsize="15px" data-random="false" async="async"></script><script src="https://cdn.jsdelivr.net/npm/pjax/pjax.min.js" defer="defer"></script><script>document.addEventListener('DOMContentLoaded', () => {
+  const pjaxSelectors = ["head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+
+  window.pjax = new Pjax({
+    elements: 'a:not([target="_blank"]):not([data-fancybox]):not([href="/music/"]):not([href="/en/"])',
+    selectors: pjaxSelectors,
+    cacheBust: false,
+    analytics: false,
+    scrollRestoration: false
+  })
+
+  const triggerPjaxFn = (val) => {
+    if (!val) return
+    Object.values(val).forEach(fn => {
+      try {
+        fn()
+      } catch (err) {
+        console.debug('Pjax callback failed:', err)
+      }
+    })
+  }
+
+  document.addEventListener('pjax:send', () => {
+    // removeEventListener
+    btf.removeGlobalFnEvent('pjaxSendOnce')
+    btf.removeGlobalFnEvent('themeChange')
+
+    // reset readmode
+    const $bodyClassList = document.body.classList
+    if ($bodyClassList.contains('read-mode')) $bodyClassList.remove('read-mode')
+
+    triggerPjaxFn(window.globalFn.pjaxSend)
+  })
+
+  document.addEventListener('pjax:complete', () => {
+    btf.removeGlobalFnEvent('pjaxCompleteOnce')
+    document.querySelectorAll('script[data-pjax]').forEach(item => {
+      if (!item.parentNode) return
+      const newScript = document.createElement('script')
+      const content = item.text || item.textContent || ''
+      Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+      newScript.appendChild(document.createTextNode(content))
+      item.parentNode.replaceChild(newScript, item)
+    })
+
+    triggerPjaxFn(window.globalFn.pjaxComplete)
+  })
+
+  document.addEventListener('pjax:error', e => {
+    const responseURL = e.request && e.request.responseURL
+    if (e.request && e.request.status === 404) {
+      true
+        ? pjax.loadUrl('/404.html')
+        : responseURL && (window.location.href = responseURL)
+    } else if (responseURL) {
+      window.location.href = responseURL
+    }
+  })
+})</script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><i class="fas fa-spinner fa-pulse" id="loading-status" hidden="hidden"></i><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="text-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据加载中</span></div><div class="local-search-input"><input placeholder="搜索文章" type="text"/></div><hr/><div id="local-search-results"></div><div class="ais-Pagination" id="local-search-pagination" style="display:none;"><ul class="ais-Pagination-list"></ul></div><div id="local-search-stats"></div></div><div id="search-mask"></div><script>(function(){var src="/js/search/local-search-lazy.js";var loaded=false,loading=false;function load(cb){if(loaded){cb&&cb();return}if(loading)return;loading=true;var s=document.createElement("script");s.src=src;s.onload=function(){loading=false;loaded=true;cb&&cb()};s.onerror=function(){loading=false};document.head.appendChild(s)}document.addEventListener("click",function(e){var b=e.target.closest&&e.target.closest("#search-button");if(!b||loaded)return;e.preventDefault();e.stopImmediatePropagation();load(function(){var t=document.querySelector("#search-button > .search");t&&t.click()})},true);})();</script></div></div></body></html>
