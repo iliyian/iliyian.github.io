@@ -137,12 +137,7 @@
     background: transparent !important;
 }
 
-/* 页脚半透明 */
-#footer {
-    background: rgba(123, 107, 138, 0.75) !important;
-    backdrop-filter: blur(6px);
-    -webkit-backdrop-filter: blur(6px);
-}
+/* 页脚样式集中在文件末尾「页脚：落款式」一节 */
 
 /* 链接悬停过渡 */
 #article-container a:hover {
@@ -1158,5 +1153,892 @@ html[lang^="en"] #sidebar #sidebar-menus .site-data .headline {
     #sidebar-menus.open .menus_items > .menus_item {
         transition: none;
         animation: none;
+    }
+}
+
+/* ===== 页脚：落款式 ===== */
+/* 版式由站点级 filter（scripts/footer.js）按 footer.motto / footer.seal / footer.links 生成，
+   主题 footer.pug 保持原样。这里只管排版与纸感，沿用站内的朱砂 + 发丝线语言。 */
+#footer {
+    background-color: #3a3345 !important;
+    background-position: center bottom !important;
+    background-size: cover !important;
+}
+
+/* 主题的遮罩只有 30% 黑，照片亮部会吃掉文字；改成上浅下深的墨色罩，
+   照片只作底纹，不再抢正文。 */
+#footer::before {
+    background: linear-gradient(
+        180deg,
+        rgba(30, 25, 36, .82) 0%,
+        rgba(30, 25, 36, .88) 55%,
+        rgba(26, 22, 31, .93) 100%
+    ) !important;
+    backdrop-filter: saturate(.75) blur(1.5px);
+    -webkit-backdrop-filter: saturate(.75) blur(1.5px);
+}
+
+#footer > * {
+    color: #efe7de;
+}
+
+#footer .footer-other {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 46px 20px 34px;
+}
+
+#footer .footer-other > * {
+    order: 9;
+}
+
+#footer .yy-footer-lead {
+    order: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+/* 起首细线 + 菱形结点 */
+#footer .yy-footer-rule {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: min(300px, 62vw);
+    margin-bottom: 26px;
+}
+
+#footer .yy-footer-rule::before,
+#footer .yy-footer-rule::after {
+    flex: 1 1 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(239, 231, 222, .42));
+    content: '';
+}
+
+#footer .yy-footer-rule::after {
+    background: linear-gradient(270deg, transparent, rgba(239, 231, 222, .42));
+}
+
+#footer .yy-footer-rule > span {
+    flex: 0 0 auto;
+    width: 6px;
+    height: 6px;
+    margin: 0 14px;
+    border: 1px solid rgba(239, 231, 222, .6);
+    background: rgba(58, 51, 69, .9);
+    transform: rotate(45deg);
+}
+
+/* 题词：全站衬线，字距略开 */
+#footer .yy-footer-motto {
+    margin: 0;
+    color: #f6f1ea;
+    font-family: "LXGW", "Noto Serif SC", serif;
+    font-size: 1.22em;
+    letter-spacing: .1em;
+    line-height: 1.7;
+    text-align: center;
+    text-indent: .1em;
+    text-shadow: 0 1px 8px rgba(0, 0, 0, .45);
+}
+
+#footer .yy-footer-motto a {
+    color: inherit;
+    border-bottom: 1px solid rgba(239, 231, 222, .35);
+    transition: border-color .2s ease, color .2s ease;
+}
+
+@media (hover: hover) {
+    #footer .yy-footer-motto a:hover {
+        color: #f0d7c9;
+        border-bottom-color: #f0d7c9;
+    }
+}
+
+/* 题词下的落款小印：与文章结尾呼应，但更轻 */
+#footer .yy-seal--footer {
+    width: 40px;
+    height: 40px;
+    margin-top: 18px;
+    font-size: 12px;
+    border-width: 1.5px;
+    background: rgba(58, 51, 69, .28);
+    box-shadow: inset 0 0 0 1px rgba(224, 161, 147, .2);
+
+    --seal-color: #e8b3a6;
+}
+
+/* 站内导航：一条横排，以间隔点分节 */
+#footer .yy-footer-links {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 4px 12px;
+    margin-top: 26px;
+    max-width: 100%;
+}
+
+#footer .yy-footer-link {
+    padding: 8px 2px;
+    color: #ddd2c7;
+    font-size: .92em;
+    letter-spacing: .1em;
+    text-decoration: none;
+    text-shadow: 0 1px 6px rgba(0, 0, 0, .4);
+    transition: color .2s ease;
+    -webkit-tap-highlight-color: transparent;
+}
+
+#footer .yy-footer-dot {
+    color: rgba(221, 210, 199, .45);
+    font-size: .8em;
+    line-height: 1;
+}
+
+@media (hover: hover) {
+    #footer .yy-footer-link:hover {
+        color: #f0d7c9;
+    }
+}
+
+#footer .yy-footer-link:active {
+    color: #f0d7c9;
+}
+
+/* 版权行：左版权，右框架；窄屏堆叠 */
+#footer .footer-copyright {
+    order: 2;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 2px 14px;
+    margin-top: 30px;
+    padding-top: 20px;
+    width: min(560px, 100%);
+    border-top: 1px solid rgba(239, 231, 222, .14);
+    font-size: .86em;
+    letter-spacing: .03em;
+    color: #d5c9bd;
+}
+
+#footer .footer-copyright .copyright,
+#footer .footer-copyright .framework-info {
+    color: #d5c9bd;
+}
+
+#footer .footer-copyright .framework-info {
+    display: inline-flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 2px 5px;
+}
+
+#footer .footer-copyright a,
+#footer .footer_custom_text a {
+    color: #ddd2c7;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(217, 206, 194, .28);
+    transition: color .2s ease, border-color .2s ease;
+}
+
+@media (hover: hover) {
+    #footer .footer-copyright a:hover,
+    #footer .footer_custom_text a:hover {
+        color: #f0d7c9;
+        border-bottom-color: #f0d7c9;
+    }
+}
+
+/* 主题在版权行用 | 分隔，与页脚的 · 不统一；保留语义，换成间隔点 */
+#footer .footer-separator {
+    margin: 0 3px;
+    color: transparent;
+    font-size: 0;
+    line-height: 1;
+}
+
+#footer .footer-separator::after {
+    color: rgba(213, 201, 189, .5);
+    font-size: 14px;
+    content: '·';
+}
+
+/* 社交：图标 + 文字，图标仅作装饰 */
+#footer .yy-footer-social {
+    order: 3;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 4px 18px;
+    margin-top: 16px;
+}
+
+#footer .yy-footer-social-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    min-height: 44px;
+    padding: 0 2px;
+    color: #d5c9bd;
+    font-size: .84em;
+    letter-spacing: .06em;
+    text-decoration: none;
+    transition: color .2s ease;
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+}
+
+#footer .yy-footer-social-link > i {
+    font-size: 1.05em;
+    opacity: .9;
+    transition: transform .25s ease, opacity .25s ease;
+}
+
+@media (hover: hover) {
+    #footer .yy-footer-social-link:hover {
+        color: #f0d7c9;
+    }
+
+    #footer .yy-footer-social-link:hover > i {
+        opacity: 1;
+        transform: translateY(-1px);
+    }
+}
+
+/* 备案与站点附注：最末一行小字 */
+#footer .footer_custom_text {
+    order: 4;
+    margin-top: 10px;
+    color: #cabdb0;
+    font-size: .8em;
+    line-height: 2;
+    letter-spacing: .04em;
+}
+
+/* 附注按配置里的 <br> 分行；行距由 line-height 收紧 */
+#footer .footer_custom_text > * {
+    display: inline;
+}
+
+/* 暗色：背景图更暗，文字保持同一层级 */
+[data-theme="dark"] #footer {
+    background-color: #201c29 !important;
+}
+
+[data-theme="dark"] #footer .yy-footer-rule > span {
+    background: rgba(32, 28, 41, .9);
+}
+
+@media screen and (max-width: 768px) {
+    #footer .footer-other {
+        padding: 34px 18px 26px;
+    }
+
+    #footer .yy-footer-rule {
+        margin-bottom: 20px;
+    }
+
+    #footer .yy-footer-motto {
+        font-size: 1.08em;
+    }
+
+    /* 六个入口在 360px 上也能排成一行：收紧字距与间隔 */
+    #footer .yy-footer-links {
+        gap: 0 9px;
+        margin-top: 18px;
+    }
+
+    #footer .yy-footer-link {
+        padding: 10px 1px;
+        font-size: .88em;
+        letter-spacing: .04em;
+    }
+
+    /* 窄屏靠间距分节，不再用间隔点（换行时会落在行尾） */
+    #footer .yy-footer-dot {
+        display: none;
+    }
+
+    #footer .footer-copyright {
+        margin-top: 22px;
+        padding-top: 16px;
+        gap: 3px 10px;
+        width: 100%;
+        font-size: .8em;
+    }
+
+    #footer .footer-copyright .framework-info {
+        line-height: 1.9;
+    }
+
+    #footer .footer-copyright .framework-info {
+        flex-basis: 100%;
+    }
+
+    /* 窄屏社交只留图标，文字收进无障碍名 */
+    #footer .yy-footer-social {
+        gap: 2px 6px;
+        margin-top: 12px;
+    }
+
+    #footer .yy-footer-social-link {
+        min-width: 44px;
+        justify-content: center;
+        gap: 0;
+        font-size: 1.05em;
+    }
+
+    #footer .yy-footer-social-link > span {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        margin: -1px;
+        padding: 0;
+        overflow: hidden;
+        clip: rect(0 0 0 0);
+        white-space: nowrap;
+        border: 0;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    #footer .yy-footer-social-link > i {
+        transition: none;
+    }
+}
+
+/* 主题给图标写死 font-weight: 600，但子集字体只有 900 一档（solid）。
+   600 匹配不到字形时浏览器会回退到系统字体，页面上表现为符号整个消失
+   （文章标题左侧、hr、note、折叠箭头都受影响）。这里统一声明回 900。 */
+.fontawesomeIcon,
+.container h1::before,
+.container h2::before,
+.container h3::before,
+.container h4::before,
+.container h5::before,
+.container h6::before,
+.container hr::before,
+.custom-hr::before,
+.note::before,
+#post .post-copyright::before,
+#post #post-outdate-notice::before,
+.toggle > .toggle-button::before {
+    font-weight: 900;
+}
+
+/* ===== FontAwesome 子集：主题的裸码点图标 ===== */
+/* 主题把文章标题前缀、hr、note、折叠箭头写成 content: '\fXXXX'，
+   subset_fontawesome.py 只扫 fa-xxx 类名，这些字形会被漏在子集外，
+   页面上表现为符号消失（标题左侧只剩一段空白）。
+   下面列出对应类名，仅为让子集脚本扫到——本段不产生任何样式。 */
+.icons-in-subset {
+    /* 标题前缀 fa-feather-pointed */
+    --wanted: fa-feather-pointed;
+    /* 折叠箭头 */
+    --wanted: fa-caret-down;
+    /* hr 分隔线 */
+    --wanted: fa-dove;
+    /* 版权框 */
+    --wanted: fa-copyright;
+    /* 过时提示 */
+    --wanted: fa-triangle-exclamation;
+    /* note 容器六型 */
+    --wanted: fa-circle-arrow-right;
+    --wanted: fa-circle-plus;
+    --wanted: fa-circle-info;
+    --wanted: fa-circle-check;
+    --wanted: fa-circle-exclamation;
+    --wanted: fa-circle-minus;
+}
+
+/* ===== 加密文章：封缄卡 ===== */
+/* 插件（hexo-blog-encrypt）默认的 flip 主题是灰底方块 + 蓝色立体按钮，
+   与站内纸感/朱砂语言脱节。这里不改插件模板，只按它的既有 DOM
+   （#hbeForm > .hbe-input > input#hbePass + label + button + .hbe-error）
+   重绘：暖纸卡片、发丝边框、朱砂主按钮，标签文字改为输入框上方的题签。
+   插件样式表在正文末尾加载，故选择器统一带 #article-container 提高优先级。 */
+#article-container .hbe-container {
+    --hbe-paper-top: #fbf7ee;
+    --hbe-paper-bottom: #f4ecdf;
+    --hbe-ink: #3a332f;
+    --hbe-muted: #6b6058;
+    --hbe-rule: rgba(107, 91, 122, .2);
+    --hbe-rule-soft: rgba(107, 91, 122, .1);
+    --hbe-vermilion: #b0473c;
+    --hbe-vermilion-deep: #9d3d33;
+    --hbe-wash: rgba(176, 71, 60, .06);
+    --hbe-field: rgba(255, 255, 255, .62);
+    --hbe-ring: rgba(176, 71, 60, .16);
+    --hbe-shadow: rgba(58, 47, 38, .14);
+
+    max-width: 30rem;
+    margin: 2.6rem auto;
+    padding: 2.1rem 1.7rem 1.7rem;
+    border: 1px solid var(--hbe-rule);
+    border-radius: 10px;
+    background:
+        radial-gradient(120% 80% at 50% 0%, var(--hbe-wash), transparent 62%),
+        linear-gradient(180deg, var(--hbe-paper-top), var(--hbe-paper-bottom));
+    box-shadow:
+        inset 0 0 0 3px rgba(255, 255, 255, .38),
+        0 10px 30px -18px var(--hbe-shadow);
+    text-align: center;
+}
+
+[data-theme="dark"] #article-container .hbe-container {
+    --hbe-paper-top: #20202f;
+    --hbe-paper-bottom: #171722;
+    --hbe-ink: #e8e2dc;
+    --hbe-muted: #a2968d;
+    --hbe-rule: rgba(208, 122, 110, .24);
+    --hbe-rule-soft: rgba(208, 122, 110, .13);
+    --hbe-vermilion: #d07a6e;
+    --hbe-vermilion-deep: #bb6860;
+    --hbe-wash: rgba(208, 122, 110, .09);
+    --hbe-field: rgba(255, 255, 255, .05);
+    --hbe-ring: rgba(208, 122, 110, .22);
+    --hbe-shadow: rgba(0, 0, 0, .5);
+
+    box-shadow:
+        inset 0 0 0 3px rgba(255, 255, 255, .03),
+        0 12px 30px -18px var(--hbe-shadow);
+}
+
+/* 封缄印：圆形细边里一枚朱砂锁 */
+#article-container .hbe-content {
+    padding: 0;
+    font-size: 1rem;
+    text-align: center;
+}
+
+#article-container .hbe-content::before {
+    content: '';
+    display: block;
+    width: 46px;
+    height: 46px;
+    margin: 0 auto .9rem;
+    border: 1px solid var(--hbe-rule);
+    border-radius: 50%;
+    background:
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23b0473c' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='4' y='10.5' width='16' height='10.5' rx='2.5'/%3E%3Cpath d='M8 10.5V7.5a4 4 0 0 1 8 0v3'/%3E%3Ccircle cx='12' cy='15.4' r='1.3' fill='%23b0473c' stroke='none'/%3E%3Cpath d='M12 16.6v1.6'/%3E%3C/svg%3E") center / 22px 22px no-repeat;
+    box-shadow: inset 0 0 0 3px rgba(255, 255, 255, .5);
+}
+
+[data-theme="dark"] #article-container .hbe-content::before {
+    background-image:
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23d07a6e' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='4' y='10.5' width='16' height='10.5' rx='2.5'/%3E%3Cpath d='M8 10.5V7.5a4 4 0 0 1 8 0v3'/%3E%3Ccircle cx='12' cy='15.4' r='1.3' fill='%23d07a6e' stroke='none'/%3E%3Cpath d='M12 16.6v1.6'/%3E%3C/svg%3E");
+    box-shadow: inset 0 0 0 3px rgba(255, 255, 255, .04);
+}
+
+/* 小标题「此页已封缄」，由 /js/hbe-enhance.js 插入 */
+#article-container .hbe-eyebrow {
+    margin: 0 0 .5rem;
+    color: var(--hbe-vermilion);
+    font-size: .72rem;
+    letter-spacing: .34em;
+    text-indent: .34em;
+    line-height: 1.4;
+}
+
+#article-container .hbe-form {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}
+
+/* 题签：标签置于输入框上方，取消 flip 主题的翻转/重叠动画 */
+#article-container .hbe-input-flip {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+    min-width: 0;
+    margin: 0 0 1.05rem;
+    padding: 0;
+    overflow: visible;
+    vertical-align: initial;
+}
+
+/* DOM 顺序是 input 在前、label 在后；题签要压在输入框上方 */
+#article-container .hbe-input-flip > .hbe-input-label,
+#article-container .hbe-input-flip > .hbe-input-label-flip {
+    order: -1;
+}
+
+#article-container .hbe-input-label-flip,
+#article-container .hbe-input-label {
+    position: static;
+    display: block;
+    width: 100%;
+    margin: 0 0 .6rem;
+    padding: 0;
+    overflow: visible;
+    transform: none !important;
+    color: var(--hbe-muted);
+    font-family: "LXGW", "Noto Serif SC", serif;
+    font-size: .96rem;
+    font-weight: 400;
+    line-height: 1.65;
+    letter-spacing: .02em;
+    text-align: center;
+    -webkit-font-smoothing: antialiased;
+}
+
+#article-container .hbe-input-label-content-flip,
+#article-container .hbe-input-label-content {
+    display: block;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    transform: none !important;
+    transition: none;
+}
+
+/* 插件用 ::after 复制一份标签做翻转动画，这里已改为静态题签 */
+#article-container .hbe-input-label-content-flip::after {
+    content: none;
+    display: none;
+}
+
+/* 提示语（原 label 文本）：JS 拆出来后作为题签，配合视觉隐藏的字段标签 */
+#article-container .hbe-hint {
+    margin: 0 0 .85rem;
+    color: var(--hbe-muted);
+    font-family: "LXGW", "Noto Serif SC", serif;
+    font-size: .96rem;
+    line-height: 1.7;
+    letter-spacing: .02em;
+    text-align: center;
+}
+
+#article-container .hbe-sr-label {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+/* 输入框：纸面凹槽，聚焦朱砂描边 */
+#article-container .hbe-input-field,
+#article-container .hbe-input-field-flip {
+    float: none;
+    display: block;
+    width: 100%;
+    height: 3rem;
+    margin: 0;
+    padding: 0 3.2rem 0 1rem;
+    border: 1px solid var(--hbe-rule);
+    border-radius: 8px;
+    background: var(--hbe-field);
+    color: var(--hbe-ink);
+    font-family: inherit;
+    font-size: 1rem;
+    line-height: 1.5;
+    text-align: left;
+    box-shadow: inset 0 1px 2px rgba(58, 47, 38, .05);
+    transition: border-color .2s ease, box-shadow .2s ease, background .2s ease;
+    -webkit-appearance: none;
+}
+
+#article-container .hbe-input-field:focus {
+    outline: none;
+    border-color: var(--hbe-vermilion);
+    background: var(--hbe-paper-top);
+    box-shadow: 0 0 0 3px var(--hbe-ring);
+}
+
+#article-container .hbe-input-field[aria-invalid="true"] {
+    border-color: var(--hbe-vermilion);
+    box-shadow: 0 0 0 3px var(--hbe-ring);
+}
+
+/* 密码显隐按钮，由 /js/hbe-enhance.js 插入。
+   容器里除了输入框还有上方提示语，且容器高度由内容决定，
+   因此锚定底部而不是 50%：输入框恒为最后一个流内元素、高度 3rem，
+   底边上移 1.5rem 正好是输入框中线。 */
+#article-container .hbe-eye {
+    position: absolute;
+    right: 4px;
+    bottom: 1.5rem;
+    transform: translateY(50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.75rem;
+    height: 2.75rem;
+    padding: 0;
+    border: 0;
+    border-radius: 6px;
+    background: transparent;
+    color: var(--hbe-muted);
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+    transition: color .18s ease, background .18s ease;
+}
+
+#article-container .hbe-eye svg {
+    display: block;
+    width: 20px;
+    height: 20px;
+}
+
+#article-container .hbe-eye:hover {
+    color: var(--hbe-vermilion);
+    background: var(--hbe-wash);
+}
+
+#article-container .hbe-eye[aria-pressed="true"] {
+    color: var(--hbe-vermilion);
+}
+
+#article-container .hbe-eye:focus-visible {
+    outline: 2px solid var(--hbe-vermilion);
+    outline-offset: 1px;
+}
+
+/* 主按钮：朱砂实底，字距拉开 */
+#article-container .hbe-button {
+    width: 100%;
+    min-width: 0;
+    height: 2.9rem;
+    margin: 0;
+    padding: 0 1rem;
+    border: 1px solid var(--hbe-vermilion);
+    border-radius: 8px;
+    background: var(--hbe-vermilion);
+    color: #fdf9f3;
+    font-family: inherit;
+    font-size: .98rem;
+    font-weight: 500;
+    letter-spacing: .18em;
+    text-indent: .18em;
+    text-align: center;
+    text-shadow: none;
+    box-shadow: 0 6px 16px -10px rgba(176, 71, 60, .75);
+    cursor: pointer;
+    transition: background .18s ease, box-shadow .18s ease, transform .12s ease;
+}
+
+#article-container .hbe-button:hover {
+    background: var(--hbe-vermilion-deep);
+    transform: translateY(-1px);
+    box-shadow: 0 9px 18px -10px rgba(176, 71, 60, .8);
+}
+
+#article-container .hbe-button:active {
+    top: 0;
+    transform: translateY(0);
+    box-shadow: 0 3px 8px -6px rgba(176, 71, 60, .7);
+}
+
+#article-container .hbe-button:focus-visible {
+    outline: 2px solid var(--hbe-vermilion);
+    outline-offset: 3px;
+}
+
+#article-container .hbe-button:disabled,
+#article-container .hbe-button[aria-busy="true"] {
+    opacity: .78;
+    cursor: progress;
+    transform: none;
+}
+
+[data-theme="dark"] #article-container .hbe-button {
+    color: #191922;
+}
+
+/* 校验中：按钮内联转圈（插件把 aria-busy 写在容器上） */
+#article-container .hbe-container[aria-busy="true"] .hbe-button::after,
+#article-container .hbe-form[aria-busy="true"] .hbe-button::after {
+    content: "";
+    display: inline-block;
+    width: .85em;
+    height: .85em;
+    margin-left: .55em;
+    vertical-align: -0.1em;
+    border: 2px solid currentColor;
+    border-right-color: transparent;
+    border-radius: 50%;
+    animation: hbe-spin .7s linear infinite;
+}
+
+/* 错误提示：贴近字段的细框提示，不用整块红底 */
+#article-container .hbe-error {
+    min-height: 0;
+    margin: .55rem 0 0;
+    padding: 0;
+    color: var(--hbe-vermilion);
+    font-family: inherit;
+    font-size: .9rem;
+    line-height: 1.55;
+}
+
+#article-container .hbe-error:empty {
+    display: none;
+}
+
+#article-container .hbe-error:not(:empty) {
+    padding: .5rem .8rem;
+    border: 1px solid var(--hbe-rule-soft);
+    border-radius: 6px;
+    background: var(--hbe-wash);
+}
+
+/* 非安全上下文提示：WebCrypto 不可用时，密码输入整体禁用并说明原因 */
+#article-container .hbe-insecure {
+    margin: .7rem 0 0;
+    padding: .6rem .85rem;
+    border: 1px solid var(--hbe-rule-soft);
+    border-radius: 6px;
+    background: var(--hbe-wash);
+    color: var(--hbe-vermilion);
+    font-size: .88rem;
+    line-height: 1.65;
+    text-align: left;
+}
+
+#article-container .hbe-input-field:disabled {
+    opacity: .6;
+    cursor: not-allowed;
+}
+
+/* 解封后正文轻微浮现，交接待续 */
+#article-container .hbe-decrypted-content {
+    animation: hbe-reveal .45s ease both;
+}
+
+@keyframes hbe-reveal {
+    from {
+        opacity: 0;
+        transform: translateY(6px);
+    }
+    to {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+@media (max-width: 768px) {
+    #article-container .hbe-container {
+        margin: 1.8rem auto;
+        padding: 1.8rem 1.15rem 1.45rem;
+        border-radius: 8px;
+    }
+
+    #article-container .hbe-content::before {
+        width: 42px;
+        height: 42px;
+        margin-bottom: .75rem;
+    }
+
+    #article-container .hbe-input-label-flip,
+    #article-container .hbe-input-label {
+        font-size: .93rem;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    #article-container .hbe-input-field,
+    #article-container .hbe-eye,
+    #article-container .hbe-button {
+        transition: none;
+    }
+
+    #article-container .hbe-button:hover {
+        transform: none;
+    }
+
+    #article-container .hbe-decrypted-content {
+        animation: none;
+    }
+}
+
+/* ===== 墨隐标记：||被藏起来的文字|| ===== */
+/* 由 scripts/spoiler.js 把成对的 || 渲染成 span.yy-spoiler。
+   藏起时保留占位与排版，只用墨色晕染遮住字形；hover / 键盘聚焦 / 点击后显字。 */
+
+.yy-spoiler {
+    --yy-ink: rgba(31, 45, 61, .82);
+    color: transparent;
+    text-shadow:
+        0 0 4px var(--yy-ink),
+        0 0 10px var(--yy-ink);
+    border-radius: 3px;
+    cursor: pointer;
+    transition: color .22s ease, text-shadow .22s ease;
+    -webkit-tap-highlight-color: transparent;
+}
+
+/* 内部链接跟着藏，避免透出蓝色字 */
+.yy-spoiler a,
+.yy-spoiler code {
+    color: inherit !important;
+}
+
+.yy-spoiler:hover,
+.yy-spoiler:focus-visible,
+.yy-spoiler.is-revealed {
+    color: inherit;
+    text-shadow: none;
+}
+
+/* 触摸设备不保留粘滞 hover，改为点击 */
+@media (hover: none) {
+    .yy-spoiler:hover:not(.is-revealed) {
+        color: transparent;
+        text-shadow:
+            0 0 4px var(--yy-ink),
+            0 0 10px var(--yy-ink);
+    }
+}
+
+[data-theme="dark"] .yy-spoiler {
+    --yy-ink: rgba(232, 226, 214, .78);
+}
+
+/* 悬停时给一点墨色底，提示这里可以揭开 */
+.yy-spoiler:hover,
+.yy-spoiler.is-revealed {
+    background: rgba(176, 71, 60, .06);
+}
+
+[data-theme="dark"] .yy-spoiler:hover,
+[data-theme="dark"] .yy-spoiler.is-revealed {
+    background: rgba(208, 122, 110, .1);
+}
+
+/* 键盘聚焦时与全站焦点环一致 */
+.yy-spoiler:focus-visible {
+    outline: 2px solid #b0473c;
+    outline-offset: 3px;
+}
+
+[data-theme="dark"] .yy-spoiler:focus-visible {
+    outline-color: #d07a6e;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .yy-spoiler {
+        transition: none;
     }
 }

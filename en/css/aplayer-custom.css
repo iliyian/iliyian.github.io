@@ -1,14 +1,13 @@
 /* ==========================================================================
    APlayer Custom Key Style for Butterfly Theme
    Theme Color: #6b5b7a
-   Font: LXGW
+   Font: inherit
    ========================================================================== */
 
 /* ------------------------------------------------------------------
    通用样式 (普通模式 & 吸底模式共用)
    ------------------------------------------------------------------ */
 .aplayer {
-    font-family: 'LXGW', 'PingFang SC', 'Microsoft YaHei', sans-serif !important;
     border-radius: 12px !important;
 }
 

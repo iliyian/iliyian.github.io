@@ -1,0 +1,1414 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>日记拾遗 · 2015</title>
+<!-- Matomo -->
+<script>
+  var _paq = window._paq = window._paq || [];
+  /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//mat.iliyian.com/";
+    _paq.push(['setTrackerUrl', u+'t']);
+    _paq.push(['setSiteId', '1']);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.async=true; g.src=u+'mat.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<!-- End Matomo Code -->
+<!-- PostHog -->
+<script>
+  !function(t,e){var o,n,p,r;e.__SV||(window.posthog && window.posthog.__loaded)||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.crossOrigin="anonymous",p.async=!0,p.src=s.api_host.replace(".i.posthog.com","-assets.i.posthog.com")+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"},o="Ji Yi init fn mn Ur pn bn cn capture calculateEventProperties Sn register register_once register_for_session unregister unregister_for_session Tn getFeatureFlag getFeatureFlagPayload getFeatureFlagResult getAllFeatureFlags isFeatureEnabled reloadFeatureFlags updateFlags updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures on onFeatureFlags onSurveysLoaded onSessionId getSurveys getActiveMatchingSurveys renderSurvey displaySurvey cancelPendingSurvey canRenderSurvey canRenderSurveyAsync Mn identify setPersonProperties unsetPersonProperties group resetGroups setPersonPropertiesForFlags resetPersonPropertiesForFlags setGroupPropertiesForFlags resetGroupPropertiesForFlags reset shutdown setIdentity clearIdentity get_distinct_id getGroups get_session_id get_session_replay_url alias set_config startSessionRecording stopSessionRecording sessionRecordingStarted captureException addExceptionStep captureLog startExceptionAutocapture stopExceptionAutocapture loadToolbar get_property getSessionProperty Cn xn createPersonProfile setInternalOrTestUser In hn Pn opt_in_capturing opt_out_capturing has_opted_in_capturing has_opted_out_capturing get_explicit_consent_status is_capturing clear_opt_in_out_capturing debug Vr Rt getPageViewId captureTraceFeedback captureTraceMetric an".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
+  posthog.init('phc_wib2S3JfFRaaaAVNFN4miJq2S8zKquKuZa9nQuV3hL2y', {
+      api_host: 'https://posth.iliyian.com',
+      defaults: '2026-05-30',
+      person_profiles: 'always', // or 'always' to create profiles for anonymous users as well
+      capture_copied_text: true
+  })
+</script>
+<!-- End PostHog -->
+<style>
+  :root {
+    --cell: 34px;          /* 单格标准宽高 */
+    --gap: 7px;            /* 行间窄缝高度 */
+    --row: calc(var(--cell) + var(--gap));
+    --green: #439c6e;      /* 稿纸绿线颜色 */
+    --paper: #fcfaf2;      /* 稿纸米白底色 */
+    --ink: #262626;        /* 钢笔墨色 */
+    --study-blue: #2f5888; /* 内封印刷蓝 */
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
+
+  /* 复古木桌背景 + 暖光台灯氛围 */
+  body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    background-color: #2b1d14;
+    background-image:
+      radial-gradient(circle at 30% 20%, rgba(255, 238, 205, 0.14) 0%, rgba(0, 0, 0, 0.68) 85%),
+      repeating-linear-gradient(
+        90deg,
+        rgba(255,255,255,0.015) 0px,
+        rgba(255,255,255,0.015) 2px,
+        transparent 2px,
+        transparent 9px
+      ),
+      linear-gradient(180deg, #3d271d 0%, #24160e 50%, #332016 100%);
+    font-family: "STKaiti", "Kaiti", "楷体", "华文楷体", "KaiTi_GB2312", serif;
+    color: var(--ink);
+    padding: 20px 8px 96px;
+    overflow-x: hidden;
+    user-select: none;
+  }
+
+  /* 顶部标题与副标题提示 */
+  .desk-header {
+    text-align: center;
+    margin-bottom: 14px;
+  }
+  .desk-title {
+    color: rgba(252, 250, 242, 0.85);
+    font-size: 18px;
+    letter-spacing: 3px;
+    text-shadow: 0 2px 6px rgba(0,0,0,0.6);
+  }
+  .desk-subtitle {
+    color: rgba(252, 250, 242, 0.45);
+    font-size: 12px;
+    margin-top: 4px;
+    letter-spacing: 1px;
+  }
+
+  /* 响应式自适应舞台 */
+  .book-stage {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    position: relative;
+    overflow: visible;
+  }
+
+  /* 日记本外壳与堆叠书页厚度 */
+  .book-wrapper {
+    position: relative;
+    padding: 12px 16px 16px;
+    background: linear-gradient(135deg, #1d4d7a 0%, #0f2c4c 100%);
+    border-radius: 10px;
+    box-shadow:
+      0 24px 55px rgba(0, 0, 0, 0.75),
+      0 4px 12px rgba(0, 0, 0, 0.5),
+      inset 0 1px 2px rgba(255, 255, 255, 0.25);
+    transform-origin: top center;
+    transition: transform 0.15s ease-out;
+  }
+
+  /* 对开双页容器 */
+  .book-spread {
+    display: flex;
+    position: relative;
+    background: var(--paper);
+    border-radius: 4px;
+    box-shadow:
+      -4px 3px 0 #e9e4d4,
+      -7px 6px 0 #dcd6c4,
+      4px 3px 0 #e9e4d4,
+      7px 6px 0 #dcd6c4,
+      0 8px 20px rgba(0,0,0,0.4);
+    transition: opacity 0.2s ease;
+  }
+  .book-spread.turning {
+    opacity: 0.35;
+  }
+
+  /* 手机端单页聚焦模式 */
+  body.single-page-mode .book-spine { display: none; }
+  body.single-page-mode .page.hidden-side { display: none; }
+  body.single-page-mode .page { border-radius: 4px; }
+
+  /* 手机端双页上下对照模式 */
+  body.mobile-stack-mode .book-spread {
+    flex-direction: column;
+    gap: 14px;
+    background: transparent;
+    box-shadow: none;
+  }
+  body.mobile-stack-mode .book-spine { display: none; }
+  body.mobile-stack-mode .page {
+    border-radius: 4px;
+    box-shadow: 0 6px 16px rgba(0,0,0,0.35);
+  }
+
+  /* 中缝阴影、装订线与红丝带书签 */
+  .book-spine {
+    width: 0;
+    position: relative;
+    z-index: 10;
+  }
+  .book-spine::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: -26px;
+    width: 52px;
+    background: linear-gradient(
+      to right,
+      transparent 0%,
+      rgba(0,0,0,0.04) 30%,
+      rgba(0,0,0,0.18) 48%,
+      rgba(0,0,0,0.28) 50%,
+      rgba(0,0,0,0.15) 52%,
+      rgba(0,0,0,0.03) 70%,
+      transparent 100%
+    );
+    pointer-events: none;
+  }
+  .red-ribbon {
+    position: absolute;
+    top: -14px;
+    left: -14px;
+    width: 28px;
+    height: calc(100% + 42px);
+    z-index: 15;
+    pointer-events: none;
+    filter: drop-shadow(2px 3px 4px rgba(0,0,0,0.38));
+    transition: transform 0.35s ease;
+    transform-origin: top center;
+  }
+  .book-spread.turning .red-ribbon {
+    transform: rotate(2.5deg) translateX(3px);
+  }
+
+  /* 单页固定标准尺寸 */
+  .page {
+    width: calc(var(--cell) * 13 + 48px); /* 490px */
+    padding: 18px 24px 20px;
+    background-color: var(--paper);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+  }
+  .page-left {
+    border-radius: 4px 0 0 4px;
+    background-image: linear-gradient(to right, rgba(220,210,185,0.25) 0%, transparent 12%);
+  }
+  .page-right {
+    border-radius: 0 4px 4px 0;
+    background-image: linear-gradient(to left, rgba(220,210,185,0.25) 0%, transparent 12%);
+  }
+
+  /* 页眉外批注区 */
+  .margin-top {
+    min-height: 32px;
+    font-size: 15px;
+    line-height: 1.2;
+    color: var(--ink);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding-bottom: 2px;
+  }
+
+  /* 日期与天气栏 */
+  .diary-header {
+    width: calc(var(--cell) * 13);
+    font-size: 15px;
+    color: var(--green);
+    border-bottom: 1.5px solid var(--green);
+    padding-bottom: 3px;
+    margin-bottom: 3px;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+  }
+  .diary-header .fill {
+    display: inline-block;
+    min-width: 22px;
+    text-align: center;
+    color: var(--ink);
+    font-size: 19px;
+    padding: 0 2px;
+  }
+  .diary-header del {
+    text-decoration: line-through;
+    margin-right: 2px;
+    font-size: 16px;
+  }
+
+  /* ====== 真·13列×11行 方格网容器 ====== */
+  .grid-box {
+    position: relative;
+    width: calc(var(--cell) * 13);
+    border: 1.5px solid var(--green);
+    background: var(--paper);
+  }
+
+  .grid-row {
+    display: grid;
+    grid-template-columns: repeat(13, var(--cell));
+    height: var(--cell);
+    border-bottom: 1px solid var(--green);
+  }
+  /* 仅前10行下方有 7px 窄缝空白条，第11行直接到底 */
+  .grid-row:nth-child(-n+10) {
+    margin-bottom: var(--gap);
+    position: relative;
+  }
+  .grid-row:nth-child(-n+10)::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: calc(-1 * var(--gap) - 1px);
+    height: 1px;
+    background: var(--green);
+  }
+  .grid-row:nth-child(11) {
+    border-bottom: none;
+    margin-bottom: 0;
+  }
+
+  /* 彻底移除花朵区域（第10~11行角落3列）内部单元格的右边框，杜绝绿点残留 */
+  .page-left .grid-row:nth-child(n+10) .cell:nth-child(-n+3),
+  .page-right .grid-row:nth-child(n+10) .cell:nth-child(n+11) {
+    border-right: none;
+  }
+
+  /* 单个方格 */
+  .cell {
+    width: var(--cell);
+    height: var(--cell);
+    border-right: 1px solid var(--green);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 21px;
+    position: relative;
+    line-height: 1;
+    overflow: visible;
+  }
+  .cell:nth-child(13) {
+    border-right: none;
+  }
+
+  /* ====== 手写笔迹模式 ====== */
+  body.jitter-mild .cell > span:not(.u-line):not(.dash-line),
+  body.jitter-mild .cell > del,
+  body.jitter-mild .cell > ruby {
+    transform: rotate(var(--rot, 0deg)) translate(var(--dx, 0px), var(--dy, 0px));
+  }
+  body.jitter-wild .cell > span:not(.u-line):not(.dash-line),
+  body.jitter-wild .cell > del,
+  body.jitter-wild .cell > ruby {
+    transform:
+      rotate(calc(var(--rot, 0deg) * 2.8))
+      translate(calc(var(--dx, 0px) * 2.2), calc(var(--dy, 0px) * 2.6))
+      scale(var(--sc, 1))
+      skewX(var(--sk, 0deg));
+  }
+
+  /* ====== 单元格内特殊排印样式 ====== */
+  /* 1. 删除线 {del:字} */
+  .cell del {
+    text-decoration: none;
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .cell del::after {
+    content: "";
+    position: absolute;
+    left: -3px;
+    right: -3px;
+    top: 50%;
+    height: 2px;
+    background: var(--ink);
+    transform: rotate(-6deg);
+  }
+
+  /* 2. 格内上下叠字改错 {ruby:旧|新} */
+  .cell ruby {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    justify-content: center;
+  }
+  .cell rt {
+    font-size: 11.5px;
+    line-height: 1;
+    margin-bottom: -2px;
+    color: #111;
+  }
+
+  /* 3. 第一行顶框外改错 {topedit:作|日} */
+  .cell .top-edit {
+    position: absolute;
+    top: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 14px;
+    color: var(--ink);
+    white-space: nowrap;
+    pointer-events: none;
+  }
+
+  /* 4. 行间窄缝补字 {sup:之|主} */
+  .cell .sup-insert {
+    position: absolute;
+    top: -11px;
+    left: -5px;
+    font-size: 14px;
+    color: var(--ink);
+    pointer-events: none;
+  }
+
+  /* 5. 带左上/右上引号的大字 {ql:彩} {qr:虹} */
+  .cell .quote-mark {
+    position: absolute;
+    top: 1px;
+    font-size: 14px;
+    line-height: 1;
+  }
+  .cell .quote-mark.left { left: 1px; }
+  .cell .quote-mark.right { right: 1px; }
+
+  /* 6. 跨格连续长破折号 {dash:full} */
+  .cell .dash-line {
+    width: calc(100% + 2px);
+    height: 2px;
+    background: var(--ink);
+    display: block;
+  }
+
+  /* 7. 跨格连续手绘下划线 {u:字} */
+  .cell .u-line {
+    position: absolute;
+    left: -1px;
+    right: -1px;
+    bottom: 2px;
+    height: 1.8px;
+    background: var(--ink);
+    pointer-events: none;
+  }
+
+  /* 8. 多字挤一格 {c1:504}：保持字高，按内容长度横向压扁 */
+  .cell .c1 {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .cell .c1-inner {
+    display: inline-block;
+    font-size: 20px;
+    line-height: 1;
+    letter-spacing: -0.3px;
+    white-space: nowrap;
+    transform: scaleX(var(--c1-sx, 0.8));
+    transform-origin: center;
+  }
+
+  /* 9. 同格内左划掉右重写 {c1_del:真|真} */
+  .cell .c1-del-wrap {
+    display: inline-flex;
+    align-items: center;
+    font-size: 13.5px;
+    letter-spacing: -1px;
+    transform: scaleX(0.88);
+  }
+
+  /* 10. 同格右下角附带标点 {sub:里|！} */
+  .cell .sub-mark {
+    position: absolute;
+    right: 0px;
+    bottom: 2px;
+    font-size: 14px;
+    line-height: 1;
+  }
+
+  /* 11. 模糊防窥遮罩 {sp:字} */
+  .spoiler {
+    filter: blur(5px);
+    cursor: pointer;
+    transition: filter 0.22s ease;
+  }
+  .spoiler:hover,
+  .spoiler.revealed,
+  body.reveal-all .spoiler {
+    filter: blur(0);
+  }
+
+  /* ====== 底部角落 3列×2行 花朵无缝折线缺角 ====== */
+  .corner-flower {
+    position: absolute;
+    bottom: -2px;
+    width: calc(var(--cell) * 3 + 2px);
+    height: calc(var(--cell) * 2 + var(--gap) * 2 + 2px);
+    background-color: var(--paper);
+    background-repeat: no-repeat;
+    background-position: center 55%;
+    background-size: 84% 84%;
+    z-index: 3;
+    pointer-events: none;
+  }
+  .page-left .corner-flower {
+    left: -2px;
+    border-right: 1.5px solid var(--green);
+  }
+  .page-right .corner-flower {
+    right: -2px;
+    border-left: 1.5px solid var(--green);
+  }
+
+  /* 花盆插画 (.pot) */
+  .corner-flower.pot {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 90'%3E%3Cg fill='none' stroke='%23439c6e' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M28 52 L72 52 L65 84 L35 84 Z' fill='%23fcfaf2'/%3E%3Cpath d='M25 48 L75 48 L75 53 L25 53 Z' fill='%23fcfaf2'/%3E%3Cpath d='M36 53 L40 84 M45 53 L47 84 M55 53 L53 84 M64 53 L60 84' stroke-width='1.5'/%3E%3Cpath d='M50 64 C38 54 34 72 50 66 C66 72 62 54 50 64 Z' fill='%23439c6e' fill-opacity='0.2'/%3E%3Cpath d='M48 66 L41 80 M52 66 L59 80' stroke-width='2'/%3E%3Ccircle cx='50' cy='65' r='3' fill='%23439c6e'/%3E%3Cpath d='M30 48 C15 44 14 28 28 32 C22 18 38 12 44 25 C46 10 60 10 58 25 C66 12 80 20 72 32 C86 28 85 44 70 48' fill='%23439c6e' fill-opacity='0.15'/%3E%3Ccircle cx='35' cy='32' r='5' fill='%23fcfaf2'/%3E%3Ccircle cx='35' cy='32' r='1.8' fill='%23439c6e'/%3E%3Ccircle cx='50' cy='22' r='5.5' fill='%23fcfaf2'/%3E%3Ccircle cx='50' cy='22' r='2' fill='%23439c6e'/%3E%3Ccircle cx='65' cy='32' r='5' fill='%23fcfaf2'/%3E%3Ccircle cx='65' cy='32' r='1.8' fill='%23439c6e'/%3E%3Ccircle cx='43' cy='39' r='4.5' fill='%23fcfaf2'/%3E%3Ccircle cx='57' cy='39' r='4.5' fill='%23fcfaf2'/%3E%3C/g%3E%3C/svg%3E");
+  }
+
+  /* 花环插画 (.wreath) */
+  .corner-flower.wreath {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 90'%3E%3Cg fill='none' stroke='%23439c6e' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='50' cy='46' r='27' stroke-width='6' stroke-dasharray='4 7'/%3E%3Ccircle cx='50' cy='46' r='27' stroke-width='1.8'/%3E%3Cpath d='M50 20 C32 6 28 28 50 22 C72 28 68 6 50 20 Z' fill='%23439c6e' fill-opacity='0.25'/%3E%3Cpath d='M47 22 L38 40 M53 22 L62 40' stroke-width='2.2'/%3E%3Ccircle cx='50' cy='20' r='3.5' fill='%23439c6e'/%3E%3Ccircle cx='25' cy='38' r='5' fill='%23fcfaf2'/%3E%3Ccircle cx='25' cy='38' r='1.8' fill='%23439c6e'/%3E%3Ccircle cx='75' cy='38' r='5' fill='%23fcfaf2'/%3E%3Ccircle cx='75' cy='38' r='1.8' fill='%23439c6e'/%3E%3Ccircle cx='28' cy='58' r='5' fill='%23fcfaf2'/%3E%3Ccircle cx='28' cy='58' r='1.8' fill='%23439c6e'/%3E%3Ccircle cx='72' cy='58' r='5' fill='%23fcfaf2'/%3E%3Ccircle cx='72' cy='58' r='1.8' fill='%23439c6e'/%3E%3Ccircle cx='50' cy='73' r='5.5' fill='%23fcfaf2'/%3E%3Ccircle cx='50' cy='73' r='2' fill='%23439c6e'/%3E%3Cpath d='M45 77 L38 87 M55 77 L62 87' stroke-width='2'/%3E%3C/g%3E%3C/svg%3E");
+  }
+
+  /* 手绘涂鸦 SVG 覆盖层 */
+  .doodle-overlay {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 4;
+  }
+  .doodle-overlay.interactive-spoiler {
+    pointer-events: auto;
+  }
+
+  /* 页脚外侧溢出小字 */
+  .margin-bottom {
+    min-height: 38px;
+    font-size: 15px;
+    line-height: 1.3;
+    padding-top: 4px;
+    text-align: right;
+    color: var(--ink);
+  }
+  .margin-bottom del {
+    text-decoration: line-through;
+  }
+
+  /* ====== 第一页左侧：蓝色 STUDY 扉页还原 ====== */
+  .study-cover {
+    width: calc(var(--cell) * 13);
+    height: calc(var(--row) * 11 - var(--gap) + 32px);
+    margin-top: 28px;
+    padding: 24px 28px;
+    border: 5px dashed var(--study-blue);
+    border-radius: 18px;
+    color: var(--study-blue);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    font-family: "SimSun", "Songti SC", serif;
+  }
+  .study-banner {
+    border: 2px solid var(--study-blue);
+    outline: 1px solid var(--study-blue);
+    outline-offset: -5px;
+    padding: 8px 38px;
+    font-family: "Georgia", serif;
+    font-weight: bold;
+    font-size: 24px;
+    letter-spacing: 6px;
+    border-radius: 6px;
+    position: relative;
+  }
+  .study-banner::before {
+    content: "♛";
+    position: absolute;
+    top: -18px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 16px;
+    background: var(--paper);
+    padding: 0 6px;
+  }
+  .study-text {
+    font-size: 14.5px;
+    line-height: 1.8;
+    letter-spacing: 1px;
+    text-align: justify;
+  }
+  .study-text ol {
+    padding-left: 22px;
+    margin: 4px 0;
+  }
+
+  /* ====== 底部悬浮控制栏 ====== */
+  .toolbar {
+    position: fixed;
+    bottom: 14px;
+    max-width: 96vw;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    background: rgba(28, 19, 14, 0.92);
+    backdrop-filter: blur(10px);
+    padding: 8px 14px;
+    border-radius: 24px;
+    border: 1px solid rgba(255, 235, 200, 0.2);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.65);
+    color: #f3ead8;
+    font-size: 13.5px;
+    z-index: 100;
+  }
+  .toolbar button {
+    background: rgba(255, 255, 255, 0.1);
+    color: #f3ead8;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    padding: 5px 12px;
+    border-radius: 999px;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 13px;
+    transition: all 0.2s;
+    white-space: nowrap;
+  }
+  .toolbar button:hover:not(:disabled) {
+    background: rgba(255, 255, 255, 0.22);
+  }
+  .toolbar button:disabled {
+    opacity: 0.35;
+    cursor: not-allowed;
+  }
+  .toolbar button.active {
+    background: #439c6e;
+    border-color: #5bc48d;
+    color: #fff;
+  }
+  .page-indicator {
+    padding: 0 6px;
+    font-variant-numeric: tabular-nums;
+    font-weight: bold;
+  }
+  #viewModeBtn { display: none; }
+  @media (max-width: 920px) {
+    #viewModeBtn { display: inline-block; }
+    .desk-title { font-size: 16px; }
+  }
+</style>
+</head>
+<body class="jitter-wild">
+
+  <div class="desk-header">
+    <div class="desk-title">📓 2015 · 日记本</div>
+    <div class="desk-subtitle" id="subHint">支持键盘 ← → 方向键或手指左右滑动翻页 · 点击模糊处可揭秘</div>
+  </div>
+
+  <div class="book-stage" id="bookStage">
+    <div class="book-wrapper" id="bookWrapper">
+      <div class="book-spread" id="bookSpread">
+        <!-- 左页 -->
+        <div class="page page-left" id="leftPage"></div>
+
+        <!-- 书脊与红丝带书签 -->
+        <div class="book-spine">
+          <svg class="red-ribbon" viewBox="0 0 28 620" preserveAspectRatio="none">
+            <path d="M14 0 C18 150, 9 300, 15 450 C18 520, 12 575, 14 615"
+                  stroke="#c82829" stroke-width="7" fill="none" stroke-linecap="round"/>
+            <path d="M14 0 C18 150, 9 300, 15 450 C18 520, 12 575, 14 615"
+                  stroke="#ff6b6b" stroke-width="1.5" stroke-dasharray="3 4" fill="none" opacity="0.5"/>
+          </svg>
+        </div>
+
+        <!-- 右页 -->
+        <div class="page page-right" id="rightPage"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 底部控制栏 -->
+  <div class="toolbar">
+    <button id="prevBtn" onclick="stepPage(-1)">◀ 上一页</button>
+    <span class="page-indicator" id="pageIndicator">1 / 11</span>
+    <button id="nextBtn" onclick="stepPage(1)">下一页 ▶</button>
+    <button id="viewModeBtn" onclick="toggleMobileViewMode()">📖 单页放大</button>
+    <button id="spoilerBtn" onclick="toggleRevealAll()">👁️ 揭开全部打码</button>
+  </div>
+
+<script>
+/**
+ * 全部 11 个对开跨页（严格按照原稿 13列 × 11行 逐格校准）
+ */
+const SPREADS = [
+  // ================= 1. 内封 STUDY + 2015年7月1日 =================
+  {
+    left: { type: "study-cover" },
+    right: {
+      header: { year: "2015", month: "7", day: "1", week: "四", weather: "晴" },
+      flower: "pot",
+      rows: [
+        "  今天终于放假了！爸爸，",
+        "你快点回来吧！不过幸好暑假",
+        "作业本做完了，免去了很多作",
+        "业"
+      ]
+    }
+  },
+
+  // ================= 2. 7月9日 + 7月26日(一) =================
+  {
+    left: {
+      header: { year: "", month: "7", day: "9", week: "日", weather: "阴转雨" },
+      flower: "pot",
+      rows: [
+        "  今天写了一百道题目给妈",
+        "妈做，但她一定不会做完的，",
+        "别想骗我了。"
+      ]
+    },
+    right: {
+      header: { year: "", month: "7", day: "26", week: "日", weather: "晴" },
+      flower: "pot",
+      rows: [
+        "  世间的一切都有着丑陋的",
+        "一面，摇钱树摇来的钱被别的",
+        "取代，摇钱树之{sup:或|主}许有难言",
+        "之隐，或许没有摇出的钱，或",
+        "许没有摇钱树，或许摇钱树根",
+        "本不存在。",
+        "",
+        "  人生是居无定所的，会遇",
+        "到多少风浪，多少风浪？在风",
+        "浪中，苟延残喘，每",
+        "个人为生活之所迫，"
+      ]
+    }
+  },
+
+  // ================= 3. 7月26日(二) + 7月26日(三) =================
+  {
+    left: {
+      header: { year: "", month: "", day: "", week: "", weather: "" },
+      flower: "pot",
+      rows: [
+        "会有着不同的命运，每个人，",
+        "都必须经历生活的大风大浪，",
+        "并挑战它，打败它，生活可能",
+        "会失败，但生活就是这样。",
+        "",
+        "  无为，是{del:老}孔子和老子认",
+        "为的人生最高境界，可我却在",
+        "用{del:彩} 风浪后{del:的}所谓的{ql:彩}{qr:虹}来",
+        "尝试着诠释它的意思",
+        "    可笑之极！",
+        "   真希望我可以无为，"
+      ]
+    },
+    right: {
+      header: { year: "", month: "", day: "", week: "", weather: "" },
+      flower: "pot",
+      rows: [
+        "呵，被别人打扰了！这就是那",
+        "小水滴或溅起的鱼儿吧！",
+        "    {dash:full}{dash:full}{dash:full}致居无定所的",
+        "         青春！",
+        "",
+        " 望着天边云彩，好想变成飞",
+        "在蓝天的小鸟，无忧无虑……",
+        "",
+        "  {u:这}{u:就}{u:是}{u:生}{u:活}{u:吧}{u:！}"
+      ]
+    }
+  },
+
+  // ================= 4. 7月27日 + 7月29日(无字页) =================
+  {
+    left: {
+      header: { year: "2015", month: "7", day: "27", week: "一", weather: "晴" },
+      flower: "pot",
+      rows: [
+        "  金色的阳光洒满窗棂。",
+        "     什么，",
+        "    才是永恒？"
+      ]
+    },
+    right: {
+      header: { year: "2015", month: "7", day: "29", week: "三", weather: "晴" },
+      flower: "pot",
+      rows: [],
+      marginBottom: `
+        <div style="text-align:center; color:#888; font-size:13.5px;">
+          <span class="spoiler" onclick="this.classList.toggle('revealed')">（这页只写了日期和天气，没有一个字）</span>
+        </div>
+      `
+    }
+  },
+
+  // ================= 5. 8月31日 + 9月1日 =================
+  {
+    left: {
+      header: { year: "2015", month: "8", day: "31", week: "", weather: "" },
+      flower: "pot",
+      rows: [
+        "  {del:啊}{del:！}",
+        "  {sub:哎|，}要开学了，作业只字未",
+        "动。看了看作业本，幸好作业",
+        "很少。"
+      ]
+    },
+    right: {
+      header: { year: "2015", month: "9", day: "1", week: "", weather: "" },
+      flower: "pot",
+      rows: [
+        "  哎，{del:开}还是开学了，希望",
+        "今天早上没有英语课，作业也",
+        "别讲啊！"
+      ]
+    }
+  },
+
+  // ================= 6. 9月22日 + 10月28日(一) =================
+  {
+    left: {
+      header: { year: "", month: "9", day: "22", week: "", weather: "雨" },
+      flower: "pot",
+      rows: [
+        "  好{del:像}{del:就}久没写{topedit:作|日}{topedit:文|记}{del:文}了，",
+        "写些什么呢？"
+      ]
+    },
+    right: {
+      header: { year: "", month: "10", day: "28", week: "三", weather: "阴" },
+      flower: "pot",
+      rows: [
+        "{del:好} 好事不出门，坏事传千{sub:里|！}",
+        "为什么倒霉的事就被我碰上了",
+        "呢？做得好你不说，很好你也",
+        "不说，特别好你还是不说！为",
+        "什么就是这样呢？为什么差了",
+        "就要{del:说}说呢？任何事都有两面",
+        "的好吧？为什么这样对待我{sub:呢|？}",
+        "为什么？{u:我}{u:恨}{u:你}！{sp:X}{sp:X}{sp:X}！我",
+        "恨你的一切，你为什么提{del:拔}我",
+        "呢！为什么？为什么？",
+        "为什么？为什么？{del:为}"
+      ],
+      marginBottom: `
+        <div style="text-align:left; padding-left: 266px; transform: rotate(-3deg);">为什么？</div>
+      `
+    }
+  },
+
+  // ================= 7. 10月28日(二) + 10月28日(三) =================
+  {
+    left: {
+      header: { year: "", month: "", day: "", week: "", weather: "" },
+      flower: "pot",
+      rows: [
+        "为什{del:么}么？为什么？{del:为}啊，三",
+        "周之后，二十一天之后，{c1:504}时",
+        "之后{c1:，30240}分之后，一切都会结束",
+        "了，一定要结束啊！",
+        "  写了这么多，心情略有平",
+        "复，但我还是恨你，{sp:X}{sp:X}{sp:X}！",
+        "你个姓{sp:X}的，我让你不得好{sub:死|！}",
+        "哈哈哈哈哈哈哈哈哈哈哈哈哈",
+        "哈。{c1:心情}仍不能完全平复， 为",
+        "   什么呢？为什么？写",
+        "   不了那么多了，我也"
+      ]
+    },
+    right: {
+      header: { year: "", month: "", day: "", week: "", weather: "" },
+      flower: "pot",
+      rows: [
+        "不想泄愤了，反正太阳总会落",
+        "山的，别再来打扰我了，门外",
+        "的人！",
+        "",
+        "  {c1:29}日补看着字迹，有种说",
+        "不出的感觉。"
+      ]
+    }
+  },
+
+// ================= 8. 10月29日(一：双面人格涂鸦) + 10月29日(二) =================
+  {
+    left: {
+      marginTop: `
+        <div style="position:relative; width:100%; height:32px;">
+          <div style="position:absolute; bottom:0; left:64px; transform:rotate(-1.5deg); line-height:1.15; white-space:nowrap;">
+            <div>这只是个泄愤工具而已，</div>
+            <div style="margin-left:-18px;">当然，它的承受力很强！</div>
+          </div>
+        </div>
+      `,
+      header: { year: "", month: "10", day: "29", week: "{ruby:四|3}", weather: "雨" },
+      flower: "pot",
+      rows: [
+        "  只有劫后余生才知道什么",
+        "叫快感，但快感会随着时间推",
+        "移而消失，再次，痛苦！",
+        "",
+        "  为什么会{del:想}感到{sp:害}{sp:怕}{sp:呢}{sp:？}",
+        "{sp:因}{sp:为}{sp:快}{sp:感}{sp:背}后{sp:有}{sp:不}可避{sp:免}{sp:的}",
+        "噩运"
+      ],
+      marginBottom: `
+        <div style="text-align:left; padding-left: 74px; font-size: 17px; display:flex; align-items:center; gap:4px;">
+          <span>两面人格</span>
+          <svg width="26" height="24" viewBox="0 0 28 26" style="vertical-align:middle;">
+            <ellipse cx="14" cy="13" rx="12" ry="10.5" fill="none" stroke="#222" stroke-width="1.6"/>
+            <path d="M7 7 L11 11 M11 7 L7 11 M17 7 L21 11 M21 7 L17 11" stroke="#222" stroke-width="1.5" stroke-linecap="round"/>
+            <path d="M8 15 L12 19 M12 15 L8 19 M16 15 L20 19 M20 15 L16 19" stroke="#222" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+          <span>只有他存在！</span>
+        </div>
+      `,
+      doodleSvg: `
+        <svg class="doodle-overlay" viewBox="0 0 442 444">
+          <g stroke="#262626" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <!-- 狂草大字：啊！ 啊！（局部坐标变换，不再左移错位） -->
+            <g transform="translate(105, 302) rotate(-12) skewX(-12)">
+              <text x="0" y="0" font-size="34" font-family="STKaiti, Kaiti, serif" fill="#262626" stroke="none">啊！</text>
+            </g>
+            <path d="M180 252 L178 336" stroke-width="2"/>
+            <g transform="translate(208, 322) rotate(-8) skewX(-10)">
+              <text x="0" y="0" font-size="34" font-family="STKaiti, Kaiti, serif" fill="#262626" stroke="none">啊！</text>
+            </g>
+
+            <!-- 底部闭眼微笑大圆脸（占第10~11行） -->
+            <circle cx="176" cy="392" r="44" fill="#fcfaf2" fill-opacity="0.9"/>
+            <path d="M148 362 L198 362" stroke-width="1.4"/>
+            <path d="M146 378 C151 388, 162 388, 166 378"/>
+            <path d="M186 378 C191 388, 202 388, 206 378"/>
+            <path d="M174 384 L166 399 L180 399"/>
+            <path d="M156 410 C168 426, 184 426, 196 410"/>
+
+            <!-- 圆脸右侧的狂草字（准确落在第7~11列） -->
+            <g transform="translate(228, 394) rotate(-3) skewX(-12)">
+              <text x="0" y="0" font-size="22" font-family="STKaiti, Kaiti, serif" fill="#262626" stroke="none">他不在存在了！</text>
+            </g>
+            <g transform="translate(232, 426) rotate(-2) skewX(-12)">
+              <text x="0" y="0" font-size="22" font-family="STKaiti, Kaiti, serif" fill="#262626" stroke="none">不存在！</text>
+            </g>
+          </g>
+        </svg>
+      `
+    },
+    right: {
+      header: { year: "", month: "10", day: "29", week: "", weather: "" },
+      flower: "wreath",
+      rows: [
+        "  观{c1:25}课，世界可有我知音",
+        "否{c1:！？}必无{c1:焉，}唉！{del:无}无人可解吾",
+        "之心声也！",
+        "  为什么？我是一只蝎子呢"
+      ],
+      doodleSvg: `
+        <svg class="doodle-overlay" viewBox="0 0 442 444" style="overflow:visible;">
+          <!-- 还原第4行第13格右边框外侧的问号 -->
+          <text x="441" y="148" font-size="21" font-family="STKaiti, Kaiti, serif" fill="#262626">？</text>
+        </svg>
+      `
+    }
+  },
+
+  // ================= 9. 10月30日(一) + 10月30日(二：哭脸小人涂鸦) =================
+  {
+    left: {
+      header: { year: "", month: "10", day: "30", week: "{ruby:4|雨}", weather: "阴雨" },
+      flower: "wreath",
+      rows: [
+        "  想写日记时无法写，无感",
+        "觉时本子就在你面前，面对日",
+        "记我常常就是这样。",
+        "  总是会莫名其妙地无聊。",
+        "",
+        "  这个自我催眠的方法好用",
+        "吗？我可以早点做作业吗？",
+        "  我不知道！",
+        "   唉，做作业去了。"
+      ]
+    },
+    right: {
+      header: { year: "", month: "", day: "", week: "", weather: "" },
+      flower: "wreath",
+      rows: [
+        "  {c1:5:43}补，自我催眠果然没{sub:用|，}",
+        "还是明天再写吧！",
+        "       明天几点写{del:写}",
+        "        写呢？",
+        "        差不多一篇",
+        "        {c1:1000}字作文吧",
+        "         {c1:40}分抄好",
+        "       最多{ruby:50|1时}分，还",
+        "       要做，5点起",
+        "       来呢？",
+        "        6点"
+      ],
+      marginBottom: `
+        <div>抄好，7:30之前能做好吧？&emsp;&emsp;&emsp;<del>可</del></div>
+        <div>可我能5点醒来吗？日记之神，求求你让我<span class="spoiler" onclick="this.classList.toggle('revealed')">5点醒来吧！</span></div>
+      `,
+      doodleSvg: `
+        <svg class="doodle-overlay" viewBox="0 0 442 444">
+          <g stroke="#262626" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M135 92 L165 79 M148 90 L185 77 M165 89 L208 79 M182 91 L222 83 M195 95 L230 91"/>
+            <ellipse cx="176" cy="136" rx="52" ry="45" fill="#fcfaf2" fill-opacity="0.86"/>
+            <path d="M124 126 C114 126, 114 146, 125 146"/>
+            <path d="M228 126 C238 126, 238 146, 227 146"/>
+            <path d="M146 117 L162 120 M153 119 C150 129, 142 129, 140 123"/>
+            <path d="M192 120 L208 117 M200 119 C202 129, 210 129, 212 123"/>
+            <path d="M175 129 L168 142 L180 142"/>
+            <circle cx="138" cy="152" r="5.5"/><circle cx="138" cy="152" r="2.2"/>
+            <circle cx="212" cy="152" r="5.5"/><circle cx="212" cy="152" r="2.2"/>
+            <path d="M153 166 C165 147, 187 147, 199 166"/>
+            <!-- 躯干与避开文字的双臂 -->
+            <path d="M148 179 L142 308 M204 179 L210 308"/>
+            <path d="M147 202 L82 254 L145 232"/>
+            <path d="M205 202 L268 228 L206 224"/>
+            <path d="M192 204 C188 198, 182 204, 192 212 C202 204, 196 198, 192 204 Z"/>
+            <text x="148" y="232" font-size="16.5" fill="#262626" stroke="none" font-family="STKaiti, Kaiti, serif">信手涂鸦</text>
+            <text x="155" y="253" font-size="16.5" fill="#262626" stroke="none" font-family="STKaiti, Kaiti, serif" text-decoration="line-through">之作</text>
+            <path d="M142 308 L118 440 L175 318 L228 440 L210 308"/>
+            <ellipse cx="176" cy="296" rx="13" ry="17" fill="#222"/>
+            <path d="M158 304 Q176 270 194 308 M162 285 Q186 298 166 312"/>
+          </g>
+        </svg>
+      `
+    }
+  },
+
+  // ================= 10. 11月2日(一) + 11月2日(二：往返长箭头) =================
+  {
+    left: {
+      header: { year: "", month: "11", day: "2", week: "", weather: "" },
+      flower: "wreath",
+      rows: [
+        "  今天真是波折的一天，但",
+        "又不知这波折从何而起，难道",
+        "说找不到日记吗？",
+        "   哈哈！天然如此，",
+        "   但还是有块巨石压在心",
+        "头。",
+        "  无论如何也开心不起来。",
+        "   这是怎样的一天呢？",
+        "    期待明天的补充{face:wry}",
+        "    有谁是我的知音吗？",
+        "   我就是一只孤独的蝎"
+      ],
+      marginBottom: `
+        <div style="text-align:left; padding-left: 102px; line-height: 1.25;">
+          <div>子而已，那怕是<del>挚</del>好友我也不会敞开心</div>
+          <div>扉，只有那真正的朋友。</div>
+        </div>
+      `
+    },
+    right: {
+      header: { year: "", month: "", day: "", week: "", weather: "" },
+      flower: "wreath",
+      rows: [
+        "  那{c1_del:真|真}正的朋友在那儿呢？",
+        "让我可以交心的挚友？",
+        "  恐怕没有吧？",
+        "",
+        "  或许，",
+        "  是日记{del:？}呢？",
+        "  似乎确是如此。{del:！}",
+        "",
+        "",
+        "  无七情，人非人？",
+        "  人则为何物？"
+      ],
+      marginBottom: `
+        <div style="text-align:left; padding-left: 68px; line-height: 1.25;">
+          <div>仙？魔？神？佛？</div>
+          <div>我不知道。唉！</div>
+        </div>
+      `,
+      doodleSvg: `
+        <svg class="doodle-overlay" viewBox="0 0 442 444">
+          <g stroke="#262626" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <!-- 第8~9行的超长往返折线箭头 -->
+            <path d="M68 302 C180 292, 390 296, 395 316 C398 332, 210 340, 88 352"/>
+            <path d="M114 336 L85 352 L118 366"/>
+          </g>
+        </svg>
+      `
+    }
+  },
+
+  // ================= 11. 密码备忘页 + 11月3日(征战三国) =================
+  {
+    left: {
+      header: { year: "", month: "{u:X}", day: "{u:X}", week: "", weather: "" },
+      flower: "wreath",
+      rows: [
+        " 记录手机屏保密码",
+        " 备忘：{sp:X}{sp:X}{sp:X}{sp:X}",
+        " 记录平板屏保密码",
+        " 备忘：   {sp:8}{sp:7}{sp:1}",
+        "       {sp:9}{sp:2}{sp:6}",
+        "       {sp:3}{sp:4}{sp:5}"
+      ],
+      doodleSvg: `
+        <svg class="doodle-overlay interactive-spoiler spoiler" onclick="this.classList.toggle('revealed')" viewBox="0 0 442 444">
+          <g stroke="#262626" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <!-- 九宫格连线图案1 -->
+            <path d="M168 136 L232 200 L232 136 L168 234 L232 234 L210 136 L210 244"/>
+            <!-- 左下连线图案2 -->
+            <path d="M72 254 C105 240, 138 274, 138 312 L72 312 L138 244"/>
+            <!-- 底部连线图案3 -->
+            <path d="M182 318 L248 318 L182 368 M215 318 L248 343 L244 380"/>
+          </g>
+        </svg>
+      `
+    },
+    right: {
+      header: { year: "", month: "11", day: "3", week: "", weather: "" },
+      flower: "wreath",
+      rows: [
+        "  双神出，天地{sub:哭|。}",
+        "  千重劫，万世{sub:难|。}",
+        "  神界危，神王{sub:归|。}",
+        "  人界乱，反叛{sub:患|。}",
+        "  天{del:机}机泄，源泉{sub:枯|。}",
+        " {del:幽}幽 {sub:动|，} 祸根现",
+        "    ……",
+        "  有谁可与我征战于三国？"
+      ]
+    }
+  }
+];
+
+let currentSpread = 0;
+let activeSide = "left";
+let mobileViewMode = "single";
+const JITTER_MODES = ["jitter-mild", "jitter-wild", "jitter-clean"];
+const JITTER_LABELS = ["✍️ 笔迹：微晃", "🤪 笔迹：狂野", "📏 笔迹：工整"];
+let jitterIndex = 0;
+
+function isMobileViewport() {
+  return window.innerWidth <= 920;
+}
+
+// 解析单行字符串为 13 个单元格 Token
+function parseRowTokens(rowStr = "") {
+  const tokens = [];
+  const regex = /\{([a-z0-9_]+):([^}]+)\}|(.)/g;
+  let match;
+  while ((match = regex.exec(rowStr)) !== null && tokens.length < 13) {
+    if (match[1]) {
+      tokens.push({ type: match[1], val: match[2] });
+    } else {
+      tokens.push({ type: "char", val: match[3] });
+    }
+  }
+  while (tokens.length < 13) {
+    tokens.push({ type: "char", val: " " });
+  }
+  return tokens;
+}
+
+// 估算 {c1:...} 的自然宽度并算出横向压缩比（半角约 0.52em，全角 1em）
+function c1ScaleX(text) {
+  const em = Array.from(text).reduce(
+    (sum, ch) => sum + (ch.charCodeAt(0) <= 0xff ? 0.52 : 1),
+    0
+  );
+  const natural = em * 20; // 与 .cell .c1-inner 的 font-size 保持一致
+  return Math.max(0.4, Math.min(0.95, 31 / natural)).toFixed(2);
+}
+
+// 渲染单个单元格内部 HTML
+function renderTokenHTML(token) {
+  const { type, val } = token;
+  if (type === "char") {
+    return val === " " ? "" : `<span>${val}</span>`;
+  }
+  if (type === "del") {
+    return `<del>${val}</del>`;
+  }
+  if (type === "ruby") {
+    const [oldTxt, newTxt] = val.split("|");
+    return `<ruby><del>${oldTxt}</del><rt>${newTxt}</rt></ruby>`;
+  }
+  if (type === "topedit") {
+    const [oldTxt, newTxt] = val.split("|");
+    return `<del>${oldTxt}</del><span class="top-edit">${newTxt}</span>`;
+  }
+  if (type === "sup") {
+    const [mainTxt, supTxt] = val.split("|");
+    return `<span>${mainTxt}</span><span class="sup-insert">${supTxt}</span>`;
+  }
+  if (type === "ql") {
+    return `<span class="quote-mark left">“</span><span>${val}</span>`;
+  }
+  if (type === "qr") {
+    return `<span>${val}</span><span class="quote-mark right">”</span>`;
+  }
+  if (type === "dash") {
+    return `<span class="dash-line"></span>`;
+  }
+  if (type === "u") {
+    return `<span>${val === " " ? "&emsp;" : val}</span><span class="u-line"></span>`;
+  }
+  if (type === "c1") {
+    return `<span class="c1"><span class="c1-inner" style="--c1-sx:${c1ScaleX(val)}">${val}</span></span>`;
+  }
+  if (type === "c1_del") {
+    const [delTxt, keepTxt] = val.split("|");
+    return `<span class="c1-del-wrap"><del>${delTxt}</del><span>${keepTxt}</span></span>`;
+  }
+  if (type === "sub") {
+    const [mainTxt, subTxt] = val.split("|");
+    return `<span>${mainTxt}</span><span class="sub-mark">${subTxt}</span>`;
+  }
+  if (type === "face") {
+    return `
+      <svg width="26" height="26" viewBox="0 0 28 28">
+        <circle cx="14" cy="14" r="11" fill="none" stroke="#262626" stroke-width="1.6"/>
+        <path d="M8 10 L12 9 M16 9 L20 10" stroke="#262626" stroke-width="1.4" stroke-linecap="round"/>
+        <circle cx="10" cy="13" r="1.3" fill="#262626"/>
+        <circle cx="18" cy="13" r="1.3" fill="#262626"/>
+        <path d="M9 19 Q14 16 19 19" fill="none" stroke="#262626" stroke-width="1.5" stroke-linecap="round"/>
+      </svg>
+    `;
+  }
+  if (type === "sp") {
+    return `<span class="spoiler" onclick="this.classList.toggle('revealed')">${val}</span>`;
+  }
+  return `<span>${val}</span>`;
+}
+
+// 渲染页眉中的特殊标签
+function formatHeaderVal(str = "") {
+  if (!str) return "&emsp;";
+  return str
+    .replace(/\{ruby:([^|]+)\|([^}]+)\}/g, (_, a, b) => `<del>${b}</del>${a}`)
+    .replace(/\{u:([^}]+)\}/g, (_, a) => `<u>${a}</u>`);
+}
+
+// 渲染单页（11行标准网格）
+function renderPage(container, pageData, spreadIdx, sideKey) {
+  if (pageData.type === "study-cover") {
+    container.innerHTML = `
+      <div class="study-cover">
+        <div class="study-banner">STUDY</div>
+        <div class="study-text">
+          <p>&emsp;&emsp;小学生在学习写作时普遍碰到的问题大致可以归纳为四个问题</p>
+          <ol>
+            <li>作文时，常常无话可说，找不到可供写作的材料</li>
+            <li>文章的中心意思写不清楚</li>
+            <li>文章的内容写不具体</li>
+            <li>文章的思想意义不鲜明</li>
+          </ol>
+          <p>&emsp;&emsp;老师和家长如果对这几个方面的问题，帮助小学生从认识和实践上都能有一些解决的办法，那么，儿童的写作基础就会打得比较扎实一些。</p>
+        </div>
+        <svg width="90" height="58" viewBox="0 0 100 65" fill="none" stroke="#2f5888" stroke-width="2">
+          <path d="M35 25 C20 25, 18 52, 36 55 C52 52, 48 25, 35 25 Z" fill="#2f5888" fill-opacity="0.18"/>
+          <path d="M62 32 C50 32, 48 54, 62 56 C76 54, 74 32, 62 32 Z" fill="#2f5888" fill-opacity="0.18"/>
+          <circle cx="32" cy="38" r="1.2" fill="#2f5888"/><circle cx="39" cy="42" r="1.2" fill="#2f5888"/><circle cx="34" cy="47" r="1.2" fill="#2f5888"/>
+          <circle cx="60" cy="42" r="1.2" fill="#2f5888"/><circle cx="65" cy="47" r="1.2" fill="#2f5888"/>
+          <path d="M35 25 Q48 10 68 18 M48 16 Q55 6 62 12"/>
+        </svg>
+      </div>
+    `;
+    return;
+  }
+
+  const h = pageData.header || {};
+  let rowsHTML = "";
+
+  // 标准 11 行
+  for (let r = 0; r < 11; r++) {
+    const tokens = parseRowTokens((pageData.rows && pageData.rows[r]) || "");
+    let cellsHTML = "";
+    for (let c = 0; c < 13; c++) {
+      const seed = ((spreadIdx + 1) * 313 + (sideKey === "left" ? 17 : 53) + r * 13 + c) * 9301 + 49297;
+      const rot = (((seed % 29) - 14) / 10).toFixed(2);
+      const dx = (((seed % 17) - 8) / 10).toFixed(1);
+      const dy = ((((seed >> 3) % 19) - 9) / 10).toFixed(1);
+      const sc = (0.92 + ((seed >> 5) % 17) / 100).toFixed(2);
+      const sk = (((seed >> 7) % 9) - 4).toFixed(1);
+
+      cellsHTML += `<div class="cell" style="--rot:${rot}deg;--dx:${dx}px;--dy:${dy}px;--sc:${sc};--sk:${sk}deg">${renderTokenHTML(tokens[c])}</div>`;
+    }
+    rowsHTML += `<div class="grid-row">${cellsHTML}</div>`;
+  }
+
+  container.innerHTML = `
+    <div class="margin-top">${pageData.marginTop || ""}</div>
+    <div class="diary-header">
+      <div><span class="fill">${formatHeaderVal(h.year)}</span>年<span class="fill">${formatHeaderVal(h.month)}</span>月<span class="fill">${formatHeaderVal(h.day)}</span>日</div>
+      <div>星期<span class="fill">${formatHeaderVal(h.week)}</span></div>
+      <div>天氣<span class="fill">${formatHeaderVal(h.weather)}</span></div>
+    </div>
+    <div class="grid-box">
+      ${rowsHTML}
+      ${pageData.flower ? `<div class="corner-flower ${pageData.flower}"></div>` : ""}
+      ${pageData.doodleSvg || ""}
+    </div>
+    <div class="margin-bottom">${pageData.marginBottom || ""}</div>
+  `;
+}
+
+function renderSpread() {
+  const spread = SPREADS[currentSpread];
+  renderPage(document.getElementById("leftPage"), spread.left, currentSpread, "left");
+  renderPage(document.getElementById("rightPage"), spread.right, currentSpread, "right");
+  updateLayoutAndScale();
+}
+
+function updateLayoutAndScale() {
+  const isMobile = isMobileViewport();
+  const leftEl = document.getElementById("leftPage");
+  const rightEl = document.getElementById("rightPage");
+  const wrapper = document.getElementById("bookWrapper");
+  const stage = document.getElementById("bookStage");
+  const viewBtn = document.getElementById("viewModeBtn");
+
+  document.body.classList.remove("single-page-mode", "mobile-stack-mode");
+  leftEl.classList.remove("hidden-side");
+  rightEl.classList.remove("hidden-side");
+
+  if (isMobile) {
+    if (mobileViewMode === "single") {
+      document.body.classList.add("single-page-mode");
+      if (activeSide === "left") {
+        rightEl.classList.add("hidden-side");
+      } else {
+        leftEl.classList.add("hidden-side");
+      }
+      viewBtn.textContent = "📖 切为双页";
+      const pageNum = currentSpread * 2 + (activeSide === "left" ? 1 : 2);
+      document.getElementById("pageIndicator").textContent = `${pageNum} / ${SPREADS.length * 2}`;
+      document.getElementById("prevBtn").disabled = (currentSpread === 0 && activeSide === "left");
+      document.getElementById("nextBtn").disabled = (currentSpread === SPREADS.length - 1 && activeSide === "right");
+    } else {
+      document.body.classList.add("mobile-stack-mode");
+      viewBtn.textContent = "🔍 切为单页";
+      document.getElementById("pageIndicator").textContent = `${currentSpread + 1} / ${SPREADS.length}`;
+      document.getElementById("prevBtn").disabled = currentSpread === 0;
+      document.getElementById("nextBtn").disabled = currentSpread === SPREADS.length - 1;
+    }
+  } else {
+    document.getElementById("pageIndicator").textContent = `${currentSpread + 1} / ${SPREADS.length}`;
+    document.getElementById("prevBtn").disabled = currentSpread === 0;
+    document.getElementById("nextBtn").disabled = currentSpread === SPREADS.length - 1;
+  }
+
+  wrapper.style.transform = "scale(1)";
+  const naturalW = wrapper.offsetWidth;
+  const naturalH = wrapper.offsetHeight;
+  const availW = window.innerWidth - 16;
+  const scale = Math.min(1, availW / naturalW);
+
+  wrapper.style.transform = `scale(${scale})`;
+  stage.style.height = `${Math.ceil(naturalH * scale)}px`;
+}
+
+function stepPage(delta) {
+  const isSingle = isMobileViewport() && mobileViewMode === "single";
+  const book = document.getElementById("bookSpread");
+
+  if (isSingle) {
+    let nextSpread = currentSpread;
+    let nextSide = activeSide;
+    if (delta > 0) {
+      if (activeSide === "left") {
+        nextSide = "right";
+      } else if (currentSpread < SPREADS.length - 1) {
+        nextSpread++;
+        nextSide = "left";
+      } else return;
+    } else {
+      if (activeSide === "right") {
+        nextSide = "left";
+      } else if (currentSpread > 0) {
+        nextSpread--;
+        nextSide = "right";
+      } else return;
+    }
+    book.classList.add("turning");
+    setTimeout(() => {
+      currentSpread = nextSpread;
+      activeSide = nextSide;
+      renderSpread();
+      book.classList.remove("turning");
+    }, 150);
+  } else {
+    const next = currentSpread + delta;
+    if (next < 0 || next >= SPREADS.length) return;
+    book.classList.add("turning");
+    setTimeout(() => {
+      currentSpread = next;
+      activeSide = "left";
+      renderSpread();
+      book.classList.remove("turning");
+    }, 160);
+  }
+}
+
+function toggleMobileViewMode() {
+  mobileViewMode = mobileViewMode === "single" ? "stack" : "single";
+  updateLayoutAndScale();
+}
+
+function cycleJitter() {
+  document.body.classList.remove(...JITTER_MODES);
+  jitterIndex = (jitterIndex + 1) % JITTER_MODES.length;
+  document.body.classList.add(JITTER_MODES[jitterIndex]);
+  const btn = document.getElementById("jitterBtn");
+  btn.textContent = JITTER_LABELS[jitterIndex];
+  btn.classList.toggle("active", jitterIndex !== 2);
+}
+
+function toggleRevealAll() {
+  document.body.classList.toggle("reveal-all");
+  document.getElementById("spoilerBtn").classList.toggle("active");
+}
+
+window.addEventListener("keydown", (e) => {
+  if (e.key === "ArrowLeft") stepPage(-1);
+  if (e.key === "ArrowRight") stepPage(1);
+});
+
+let touchStartX = 0;
+let touchStartY = 0;
+window.addEventListener("touchstart", (e) => {
+  if (e.touches.length === 1) {
+    touchStartX = e.touches[0].clientX;
+    touchStartY = e.touches[0].clientY;
+  }
+}, { passive: true });
+
+window.addEventListener("touchend", (e) => {
+  if (!touchStartX) return;
+  const dx = e.changedTouches[0].clientX - touchStartX;
+  const dy = e.changedTouches[0].clientY - touchStartY;
+  if (Math.abs(dx) > 50 && Math.abs(dx) > Math.abs(dy) * 1.5) {
+    if (dx < 0) stepPage(1);
+    else stepPage(-1);
+  }
+  touchStartX = 0;
+}, { passive: true });
+
+window.addEventListener("resize", updateLayoutAndScale);
+
+renderSpread();
+</script>
+</body>
+</html>

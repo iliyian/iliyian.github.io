@@ -49,3 +49,39 @@
   document.addEventListener('pjax:complete', apply);
   if (document.readyState !== 'loading') apply();
 })();
+
+/* 墨隐标记：点击锁定显示 / 再点收回（hover 与键盘聚焦已由 CSS 处理） */
+(() => {
+  if (window.__yySpoilerLoaded) return;
+  window.__yySpoilerLoaded = true;
+
+  const bind = () => {
+    document.querySelectorAll('.yy-spoiler').forEach((el) => {
+      if (el.dataset.yyBound) return;
+      el.dataset.yyBound = '1';
+      el.setAttribute('role', 'button');
+      el.setAttribute('aria-expanded', 'false');
+      if (!el.hasAttribute('tabindex')) el.setAttribute('tabindex', '0');
+
+      const toggle = () => {
+        const revealed = el.classList.toggle('is-revealed');
+        el.setAttribute('aria-expanded', String(revealed));
+      };
+      // 里面如果有链接，点链接就让它照常跳转，不顺手揭开
+      el.addEventListener('click', (e) => {
+        if (e.target.closest('a')) return;
+        toggle();
+      });
+      el.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ' || e.key === 'Spacebar') {
+          e.preventDefault();
+          toggle();
+        }
+      });
+    });
+  };
+
+  document.addEventListener('DOMContentLoaded', bind);
+  document.addEventListener('pjax:complete', bind);
+  if (document.readyState !== 'loading') bind();
+})();

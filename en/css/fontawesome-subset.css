@@ -76,10 +76,15 @@
 .fa-adjust,.fa-circle-half-stroke{--fa:"\f042"}
 .fa-chevron-left{--fa:"\f053"}
 .fa-chevron-right{--fa:"\f054"}
+.fa-circle-plus,.fa-plus-circle{--fa:"\f055"}
+.fa-circle-minus,.fa-minus-circle{--fa:"\f056"}
+.fa-check-circle,.fa-circle-check{--fa:"\f058"}
+.fa-circle-info,.fa-info-circle{--fa:"\f05a"}
 .fa-arrow-up{--fa:"\f062"}
 .fa-arrow-down{--fa:"\f063"}
 .fa-circle-exclamation,.fa-exclamation-circle{--fa:"\f06a"}
 .fa-eye{--fa:"\f06e"}
+.fa-exclamation-triangle,.fa-triangle-exclamation,.fa-warning{--fa:"\f071"}
 .fa-calendar-alt,.fa-calendar-days{--fa:"\f073"}
 .fa-chevron-down{--fa:"\f078"}
 .fa-folder-open{--fa:"\f07c"}
@@ -87,9 +92,11 @@
 .fa-thumb-tack,.fa-thumbtack{--fa:"\f08d"}
 .fa-bullhorn{--fa:"\f0a1"}
 .fa-arrow-circle-left,.fa-circle-arrow-left{--fa:"\f0a8"}
+.fa-arrow-circle-right,.fa-circle-arrow-right{--fa:"\f0a9"}
 .fa-chain,.fa-link{--fa:"\f0c1"}
 .fa-bars,.fa-navicon{--fa:"\f0c9"}
 .fa-list-dots,.fa-list-ul{--fa:"\f0ca"}
+.fa-caret-down{--fa:"\f0d7"}
 .fa-caret-left{--fa:"\f0d9"}
 .fa-envelope{--fa:"\f0e0"}
 .fa-file-clipboard,.fa-paste{--fa:"\f0ea"}
@@ -106,6 +113,7 @@
 .fa-file-word{--fa:"\f1c2"}
 .fa-circle-notch{--fa:"\f1ce"}
 .fa-clock-rotate-left,.fa-history{--fa:"\f1da"}
+.fa-copyright{--fa:"\f1f9"}
 .fa-chart-line,.fa-line-chart{--fa:"\f201"}
 .fa-comment-alt,.fa-message{--fa:"\f27a"}
 .fa-circle-user,.fa-user-circle{--fa:"\f2bd"}
@@ -116,8 +124,10 @@
 .fa-expand-alt,.fa-up-right-and-down-left-from-center{--fa:"\f424"}
 .fa-chess-queen{--fa:"\f445"}
 .fa-comment-dots,.fa-commenting{--fa:"\f4ad"}
+.fa-dove{--fa:"\f4ba"}
 .fa-book-open{--fa:"\f518"}
 .fa-bars-staggered,.fa-reorder,.fa-stream{--fa:"\f550"}
+.fa-feather-alt,.fa-feather-pointed{--fa:"\f56b"}
 .fa-layer-group{--fa:"\f5fd"}
 :host,:root{--fa-family-brands:"Font Awesome 7 Brands";--fa-font-brands:normal 400 1em/1 var(--fa-family-brands)}
 @font-face{font-family:"Font Awesome 7 Brands";font-style:normal;font-weight:400;font-display:block;src:url(../fonts/fa-brands-subset.woff2)}
