@@ -2042,3 +2042,18 @@ html[lang^="en"] #sidebar #sidebar-menus .site-data .headline {
         transition: none;
     }
 }
+
+/* ===== 相关推荐：桌面端一行两张 ===== */
+@media screen and (min-width: 769px) {
+    .relatedPosts > .relatedPosts-list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px;
+    }
+
+    .relatedPosts > .relatedPosts-list > a {
+        flex: 1 1 calc(50% - 3px);
+        width: auto;
+        margin: 0;
+    }
+}
