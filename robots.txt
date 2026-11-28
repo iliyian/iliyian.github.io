@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://iliyian.com/sitemap.xml
+Sitemap: https://iliyian.com/en/sitemap.xml
