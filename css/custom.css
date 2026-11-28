@@ -32,13 +32,13 @@
 
 @font-face {
     font-family: "LXGW";
-    src: url(/fonts/LXGWWenKai-Medium.subset.woff2);
+    src: url(/fonts/LXGWWenKai-Medium.subset.woff2?v=87c65e1c);
     font-display: swap;
 }
 
 @font-face {
     font-family: "LXGW-Screen";
-    src: url(/fonts/LXGWWenKai-Screen.woff2);
+    src: url(/fonts/LXGWWenKai-Screen.woff2?v=8f3d7766);
     font-display: swap;
 }
 
